@@ -4,233 +4,200 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BEST 4K | الاشتراك الرسمي</title>
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/all.min.css">
-
 <style>
 :root {
     --gold: #d4af37;
+    --gold-bright: #f1d592;
     --bg: #050505;
     --card: #111;
     --text: #fff;
-    --muted: #aaa;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; line-height: 1.6; }
 
-body {
-    font-family: system-ui;
-    background: var(--bg);
-    color: var(--text);
-}
-
-/* ===== HERO ===== */
+/* ===== خلفية الفقاعات الرقمية المحدثة ===== */
 .hero {
     position: relative;
-    height: 80vh;
+    height: 70vh;
+    background: radial-gradient(circle at center, #111 0%, #000 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
 }
 
-.slides {
-    display: flex;
-    height: 100%;
-    transition: transform 1s ease;
-}
-
-.slide {
-    min-width: 100%;
-}
-
-.slide img {
+.bubbles-container {
+    position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    filter: brightness(30%);
+    top: 0; left: 0;
 }
 
-/* overlay */
-.hero-content {
+.bubble {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    bottom: -100px;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-weight: bold;
+    font-size: 14px;
+    animation: float 15s infinite linear;
 }
 
-/* LOGO */
-.logo {
-    width: 120px;
-    height: 120px;
-    border: 3px solid var(--gold);
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    20% { opacity: 0.6; }
+    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+/* ===== الشعار الرقمي المطور (مثل الصورة) ===== */
+.digital-logo {
+    width: 160px;
+    height: 160px;
+    border: 4px solid var(--gold);
     border-radius: 50%;
-    margin: auto;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    box-shadow: 0 0 20px rgba(212,175,55,0.4);
+    position: relative;
+    background: var(--bg);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+    z-index: 10;
 }
 
-.logo span:first-child {
-    color: var(--gold);
-    font-weight: bold;
-    font-size: 22px;
+.logo-top { font-size: 22px; font-weight: 900; color: var(--gold-bright); letter-spacing: 2px; margin-top: 10px; }
+.logo-mid { 
+    border: 2px solid var(--gold); 
+    padding: 2px 15px; 
+    font-size: 28px; 
+    font-weight: 900; 
+    margin: 5px 0;
+    background: rgba(212,175,55,0.1);
 }
-
-.logo span:last-child {
-    font-size: 26px;
-    border: 2px solid var(--gold);
-    margin: 5px 20px 0;
-}
-
-h1 {
-    margin-top: 15px;
-    color: var(--gold);
-}
-
-.tag {
-    color: var(--muted);
-}
-
-/* ===== SECTION ===== */
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 30px 15px;
-}
-
-.title {
+.logo-bottom-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: var(--gold);
+    color: #000;
+    font-size: 12px;
+    font-weight: 900;
+    padding: 5px 0;
+    border-bottom-left-radius: 70px;
+    border-bottom-right-radius: 70px;
     text-align: center;
-    color: var(--gold);
-    margin: 40px 0;
 }
 
-/* ===== CARDS ===== */
-.grid {
-    display: grid;
-    gap: 20px;
+/* ===== التنسيقات العامة ===== */
+.container { max-width: 1100px; margin: auto; padding: 20px; }
+.section-title { text-align: center; color: var(--gold); margin: 50px 0 30px; font-size: 1.8rem; }
+
+.grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.card { background: var(--card); padding: 30px; border-radius: 20px; border: 1px solid #222; text-align: center; }
+.price { font-size: 32px; color: var(--gold); font-weight: bold; margin: 10px 0; }
+
+.info-box { background: #0c0c0c; padding: 20px; border-radius: 12px; border-right: 4px solid var(--gold); margin-bottom: 20px; }
+.info-box h4 { color: var(--gold); margin-bottom: 10px; }
+.badge { background: #222; color: var(--gold); padding: 4px 10px; border-radius: 5px; font-family: monospace; font-weight: bold; }
+
+.btn-whatsapp {
+    background: #25d366; color: #fff; padding: 18px 40px; border-radius: 50px;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
+    font-weight: bold; font-size: 1.1rem; margin-top: 20px;
 }
 
-.pricing {
-    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-}
+footer { text-align: center; padding: 50px; color: #444; border-top: 1px solid #222; font-size: 14px; }
 
-.card {
-    background: var(--card);
-    padding: 25px;
-    border-radius: 15px;
-    text-align: center;
-    transition: .3s;
-    border: 1px solid #222;
-}
-
-.card:hover {
-    transform: translateY(-6px);
-    border-color: var(--gold);
-}
-
-.price {
-    font-size: 28px;
-    color: var(--gold);
-}
-
-/* ===== BUTTON ===== */
-.btn {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 15px 35px;
-    background: #25d366;
-    color: white;
-    border-radius: 40px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* ===== FOOTER ===== */
-footer {
-    text-align: center;
-    padding: 40px;
-    color: #666;
-    border-top: 1px solid #222;
-}
-
-/* ===== MOBILE ===== */
-@media(max-width:600px){
-    h1 {font-size: 22px;}
-    .logo {width:90px;height:90px;}
-}
 </style>
 </head>
-
 <body>
 
-<!-- HERO -->
 <section class="hero">
-    <div class="slides" id="slider">
-        <div class="slide"><img src="https://images.unsplash.com/photo-1593789198777-f29bc23293cc?q=80"></div>
-        <div class="slide"><img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80"></div>
-        <div class="slide"><img src="https://images.unsplash.com/photo-1520004434532-668416ca0a78?q=80"></div>
-    </div>
+    <div class="bubbles-container" id="bubbles"></div>
 
-    <div class="hero-content">
-        <div class="logo">
-            <span>BEST</span>
-            <span>4K</span>
+    <div style="text-align: center; z-index: 10;">
+        <div class="digital-logo">
+            <div class="logo-top">BEST</div>
+            <div class="logo-mid">4K</div>
+            <div class="logo-bottom-bar">ULTRAHD</div>
         </div>
-        <h1>BEST 4K</h1>
-        <p class="tag">تجربة مشاهدة احترافية داخل منزلك</p>
+        <h1 style="margin-top:20px; color:var(--gold);">BEST 4K OFFICIAL</h1>
+        <p style="color: #888;">الوكيل الرسمي المعتمد لخدمات البث في العراق</p>
     </div>
 </section>
 
-<!-- PRICING -->
 <div class="container">
-    <h2 class="title">الباقات</h2>
-
-    <div class="grid pricing">
-        <div class="card">
-            <h3>شهر</h3>
-            <div class="price">7,000 IQD</div>
-        </div>
-
-        <div class="card">
-            <h3>3 أشهر</h3>
-            <div class="price">12,000 IQD</div>
-        </div>
-
-        <div class="card">
-            <h3>6 أشهر</h3>
-            <div class="price">20,000 IQD</div>
-        </div>
-
-        <div class="card">
-            <h3>سنة</h3>
-            <div class="price">30,000 IQD</div>
-        </div>
+    
+    <h2 class="section-title">باقات الاشتراك</h2>
+    <div class="grid">
+        <div class="card"><h3>شهر</h3><div class="price">7,000 <small style="font-size:12px">IQD</small></div></div>
+        <div class="card" style="border-color: var(--gold);"><h3>3 أشهر</h3><div class="price">12,000 <small style="font-size:12px">IQD</small></div></div>
+        <div class="card"><h3>6 أشهر</h3><div class="price">20,000 <small style="font-size:12px">IQD</small></div></div>
+        <div class="card"><h3>سنة كاملة</h3><div class="price">30,000 <small style="font-size:12px">IQD</small></div></div>
     </div>
 
-    <div style="text-align:center;">
-        <a href="https://wa.me/9647740393776" class="btn">
-            <i class="fab fa-whatsapp"></i> طلب تجربة مجانية
+    <div style="text-align: center;">
+        <a href="https://wa.me/9647740393776" class="btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> اطلب تجربة مجانية (12 ساعة)
         </a>
+    </div>
+
+    <h2 class="section-title">دليل الاستخدام والتحميل</h2>
+    <div class="grid">
+        <div class="info-box">
+            <h4><i class="fas fa-wifi"></i> متطلبات الإنترنت</h4>
+            <p>يتطلب الاشتراك إنترنت ألياف ضوئية (Fiber). لا يعمل بكفاءة على إنترنت الأبراج بسبب الحاجة لثبات الاتصال.</p>
+        </div>
+        <div class="info-box">
+            <h4><i class="fas fa-tv"></i> الأجهزة والخصوصية</h4>
+            <p>التفعيل برقم هاتفك الشخصي. الحساب يعمل على جهاز واحد فقط في نفس الوقت لضمان استقرار الخدمة.</p>
+        </div>
+        <div class="info-box">
+            <h4><i class="fab fa-android"></i> تحميل أندرويد</h4>
+            <p>عبر تطبيق Downloader استخدم الكود: <span class="badge">4056700</span></p>
+            <p style="margin-top:5px">أو <a href="https://sh-apps.cyou/apk/BEST4K.apk" style="color:var(--gold)">تحميل APK مباشر</a></p>
+        </div>
+        <div class="info-box">
+            <h4><i class="fab fa-apple"></i> تحميل آيفون</h4>
+            <p>استخدم تطبيق NEXT+ أو CASTORA</p>
+            <p>كود تفعيل السيرفر: <span class="badge">4949</span></p>
+            <small style="color:#666">هوست خارجي: http://39kent-cdn.streamcorex.net:8080</small>
+        </div>
     </div>
 </div>
 
 <footer>
-    BEST 4K © 2026
+    <p>BEST 4K © 2026 | جميع الحقوق محفوظة</p>
+    <p>طرق الدفع: ماستر سوبر كي (SuperKey)</p>
 </footer>
 
 <script>
-let i = 0;
-const slider = document.getElementById("slider");
-const total = slider.children.length;
+// توليد الفقاعات الرقمية تلقائياً
+const container = document.getElementById('bubbles');
+const platforms = ['NETFLIX', 'SHAHID', 'beIN', 'OSN', 'HBO', 'BEST 4K', '4K HD', 'LIVE'];
 
-setInterval(()=>{
-    i = (i + 1) % total;
-    slider.style.transform = `translateX(-${i * 100}%)`;
-},4000);
+for (let i = 0; i < 15; i++) {
+    const bubble = document.createElement('div');
+    bubble.className = 'bubble';
+    
+    // إعدادات عشوائية
+    const size = Math.random() * 60 + 40 + 'px';
+    bubble.style.width = size;
+    bubble.style.height = size;
+    bubble.style.left = Math.random() * 100 + '%';
+    bubble.style.animationDelay = Math.random() * 10 + 's';
+    bubble.style.animationDuration = Math.random() * 10 + 10 + 's';
+    
+    bubble.innerText = platforms[Math.floor(Math.random() * platforms.length)];
+    container.appendChild(bubble);
+}
 </script>
 
 </body>
