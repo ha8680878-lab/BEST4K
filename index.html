@@ -3,45 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BEST 4K | تجربة المشاهدة الأقوى</title>
+    <title>BEST 4K | دليل الخدمة والاشتراك الرسمي</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/all.min.css">
     <style>
         :root {
             --gold: #d4af37;
             --gold-light: #f1d592;
+            --gold-shadow: rgba(212, 175, 55, 0.5);
             --bg-deep: #050505;
+            --bg-glass: rgba(17, 17, 17, 0.85);
             --card-bg: #111111;
             --text-main: #ffffff;
             --text-dim: #b0b0b0;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, sans-serif;
+            font-family: 'Segoe UI', Roboto, sans-serif;
             background-color: var(--bg-deep);
             color: var(--text-main);
             margin: 0;
             overflow-x: hidden;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
-        /* --- تصميم السلايدر المتحرك (خلفية سينمائية) --- */
-        .slider-wrapper {
+        /* --- تصميم اللوكو الرقمي (CSS) --- */
+        .digital-logo {
+            width: 150px;
+            height: 150px;
+            background-color: var(--bg-deep);
+            border: 4px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            box-shadow: 0 0 30px var(--gold-shadow);
+            position: relative;
+        }
+
+        .digital-logo::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 40%;
+            background-color: var(--gold);
+            border-bottom-left-radius: 65px;
+            border-bottom-right-radius: 65px;
+            z-index: 1;
+        }
+
+        .logo-best {
+            color: var(--gold-light);
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: -15px;
+            text-shadow: 0 0 5px var(--gold-shadow);
+        }
+
+        .logo-4k {
+            border: 2px solid var(--gold);
+            padding: 5px 15px;
+            color: var(--gold);
+            font-size: 2.4rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+            z-index: 2;
+        }
+
+        .logo-ultrahd {
+            color: var(--bg-deep);
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: absolute;
+            bottom: 12px;
+            z-index: 3;
+        }
+
+        /* --- السلايدر المتحرك (الواجهة السينمائية) --- */
+        .hero-slider {
             position: relative;
             width: 100%;
-            height: 60vh; /* يغطي 60% من ارتفاع الشاشة */
+            height: 70vh; /* يغطي جزءاً كبيراً من ارتفاع الشاشة */
             overflow: hidden;
-            border-bottom: 3px solid var(--gold);
+            border-bottom: 2px solid var(--gold);
         }
 
         .slides-container {
             display: flex;
-            width: 300%; /* عدد الصور (3) × 100 */
+            width: 400%; /* عدد الصور × 100 */
             height: 100%;
-            transition: transform 1s ease-in-out;
+            transition: transform 1.2s ease-in-out;
         }
 
         .slide {
-            width: 33.33%;
+            width: 25%;
             height: 100%;
             position: relative;
         }
@@ -50,53 +109,42 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(30%) blur(2px); /* تعتيم وتغبيش بسيط ليبرز الشعار والنص */
+            filter: brightness(25%) blur(1px); /* تعتيم الصور لظهور المحتوى */
         }
 
-        /* محتوى واجهة الموقع (فوق السلايدر) */
-        .hero-overlay {
+        /* محتوى الموقع (فوق السلايدر) */
+        .hero-content {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            width: 90%;
+            width: 85%;
+            max-width: 900px;
             z-index: 10;
         }
 
-        /* تنسيق الشعار (الملف الوحيد الذي تحتاجه) */
-        .hero-overlay img.main-logo {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            border: 4px solid var(--gold);
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
-            margin-bottom: 20px;
-            object-fit: cover;
-        }
-
-        .hero-overlay h1 {
-            color: var(--gold);
-            font-size: 3.5rem;
+        .hero-content h1 {
+            font-size: 3rem;
+            color: var(--gold-light);
             margin: 0;
             letter-spacing: 2px;
-            text-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
         }
 
-        .hero-overlay p.tagline {
-            font-size: 1.3rem;
-            color: var(--text-white);
-            margin-top: 10px;
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--text-main);
+            margin-top: 15px;
             font-weight: 300;
         }
 
-        /* --- تنسيقات المحتوى الرئيسي --- */
+        /* --- الأقسام والمحتوى --- */
         .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
-        .section-title { text-align: center; color: var(--gold); margin: 60px 0 40px; font-size: 2.2rem; }
-        .section-title::after { content: ''; display: block; width: 80px; height: 3px; background: var(--gold); margin: 10px auto; }
-        
+        .section-title { text-align: center; color: var(--gold); margin: 60px 0 40px; font-size: 2.2rem; position: relative; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--gold); margin: 10px auto; }
+
         /* الباقات */
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
         .price-card {
             background: var(--card-bg);
             padding: 40px 20px;
@@ -105,21 +153,21 @@
             border: 1px solid #222;
             transition: 0.3s;
         }
-        .price-card:hover { border-color: var(--gold); transform: translateY(-10px); }
-        .price-card.featured { border: 2px solid var(--gold); background: #161616; position: relative; }
-        .cost { font-size: 2.5rem; color: var(--gold); font-weight: bold; }
+        .price-card:hover { border-color: var(--gold); transform: translateY(-8px); }
+        .cost { font-size: 2.4rem; color: var(--gold); font-weight: bold; }
         .currency { font-size: 1rem; color: var(--text-dim); }
 
-        /* الأسئلة والتحميل */
-        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
-        .info-card { background: #0c0c0c; padding: 25px; border-radius: 15px; border-right: 5px solid var(--gold); }
-        .info-card h4 { margin: 0 0 10px 0; color: var(--gold-light); font-size: 1.2rem; }
+        /* دليل المستخدم والأسئلة */
+        .guide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-top: 30px; }
+        .guide-card { background: #0c0c0c; padding: 25px; border-radius: 15px; border-right: 5px solid var(--gold); }
+        .guide-card h4 { margin: 0 0 10px 0; color: var(--gold-light); font-size: 1.15rem; }
+        .guide-card p { margin: 0; color: var(--text-dim); font-size: 0.95rem; }
         
-        .code { background: #222; color: var(--gold); padding: 5px 12px; border-radius: 5px; font-weight: bold; font-family: monospace; font-size: 1.1rem; }
+        .code-badge { background: #222; color: var(--gold); padding: 5px 15px; border-radius: 8px; font-weight: bold; font-family: monospace; font-size: 1.2rem; }
 
-        /* زر واتساب */
-        .cta-container { text-align: center; margin: 50px 0; }
-        .btn-whatsapp {
+        /* أزرار الإجراء */
+        .cta-container { text-align: center; margin: 60px 0; }
+        .btn-wa {
             background: #25d366;
             color: white;
             padding: 18px 45px;
@@ -129,66 +177,119 @@
             align-items: center;
             gap: 12px;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
         }
 
-        footer { text-align: center; padding: 60px; border-top: 1px solid #222; color: #666; font-size: 0.9rem; }
+        footer { text-align: center; padding: 60px; border-top: 1px solid #222; color: #555; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
-    <div class="slider-wrapper">
+    <div class="hero-slider">
         <div class="slides-container" id="slides-container">
             <div class="slide">
-                <img src="https://images.unsplash.com/photo-1593789198777-f29bc23293cc?q=80&w=1470&h=800&auto=format&fit=crop" alt="Films UI">
+                <img src="https://images.unsplash.com/photo-1593789198777-f29bc23293cc?q=80&w=1470&h=900&auto=format&fit=crop" alt="UI">
             </div>
             <div class="slide">
-                <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1470&h=800&auto=format&fit=crop" alt="Football Match">
+                <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1470&h=900&auto=format&fit=crop" alt="Football">
             </div>
             <div class="slide">
-                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1470&h=800&auto=format&fit=crop" alt="Ultra HD Quality">
+                <img src="https://images.unsplash.com/photo-1520004434532-668416ca0a78?q=80&w=1470&h=900&auto=format&fit=crop" alt="Cinema">
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=1378&h=900&auto=format&fit=crop" alt="gaming">
             </div>
         </div>
 
-        <div class="hero-overlay">
-            <img src="1000075753.jpg" class="main-logo" alt="BEST 4K Logo">
+        <div class="hero-content">
+            <div class="digital-logo">
+                <div class="logo-best">BEST</div>
+                <div class="logo-4k">4K</div>
+                <div class="logo-ultrahd">ULTRAHD</div>
+            </div>
+            
             <h1>BEST 4K</h1>
-            <p class="tagline">آلاف القنوات والأفلام والرياضة بجودة Ultra HD حقيقية</p>
+            <p class="tagline">تجربة مشاهدة سينمائية في منزلك | وكيل معتمد داخل العراق ✅</p>
         </div>
     </div>
 
     <div class="container">
+        
         <h2 class="section-title">باقات الاشتراك الرسمية</h2>
         <div class="pricing-grid">
-            <div class="price-card"><h3>شهر</h3><div class="cost">7,000 <span class="currency">IQD</span></div></div>
-            <div class="price-card"><h3>3 أشهر</h3><div class="cost">12,000 <span class="currency">IQD</span></div></div>
-            <div class="price-card featured">
-                <div style="background: var(--gold); color: black; font-size: 0.7rem; font-weight: bold; padding: 2px 10px; border-radius: 10px; position: absolute; top: -10px; left: 50%; transform: translateX(-50%);">الأكثر توفيراً</div>
-                <h3>6 أشهر</h3><div class="cost">20,000 <span class="currency">IQD</span></div>
+            <div class="price-card">
+                <h3>شهر كامل</h3>
+                <div class="cost">7,000 <span class="currency">IQD</span></div>
+                <p>دخول كامل لكافة المحتوى</p>
             </div>
-            <div class="price-card"><h3>سنة</h3><div class="cost">30,000 <span class="currency">IQD</span></div></div>
+            <div class="price-card">
+                <h3>3 أشهر</h3>
+                <div class="cost">12,000 <span class="currency">IQD</span></div>
+                <p>الخيار الأكثر توفيراً</p>
+            </div>
+            <div class="price-card" style="border: 2px solid var(--gold);">
+                <h3>6 أشهر</h3>
+                <div class="cost">20,000 <span class="currency">IQD</span></div>
+                <p>توفير كبير ومشاهدة مستقرة</p>
+            </div>
+            <div class="price-card">
+                <h3>سنة كاملة</h3>
+                <div class="cost">30,000 <span class="currency">IQD</span></div>
+                <p>أفضل عرض على الإطلاق</p>
+            </div>
         </div>
 
         <div class="cta-container">
-            <a href="https://wa.me/9647740393776" class="btn-whatsapp">
-                <i class="fab fa-whatsapp"></i> اطلب تجربتك المجانية (12 ساعة)
+            <a href="https://wa.me/9647740393776" class="btn-wa">
+                <i class="fab fa-whatsapp"></i> اطلب تفعيلاً تجريبياً مجانياً (12 ساعة)
             </a>
         </div>
 
-        <h2 class="section-title">دليل الخدمة والتحميل</h2>
-        <div class="info-grid">
-            <div class="info-card">
-                <h4><i class="fas fa-signal"></i> متطلبات الإنترنت</h4>
-                <p>يفضل استخدام إنترنت ألياف ضوئية (Fiber). الخدمة تحتاج ثباتاً وسرعة عالية لضمان بث 4K بدون تقطيع.</p>
+        <h2 class="section-title">حول الخدمة والجودة</h2>
+        <div class="guide-grid">
+            <div class="guide-card">
+                <h4>ما هي خدمة BEST 4K؟</h4>
+                <p>خدمة بث IPTV متقدمة ومصرح بها رسمياً، توفر آلاف القنوات العالمية والرياضية وأضخم مكتبة أفلام بجودة 4K حقيقية.</p>
             </div>
-            <div class="info-card">
-                <h4><i class="fas fa-mobile-alt"></i> التحميل للأندرويد</h4>
-                <p>حمل تطبيق BEST4K المباشر، أو عبر Downloader باستخدام الكود: <span class="code">4056700</span></p>
+            <div class="guide-card">
+                <h4>متطلبات الإنترنت</h4>
+                <p>تتطلب الخدمة إنترنت ألياف ضوئية (Fiber). لا تعمل على الإنترنت اللاسلكي (الأبراج) بسبب الحاجة لثبات تدفق البيانات.</p>
             </div>
-            <div class="info-card">
-                <h4><i class="fab fa-apple"></i> التحميل للآيفون (iOS)</h4>
-                <p>حمل تطبيق NEXT+ أو CASTORA، واستخدم كود تفعيل السيرفر: <span class="code">4949</span></p>
+            <div class="guide-card">
+                <h4>الخصوصية وعدد الأجهزة</h4>
+                <p>الحساب خاص بك حصراً ويتم تفعيله برقم هاتفك. المشاهدة تعمل على جهاز واحد فقط في اللحظة الواحدة.</p>
+            </div>
+            <div class="guide-card">
+                <h4>جودة البث</h4>
+                <p>نعم، جودة 4K حقيقية مع توفر جودات أقل (FHD, HD, SD) لتناسب سرعة الاتصال وضمان عدم التقطيع.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">روابط التحميل والتفعيل</h2>
+        <div class="guide-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+            <div class="guide-card" style="border-right-color: #f1d592;">
+                <h4>أجهزة أندرويد و Android Box</h4>
+                <p>يمكنك التحميل المباشر للتطبيق: <a href="https://sh-apps.cyou/apk/BEST4K.apk" style="color: var(--gold);">BEST4K.apk</a></p>
+                <p>أو عبر تطبيق Downloader باستخدام الكود الرسمي: <span class="code-badge">4056700</span></p>
+            </div>
+            <div class="guide-card" style="border-right-color: #f1d592;">
+                <h4>أجهزة آيفون (iOS)</h4>
+                <p>يمكن التفعيل عبر التطبيقات التالية: <a href="https://apps.apple.com/app/id6443335504" style="color: var(--gold);">NEXT+</a> أو <a href="https://apps.apple.com/us/app/castora/id6760588570" style="color: var(--gold);">CASTORA</a></p>
+                <p>كود تفعيل السيرفر الخاص بنا: <span class="code-badge">4949</span></p>
+                <p style="font-size: 0.8rem; color: #777; margin-top: 10px;">هوست المشغلات الخارجية: http://39kent-cdn.streamcorex.net:8080</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">مميزات الاشتراك</h2>
+        <div class="guide-grid">
+            <div class="guide-card" style="border-right-color: #25d366;">
+                <h4>✅ ثبات أسطوري</h4>
+                <p>سيرفرات مخصصة لضمان عدم التقطيع أثناء المباريات الكبرى والمباشرة.</p>
+            </div>
+            <div class="guide-card" style="border-right-color: #25d366;">
+                <h4>✅ تفعيل فوري ومباشر</h4>
+                <p>بمجرد إتمام الدفع (SuperKey)، يتم تفعيل اشتراكك وتجربة المشاهدة خلال دقائق.</p>
             </div>
         </div>
 
@@ -197,19 +298,19 @@
     <footer>
         <p>BEST 4K | تجربة مشاهدة سينمائية في منزلك</p>
         <p>طرق الدفع المتوفرة: ماستر سوبر كي (SuperKey)</p>
+        <p>واتساب الدفع والدعم: 07740393776</p>
         <p>&copy; 2026 جميع الحقوق محفوظة</p>
     </footer>
 
     <script>
         let currentIndex = 0;
         const slidesContainer = document.getElementById('slides-container');
-        const totalSlides = 3; // عدد الصور الآن 3
+        const totalSlides = 4;
 
-        // تحريك تلقائي كل 5 ثواني
         setInterval(() => {
             currentIndex = (currentIndex + 1) % totalSlides;
             slidesContainer.style.transform = `translateX(${currentIndex * 100}%)`;
-        }, 5000); // 5000 مللي ثانية = 5 ثواني
+        }, 5000); // تحريك كل 5 ثواني
     </script>
 
 </body>
