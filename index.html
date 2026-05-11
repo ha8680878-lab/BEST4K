@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BEST 4K | المنصة الرسمية في العراق 🇮🇶</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/all.min.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
         :root {
             --gold: #d4af37;
@@ -14,19 +23,70 @@
             --glass: rgba(255, 255, 255, 0.05);
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            font-family: 'Segoe UI', Tahoma, sans-serif; 
-            background: var(--bg); 
-            color: #fff; 
-            overflow-x: hidden; 
-            line-height: 1.8;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
-        /* ===== Hero & Animated Bubbles ===== */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background:
+                radial-gradient(circle at top right, rgba(212, 175, 55, 0.08), transparent 25%),
+                radial-gradient(circle at bottom left, rgba(212, 175, 55, 0.05), transparent 30%),
+                #030303;
+            color: #fff;
+            overflow-x: hidden;
+            line-height: 1.9;
+        }
+
+        /* ===== TOPBAR ===== */
+
+        .topbar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            z-index: 9999;
+            backdrop-filter: blur(12px);
+            background: rgba(0, 0, 0, 0.55);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .topbar-inner {
+            max-width: 1200px;
+            margin: auto;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .top-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: .3s;
+            font-size: .95rem;
+        }
+
+        .top-links a:hover {
+            color: var(--gold);
+        }
+
+        /* ===== Hero ===== */
+
         .hero {
             position: relative;
-            height: 90vh;
+            height: 100vh;
             background: radial-gradient(circle at center, #111 0%, #000 100%);
             display: flex;
             align-items: center;
@@ -35,8 +95,23 @@
             border-bottom: 2px solid var(--gold);
         }
 
-        .bubbles-container { position: absolute; width: 100%; height: 100%; top: 0; left: 0; }
-        
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(to bottom, rgba(0, 0, 0, .45), rgba(0, 0, 0, .8));
+            z-index: 1;
+        }
+
+        .bubbles-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
         .bubble {
             position: absolute;
             bottom: -150px;
@@ -56,13 +131,27 @@
         }
 
         @keyframes floatUp {
-            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(-115vh) rotate(10deg); opacity: 0; }
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-115vh) rotate(10deg);
+                opacity: 0;
+            }
         }
 
-        /* ===== Digital Logo (Exact Replica) ===== */
+        /* ===== Logo ===== */
+
         .digital-logo {
             width: 190px;
             height: 190px;
@@ -76,10 +165,42 @@
             background: #000;
             box-shadow: 0 0 40px rgba(212, 175, 55, 0.4);
             margin: 0 auto;
+            z-index: 10;
         }
 
-        .logo-top { font-size: 26px; font-weight: 900; color: var(--gold-bright); letter-spacing: 2px; margin-top: 15px; }
-        
+        .digital-logo::before {
+            content: "";
+            position: absolute;
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.18), transparent 70%);
+            z-index: -1;
+            animation: pulseGlow 3s infinite ease-in-out;
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: .6;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+        }
+
+        .logo-top {
+            font-size: 26px;
+            font-weight: 900;
+            color: var(--gold-bright);
+            letter-spacing: 2px;
+            margin-top: 15px;
+        }
+
         .logo-mid {
             border: 3px solid var(--gold);
             padding: 2px 25px;
@@ -103,47 +224,121 @@
             text-align: center;
         }
 
-        /* ===== Content Design ===== */
-        .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
-        .section-title { text-align: center; color: var(--gold); margin: 60px 0 40px; font-size: 2.5rem; text-shadow: var(--neon-gold); }
+        /* ===== Main ===== */
 
-        .grid { display: grid; gap: 30px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-        
+        .container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--gold);
+            margin: 70px 0 40px;
+            font-size: 2.7rem;
+            text-shadow: var(--neon-gold);
+        }
+
+        .grid {
+            display: grid;
+            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        }
+
+        /* ===== Cards ===== */
+
         .card {
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(255, 255, 255, 0.03);
             border: 1px solid #222;
             padding: 40px 20px;
             border-radius: 25px;
             text-align: center;
             transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(12px);
         }
-        .card:hover { border-color: var(--gold); transform: translateY(-10px); background: rgba(212, 175, 55, 0.05); }
 
-        .price { font-size: 42px; color: var(--gold-bright); font-weight: 900; margin: 15px 0; }
-        
-        /* Guide & Details */
-        .detail-panel {
-            background: #0a0a0a;
-            border-right: 5px solid var(--gold);
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 25px;
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.08),
+                    transparent);
+            transition: .7s;
         }
-        .detail-panel h4 { color: var(--gold); margin-bottom: 15px; font-size: 1.4rem; display: flex; align-items: center; gap: 10px; }
-        .detail-panel p, .detail-panel li { color: #ccc; font-size: 1rem; }
-        .detail-panel ul { padding-right: 20px; }
 
-        .badge { background: #1a1a1a; color: var(--gold); padding: 6px 14px; border-radius: 8px; font-weight: bold; border: 1px solid var(--gold); font-family: monospace; font-size: 1.2rem; }
-        
-        .apk-link {
-            display: inline-block;
-            margin-top: 10px;
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .best-plan {
+            position: absolute;
+            top: 15px;
+            left: -35px;
+            background: linear-gradient(45deg, #ffd700, #b8860b);
+            color: #000;
+            padding: 6px 40px;
+            font-size: .8rem;
+            font-weight: 900;
+            transform: rotate(-45deg);
+            box-shadow: 0 0 15px rgba(255, 215, 0, .4);
+        }
+
+        .price {
+            font-size: 42px;
             color: var(--gold-bright);
-            text-decoration: none;
-            border-bottom: 1px dashed var(--gold);
-            font-weight: bold;
+            font-weight: 900;
+            margin: 15px 0;
         }
-        .apk-link:hover { color: #fff; border-bottom-style: solid; }
+
+        /* ===== Stats ===== */
+
+        .stats {
+            margin: 70px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: .3s;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--gold);
+        }
+
+        .stat-title {
+            color: #aaa;
+            margin-top: 8px;
+        }
+
+        /* ===== Button ===== */
 
         .btn-action {
             background: linear-gradient(45deg, #25d366, #128c7e);
@@ -159,132 +354,594 @@
             margin-top: 30px;
             box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
             transition: 0.3s;
+            position: relative;
+            overflow: hidden;
         }
 
-        footer { text-align: center; padding: 80px 20px; border-top: 1px solid #222; }
-        .status-badge { color: #25d366; font-size: 0.9rem; font-weight: bold; border: 1px solid #25d366; padding: 2px 10px; border-radius: 20px; }
+        .btn-action::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg,
+                    transparent,
+                    rgba(255, 255, 255, .2),
+                    transparent);
+        }
+
+        .btn-action:hover::before {
+            left: 100%;
+            transition: .8s;
+        }
+
+        .btn-action:hover {
+            transform: translateY(-4px) scale(1.03);
+        }
+
+        /* ===== Panels ===== */
+
+        .detail-panel {
+            background: #0a0a0a;
+            border-right: 5px solid var(--gold);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+
+        .detail-panel h4 {
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .detail-panel p,
+        .detail-panel li {
+            color: #ccc;
+            font-size: 1rem;
+        }
+
+        .detail-panel ul {
+            padding-right: 20px;
+        }
+
+        .badge {
+            background: #1a1a1a;
+            color: var(--gold);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-weight: bold;
+            border: 1px solid var(--gold);
+            font-family: monospace;
+            font-size: 1.2rem;
+        }
+
+        .apk-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--gold-bright);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--gold);
+            font-weight: bold;
+        }
+
+        /* ===== Features ===== */
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .feature-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, .15);
+            padding: 30px;
+            border-radius: 22px;
+            text-align: center;
+            transition: .3s;
+        }
+
+        .feature-box i {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 18px;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+        }
+
+        /* ===== Devices ===== */
+
+        .devices {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .device {
+            background: #0f0f0f;
+            border: 1px solid #222;
+            padding: 15px 25px;
+            border-radius: 15px;
+            color: #ccc;
+            transition: .3s;
+        }
+
+        .device:hover {
+            border-color: var(--gold);
+            color: var(--gold-bright);
+            transform: translateY(-5px);
+        }
+
+        /* ===== Footer ===== */
+
+        footer {
+            text-align: center;
+            padding: 80px 20px;
+            border-top: 1px solid #222;
+            background: linear-gradient(to top, #000, #070707);
+            position: relative;
+        }
+
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+        }
+
+        .status-badge {
+            color: #25d366;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border: 1px solid #25d366;
+            padding: 2px 10px;
+            border-radius: 20px;
+        }
+
+        /* ===== Mobile ===== */
+
+        @media(max-width:768px) {
+
+            .hero {
+                height: auto;
+                padding: 140px 20px 90px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem !important;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .btn-action {
+                width: 100%;
+                justify-content: center;
+                font-size: 1.1rem;
+                padding: 18px;
+            }
+
+            .top-links {
+                display: none;
+            }
+        }
     </style>
 </head>
+
 <body>
 
-<section class="hero">
-    <div class="bubbles-container" id="bubbles"></div>
+    <!-- ===== TOPBAR ===== -->
 
-    <div style="text-align: center; z-index: 10;">
-        <div class="digital-logo">
-            <div class="logo-top">BEST</div>
-            <div class="logo-mid">4K</div>
-            <div class="logo-bottom">ULTRAHD</div>
-        </div>
-        <h1 style="margin-top:30px; font-size: 3.5rem;">BEST 4K</h1>
-        <p style="color: var(--gold); font-size: 1.4rem; letter-spacing: 2px;">الموزع الرسمي المعتمد في العراق 🇮🇶</p>
-        <p style="margin-top: 10px;"><span class="status-badge">● السيرفر متصل ويعمل بكفاءة</span></p>
-    </div>
-</section>
+    <div class="topbar">
+        <div class="topbar-inner">
 
-<div class="container">
-    
-    <h2 class="section-title">خطط الاشتراك الرسمية</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>اشتراك 1 شهر</h3>
-            <div class="price">7,000 <small style="font-size: 14px;">IQD</small></div>
-            <p>تجربة كاملة للمحتوى</p>
-        </div>
-        <div class="card" style="border: 2px solid var(--gold);">
-            <h3>اشتراك 3 أشهر</h3>
-            <div class="price">12,000 <small style="font-size: 14px;">IQD</small></div>
-            <p>الأكثر طلباً للمستخدمين الجدد</p>
-        </div>
-        <div class="card">
-            <h3>اشتراك 6 أشهر</h3>
-            <div class="price">20,000 <small style="font-size: 14px;">IQD</small></div>
-            <p>ضمان الثبات التام</p>
-        </div>
-        <div class="card">
-            <h3>اشتراك 12 شهر</h3>
-            <div class="price">30,000 <small style="font-size: 14px;">IQD</small></div>
-            <p>القيمة الأفضل للتوفير</p>
+            <div style="color:var(--gold);font-weight:900;">
+                BEST 4K IRAQ 🇮🇶
+            </div>
+
+            <div class="top-links">
+                <a href="#">الرئيسية</a>
+                <a href="#">الاشتراكات</a>
+                <a href="#">التطبيقات</a>
+                <a href="#">الدعم الفني</a>
+                <a href="#">اتصل بنا</a>
+            </div>
+
         </div>
     </div>
 
-    <div style="text-align: center;">
-        <a href="https://wa.me/9647740393776" class="btn-action">
-            <i class="fab fa-whatsapp"></i> تفعيل التجربة المجانية (12 ساعة)
-        </a>
+    <!-- ===== HERO ===== -->
+
+    <section class="hero">
+
+        <div class="bubbles-container" id="bubbles"></div>
+
+        <div style="text-align:center;z-index:10;">
+
+            <div class="digital-logo">
+                <div class="logo-top">BEST</div>
+                <div class="logo-mid">4K</div>
+                <div class="logo-bottom">ULTRAHD</div>
+            </div>
+
+            <h1 style="margin-top:30px;font-size:3.7rem;">
+                BEST 4K
+            </h1>
+
+            <p style="color:var(--gold);font-size:1.4rem;letter-spacing:2px;">
+                الموزع الرسمي المعتمد في العراق 🇮🇶
+            </p>
+
+            <p style="margin-top:15px;">
+                <span class="status-badge">
+                    ● السيرفر متصل ويعمل بكفاءة عالية
+                </span>
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ===== MAIN ===== -->
+
+    <div class="container">
+
+        <h2 class="section-title">
+            خطط الاشتراك الرسمية
+        </h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>اشتراك 1 شهر</h3>
+                <div class="price">
+                    7,000
+                    <small style="font-size:14px;">IQD</small>
+                </div>
+                <p>تجربة كاملة للمحتوى</p>
+            </div>
+
+            <div class="card" style="border:2px solid var(--gold);">
+
+                <div class="best-plan">
+                    الأكثر طلباً
+                </div>
+
+                <h3>اشتراك 3 أشهر</h3>
+
+                <div class="price">
+                    12,000
+                    <small style="font-size:14px;">IQD</small>
+                </div>
+
+                <p>الأفضل للمستخدمين الجدد</p>
+
+            </div>
+
+            <div class="card">
+                <h3>اشتراك 6 أشهر</h3>
+                <div class="price">
+                    20,000
+                    <small style="font-size:14px;">IQD</small>
+                </div>
+                <p>ثبات واستقرار طويل</p>
+            </div>
+
+            <div class="card">
+                <h3>اشتراك 12 شهر</h3>
+                <div class="price">
+                    30,000
+                    <small style="font-size:14px;">IQD</small>
+                </div>
+                <p>أفضل قيمة مقابل السعر</p>
+            </div>
+
+        </div>
+
+        <!-- ===== STATS ===== -->
+
+        <div class="stats">
+
+            <div class="stat-box">
+                <div class="stat-number">12K+</div>
+                <div class="stat-title">قناة مباشرة</div>
+            </div>
+
+            <div class="stat-box">
+                <div class="stat-number">4K</div>
+                <div class="stat-title">جودة حقيقية</div>
+            </div>
+
+            <div class="stat-box">
+                <div class="stat-number">99.9%</div>
+                <div class="stat-title">استقرار السيرفر</div>
+            </div>
+
+            <div class="stat-box">
+                <div class="stat-number">24/7</div>
+                <div class="stat-title">دعم فني مباشر</div>
+            </div>
+
+        </div>
+
+        <!-- ===== BUTTON ===== -->
+
+        <div style="text-align:center;">
+
+            <a href="https://wa.me/9647740393776" class="btn-action">
+                <i class="fab fa-whatsapp"></i>
+                تفعيل التجربة المجانية (12 ساعة)
+            </a>
+
+        </div>
+
+        <!-- ===== GUIDE ===== -->
+
+        <h2 class="section-title">
+            الدليل الشامل للمستخدم
+        </h2>
+
+        <div class="detail-panel">
+
+            <h4>
+                <i class="fas fa-info-circle"></i>
+                لماذا سيرفر BEST 4K؟
+            </h4>
+
+            <ul>
+                <li>أكثر من 12,000 قناة عربية وعالمية مباشرة.</li>
+                <li>مكتبة أفلام ومسلسلات ضخمة يتم تحديثها يومياً.</li>
+                <li>ثبات عالي أثناء المباريات الكبرى.</li>
+                <li>دعم فني سريع لجميع المشتركين.</li>
+            </ul>
+
+        </div>
+
+        <div class="detail-panel">
+
+            <h4>
+                <i class="fas fa-download"></i>
+                دليل التحميل والتثبيت
+            </h4>
+
+            <p>
+                <strong>
+                    أجهزة Android و Smart TV:
+                </strong>
+            </p>
+
+            <p>
+                تحميل التطبيق:
+                <a href="https://sh-apps.cyou/apk/BEST4K.apk" class="apk-link">
+                    تحميل ملف APK
+                </a>
+            </p>
+
+            <p>
+                أو استخدم كود Downloader:
+                <span class="badge">
+                    4056700
+                </span>
+            </p>
+
+            <br>
+
+            <p>
+                <strong>
+                    أجهزة Apple:
+                </strong>
+            </p>
+
+            <p>
+                قم بتحميل تطبيق NEXT+ أو CASTORA
+            </p>
+
+            <p>
+                كود التفعيل:
+                <span class="badge">
+                    4949
+                </span>
+            </p>
+
+        </div>
+
+        <div class="detail-panel">
+
+            <h4>
+                <i class="fas fa-exclamation-triangle"></i>
+                ملاحظات الجودة
+            </h4>
+
+            <p>
+                يفضل استخدام إنترنت الألياف الضوئية لضمان أفضل تجربة مشاهدة.
+            </p>
+
+            <br>
+
+            <p>
+                الاشتراك يعمل على جهاز واحد فقط بنفس الوقت.
+            </p>
+
+        </div>
+
+        <!-- ===== FEATURES ===== -->
+
+        <h2 class="section-title">
+            لماذا يختارنا الجميع؟
+        </h2>
+
+        <div class="features-grid">
+
+            <div class="feature-box">
+                <i class="fas fa-bolt"></i>
+                <h3>سرعة فائقة</h3>
+                <p>
+                    فتح القنوات بسرعة وبدون انتظار.
+                </p>
+            </div>
+
+            <div class="feature-box">
+                <i class="fas fa-shield-alt"></i>
+                <h3>استقرار قوي</h3>
+                <p>
+                    ثبات عالي أثناء المباريات الكبرى.
+                </p>
+            </div>
+
+            <div class="feature-box">
+                <i class="fas fa-film"></i>
+                <h3>مكتبة ضخمة</h3>
+                <p>
+                    أحدث الأفلام والمسلسلات بشكل يومي.
+                </p>
+            </div>
+
+            <div class="feature-box">
+                <i class="fas fa-headset"></i>
+                <h3>دعم مباشر</h3>
+                <p>
+                    دعم فني متوفر على مدار الساعة.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- ===== DEVICES ===== -->
+
+        <h2 class="section-title">
+            الأجهزة المدعومة
+        </h2>
+
+        <div class="devices">
+
+            <div class="device">
+                <i class="fab fa-android"></i>
+                Android TV
+            </div>
+
+            <div class="device">
+                <i class="fab fa-apple"></i>
+                Apple TV
+            </div>
+
+            <div class="device">
+                <i class="fas fa-tv"></i>
+                Smart TV
+            </div>
+
+            <div class="device">
+                <i class="fas fa-gamepad"></i>
+                TV Box
+            </div>
+
+            <div class="device">
+                <i class="fas fa-mobile-alt"></i>
+                الهواتف الذكية
+            </div>
+
+        </div>
+
     </div>
 
-    <h2 class="section-title">الدليل الشامل للمستخدم</h2>
-    
-    <div class="detail-panel">
-        <h4><i class="fas fa-info-circle"></i> لماذا سيرفر BEST 4K؟</h4>
-        <ul>
-            <li>أكثر من 12,000 قناة عربية وعالمية مباشرة وبدون تأخير.</li>
-            <li>أضخم مكتبة أفلام ومسلسلات (VOD) يتم تحديثها يومياً بأحدث الإصدارات.</li>
-            <li>ثبات أسطوري أثناء المباريات الكبرى بفضل تقنية Anti-Freeze.</li>
-            <li>دعم فني متواصل لضمان جودة الخدمة لجميع المشتركين.</li>
-        </ul>
-    </div>
+    <!-- ===== FOOTER ===== -->
 
-    <div class="detail-panel">
-        <h4><i class="fas fa-download"></i> دليل التحميل والتثبيت التفصيلي</h4>
-        
-        <p><strong>أجهزة الأندرويد و Android Box و شاشات Smart:</strong></p>
-        <p>1. يمكنك التحميل المباشر للتطبيق من هنا: <a href="https://sh-apps.cyou/apk/BEST4K.apk" class="apk-link">تحميل تطبيق BEST 4K (ملف APK)</a></p>
-        <p>2. أو افتح تطبيق Downloader على جهازك وأدخل الكود المباشر: <span class="badge">4056700</span> للتحميل التلقائي.</p>
-        <br>
-        <p><strong>أجهزة الآيفون، الآيباد، و Apple TV:</strong></p>
-        <p>1. قم بتحميل أحد التطبيقات التالية من App Store: <strong>NEXT+</strong> أو <strong>CASTORA</strong>.</p>
-        <p>2. عند فتح التطبيق، استخدم كود تفعيل السيرفر الموحد: <span class="badge">4949</span>.</p>
-        <p>3. في حال طلب التطبيق بيانات "Host" يدوياً، استخدم الرابط التالي: <br><span style="color: var(--gold-bright); font-family: monospace;">http://39kent-cdn.streamcorex.net:8080</span></p>
-    </div>
+    <footer>
 
-    <div class="detail-panel">
-        <h4><i class="fas fa-exclamation-triangle"></i> ملاحظات الجودة والأداء</h4>
-        <p><strong>استقرار الإنترنت:</strong> لضمان مشاهدة ممتعة بدون تقطيع وبدقة 4K الحقيقية، ننصح بشدة باستخدام **إنترنت الألياف الضوئية (Fiber)**. إنترنت الأبراج اللاسلكية قد لا يوفر الثبات المطلوب للبث الفائق.</p>
-        <br>
-        <p><strong>سياسة الأجهزة:</strong> الاشتراك يسمح بالتشغيل على **جهاز واحد فقط** في نفس اللحظة. نظام الأمان في السيرفر يقوم بإيقاف الحساب تلقائياً في حال رصد محاولات تشغيل متعددة متزامنة.</p>
-    </div>
+        <p style="color:var(--gold);font-weight:bold;font-size:1.3rem;letter-spacing:1px;">
+            BEST 4K - المنصة الرسمية في العراق
+        </p>
 
-    <div class="detail-panel">
-        <h4><i class="fas fa-credit-card"></i> تفعيل الاشتراك والدفع</h4>
-        <p>يتم تفعيل اشتراكك فورياً بعد إتمام الدفع عبر **ماستر سوبر كي (SuperKey)**. يرجى التواصل عبر الواتساب لإرسال بيانات الدفع واستلام كود التفعيل الخاص بك.</p>
-    </div>
+        <p style="color:#666;margin-top:15px;">
+            جميع الحقوق محفوظة © 2026
+        </p>
 
-</div>
+        <p style="color:#444;font-size:.8rem;margin-top:5px;">
+            الجودة، الثبات، والتميز في عالم البث الرقمي
+        </p>
 
-<footer>
-    <p style="color: var(--gold); font-weight: bold; font-size: 1.3rem; letter-spacing: 1px;">BEST 4K - المنصة الرسمية في العراق</p>
-    <p style="color: #666; margin-top: 15px;">جميع الحقوق محفوظة © 2026</p>
-    <p style="color: #444; font-size: 0.8rem; margin-top: 5px;">الجودة، الثبات، والتميز في عالم البث الرقمي</p>
-</footer>
+    </footer>
 
-<script>
-    const container = document.getElementById('bubbles');
-    const items = [
-        { name: 'NETFLIX', icon: 'fa-play' },
-        { name: 'beIN SPORTS', icon: 'fa-futbol' },
-        { name: 'SHAHID VIP', icon: 'fa-star' },
-        { name: 'BEST 4K', icon: 'fa-crown' },
-        { name: 'OSN', icon: 'fa-tv' },
-        { name: 'TOD', icon: 'fa-video' },
-        { name: 'HBO MAX', icon: 'fa-film' }
-    ];
+    <!-- ===== SCRIPT ===== -->
 
-    for (let i = 0; i < 18; i++) {
-        const item = items[Math.floor(Math.random() * items.length)];
-        const bubble = document.createElement('div');
-        bubble.className = 'bubble';
-        bubble.innerHTML = `<i class="fas ${item.icon}"></i> <span>${item.name}</span>`;
-        
-        bubble.style.left = Math.random() * 92 + '%';
-        bubble.style.animationDelay = Math.random() * 12 + 's';
-        bubble.style.animationDuration = (Math.random() * 6 + 10) + 's';
-        bubble.style.fontSize = (Math.random() * 4 + 13) + 'px';
-        
-        container.appendChild(bubble);
-    }
-</script>
+    <script>
+
+        const container = document.getElementById('bubbles');
+
+        const items = [
+            { name: 'NETFLIX', icon: 'fa-play' },
+            { name: 'beIN SPORTS', icon: 'fa-futbol' },
+            { name: 'SHAHID VIP', icon: 'fa-star' },
+            { name: 'BEST 4K', icon: 'fa-crown' },
+            { name: 'OSN', icon: 'fa-tv' },
+            { name: 'TOD', icon: 'fa-video' },
+            { name: 'HBO MAX', icon: 'fa-film' }
+        ];
+
+        for (let i = 0; i < 18; i++) {
+
+            const item = items[Math.floor(Math.random() * items.length)];
+
+            const bubble = document.createElement('div');
+
+            bubble.className = 'bubble';
+
+            bubble.innerHTML =
+                `<i class="fas ${item.icon}"></i> <span>${item.name}</span>`;
+
+            bubble.style.left = Math.random() * 92 + '%';
+
+            bubble.style.animationDelay =
+                Math.random() * 12 + 's';
+
+            bubble.style.animationDuration =
+                (Math.random() * 6 + 10) + 's';
+
+            bubble.style.fontSize =
+                (Math.random() * 4 + 13) + 'px';
+
+            container.appendChild(bubble);
+        }
+
+        /* ===== STARS ===== */
+
+        for (let i = 0; i < 70; i++) {
+
+            const star = document.createElement('div');
+
+            star.style.position = 'absolute';
+            star.style.width = '2px';
+            star.style.height = '2px';
+            star.style.background = 'rgba(255,255,255,0.7)';
+            star.style.borderRadius = '50%';
+
+            star.style.top = Math.random() * 100 + '%';
+            star.style.left = Math.random() * 100 + '%';
+
+            star.style.opacity = Math.random();
+
+            star.style.animation =
+                `floatUp ${Math.random() * 10 + 15}s linear infinite`;
+
+            container.appendChild(star);
+        }
+
+    </script>
 
 </body>
+
 </html>
