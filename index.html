@@ -3,845 +3,1342 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>BEST 4K IRAQ 🇮🇶</title>
+<title>BEST 4K | IRAQ 🇮🇶</title>
 
-    <!-- FONT -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap"
-        rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap"
+rel="stylesheet">
 
-    <!-- ICONS -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
 
-    <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
+:root{
 
-        body{
+    --gold:#d4af37;
+    --gold2:#f1d592;
 
-            font-family:'Cairo',sans-serif;
+    --bg:#050505;
+    --card:#101010;
 
-            background:#070707;
+    --text:#ffffff;
+    --muted:#b8b8b8;
 
-            color:white;
+    --border:rgba(255,255,255,.07);
 
-            overflow-x:hidden;
-        }
+    --shadow:
+        0 0 25px rgba(212,175,55,.20);
 
-        html{
-            scroll-behavior:smooth;
-        }
+    --shadow2:
+        0 0 60px rgba(212,175,55,.12);
+}
 
-        a{
-            text-decoration:none;
-        }
+body{
 
-        /* ===== BACKGROUND ===== */
+    font-family:'Cairo',sans-serif;
 
-        .bg{
+    background:#050505;
 
-            position:fixed;
+    color:white;
 
-            inset:0;
+    overflow-x:hidden;
+}
 
-            z-index:-2;
+html{
+    scroll-behavior:smooth;
+}
 
-            background:
-                radial-gradient(circle at top right,
-                    rgba(139,92,246,.18),
-                    transparent 25%),
+a{
+    text-decoration:none;
+}
 
-                radial-gradient(circle at bottom left,
-                    rgba(124,58,237,.12),
-                    transparent 25%),
+/* ===== BACKGROUND ===== */
 
-                #070707;
-        }
+body::before{
 
-        .glow{
+    content:"";
 
-            position:fixed;
+    position:fixed;
 
-            width:500px;
-            height:500px;
+    inset:0;
 
-            border-radius:50%;
+    background:
 
-            filter:blur(120px);
+        radial-gradient(circle at top right,
+            rgba(212,175,55,.12),
+            transparent 20%),
 
-            z-index:-1;
+        radial-gradient(circle at bottom left,
+            rgba(212,175,55,.08),
+            transparent 25%),
 
-            opacity:.18;
+        linear-gradient(
+            to bottom,
+            #050505,
+            #070707,
+            #050505
+        );
 
-            animation:moveGlow 12s infinite alternate ease-in-out;
-        }
+    z-index:-3;
+}
 
-        .g1{
-            background:#7c3aed;
-            top:-150px;
-            right:-100px;
-        }
+/* ===== TOPBAR ===== */
 
-        .g2{
-            background:#9333ea;
-            bottom:-150px;
-            left:-100px;
-        }
+.topbar{
 
-        @keyframes moveGlow{
+    position:fixed;
 
-            0%{
-                transform:translate(0,0);
-            }
+    top:0;
+    right:0;
 
-            100%{
-                transform:translate(40px,-30px);
-            }
-        }
+    width:100%;
 
-        /* ===== NAVBAR ===== */
+    z-index:9999;
 
-        .navbar{
+    background:rgba(0,0,0,.55);
 
-            position:fixed;
+    backdrop-filter:blur(16px);
 
-            top:0;
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
 
-            width:100%;
+.topbar-inner{
 
-            z-index:999;
+    max-width:1450px;
 
-            background:rgba(0,0,0,.55);
+    margin:auto;
 
-            backdrop-filter:blur(20px);
+    padding:18px 35px;
 
-            border-bottom:1px solid rgba(255,255,255,.06);
-        }
+    display:flex;
 
-        .nav-inner{
+    justify-content:space-between;
 
-            max-width:1400px;
+    align-items:center;
+}
 
-            margin:auto;
+/* ===== LOGO ===== */
 
-            padding:18px 35px;
+.brand{
 
-            display:flex;
+    display:flex;
 
-            justify-content:space-between;
+    align-items:center;
 
-            align-items:center;
-        }
+    gap:18px;
+}
 
-        /* ===== LOGO ===== */
+.logo{
 
-        .brand{
+    width:68px;
+    height:68px;
 
-            display:flex;
+    border-radius:22px;
 
-            align-items:center;
+    background:
+        linear-gradient(
+            145deg,
+            #0f0f0f,
+            #191919
+        );
 
-            gap:15px;
-        }
+    border:2px solid rgba(212,175,55,.45);
 
-        .logo{
+    display:flex;
 
-            width:62px;
-            height:62px;
+    justify-content:center;
 
-            border-radius:18px;
+    align-items:center;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #6d28d9,
-                    #9333ea
-                );
+    position:relative;
 
-            position:relative;
+    overflow:hidden;
 
-            overflow:hidden;
+    box-shadow:
+        var(--shadow),
+        inset 0 0 25px rgba(212,175,55,.08);
 
-            display:flex;
+    animation:logoGlow 3s infinite ease-in-out;
+}
 
-            justify-content:center;
+.logo::before{
 
-            align-items:center;
+    content:"";
 
-            font-weight:900;
+    position:absolute;
 
-            font-size:1rem;
+    inset:-30%;
 
-            box-shadow:
-                0 0 30px rgba(139,92,246,.35);
+    background:
+        conic-gradient(
+            from 0deg,
+            transparent,
+            rgba(212,175,55,.25),
+            transparent
+        );
 
-            animation:logoPulse 3s infinite;
-        }
+    animation:rotate 5s linear infinite;
+}
 
-        .logo span{
+.logo span{
 
-            position:relative;
+    position:relative;
 
-            z-index:2;
-        }
+    z-index:2;
 
-        .iraq{
+    font-size:1rem;
 
-            position:absolute;
+    font-weight:900;
 
-            bottom:0;
+    color:var(--gold2);
+}
 
-            width:100%;
+.iraq-flag{
 
-            height:12px;
+    position:absolute;
 
-            background:
-                linear-gradient(
-                    to bottom,
-                    #ce1126 0%,
-                    #ce1126 33%,
-                    white 33%,
-                    white 66%,
-                    black 66%,
-                    black 100%
-                );
+    bottom:0;
 
-            animation:wave 2s infinite;
-        }
+    width:100%;
 
-        @keyframes wave{
+    height:13px;
 
-            0%,100%{
-                transform:translateX(0);
-            }
+    background:
+        linear-gradient(
+            to bottom,
+            #ce1126 0%,
+            #ce1126 33%,
+            white 33%,
+            white 66%,
+            black 66%,
+            black 100%
+        );
 
-            50%{
-                transform:translateX(2px);
-            }
-        }
+    animation:flagMove 2s infinite ease-in-out;
+}
 
-        @keyframes logoPulse{
+@keyframes flagMove{
 
-            0%,100%{
-                transform:scale(1);
-            }
+    0%,100%{
+        transform:translateX(0);
+    }
 
-            50%{
-                transform:scale(1.05);
-            }
-        }
+    50%{
+        transform:translateX(2px);
+    }
+}
 
-        .brand-text h1{
+@keyframes rotate{
 
-            font-size:1.2rem;
+    100%{
+        transform:rotate(360deg);
+    }
+}
 
-            margin-bottom:2px;
-        }
+@keyframes logoGlow{
 
-        .brand-text p{
+    0%,100%{
+        transform:scale(1);
+    }
 
-            color:#aaa;
+    50%{
+        transform:scale(1.04);
+    }
+}
 
-            font-size:.8rem;
-        }
+.brand-text h1{
 
-        /* ===== MENU ===== */
+    font-size:1.15rem;
 
-        .menu{
+    font-weight:900;
+}
 
-            display:flex;
+.brand-text p{
 
-            gap:28px;
-        }
+    color:#999;
 
-        .menu a{
+    font-size:.82rem;
+}
 
-            color:#ccc;
+/* ===== MENU ===== */
 
-            font-size:.95rem;
+.menu{
 
-            transition:.3s;
-        }
+    display:flex;
 
-        .menu a:hover{
+    gap:32px;
+}
 
-            color:white;
-        }
+.menu a{
 
-        /* ===== HERO ===== */
+    color:#cfcfcf;
 
-        .hero{
+    font-size:.95rem;
 
-            min-height:100vh;
+    transition:.3s;
+}
 
-            display:flex;
+.menu a:hover{
 
-            align-items:center;
+    color:var(--gold2);
+}
 
-            position:relative;
+/* ===== HERO ===== */
 
-            overflow:hidden;
-        }
+.hero{
 
-        .hero::before{
+    position:relative;
 
-            content:"";
+    min-height:100vh;
 
-            position:absolute;
+    display:flex;
 
-            inset:0;
+    align-items:center;
 
-            background:
+    overflow:hidden;
+}
 
-                linear-gradient(
-                    to left,
-                    rgba(0,0,0,.90),
-                    rgba(0,0,0,.50),
-                    rgba(0,0,0,.90)
-                ),
+.hero::before{
 
-                url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1974&auto=format&fit=crop');
+    content:"";
 
-            background-size:cover;
+    position:absolute;
 
-            background-position:center;
+    inset:0;
 
-            opacity:.42;
-        }
+    background:
 
-        .hero-inner{
+        linear-gradient(
+            to left,
+            rgba(0,0,0,.95),
+            rgba(0,0,0,.55),
+            rgba(0,0,0,.92)
+        ),
 
-            max-width:1400px;
+        url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2070&auto=format&fit=crop');
 
-            margin:auto;
+    background-size:cover;
 
-            width:100%;
+    background-position:center;
 
-            padding:140px 35px 80px;
+    opacity:.48;
+}
 
-            position:relative;
+.hero-inner{
 
-            z-index:2;
+    max-width:1450px;
 
-            display:grid;
+    margin:auto;
 
-            grid-template-columns:1fr 1fr;
+    width:100%;
 
-            gap:50px;
+    padding:140px 35px 80px;
 
-            align-items:center;
-        }
+    position:relative;
 
-        .hero-left h5{
+    z-index:2;
 
-            display:inline-flex;
+    display:grid;
 
-            align-items:center;
+    grid-template-columns:1.1fr .9fr;
 
-            gap:10px;
+    gap:55px;
 
-            background:rgba(139,92,246,.12);
+    align-items:center;
+}
 
-            border:1px solid rgba(139,92,246,.35);
+/* ===== LEFT ===== */
 
-            padding:12px 18px;
+.hero-left h5{
 
-            border-radius:50px;
+    display:inline-flex;
 
-            color:#d8b4fe;
+    align-items:center;
 
-            margin-bottom:25px;
-        }
+    gap:12px;
 
-        .hero-left h1{
+    padding:12px 18px;
 
-            font-size:5rem;
+    border-radius:60px;
 
-            line-height:1.1;
+    background:rgba(212,175,55,.08);
 
-            margin-bottom:20px;
-        }
+    border:1px solid rgba(212,175,55,.25);
 
-        .hero-left h1 span{
+    color:var(--gold2);
 
-            background:
-                linear-gradient(
-                    90deg,
-                    #fff,
-                    #d8b4fe
-                );
+    margin-bottom:28px;
+}
 
-            -webkit-background-clip:text;
+.hero-left h1{
 
-            -webkit-text-fill-color:transparent;
-        }
+    font-size:5.6rem;
 
-        .hero-left p{
+    line-height:1.05;
 
-            color:#cfcfcf;
+    margin-bottom:22px;
 
-            line-height:2;
+    font-weight:900;
+}
 
-            font-size:1.1rem;
+.hero-left h1 span{
 
-            max-width:700px;
-        }
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            var(--gold2)
+        );
 
-        /* ===== BUTTONS ===== */
+    -webkit-background-clip:text;
 
-        .buttons{
+    -webkit-text-fill-color:transparent;
+}
 
-            margin-top:40px;
+.hero-left p{
 
-            display:flex;
+    color:#d0d0d0;
 
-            gap:20px;
+    line-height:2.1;
 
-            flex-wrap:wrap;
-        }
+    font-size:1.08rem;
 
-        .btn-main{
+    max-width:720px;
+}
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #6d28d9,
-                    #9333ea
-                );
+/* ===== BUTTONS ===== */
 
-            color:white;
+.buttons{
 
-            padding:18px 34px;
+    margin-top:42px;
 
-            border-radius:16px;
+    display:flex;
 
-            display:inline-flex;
+    gap:20px;
 
-            align-items:center;
+    flex-wrap:wrap;
+}
 
-            gap:12px;
+.btn-main{
 
-            font-weight:700;
+    background:
+        linear-gradient(
+            135deg,
+            #d4af37,
+            #f1d592
+        );
 
-            transition:.3s;
+    color:#000;
 
-            box-shadow:
-                0 0 30px rgba(139,92,246,.35);
-        }
+    padding:18px 34px;
 
-        .btn-main:hover{
+    border-radius:18px;
 
-            transform:translateY(-5px);
-        }
+    display:inline-flex;
 
-        .btn-sec{
+    align-items:center;
 
-            background:rgba(255,255,255,.08);
+    gap:12px;
 
-            color:white;
+    font-weight:800;
 
-            padding:18px 34px;
+    transition:.3s;
 
-            border-radius:16px;
+    box-shadow:
+        0 0 35px rgba(212,175,55,.22);
+}
 
-            display:inline-flex;
+.btn-main:hover{
 
-            align-items:center;
+    transform:translateY(-5px);
+}
 
-            gap:12px;
+.btn-sec{
 
-            transition:.3s;
-        }
+    background:rgba(255,255,255,.06);
 
-        .btn-sec:hover{
+    border:1px solid rgba(255,255,255,.08);
 
-            background:rgba(255,255,255,.15);
-        }
+    color:white;
 
-        /* ===== RIGHT CARD ===== */
+    padding:18px 34px;
 
-        .showcase{
+    border-radius:18px;
 
-            background:rgba(255,255,255,.05);
+    display:inline-flex;
 
-            border:1px solid rgba(255,255,255,.08);
+    align-items:center;
 
-            border-radius:32px;
+    gap:12px;
 
-            overflow:hidden;
+    transition:.3s;
+}
 
-            backdrop-filter:blur(20px);
-        }
+.btn-sec:hover{
 
-        .show-top{
+    background:rgba(255,255,255,.12);
+}
 
-            height:280px;
+/* ===== RIGHT SHOWCASE ===== */
 
-            background:
+.showcase{
 
-                linear-gradient(
-                    to top,
-                    rgba(0,0,0,.90),
-                    transparent
-                ),
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.06),
+            rgba(255,255,255,.03)
+        );
 
-                url('https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=1974&auto=format&fit=crop');
+    border:1px solid rgba(255,255,255,.08);
 
-            background-size:cover;
+    border-radius:35px;
 
-            background-position:center;
+    overflow:hidden;
 
-            position:relative;
-        }
+    backdrop-filter:blur(20px);
 
-        .live{
+    box-shadow:var(--shadow2);
+}
 
-            position:absolute;
+.show-top{
 
-            top:20px;
-            left:20px;
+    height:320px;
 
-            background:#ff0033;
+    position:relative;
 
-            padding:10px 18px;
+    background:
 
-            border-radius:50px;
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.95),
+            transparent
+        ),
 
-            font-size:.8rem;
+        url('https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=2070&auto=format&fit=crop');
 
-            font-weight:bold;
-        }
+    background-size:cover;
 
-        .show-content{
+    background-position:center;
+}
 
-            padding:35px;
-        }
+.live{
 
-        .show-content h3{
+    position:absolute;
 
-            font-size:1.8rem;
+    top:22px;
+    left:22px;
 
-            margin-bottom:15px;
-        }
+    background:#ff0033;
 
-        .show-content p{
+    padding:10px 18px;
 
-            color:#aaa;
+    border-radius:50px;
 
-            line-height:2;
-        }
+    font-size:.82rem;
 
-        .tags{
+    font-weight:bold;
 
-            display:flex;
+    box-shadow:
+        0 0 25px rgba(255,0,51,.35);
+}
 
-            gap:12px;
+.show-content{
 
-            flex-wrap:wrap;
+    padding:35px;
+}
 
-            margin-top:25px;
-        }
+.show-content h3{
 
-        .tag{
+    font-size:2rem;
 
-            padding:10px 16px;
+    margin-bottom:14px;
+}
 
-            border-radius:50px;
+.show-content p{
 
-            background:rgba(139,92,246,.12);
+    color:#aaa;
 
-            border:1px solid rgba(139,92,246,.25);
+    line-height:2;
+}
 
-            color:#d8b4fe;
+/* ===== TAGS ===== */
 
-            font-size:.85rem;
-        }
+.tags{
 
-        /* ===== SECTION ===== */
+    display:flex;
 
-        section{
+    flex-wrap:wrap;
 
-            padding:100px 35px;
-        }
+    gap:12px;
 
-        .container{
+    margin-top:28px;
+}
 
-            max-width:1400px;
+.tag{
 
-            margin:auto;
-        }
+    padding:11px 18px;
 
-        .section-title{
+    border-radius:50px;
 
-            margin-bottom:50px;
-        }
+    background:rgba(212,175,55,.08);
 
-        .section-title h2{
+    border:1px solid rgba(212,175,55,.20);
 
-            font-size:3rem;
+    color:var(--gold2);
 
-            margin-bottom:15px;
-        }
+    font-size:.85rem;
+}
 
-        .section-title p{
+/* ===== FLOAT CARDS ===== */
 
-            color:#aaa;
+.float-box{
 
-            line-height:2;
-        }
+    position:absolute;
 
-        /* ===== PLANS ===== */
+    background:rgba(255,255,255,.05);
 
-        .plans{
+    border:1px solid rgba(212,175,55,.20);
 
-            display:grid;
+    backdrop-filter:blur(12px);
 
-            grid-template-columns:
-                repeat(auto-fit,minmax(280px,1fr));
+    padding:16px 20px;
 
-            gap:30px;
-        }
+    border-radius:18px;
 
-        .plan{
+    color:var(--gold2);
 
-            background:rgba(255,255,255,.04);
+    display:flex;
 
-            border:1px solid rgba(255,255,255,.08);
+    align-items:center;
 
-            border-radius:30px;
+    gap:12px;
 
-            padding:35px;
+    font-weight:700;
 
-            transition:.4s;
+    box-shadow:var(--shadow);
 
-            position:relative;
-        }
+    animation:float 5s infinite ease-in-out;
+}
 
-        .plan:hover{
+.f1{
+    top:18%;
+    right:8%;
+}
 
-            transform:translateY(-10px);
+.f2{
+    bottom:18%;
+    right:40%;
+}
 
-            border-color:rgba(139,92,246,.35);
+.f3{
+    top:60%;
+    left:8%;
+}
 
-            box-shadow:
-                0 0 30px rgba(139,92,246,.15);
-        }
+@keyframes float{
 
-        .popular{
+    0%,100%{
+        transform:translateY(0);
+    }
 
-            position:absolute;
+    50%{
+        transform:translateY(-12px);
+    }
+}
 
-            top:18px;
-            left:18px;
+/* ===== SECTION ===== */
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #6d28d9,
-                    #9333ea
-                );
+section{
 
-            padding:10px 16px;
+    padding:100px 35px;
+}
 
-            border-radius:50px;
+.container{
 
-            font-size:.8rem;
+    max-width:1450px;
 
-            font-weight:bold;
-        }
+    margin:auto;
+}
 
-        .plan h3{
+.section-head{
 
-            font-size:2rem;
+    margin-bottom:55px;
+}
 
-            margin-bottom:20px;
-        }
+.section-head h2{
 
-        .price{
+    font-size:3rem;
 
-            font-size:4rem;
+    margin-bottom:16px;
+}
 
-            font-weight:900;
+.section-head p{
 
-            margin-bottom:20px;
-        }
+    color:#aaa;
 
-        .price span{
+    line-height:2;
+}
 
-            font-size:1rem;
+/* ===== PLANS ===== */
 
-            color:#999;
-        }
+.plans{
 
-        .plan ul{
+    display:grid;
 
-            list-style:none;
+    grid-template-columns:
+        repeat(auto-fit,minmax(280px,1fr));
 
-            margin-top:25px;
-        }
+    gap:28px;
+}
 
-        .plan ul li{
+.plan{
 
-            margin-bottom:15px;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.05),
+            rgba(255,255,255,.02)
+        );
 
-            color:#ddd;
+    border:1px solid rgba(255,255,255,.08);
 
-            display:flex;
+    border-radius:30px;
 
-            align-items:center;
+    padding:35px;
 
-            gap:10px;
-        }
+    position:relative;
 
-        .plan ul li i{
+    overflow:hidden;
 
-            color:#d8b4fe;
-        }
+    transition:.4s;
+}
 
-        .plan .btn-main{
+.plan::before{
 
-            width:100%;
+    content:"";
 
-            justify-content:center;
+    position:absolute;
 
-            margin-top:25px;
-        }
+    inset:0;
 
-        /* ===== FOOTER ===== */
+    background:
+        linear-gradient(
+            140deg,
+            transparent,
+            rgba(212,175,55,.04),
+            transparent
+        );
 
-        footer{
+    opacity:0;
 
-            padding:70px 30px;
+    transition:.4s;
+}
 
-            text-align:center;
+.plan:hover::before{
 
-            border-top:1px solid rgba(255,255,255,.08);
+    opacity:1;
+}
 
-            background:#050505;
-        }
+.plan:hover{
 
-        footer h2{
+    transform:translateY(-10px);
 
-            margin-bottom:12px;
-        }
+    border-color:rgba(212,175,55,.28);
 
-        footer p{
+    box-shadow:var(--shadow);
+}
 
-            color:#777;
-        }
+.popular{
 
-        /* ===== MOBILE ===== */
+    position:absolute;
 
-        @media(max-width:950px){
+    top:18px;
+    left:18px;
 
-            .hero-inner{
+    background:
+        linear-gradient(
+            135deg,
+            #d4af37,
+            #f1d592
+        );
 
-                grid-template-columns:1fr;
-            }
+    color:#000;
 
-            .hero-left h1{
+    padding:10px 16px;
 
-                font-size:3rem;
-            }
+    border-radius:50px;
 
-            .menu{
+    font-size:.8rem;
 
-                display:none;
-            }
+    font-weight:900;
+}
 
-            .buttons{
+.plan h3{
 
-                flex-direction:column;
-            }
+    font-size:2rem;
 
-            .btn-main,
-            .btn-sec{
+    margin-bottom:22px;
+}
 
-                width:100%;
+.price{
 
-                justify-content:center;
-            }
+    font-size:4rem;
 
-            .section-title h2{
+    font-weight:900;
 
-                font-size:2.2rem;
-            }
-        }
+    margin-bottom:18px;
 
-    </style>
+    color:var(--gold2);
+}
+
+.price span{
+
+    font-size:1rem;
+
+    color:#999;
+}
+
+.plan ul{
+
+    list-style:none;
+
+    margin-top:25px;
+}
+
+.plan ul li{
+
+    margin-bottom:15px;
+
+    color:#ddd;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+}
+
+.plan ul li i{
+
+    color:var(--gold2);
+}
+
+.plan .btn-main{
+
+    width:100%;
+
+    justify-content:center;
+
+    margin-top:28px;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+
+    padding:80px 35px;
+
+    text-align:center;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    background:#040404;
+}
+
+footer h2{
+
+    color:var(--gold2);
+
+    margin-bottom:14px;
+}
+
+footer p{
+
+    color:#777;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:980px){
+
+    .hero-inner{
+
+        grid-template-columns:1fr;
+    }
+
+    .hero-left h1{
+
+        font-size:3.4rem;
+    }
+
+    .menu{
+
+        display:none;
+    }
+
+    .buttons{
+
+        flex-direction:column;
+    }
+
+    .btn-main,
+    .btn-sec{
+
+        width:100%;
+
+        justify-content:center;
+    }
+
+    .float-box{
+
+        display:none;
+    }
+
+    .section-head h2{
+
+        font-size:2.2rem;
+    }
+}
+
+</style>
 
 </head>
 
 <body>
 
-    <!-- BACKGROUND -->
+<!-- ===== TOPBAR ===== -->
 
-    <div class="bg"></div>
+<div class="topbar">
 
-    <div class="glow g1"></div>
-    <div class="glow g2"></div>
+    <div class="topbar-inner">
 
-    <!-- NAVBAR -->
+        <div class="brand">
 
-    <div class="navbar">
+            <div class="logo">
 
-        <div class="nav-inner">
+                <span>
+                    BEST
+                </span>
 
-            <div class="brand">
+                <div class="iraq-flag"></div>
 
-                <div class="logo">
+            </div>
 
-                    <span>
-                        BEST
-                    </span>
+            <div class="brand-text">
 
-                    <div class="iraq"></div>
+                <h1>
+                    BEST 4K IRAQ 🇮🇶
+                </h1>
 
-                </div>
+                <p>
+                    OFFICIAL STREAMING PLATFORM
+                </p>
 
-                <div class="brand-text">
+            </div>
 
-                    <h1>
-                        BEST 4K IRAQ 🇮🇶
-                    </h1>
+        </div>
 
-                    <p>
-                        Premium Streaming Platform
-                    </p>
+        <div class="menu">
+
+            <a href="#">
+                الرئيسية
+            </a>
+
+            <a href="#">
+                القنوات
+            </a>
+
+            <a href="#">
+                الأفلام
+            </a>
+
+            <a href="#">
+                المباريات
+            </a>
+
+            <a href="#">
+                الدعم
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===== HERO ===== -->
+
+<section class="hero">
+
+    <div class="float-box f1">
+
+        <i class="fas fa-tv"></i>
+
+        +12,000 LIVE CHANNELS
+
+    </div>
+
+    <div class="float-box f2">
+
+        <i class="fas fa-film"></i>
+
+        MOVIES & SERIES
+
+    </div>
+
+    <div class="float-box f3">
+
+        <i class="fas fa-futbol"></i>
+
+        LIVE SPORTS 4K
+
+    </div>
+
+    <div class="hero-inner">
+
+        <!-- LEFT -->
+
+        <div class="hero-left">
+
+            <h5>
+
+                <i class="fas fa-circle"></i>
+
+                السيرفر متصل ويعمل بثبات عالي
+
+            </h5>
+
+            <h1>
+
+                منصة
+                <span>
+                    BEST 4K
+                </span>
+
+                الرسمية في العراق 🇮🇶
+
+            </h1>
+
+            <p>
+
+                استمتع بتجربة بث احترافية
+                بأسلوب عصري مشابه لمنصات البث العالمية،
+                مع جودة 4K حقيقية،
+                وأقوى القنوات الرياضية،
+                والأفلام والمسلسلات،
+                وسيرفرات فائقة الثبات.
+
+            </p>
+
+            <div class="buttons">
+
+                <a href="https://wa.me/9647740393776"
+                class="btn-main">
+
+                    <i class="fab fa-whatsapp"></i>
+
+                    تجربة مجانية 12 ساعة
+
+                </a>
+
+                <a href="#plans"
+                class="btn-sec">
+
+                    <i class="fas fa-play"></i>
+
+                    عرض الاشتراكات
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="showcase">
+
+            <div class="show-top">
+
+                <div class="live">
+
+                    ● LIVE NOW
 
                 </div>
 
             </div>
 
-            <div class="menu">
+            <div class="show-content">
 
-                <a href="#">
-                    الرئيسية
+                <h3>
+
+                    BEST 4K PREMIUM
+
+                </h3>
+
+                <p>
+
+                    منصة متكاملة للبث المباشر
+                    تضم آلاف القنوات
+                    ومكتبة ضخمة من المحتوى الترفيهي
+                    بجودة فائقة وتصميم احترافي.
+
+                </p>
+
+                <div class="tags">
+
+                    <div class="tag">
+                        4K Ultra HD
+                    </div>
+
+                    <div class="tag">
+                        SPORTS
+                    </div>
+
+                    <div class="tag">
+                        MOVIES
+                    </div>
+
+                    <div class="tag">
+                        SERIES
+                    </div>
+
+                    <div class="tag">
+                        FAST SERVERS
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===== PLANS ===== -->
+
+<section id="plans">
+
+    <div class="container">
+
+        <div class="section-head">
+
+            <h2>
+
+                الاشتراكات الرسمية
+
+            </h2>
+
+            <p>
+
+                اختر الباقة المناسبة لك
+                واستمتع بأفضل تجربة مشاهدة
+                بجودة واستقرار عالي.
+
+            </p>
+
+        </div>
+
+        <div class="plans">
+
+            <!-- 1 -->
+
+            <div class="plan">
+
+                <h3>
+                    1 Month
+                </h3>
+
+                <div class="price">
+
+                    7K
+
+                    <span>
+                        IQD
+                    </span>
+
+                </div>
+
+                <ul>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        جودة 4K
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        قنوات رياضية
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        أفلام ومسلسلات
+                    </li>
+
+                </ul>
+
+                <a href="https://wa.me/9647740393776"
+                class="btn-main">
+
+                    اشترك الآن
+
                 </a>
 
-                <a href="#">
-                    القنوات
+            </div>
+
+            <!-- 2 -->
+
+            <div class="plan">
+
+                <div class="popular">
+
+                    الأكثر طلباً
+
+                </div>
+
+                <h3>
+                    3 Months
+                </h3>
+
+                <div class="price">
+
+                    12K
+
+                    <span>
+                        IQD
+                    </span>
+
+                </div>
+
+                <ul>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        بث ثابت
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        تحديث يومي
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        دعم VIP
+                    </li>
+
+                </ul>
+
+                <a href="https://wa.me/9647740393776"
+                class="btn-main">
+
+                    اشترك الآن
+
                 </a>
 
-                <a href="#">
-                    الأفلام
+            </div>
+
+            <!-- 3 -->
+
+            <div class="plan">
+
+                <h3>
+                    6 Months
+                </h3>
+
+                <div class="price">
+
+                    20K
+
+                    <span>
+                        IQD
+                    </span>
+
+                </div>
+
+                <ul>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        +12,000 قناة
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        سيرفرات قوية
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        جودة فائقة
+                    </li>
+
+                </ul>
+
+                <a href="https://wa.me/9647740393776"
+                class="btn-main">
+
+                    اشترك الآن
+
                 </a>
 
-                <a href="#">
-                    المباريات
-                </a>
+            </div>
 
-                <a href="#">
-                    الدعم
+            <!-- 4 -->
+
+            <div class="plan">
+
+                <h3>
+                    12 Months
+                </h3>
+
+                <div class="price">
+
+                    30K
+
+                    <span>
+                        IQD
+                    </span>
+
+                </div>
+
+                <ul>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        أفضل قيمة
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        بدون تقطيع
+                    </li>
+
+                    <li>
+                        <i class="fas fa-check"></i>
+                        دعم مباشر
+                    </li>
+
+                </ul>
+
+                <a href="https://wa.me/9647740393776"
+                class="btn-main">
+
+                    اشترك الآن
+
                 </a>
 
             </div>
@@ -850,354 +1347,21 @@
 
     </div>
 
-    <!-- HERO -->
+</section>
 
-    <section class="hero">
+<!-- ===== FOOTER ===== -->
 
-        <div class="hero-inner">
+<footer>
 
-            <!-- LEFT -->
+    <h2>
+        BEST 4K IRAQ 🇮🇶
+    </h2>
 
-            <div class="hero-left">
+    <p>
+        جميع الحقوق محفوظة © 2026
+    </p>
 
-                <h5>
-
-                    <i class="fas fa-circle"></i>
-
-                    السيرفر يعمل بثبات عالي
-
-                </h5>
-
-                <h1>
-
-                    منصة
-                    <span>
-                        BEST 4K
-                    </span>
-
-                    الرسمية في العراق 🇮🇶
-
-                </h1>
-
-                <p>
-
-                    أقوى تجربة مشاهدة للقنوات الرياضية،
-                    الأفلام، المسلسلات،
-                    والبث المباشر بجودة 4K
-                    وبدون تقطيع على جميع الأجهزة.
-
-                </p>
-
-                <div class="buttons">
-
-                    <a href="https://wa.me/9647740393776"
-                        class="btn-main">
-
-                        <i class="fab fa-whatsapp"></i>
-
-                        تجربة مجانية
-
-                    </a>
-
-                    <a href="#plans"
-                        class="btn-sec">
-
-                        <i class="fas fa-play"></i>
-
-                        عرض الاشتراكات
-
-                    </a>
-
-                </div>
-
-            </div>
-
-            <!-- RIGHT -->
-
-            <div class="showcase">
-
-                <div class="show-top">
-
-                    <div class="live">
-                        ● LIVE
-                    </div>
-
-                </div>
-
-                <div class="show-content">
-
-                    <h3>
-
-                        Premium IPTV
-
-                    </h3>
-
-                    <p>
-
-                        أكثر من 12,000 قناة مباشرة
-                        مع مكتبة ضخمة من الأفلام
-                        والمسلسلات بجودة فائقة.
-
-                    </p>
-
-                    <div class="tags">
-
-                        <div class="tag">
-                            4K Ultra HD
-                        </div>
-
-                        <div class="tag">
-                            Sports
-                        </div>
-
-                        <div class="tag">
-                            Movies
-                        </div>
-
-                        <div class="tag">
-                            Fast Servers
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- PLANS -->
-
-    <section id="plans">
-
-        <div class="container">
-
-            <div class="section-title">
-
-                <h2>
-                    الاشتراكات الرسمية
-                </h2>
-
-                <p>
-
-                    اختر الباقة المناسبة لك
-                    واستمتع بأفضل تجربة مشاهدة.
-
-                </p>
-
-            </div>
-
-            <div class="plans">
-
-                <!-- 1 -->
-
-                <div class="plan">
-
-                    <h3>
-                        1 Month
-                    </h3>
-
-                    <div class="price">
-
-                        7K
-
-                        <span>
-                            IQD
-                        </span>
-
-                    </div>
-
-                    <ul>
-
-                        <li>
-                            <i class="fas fa-check"></i>
-                            جودة 4K
-                        </li>
-
-                        <li>
-                            <i class="fas fa-check"></i>
-                            قنوات رياضية
-                        </li>
-
-                        <li>
-                            <i class="fas fa-check"></i>
-                            أفلام ومسلسلات
-                        </li>
-
-                    </ul>
-
-                    <a href="https://wa.me/9647740393776"
-                        class="btn-main">
-
-                        اشترك الآن
-
-                    </a>
-
-                </div>
-
-                <!-- 2 -->
-
-                <div class="plan">
-
-                    <div class="popular">
-                        الأكثر طلباً
-                    </div>
-
-                    <h3>
-                        3 Months
-                    </h3>
-
-                    <div class="price">
-
-                        12K
-
-                        <span>
-                            IQD
-                        </span>
-
-                    </div>
-
-                    <ul>
-
-                        <li>
-                            <i class="fas fa-check"></i>
-                            بث ثابت
-                        </li>
-
-                        <li>
-                            <i class="fas fa-check"></i>
-                            تحديث يومي
-                        </li>
-
-                        <li>
-                            <i class="fas fa-check"></i>
-                            دعم VIP
-                        </li>
-
-                    </ul>
-
-                    <a href="https://wa.me/9647740393776"
-                        class="btn-main">
-
-                        اشترك الآن
-
-                    </a>
-
-                </div>
-
-                <!-- 3 -->
-
-                <div class="plan">
-
-                    <h3>
-                        6 Months
-                    </h3>
-
-                    <div class="price">
-
-                        20K
-
-                        <span>
-                            IQD
-                        </span>
-
-                    </div>
-
-                    <ul>
-
-                        <li>
-                            <i class="fas fa-check"></i>
-                            +12000 قناة
-                        </li>
-
-                        <li>
-                            <i class="fas fa-check"></i>
-                            سيرفرات قوية
-                        </li>
-
-                        <li>
-                            <i class="fas fa-check"></i>
-                            جودة فائقة
-                        </li>
-
-                    </ul>
-
-                    <a href="https://wa.me/9647740393776"
-                        class="btn-main">
-
-                        اشترك الآن
-
-                    </a>
-
-                </div>
-
-                <!-- 4 -->
-
-                <div class="plan">
-
-                    <h3>
-                        12 Months
-                    </h3>
-
-                    <div class="price">
-
-                        30K
-
-                        <span>
-                            IQD
-                        </span>
-
-                    </div>
-
-                    <ul>
-
-                        <li>
-                            <i class="fas fa-check"></i>
-                            أفضل قيمة
-                        </li>
-
-                        <li>
-                            <i class="fas fa-check"></i>
-                            بدون تقطيع
-                        </li>
-
-                        <li>
-                            <i class="fas fa-check"></i>
-                            دعم مباشر
-                        </li>
-
-                    </ul>
-
-                    <a href="https://wa.me/9647740393776"
-                        class="btn-main">
-
-                        اشترك الآن
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <h2>
-            BEST 4K IRAQ 🇮🇶
-        </h2>
-
-        <p>
-            جميع الحقوق محفوظة © 2026
-        </p>
-
-    </footer>
+</footer>
 
 </body>
 
