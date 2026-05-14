@@ -8,13 +8,13 @@
 
     <title>BEST 4K IRAQ 🇮🇶</title>
 
-    <!-- GOOGLE FONT -->
+    <!-- FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap"
         rel="stylesheet">
 
-    <!-- FONT AWESOME -->
+    <!-- ICONS -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -26,38 +26,11 @@
             box-sizing:border-box;
         }
 
-        :root{
-
-            --bg:#050505;
-            --card:#111111;
-
-            --purple:#6d28d9;
-            --purple2:#8b5cf6;
-            --purple3:#c4b5fd;
-
-            --white:#ffffff;
-            --text:#cfcfcf;
-
-            --border:rgba(255,255,255,.08);
-
-            --glow:
-                0 0 35px rgba(139,92,246,.35);
-        }
-
         body{
 
             font-family:'Cairo',sans-serif;
 
-            background:
-                radial-gradient(circle at top right,
-                    rgba(109,40,217,.15),
-                    transparent 20%),
-
-                radial-gradient(circle at bottom left,
-                    rgba(139,92,246,.10),
-                    transparent 20%),
-
-                #050505;
+            background:#070707;
 
             color:white;
 
@@ -72,103 +45,95 @@
             text-decoration:none;
         }
 
-        /* ===== SCROLL ===== */
+        /* ===== BACKGROUND ===== */
 
-        ::-webkit-scrollbar{
-            width:8px;
-        }
+        .bg{
 
-        ::-webkit-scrollbar-thumb{
+            position:fixed;
+
+            inset:0;
+
+            z-index:-2;
 
             background:
-                linear-gradient(
-                    var(--purple),
-                    var(--purple2)
-                );
+                radial-gradient(circle at top right,
+                    rgba(139,92,246,.18),
+                    transparent 25%),
 
-            border-radius:10px;
+                radial-gradient(circle at bottom left,
+                    rgba(124,58,237,.12),
+                    transparent 25%),
+
+                #070707;
         }
 
-        /* ===== BACKGROUND BLUR ===== */
+        .glow{
 
-        .bg-blur{
             position:fixed;
+
+            width:500px;
+            height:500px;
+
             border-radius:50%;
+
             filter:blur(120px);
+
             z-index:-1;
+
             opacity:.18;
 
-            animation:moveBlur 18s infinite alternate ease-in-out;
+            animation:moveGlow 12s infinite alternate ease-in-out;
         }
 
-        .blur1{
-            width:320px;
-            height:320px;
-
+        .g1{
             background:#7c3aed;
-
-            top:-80px;
-            right:-80px;
+            top:-150px;
+            right:-100px;
         }
 
-        .blur2{
-            width:280px;
-            height:280px;
-
+        .g2{
             background:#9333ea;
-
-            bottom:0;
-            left:-80px;
+            bottom:-150px;
+            left:-100px;
         }
 
-        .blur3{
-            width:240px;
-            height:240px;
-
-            background:#6d28d9;
-
-            top:40%;
-            left:40%;
-        }
-
-        @keyframes moveBlur{
+        @keyframes moveGlow{
 
             0%{
-                transform:translateY(0) translateX(0);
+                transform:translate(0,0);
             }
 
             100%{
-                transform:translateY(40px) translateX(30px);
+                transform:translate(40px,-30px);
             }
         }
 
-        /* ===== TOPBAR ===== */
+        /* ===== NAVBAR ===== */
 
-        .topbar{
+        .navbar{
 
             position:fixed;
 
             top:0;
-            right:0;
 
             width:100%;
 
-            z-index:9999;
+            z-index:999;
 
-            background:rgba(0,0,0,.75);
+            background:rgba(0,0,0,.55);
 
-            backdrop-filter:blur(14px);
+            backdrop-filter:blur(20px);
 
-            border-bottom:1px solid var(--border);
+            border-bottom:1px solid rgba(255,255,255,.06);
         }
 
-        .topbar-inner{
+        .nav-inner{
 
             max-width:1400px;
 
             margin:auto;
 
-            padding:16px 30px;
+            padding:18px 35px;
 
             display:flex;
 
@@ -176,6 +141,8 @@
 
             align-items:center;
         }
+
+        /* ===== LOGO ===== */
 
         .brand{
 
@@ -186,21 +153,23 @@
             gap:15px;
         }
 
-        /* ===== LOGO ===== */
-
         .logo{
 
-            width:60px;
-            height:60px;
+            width:62px;
+            height:62px;
 
             border-radius:18px;
 
             background:
                 linear-gradient(
                     135deg,
-                    var(--purple),
-                    var(--purple2)
+                    #6d28d9,
+                    #9333ea
                 );
+
+            position:relative;
+
+            overflow:hidden;
 
             display:flex;
 
@@ -212,23 +181,20 @@
 
             font-size:1rem;
 
-            position:relative;
-
-            overflow:hidden;
-
             box-shadow:
-                0 0 25px rgba(124,58,237,.45),
-                inset 0 0 20px rgba(255,255,255,.08);
+                0 0 30px rgba(139,92,246,.35);
 
-            animation:glowLogo 3s infinite ease-in-out;
+            animation:logoPulse 3s infinite;
         }
 
         .logo span{
+
             position:relative;
+
             z-index:2;
         }
 
-        .iraq-flag{
+        .iraq{
 
             position:absolute;
 
@@ -249,21 +215,10 @@
                     black 100%
                 );
 
-            animation:flagWave 2s infinite ease-in-out;
+            animation:wave 2s infinite;
         }
 
-        @keyframes glowLogo{
-
-            0%,100%{
-                transform:scale(1);
-            }
-
-            50%{
-                transform:scale(1.07);
-            }
-        }
-
-        @keyframes flagWave{
+        @keyframes wave{
 
             0%,100%{
                 transform:translateX(0);
@@ -274,14 +229,32 @@
             }
         }
 
-        .brand h1{
-            font-size:1.2rem;
+        @keyframes logoPulse{
+
+            0%,100%{
+                transform:scale(1);
+            }
+
+            50%{
+                transform:scale(1.05);
+            }
         }
 
-        .brand p{
-            color:#999;
-            font-size:.85rem;
+        .brand-text h1{
+
+            font-size:1.2rem;
+
+            margin-bottom:2px;
         }
+
+        .brand-text p{
+
+            color:#aaa;
+
+            font-size:.8rem;
+        }
+
+        /* ===== MENU ===== */
 
         .menu{
 
@@ -294,12 +267,13 @@
 
             color:#ccc;
 
-            transition:.3s;
-
             font-size:.95rem;
+
+            transition:.3s;
         }
 
         .menu a:hover{
+
             color:white;
         }
 
@@ -316,8 +290,6 @@
             position:relative;
 
             overflow:hidden;
-
-            padding-top:120px;
         }
 
         .hero::before{
@@ -333,16 +305,17 @@
                 linear-gradient(
                     to left,
                     rgba(0,0,0,.90),
-                    rgba(0,0,0,.60),
+                    rgba(0,0,0,.50),
                     rgba(0,0,0,.90)
                 ),
 
-                url('https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=1974&auto=format&fit=crop');
+                url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1974&auto=format&fit=crop');
 
             background-size:cover;
+
             background-position:center;
 
-            opacity:.55;
+            opacity:.42;
         }
 
         .hero-inner{
@@ -353,7 +326,7 @@
 
             width:100%;
 
-            padding:0 30px;
+            padding:140px 35px 80px;
 
             position:relative;
 
@@ -361,9 +334,9 @@
 
             display:grid;
 
-            grid-template-columns:1.1fr .9fr;
+            grid-template-columns:1fr 1fr;
 
-            gap:40px;
+            gap:50px;
 
             align-items:center;
         }
@@ -372,19 +345,19 @@
 
             display:inline-flex;
 
-            gap:10px;
-
             align-items:center;
 
-            background:rgba(124,58,237,.15);
+            gap:10px;
 
-            border:1px solid rgba(124,58,237,.4);
+            background:rgba(139,92,246,.12);
+
+            border:1px solid rgba(139,92,246,.35);
 
             padding:12px 18px;
 
             border-radius:50px;
 
-            color:var(--purple3);
+            color:#d8b4fe;
 
             margin-bottom:25px;
         }
@@ -404,7 +377,7 @@
                 linear-gradient(
                     90deg,
                     #fff,
-                    #c4b5fd
+                    #d8b4fe
                 );
 
             -webkit-background-clip:text;
@@ -414,16 +387,18 @@
 
         .hero-left p{
 
-            color:#d0d0d0;
-
-            font-size:1.1rem;
+            color:#cfcfcf;
 
             line-height:2;
+
+            font-size:1.1rem;
 
             max-width:700px;
         }
 
-        .hero-buttons{
+        /* ===== BUTTONS ===== */
+
+        .buttons{
 
             margin-top:40px;
 
@@ -439,13 +414,13 @@
             background:
                 linear-gradient(
                     135deg,
-                    var(--purple),
-                    var(--purple2)
+                    #6d28d9,
+                    #9333ea
                 );
 
             color:white;
 
-            padding:18px 35px;
+            padding:18px 34px;
 
             border-radius:16px;
 
@@ -453,13 +428,14 @@
 
             align-items:center;
 
-            gap:14px;
+            gap:12px;
 
             font-weight:700;
 
             transition:.3s;
 
-            box-shadow:var(--glow);
+            box-shadow:
+                0 0 30px rgba(139,92,246,.35);
         }
 
         .btn-main:hover{
@@ -473,7 +449,7 @@
 
             color:white;
 
-            padding:18px 35px;
+            padding:18px 34px;
 
             border-radius:16px;
 
@@ -481,7 +457,7 @@
 
             align-items:center;
 
-            gap:14px;
+            gap:12px;
 
             transition:.3s;
         }
@@ -491,34 +467,34 @@
             background:rgba(255,255,255,.15);
         }
 
-        /* ===== HERO CARD ===== */
+        /* ===== RIGHT CARD ===== */
 
-        .hero-card{
+        .showcase{
 
             background:rgba(255,255,255,.05);
 
             border:1px solid rgba(255,255,255,.08);
 
-            border-radius:30px;
+            border-radius:32px;
 
             overflow:hidden;
 
             backdrop-filter:blur(20px);
         }
 
-        .hero-card-top{
+        .show-top{
 
-            height:250px;
+            height:280px;
 
             background:
 
                 linear-gradient(
                     to top,
-                    rgba(0,0,0,.85),
+                    rgba(0,0,0,.90),
                     transparent
                 ),
 
-                url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1974&auto=format&fit=crop');
+                url('https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=1974&auto=format&fit=crop');
 
             background-size:cover;
 
@@ -543,34 +519,21 @@
             font-size:.8rem;
 
             font-weight:bold;
-
-            animation:pulse 1s infinite;
         }
 
-        @keyframes pulse{
+        .show-content{
 
-            0%,100%{
-                transform:scale(1);
-            }
-
-            50%{
-                transform:scale(1.08);
-            }
+            padding:35px;
         }
 
-        .hero-card-content{
-
-            padding:30px;
-        }
-
-        .hero-card-content h3{
+        .show-content h3{
 
             font-size:1.8rem;
 
             margin-bottom:15px;
         }
 
-        .hero-card-content p{
+        .show-content p{
 
             color:#aaa;
 
@@ -594,11 +557,11 @@
 
             border-radius:50px;
 
-            background:rgba(124,58,237,.12);
+            background:rgba(139,92,246,.12);
 
-            border:1px solid rgba(124,58,237,.25);
+            border:1px solid rgba(139,92,246,.25);
 
-            color:var(--purple3);
+            color:#d8b4fe;
 
             font-size:.85rem;
         }
@@ -607,7 +570,7 @@
 
         section{
 
-            padding:100px 30px;
+            padding:100px 35px;
         }
 
         .container{
@@ -617,25 +580,23 @@
             margin:auto;
         }
 
-        .section-head{
+        .section-title{
 
             margin-bottom:50px;
         }
 
-        .section-head h2{
+        .section-title h2{
 
             font-size:3rem;
 
             margin-bottom:15px;
         }
 
-        .section-head p{
+        .section-title p{
 
             color:#aaa;
 
             line-height:2;
-
-            max-width:700px;
         }
 
         /* ===== PLANS ===== */
@@ -652,12 +613,7 @@
 
         .plan{
 
-            background:
-                linear-gradient(
-                    180deg,
-                    rgba(255,255,255,.05),
-                    rgba(255,255,255,.02)
-                );
+            background:rgba(255,255,255,.04);
 
             border:1px solid rgba(255,255,255,.08);
 
@@ -665,20 +621,19 @@
 
             padding:35px;
 
-            position:relative;
-
-            overflow:hidden;
-
             transition:.4s;
+
+            position:relative;
         }
 
         .plan:hover{
 
             transform:translateY(-10px);
 
-            border-color:rgba(124,58,237,.4);
+            border-color:rgba(139,92,246,.35);
 
-            box-shadow:var(--glow);
+            box-shadow:
+                0 0 30px rgba(139,92,246,.15);
         }
 
         .popular{
@@ -690,9 +645,9 @@
 
             background:
                 linear-gradient(
-                    90deg,
-                    var(--purple),
-                    var(--purple2)
+                    135deg,
+                    #6d28d9,
+                    #9333ea
                 );
 
             padding:10px 16px;
@@ -736,20 +691,20 @@
 
         .plan ul li{
 
-            margin-bottom:16px;
+            margin-bottom:15px;
 
             color:#ddd;
 
             display:flex;
 
-            gap:12px;
-
             align-items:center;
+
+            gap:10px;
         }
 
         .plan ul li i{
 
-            color:var(--purple3);
+            color:#d8b4fe;
         }
 
         .plan .btn-main{
@@ -761,90 +716,22 @@
             margin-top:25px;
         }
 
-        /* ===== FEATURES ===== */
-
-        .features{
-
-            display:grid;
-
-            grid-template-columns:
-                repeat(auto-fit,minmax(260px,1fr));
-
-            gap:25px;
-        }
-
-        .feature{
-
-            background:rgba(255,255,255,.04);
-
-            border:1px solid rgba(255,255,255,.08);
-
-            border-radius:25px;
-
-            padding:35px;
-
-            transition:.4s;
-        }
-
-        .feature:hover{
-
-            transform:translateY(-8px);
-
-            border-color:rgba(124,58,237,.4);
-        }
-
-        .feature i{
-
-            width:75px;
-            height:75px;
-
-            background:rgba(124,58,237,.15);
-
-            color:var(--purple3);
-
-            display:flex;
-
-            justify-content:center;
-
-            align-items:center;
-
-            border-radius:20px;
-
-            font-size:1.8rem;
-
-            margin-bottom:25px;
-        }
-
-        .feature h3{
-
-            margin-bottom:15px;
-
-            font-size:1.4rem;
-        }
-
-        .feature p{
-
-            color:#aaa;
-
-            line-height:2;
-        }
-
         /* ===== FOOTER ===== */
 
         footer{
 
-            padding:80px 30px;
-
-            border-top:1px solid rgba(255,255,255,.08);
+            padding:70px 30px;
 
             text-align:center;
 
-            background:#040404;
+            border-top:1px solid rgba(255,255,255,.08);
+
+            background:#050505;
         }
 
         footer h2{
 
-            margin-bottom:15px;
+            margin-bottom:12px;
         }
 
         footer p{
@@ -857,28 +744,35 @@
         @media(max-width:950px){
 
             .hero-inner{
+
                 grid-template-columns:1fr;
             }
 
             .hero-left h1{
+
                 font-size:3rem;
             }
 
             .menu{
+
                 display:none;
             }
 
-            .hero-buttons{
+            .buttons{
+
                 flex-direction:column;
             }
 
             .btn-main,
             .btn-sec{
+
                 width:100%;
+
                 justify-content:center;
             }
 
-            .section-head h2{
+            .section-title h2{
+
                 font-size:2.2rem;
             }
         }
@@ -891,15 +785,16 @@
 
     <!-- BACKGROUND -->
 
-    <div class="bg-blur blur1"></div>
-    <div class="bg-blur blur2"></div>
-    <div class="bg-blur blur3"></div>
+    <div class="bg"></div>
 
-    <!-- TOPBAR -->
+    <div class="glow g1"></div>
+    <div class="glow g2"></div>
 
-    <div class="topbar">
+    <!-- NAVBAR -->
 
-        <div class="topbar-inner">
+    <div class="navbar">
+
+        <div class="nav-inner">
 
             <div class="brand">
 
@@ -909,11 +804,11 @@
                         BEST
                     </span>
 
-                    <div class="iraq-flag"></div>
+                    <div class="iraq"></div>
 
                 </div>
 
-                <div>
+                <div class="brand-text">
 
                     <h1>
                         BEST 4K IRAQ 🇮🇶
@@ -946,7 +841,7 @@
                 </a>
 
                 <a href="#">
-                    الدعم الفني
+                    الدعم
                 </a>
 
             </div>
@@ -986,21 +881,21 @@
 
                 <p>
 
-                    استمتع بأقوى القنوات الرياضية،
-                    أحدث الأفلام والمسلسلات،
+                    أقوى تجربة مشاهدة للقنوات الرياضية،
+                    الأفلام، المسلسلات،
                     والبث المباشر بجودة 4K
                     وبدون تقطيع على جميع الأجهزة.
 
                 </p>
 
-                <div class="hero-buttons">
+                <div class="buttons">
 
                     <a href="https://wa.me/9647740393776"
                         class="btn-main">
 
                         <i class="fab fa-whatsapp"></i>
 
-                        تجربة مجانية 12 ساعة
+                        تجربة مجانية
 
                     </a>
 
@@ -1019,9 +914,9 @@
 
             <!-- RIGHT -->
 
-            <div class="hero-card">
+            <div class="showcase">
 
-                <div class="hero-card-top">
+                <div class="show-top">
 
                     <div class="live">
                         ● LIVE
@@ -1029,18 +924,18 @@
 
                 </div>
 
-                <div class="hero-card-content">
+                <div class="show-content">
 
                     <h3>
 
-                        Premium IPTV Experience
+                        Premium IPTV
 
                     </h3>
 
                     <p>
 
                         أكثر من 12,000 قناة مباشرة
-                        ومكتبة ضخمة من الأفلام
+                        مع مكتبة ضخمة من الأفلام
                         والمسلسلات بجودة فائقة.
 
                     </p>
@@ -1052,11 +947,11 @@
                         </div>
 
                         <div class="tag">
-                            Sports Channels
+                            Sports
                         </div>
 
                         <div class="tag">
-                            Movies & Series
+                            Movies
                         </div>
 
                         <div class="tag">
@@ -1079,12 +974,10 @@
 
         <div class="container">
 
-            <div class="section-head">
+            <div class="section-title">
 
                 <h2>
-
                     الاشتراكات الرسمية
-
                 </h2>
 
                 <p>
@@ -1292,97 +1185,6 @@
 
     </section>
 
-    <!-- FEATURES -->
-
-    <section>
-
-        <div class="container">
-
-            <div class="section-head">
-
-                <h2>
-
-                    لماذا BEST 4K ؟
-
-                </h2>
-
-                <p>
-
-                    منصة احترافية مصممة لعشاق
-                    الرياضة والترفيه داخل العراق.
-
-                </p>
-
-            </div>
-
-            <div class="features">
-
-                <div class="feature">
-
-                    <i class="fas fa-tv"></i>
-
-                    <h3>
-                        جودة حقيقية
-                    </h3>
-
-                    <p>
-                        مشاهدة بدقة 4K
-                        وصوت نقي.
-                    </p>
-
-                </div>
-
-                <div class="feature">
-
-                    <i class="fas fa-bolt"></i>
-
-                    <h3>
-                        سرعة عالية
-                    </h3>
-
-                    <p>
-                        تشغيل سريع للقنوات
-                        بدون انتظار.
-                    </p>
-
-                </div>
-
-                <div class="feature">
-
-                    <i class="fas fa-film"></i>
-
-                    <h3>
-                        مكتبة ضخمة
-                    </h3>
-
-                    <p>
-                        أفلام ومسلسلات
-                        محدثة يومياً.
-                    </p>
-
-                </div>
-
-                <div class="feature">
-
-                    <i class="fas fa-headset"></i>
-
-                    <h3>
-                        دعم مباشر
-                    </h3>
-
-                    <p>
-                        دعم فني متوفر
-                        على مدار الساعة.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
     <!-- FOOTER -->
 
     <footer>
@@ -1392,9 +1194,7 @@
         </h2>
 
         <p>
-
             جميع الحقوق محفوظة © 2026
-
         </p>
 
     </footer>
