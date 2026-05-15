@@ -14,11 +14,11 @@
 
 :root{
 --gold:#d4af37;
---gold-light:#f5d97f;
+--gold-light:#f3d57a;
 --bg:#050505;
 --card:#111111;
 --text:#ffffff;
---muted:#b0b0b0;
+--muted:#b8b8b8;
 --border:rgba(212,175,55,.25);
 }
 
@@ -39,18 +39,18 @@ html{
 scroll-behavior:smooth;
 }
 
+a{
+text-decoration:none;
+transition:.3s;
+}
+
 body::before{
 content:'';
 position:fixed;
 inset:0;
 background:
-radial-gradient(circle at top,#2c2207 0%,#000 60%);
+radial-gradient(circle at top,#2d2105 0%,#000 60%);
 z-index:-2;
-}
-
-a{
-text-decoration:none;
-transition:.3s;
 }
 
 header{
@@ -79,15 +79,15 @@ gap:15px;
 }
 
 .logo-circle{
-width:72px;
-height:72px;
+width:70px;
+height:70px;
 border-radius:50%;
 border:2px solid var(--gold);
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-background:linear-gradient(145deg,#151515,#000);
+background:linear-gradient(145deg,#161616,#000);
 box-shadow:0 0 25px rgba(212,175,55,.35);
 }
 
@@ -102,7 +102,7 @@ font-size:23px;
 font-weight:900;
 line-height:1;
 color:var(--gold);
-margin-top:4px;
+margin-top:3px;
 }
 
 .logo-text h1{
@@ -131,12 +131,12 @@ color:var(--gold);
 
 .hero{
 height:100vh;
+position:relative;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
 padding:20px;
-position:relative;
 overflow:hidden;
 }
 
@@ -145,12 +145,12 @@ content:'';
 position:absolute;
 inset:0;
 background:
-linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.9)),
+linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.9)),
 url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2000&auto=format&fit=crop');
 background-size:cover;
 background-position:center;
-animation:zoomHero 18s linear infinite alternate;
 z-index:-1;
+animation:zoomHero 18s linear infinite alternate;
 }
 
 @keyframes zoomHero{
@@ -181,7 +181,7 @@ color:var(--gold);
 font-size:1.2rem;
 line-height:2;
 color:#ddd;
-max-width:850px;
+max-width:800px;
 margin:auto;
 }
 
@@ -405,7 +405,6 @@ text-align:center;
 
 .stat-box h4{
 font-size:2.3rem;
-font-weight:900;
 color:var(--gold);
 margin-bottom:10px;
 }
@@ -610,7 +609,7 @@ transform:none;
 
 <nav class="nav-links">
 <a href="#servers">السيرفرات</a>
-<a href="javascript:void(0)" onclick="openModal()">الخصوصية</a>
+<a href="javascript:void(0)" onclick="openModal()">سياسة الاستخدام</a>
 </nav>
 
 </div>
@@ -627,7 +626,7 @@ transform:none;
 </h2>
 
 <p>
-استمتع بأقوى تجربة مشاهدة مع سيرفرات BEST4K و MAX TV PRO بثبات عالي أثناء المباريات، جودة 4K حقيقية، وأكثر من 15,000 قناة و 30,000 فيلم ومسلسل مع تحديث يومي للمحتوى.
+استمتع بأقوى تجربة مشاهدة مع سيرفرات BEST4K و MAX TV PRO بجودة 4K وثبات عالي أثناء المباريات وأكثر من 15,000 قناة و 30,000 فيلم ومسلسل.
 </p>
 
 <div class="hero-buttons">
@@ -720,9 +719,7 @@ MAX
 
 <div class="panel-hero">
 
-<h2>
-BEST4K
-</h2>
+<h2>BEST4K</h2>
 
 <p>
 سيرفر رياضي وترفيهي احترافي بثبات عالي أثناء المباريات الكبرى مع دعم جودة 4K الحقيقية.
@@ -734,17 +731,87 @@ BEST4K
 
 <div class="stat-box">
 <h4>15,000+</h4>
-<p>قناة مباشرة</p>
+<p>قناة رياضية وترفيهية</p>
 </div>
 
 <div class="stat-box">
 <h4>30,000+</h4>
-<p>فيلم ومسلسل</p>
+<p>أفلام ومسلسلات</p>
+</div>
+
+<div class="stat-box">
+<h4>Daily</h4>
+<p>تحديث يومي للمحتوى</p>
 </div>
 
 <div class="stat-box">
 <h4>4K</h4>
-<p>جودة فائقة</p>
+<p>جودة HD / FHD / 4K</p>
+</div>
+
+</div>
+
+<div class="download-grid">
+
+<div class="download-card">
+
+<i class="fab fa-android"></i>
+
+<h4>تحميل التطبيق</h4>
+
+<a href="https://sh-apps.cyou/apk/BEST4K.apk" target="_blank" class="btn btn-primary">
+اضغط هنا للتحميل
+</a>
+
+</div>
+
+<div class="download-card">
+
+<i class="fas fa-tv"></i>
+
+<h4>Downloader Code</h4>
+
+<div class="download-code">
+4056700
+</div>
+
+</div>
+
+<div class="download-card">
+
+<i class="fab fa-apple"></i>
+
+<h4>مشغلات iOS</h4>
+
+<p style="line-height:2;">
+NEXT+<br>
+CASTORA
+</p>
+
+<div class="download-code">
+4949
+</div>
+
+<p style="margin-top:10px;">
+كود التفعيل
+</p>
+
+</div>
+
+<div class="download-card">
+
+<i class="fas fa-bolt"></i>
+
+<h4>مميزات السيرفر</h4>
+
+<p style="line-height:2;">
+ثبات عالي أثناء المباريات<br>
+سيرفرات قوية<br>
+دعم 4K حقيقي<br>
+تحديث يومي<br>
+دعم جميع الأجهزة
+</p>
+
 </div>
 
 </div>
@@ -767,9 +834,23 @@ BEST4K
 </div>
 
 <div class="price-card">
-<h4>سنة</h4>
+<h4>سنة كاملة</h4>
 <div class="price">22,000 IQD</div>
 </div>
+
+</div>
+
+<div class="notice">
+
+<h4>
+أفضل استقرار للمشاهدة ⚡
+</h4>
+
+<p>
+للحصول على أفضل أداء أثناء المباريات والبث المباشر يُفضل استخدام إنترنت Fiber أو FTTH بسرعة لا تقل عن 20Mbps مع اتصال مستقر.
+
+سيرفر BEST4K مصمم لتحمل الضغط العالي أثناء البطولات والأحداث الكبرى بدون تقطيع.
+</p>
 
 </div>
 
@@ -789,9 +870,7 @@ BEST4K
 
 <div class="panel-hero">
 
-<h2>
-MAX TV PRO
-</h2>
+<h2>MAX TV PRO</h2>
 
 <p>
 أقوى مكتبة ترفيهية وقنوات عالمية مع دعم Android و iOS و Smart TV و PC.
@@ -829,9 +908,7 @@ MAX TV PRO
 
 <i class="fab fa-android"></i>
 
-<h4>
-Android APK
-</h4>
+<h4>Android APK</h4>
 
 <a href="https://www.mediafire.com/file/aynt5054tdllmmb/Max-TV-Pro-active.apk/file" target="_blank" class="btn btn-primary">
 اضغط هنا للتحميل
@@ -843,9 +920,7 @@ Android APK
 
 <i class="fab fa-apple"></i>
 
-<h4>
-iPhone & iPad
-</h4>
+<h4>iPhone & iPad</h4>
 
 <a href="https://apps.apple.com/app/id6443335504" target="_blank" class="btn btn-dark" style="margin-top:10px;">
 NEXT+
@@ -866,9 +941,7 @@ CASTORA
 
 <i class="fas fa-tv"></i>
 
-<h4>
-Downloader Codes
-</h4>
+<h4>Downloader Codes</h4>
 
 <div class="download-code">2606779</div>
 <p>MAX ACTIVE</p>
@@ -894,9 +967,7 @@ Downloader Codes
 
 <i class="fas fa-desktop"></i>
 
-<h4>
-PC & Laptop
-</h4>
+<h4>PC & Laptop</h4>
 
 <div class="download-code">
 8488
