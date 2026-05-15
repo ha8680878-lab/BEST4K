@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BEST 4K | IRAQ 🇮🇶</title>
-    <!-- استدعاء الأيقونات والخطوط -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
@@ -37,6 +36,8 @@
 
         html { scroll-behavior: smooth; }
         a { text-decoration: none; }
+        .mb-2 { margin-bottom: 10px; }
+        hr { border: 0; height: 1px; background: var(--border-light); margin: 20px 0; }
 
         /* ===== الخلفية ===== */
         body::before {
@@ -74,20 +75,24 @@
             gap: 15px;
         }
 
+        /* تعديل الشعار ليناسب الصورة المرفقة */
         .logo {
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
-            background: linear-gradient(145deg, #111, #222);
-            border: 1px solid var(--gold);
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
             display: flex;
             justify-content: center;
             align-items: center;
-            font-weight: 900;
-            color: var(--gold-light);
-            font-size: 1.1rem;
-            position: relative;
             overflow: hidden;
+            box-shadow: 0 0 15px rgba(212,175,55,0.3);
+            background-color: #000;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .brand-text h1 {
@@ -101,18 +106,13 @@
             font-size: 0.8rem;
         }
 
-        .menu {
-            display: flex;
-            gap: 25px;
-        }
-
+        .menu { display: flex; gap: 20px; }
         .menu a {
             color: var(--text-muted);
             font-size: 0.95rem;
             font-weight: 600;
             transition: var(--transition);
         }
-
         .menu a:hover { color: var(--gold-light); }
 
         /* ===== القسم الرئيسي (Hero) ===== */
@@ -177,10 +177,12 @@
             font-weight: 700;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
             transition: var(--transition);
             font-size: 1rem;
             cursor: pointer;
+            text-align: center;
         }
 
         .btn-main {
@@ -198,6 +200,7 @@
             background: transparent;
             border: 1px solid var(--border-light);
             color: var(--text-main);
+            width: 100%;
         }
 
         .btn-sec:hover {
@@ -255,43 +258,99 @@
             100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
         }
 
-        /* ===== قسم المميزات (جديد) ===== */
-        .features {
+        /* ===== الأقسام العامة (متطلبات وتحميلات) ===== */
+        .section-padding {
             padding: 80px 25px;
-            background: rgba(0,0,0,0.3);
             border-top: 1px solid var(--border-light);
-            border-bottom: 1px solid var(--border-light);
         }
 
-        .features-grid {
-            max-width: 1200px;
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 2.3rem; margin-bottom: 15px; color: var(--gold-light); }
+        .section-header p { color: var(--text-muted); max-width: 600px; margin: auto; }
+
+        /* ===== قسم متطلبات التشغيل ===== */
+        .req-container {
+            max-width: 800px;
+            margin: auto;
+            background: var(--card-bg);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .req-list {
+            list-style: none;
+        }
+
+        .req-list li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            font-size: 1.1rem;
+            color: #ddd;
+        }
+
+        .req-list li i {
+            color: var(--gold);
+            font-size: 1.4rem;
+            margin-top: 5px;
+        }
+
+        .req-list li strong { color: var(--gold-light); display: block; margin-bottom: 5px;}
+
+        /* ===== قسم التحميل ===== */
+        .download-grid {
+            max-width: 1000px;
             margin: auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            text-align: center;
         }
 
-        .feature-card i {
-            font-size: 2.5rem;
+        .dl-card {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 35px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .dl-card:hover {
+            border-color: rgba(212,175,55,0.4);
+            transform: translateY(-5px);
+        }
+
+        .dl-card i {
+            font-size: 3rem;
             color: var(--gold);
             margin-bottom: 15px;
         }
 
-        .feature-card h3 { font-size: 1.3rem; margin-bottom: 10px; }
-        .feature-card p { color: var(--text-muted); font-size: 0.95rem; }
+        .dl-card h3 { font-size: 1.4rem; margin-bottom: 10px; }
+        .dl-card > p { color: var(--text-muted); margin-bottom: 20px; }
+
+        .dl-code {
+            background: rgba(212,175,55,0.1);
+            border: 1px dashed var(--gold);
+            color: var(--gold-light);
+            font-size: 1.8rem;
+            font-weight: 900;
+            padding: 10px;
+            border-radius: 12px;
+            display: inline-block;
+            letter-spacing: 2px;
+            margin-top: 10px;
+        }
 
         /* ===== قسم الاشتراكات ===== */
-        .subscriptions { padding: 100px 25px; }
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header h2 { font-size: 2.5rem; margin-bottom: 15px; color: var(--gold-light); }
-        .section-header p { color: var(--text-muted); max-width: 600px; margin: auto; }
-
         .plans {
             max-width: 1200px;
             margin: auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
             align-items: center;
         }
@@ -304,7 +363,6 @@
             text-align: center;
             transition: var(--transition);
             position: relative;
-            backdrop-filter: blur(10px);
         }
 
         .plan-card:hover {
@@ -336,7 +394,7 @@
         }
 
         .plan-title { font-size: 1.5rem; color: var(--text-muted); margin-bottom: 15px; }
-        .plan-price { font-size: 3rem; font-weight: 900; color: var(--text-main); margin-bottom: 25px; }
+        .plan-price { font-size: 2.5rem; font-weight: 900; color: var(--text-main); margin-bottom: 25px; }
         .plan-price span { font-size: 1rem; color: var(--gold-light); font-weight: 600; }
 
         .plan-features { list-style: none; text-align: right; margin-bottom: 30px; }
@@ -350,7 +408,7 @@
         }
         .plan-features li i { color: var(--gold); font-size: 0.9rem; }
 
-        .plan-card .btn-main { width: 100%; justify-content: center; }
+        .plan-card .btn-main { width: 100%; }
 
         /* ===== الفوتر ===== */
         footer {
@@ -369,7 +427,7 @@
             .hero-left h1 { font-size: 2.8rem; }
             .hero-left p { margin: 0 auto 30px; }
             .buttons { justify-content: center; }
-            .menu { display: none; /* يمكن إضافة قائمة هامبرغر لاحقاً */ }
+            .menu { display: none; }
             .plan-popular { transform: scale(1); }
             .plan-popular:hover { transform: translateY(-5px); }
         }
@@ -377,11 +435,12 @@
 </head>
 <body>
 
-    <!-- الشريط العلوي -->
     <header class="topbar">
         <div class="topbar-inner">
             <div class="brand">
-                <div class="logo">B4K</div>
+                <div class="logo">
+                    <img src="1000075753.jpg" alt="BEST 4K Logo">
+                </div>
                 <div class="brand-text">
                     <h1>BEST 4K IRAQ 🇮🇶</h1>
                     <p>المنصة الرسمية للبث</p>
@@ -389,14 +448,13 @@
             </div>
             <nav class="menu">
                 <a href="#">الرئيسية</a>
-                <a href="#features">المميزات</a>
+                <a href="#requirements">المتطلبات</a>
+                <a href="#downloads">التطبيقات</a>
                 <a href="#plans">الاشتراكات</a>
-                <a href="#">تواصل معنا</a>
             </nav>
         </div>
     </header>
 
-    <!-- القسم الرئيسي -->
     <section class="hero">
         <div class="hero-inner">
             <div class="hero-left">
@@ -405,10 +463,10 @@
                 <p>استمتع بتجربة بث احترافية خالية من التقطيع. مكتبة ضخمة من الأفلام، المسلسلات، وأقوى القنوات الرياضية العالمية المشفرة في مكان واحد.</p>
                 <div class="buttons">
                     <a href="https://wa.me/9647740393776" target="_blank" class="btn btn-main">
-                        <i class="fab fa-whatsapp"></i> تجربة مجانية
+                        <i class="fab fa-whatsapp"></i> تواصل للاشتراك
                     </a>
-                    <a href="#plans" class="btn btn-sec">
-                        عرض الباقات <i class="fas fa-arrow-down"></i>
+                    <a href="#downloads" class="btn btn-sec" style="width: auto;">
+                        <i class="fas fa-download"></i> حمل التطبيق
                     </a>
                 </div>
             </div>
@@ -416,46 +474,84 @@
             <div class="hero-right">
                 <div class="showcase">
                     <div class="live-badge">مباشر الآن</div>
-                    <!-- استخدمنا صورة معبرة عن الأفلام والرياضة كخلفية بدلاً من البلوك الفارغ -->
                     <img src="https://images.unsplash.com/photo-1616530940355-351fabd9524b?q=80&w=1000&auto=format&fit=crop" alt="TV Streaming">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- قسم المميزات -->
-    <section id="features" class="features">
-        <div class="features-grid">
-            <div class="feature-card">
-                <i class="fas fa-tachometer-alt"></i>
-                <h3>سيرفرات فائقة السرعة</h3>
-                <p>نضمن لك مشاهدة مستقرة بدون تقطيع حتى أوقات الذروة والمباريات الكبرى.</p>
+    <section id="requirements" class="section-padding">
+        <div class="section-header">
+            <h2>متطلبات التشغيل</h2>
+            <p>لضمان الحصول على أفضل تجربة مشاهدة بدون تقطيع</p>
+        </div>
+        <div class="req-container">
+            <ul class="req-list">
+                <li>
+                    <i class="fas fa-wifi"></i>
+                    <div>
+                        <strong>إنترنت مستقر وسريع</strong>
+                        يفضل استخدام إنترنت الألياف الضوئية (FTTH - الكيبل الضوئي) لضمان أعلى مستوى من الاستقرار وعدم التقطيع أثناء الضغط والمباريات.
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-tachometer-alt"></i>
+                    <div>
+                        <strong>سرعة الإنترنت</strong>
+                        يتطلب الاشتراك سرعة إنترنت لا تقل عن 15 إلى 20 ميجابت/ثانية لتشغيل قنوات الـ 4K بسلاسة تامة.
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-tv"></i>
+                    <div>
+                        <strong>الأجهزة المدعومة</strong>
+                        الاشتراك يعمل على جميع الشاشات الذكية (Smart TV)، أجهزة TV Box، هواتف الأندرويد، والآيفون والآيباد.
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="downloads" class="section-padding" style="background: rgba(0,0,0,0.3);">
+        <div class="section-header">
+            <h2>تحميل التطبيقات</h2>
+            <p>اختر نوع جهازك وقم بتحميل التطبيق المناسب للبدء</p>
+        </div>
+        
+        <div class="download-grid">
+            <div class="dl-card">
+                <i class="fab fa-android"></i>
+                <h3>للأندرويد والشاشات الذكية</h3>
+                <p>قم بتحميل تطبيق BEST4K المباشر</p>
+                <a href="https://sh-apps.cyou/apk/BEST4K.apk" class="btn btn-main mb-2" style="width: 100%;">تحميل التطبيق المباشر</a>
+                <hr>
+                <p>أو للتحميل عبر تطبيق <strong>Downloader</strong> أدخل الكود التالي:</p>
+                <div class="dl-code">4056700</div>
             </div>
-            <div class="feature-card">
-                <i class="fas fa-tv"></i>
-                <h3>مكتبة محدثة يومياً</h3>
-                <p>أكثر من 12,000 قناة حية، وأحدث الأفلام والمسلسلات العربية والأجنبية.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-headset"></i>
-                <h3>دعم فني متواصل</h3>
-                <p>فريق دعم متواجد لخدمتك ومساعدتك في تفعيل وتشغيل الاشتراك على أي جهاز.</p>
+
+            <div class="dl-card">
+                <i class="fab fa-apple"></i>
+                <h3>للآيفون والآيباد (iOS)</h3>
+                <p>يمكنك تفعيل الاشتراك عبر أحد التطبيقات التالية:</p>
+                <a href="https://apps.apple.com/app/id6443335504" target="_blank" class="btn btn-sec mb-2">تطبيق NEXT+</a>
+                <a href="https://apps.apple.com/us/app/castora/id6760588570" target="_blank" class="btn btn-sec mb-2">تطبيق CASTORA (000 Player)</a>
+                <hr>
+                <p>بعد التحميل، أدخل كود السيرفر التالي:</p>
+                <div class="dl-code">4949</div>
             </div>
         </div>
     </section>
 
-    <!-- قسم الاشتراكات -->
-    <section id="plans" class="subscriptions">
+    <section id="plans" class="section-padding">
         <div class="section-header">
             <h2>باقات الاشتراك</h2>
-            <p>اختر الباقة التي تناسب احتياجاتك واستمتع بأفضل تجربة ترفيهية في العراق</p>
+            <p>اختر الباقة التي تناسب احتياجاتك واستمتع بأفضل تجربة ترفيهية</p>
         </div>
 
         <div class="plans">
-            <!-- باقة 1 -->
             <div class="plan-card">
                 <div class="plan-title">شهر واحد</div>
-                <div class="plan-price">7K <span>IQD</span></div>
+                <div class="plan-price">7000 <span>IQD</span></div>
                 <ul class="plan-features">
                     <li><i class="fas fa-check"></i> جودة بث 4K / FHD</li>
                     <li><i class="fas fa-check"></i> جميع القنوات الرياضية</li>
@@ -464,11 +560,10 @@
                 <a href="https://wa.me/9647740393776" target="_blank" class="btn btn-sec">اشترك الآن</a>
             </div>
 
-            <!-- باقة 2 (الأكثر طلباً) -->
             <div class="plan-card plan-popular">
                 <div class="popular-badge">الأكثر توفيراً وطلباً</div>
                 <div class="plan-title">3 أشهر</div>
-                <div class="plan-price">12K <span>IQD</span></div>
+                <div class="plan-price">12000 <span>IQD</span></div>
                 <ul class="plan-features">
                     <li><i class="fas fa-check"></i> بث ثابت وقت الذروة</li>
                     <li><i class="fas fa-check"></i> تحديث يومي للمحتوى</li>
@@ -477,10 +572,9 @@
                 <a href="https://wa.me/9647740393776" target="_blank" class="btn btn-main">اشترك الآن</a>
             </div>
 
-            <!-- باقة 3 -->
             <div class="plan-card">
                 <div class="plan-title">6 أشهر</div>
-                <div class="plan-price">20K <span>IQD</span></div>
+                <div class="plan-price">20000 <span>IQD</span></div>
                 <ul class="plan-features">
                     <li><i class="fas fa-check"></i> +12,000 قناة عالمية</li>
                     <li><i class="fas fa-check"></i> يعمل على جميع الأجهزة</li>
@@ -489,10 +583,9 @@
                 <a href="https://wa.me/9647740393776" target="_blank" class="btn btn-sec">اشترك الآن</a>
             </div>
 
-            <!-- باقة 4 -->
             <div class="plan-card">
                 <div class="plan-title">سنة كاملة</div>
-                <div class="plan-price">30K <span>IQD</span></div>
+                <div class="plan-price">30000 <span>IQD</span></div>
                 <ul class="plan-features">
                     <li><i class="fas fa-check"></i> أفضل قيمة مقابل السعر</li>
                     <li><i class="fas fa-check"></i> مكتبة ضخمة VOD</li>
@@ -503,7 +596,6 @@
         </div>
     </section>
 
-    <!-- الفوتر -->
     <footer>
         <h3>BEST 4K IRAQ 🇮🇶</h3>
         <p>جميع الحقوق محفوظة © 2026</p>
