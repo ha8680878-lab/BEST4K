@@ -8,18 +8,17 @@
 <title>MAX VIP STORE | الوكيل المعتمد لجميع السيرفرات الأصلية في العراق</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
 --gold:#d4af37;
---gold-light:#f3d57a;
+--gold-light:#f5d97f;
 --bg:#050505;
---card:#111;
---text:#fff;
---muted:#b8b8b8;
+--card:#111111;
+--text:#ffffff;
+--muted:#b0b0b0;
 --border:rgba(212,175,55,.25);
 }
 
@@ -40,18 +39,18 @@ html{
 scroll-behavior:smooth;
 }
 
-a{
-text-decoration:none;
-transition:.3s;
-}
-
 body::before{
 content:'';
 position:fixed;
 inset:0;
 background:
-radial-gradient(circle at top,#2d2105 0%,#000 60%);
+radial-gradient(circle at top,#2c2207 0%,#000 60%);
 z-index:-2;
+}
+
+a{
+text-decoration:none;
+transition:.3s;
 }
 
 header{
@@ -80,15 +79,15 @@ gap:15px;
 }
 
 .logo-circle{
-width:70px;
-height:70px;
+width:72px;
+height:72px;
 border-radius:50%;
 border:2px solid var(--gold);
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-background:linear-gradient(145deg,#161616,#000);
+background:linear-gradient(145deg,#151515,#000);
 box-shadow:0 0 25px rgba(212,175,55,.35);
 }
 
@@ -103,7 +102,7 @@ font-size:23px;
 font-weight:900;
 line-height:1;
 color:var(--gold);
-margin-top:3px;
+margin-top:4px;
 }
 
 .logo-text h1{
@@ -132,12 +131,12 @@ color:var(--gold);
 
 .hero{
 height:100vh;
-position:relative;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
 padding:20px;
+position:relative;
 overflow:hidden;
 }
 
@@ -146,12 +145,12 @@ content:'';
 position:absolute;
 inset:0;
 background:
-linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.88)),
+linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.9)),
 url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2000&auto=format&fit=crop');
 background-size:cover;
 background-position:center;
-z-index:-1;
 animation:zoomHero 18s linear infinite alternate;
+z-index:-1;
 }
 
 @keyframes zoomHero{
@@ -182,7 +181,7 @@ color:var(--gold);
 font-size:1.2rem;
 line-height:2;
 color:#ddd;
-max-width:800px;
+max-width:850px;
 margin:auto;
 }
 
@@ -406,6 +405,7 @@ text-align:center;
 
 .stat-box h4{
 font-size:2.3rem;
+font-weight:900;
 color:var(--gold);
 margin-bottom:10px;
 }
@@ -627,7 +627,7 @@ transform:none;
 </h2>
 
 <p>
-استمتع بأقوى تجربة مشاهدة مع سيرفرات BEST4K و MAX TV PRO بجودة 4K وثبات عالي أثناء المباريات وأكثر من 15,000 قناة و 30,000 فيلم ومسلسل.
+استمتع بأقوى تجربة مشاهدة مع سيرفرات BEST4K و MAX TV PRO بثبات عالي أثناء المباريات، جودة 4K حقيقية، وأكثر من 15,000 قناة و 30,000 فيلم ومسلسل مع تحديث يومي للمحتوى.
 </p>
 
 <div class="hero-buttons">
@@ -708,6 +708,8 @@ MAX
 
 </section>
 
+<!-- BEST4K PANEL -->
+
 <div class="panel" id="best4kPanel">
 
 <div class="close-panel" onclick="closePanel('best4kPanel')">
@@ -747,38 +749,6 @@ BEST4K
 
 </div>
 
-<div class="download-grid">
-
-<div class="download-card">
-
-<i class="fab fa-android"></i>
-
-<h4>
-تحميل التطبيق
-</h4>
-
-<a href="https://www.mediafire.com/file/aynt5054tdllmmb/Max-TV-Pro-active.apk/file" target="_blank" class="btn btn-primary">
-اضغط هنا للتحميل
-</a>
-
-</div>
-
-<div class="download-card">
-
-<i class="fas fa-tv"></i>
-
-<h4>
-Downloader Code
-</h4>
-
-<div class="download-code">
-4056700
-</div>
-
-</div>
-
-</div>
-
 <div class="price-grid">
 
 <div class="price-card">
@@ -807,6 +777,8 @@ Downloader Code
 
 </div>
 
+<!-- MAX TV PRO PANEL -->
+
 <div class="panel" id="maxPanel">
 
 <div class="close-panel" onclick="closePanel('maxPanel')">
@@ -824,6 +796,30 @@ MAX TV PRO
 <p>
 أقوى مكتبة ترفيهية وقنوات عالمية مع دعم Android و iOS و Smart TV و PC.
 </p>
+
+</div>
+
+<div class="stats">
+
+<div class="stat-box">
+<h4>15,000+</h4>
+<p>قناة مباشرة متنوعة</p>
+</div>
+
+<div class="stat-box">
+<h4>30,000+</h4>
+<p>فيلم ومسلسل</p>
+</div>
+
+<div class="stat-box">
+<h4>Daily</h4>
+<p>تحديث يومي للمحتوى</p>
+</div>
+
+<div class="stat-box">
+<h4>4K</h4>
+<p>دعم HD / FHD / 4K</p>
+</div>
 
 </div>
 
@@ -886,6 +882,12 @@ Downloader Codes
 <div class="download-code">680115</div>
 <p>MAX XCIPTV</p>
 
+<div class="download-code">3603031</div>
+<p>MAX TV+</p>
+
+<div class="download-code">8623805</div>
+<p>MAX TV VPN</p>
+
 </div>
 
 <div class="download-card">
@@ -908,6 +910,30 @@ my.splayer.in
 
 </div>
 
+<div class="price-grid">
+
+<div class="price-card">
+<h4>شهر</h4>
+<div class="price">5,000 IQD</div>
+</div>
+
+<div class="price-card active">
+<h4>3 أشهر</h4>
+<div class="price">10,000 IQD</div>
+</div>
+
+<div class="price-card">
+<h4>6 أشهر</h4>
+<div class="price">15,000 IQD</div>
+</div>
+
+<div class="price-card">
+<h4>سنة كاملة</h4>
+<div class="price">22,000 IQD</div>
+</div>
+
+</div>
+
 <div class="notice">
 
 <h4>
@@ -918,6 +944,8 @@ my.splayer.in
 لأفضل جودة مشاهدة وثبات أثناء المباريات والأفلام يُنصح باستخدام إنترنت Fiber أو FTTH بسرعة لا تقل عن 20Mbps.
 
 يفضل تجنب الشبكات اللاسلكية الضعيفة لضمان تشغيل القنوات بجودة 4K بدون تقطيع.
+
+جميع السيرفرات تعمل بتحديث يومي وتدعم معظم الشاشات الذكية وأجهزة Android و iPhone والكمبيوتر.
 </p>
 
 </div>
