@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MAX VIP STORE | الوكيل المعتمد لجميع السيرفرات الأصلية في العراق</title>
 
-<meta name="description" content="MAX VIP STORE الوكيل المعتمد لجميع السيرفرات الأصلية في العراق - BEST4K و MAX TV PRO بجودة 4K وثبات عالي بدون تقطيع.">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
 --gold:#d4af37;
---gold-light:#f4d87b;
---dark:#050505;
---card:#111111;
---text:#ffffff;
---muted:#b0b0b0;
+--gold-light:#f3d57a;
+--bg:#050505;
+--card:#111;
+--text:#fff;
+--muted:#b8b8b8;
 --border:rgba(212,175,55,.25);
 }
 
@@ -29,10 +29,6 @@ padding:0;
 box-sizing:border-box;
 }
 
-html{
-scroll-behavior:smooth;
-}
-
 body{
 font-family:'Cairo',sans-serif;
 background:#000;
@@ -40,13 +36,8 @@ color:#fff;
 overflow-x:hidden;
 }
 
-body::before{
-content:'';
-position:fixed;
-inset:0;
-background:
-radial-gradient(circle at top,#2d2205 0%,#000 60%);
-z-index:-1;
+html{
+scroll-behavior:smooth;
 }
 
 a{
@@ -54,12 +45,21 @@ text-decoration:none;
 transition:.3s;
 }
 
+body::before{
+content:'';
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at top,#2d2105 0%,#000 60%);
+z-index:-2;
+}
+
 header{
 position:fixed;
 top:0;
 width:100%;
 z-index:999;
-background:rgba(0,0,0,.9);
+background:rgba(0,0,0,.88);
 backdrop-filter:blur(10px);
 border-bottom:1px solid var(--border);
 }
@@ -88,21 +88,21 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-background:linear-gradient(145deg,#151515,#000);
-box-shadow:0 0 20px rgba(212,175,55,.35);
+background:linear-gradient(145deg,#161616,#000);
+box-shadow:0 0 25px rgba(212,175,55,.35);
 }
 
-.logo-circle .top{
+.logo-circle .t1{
 font-size:14px;
 font-weight:900;
 line-height:1;
 }
 
-.logo-circle .bottom{
-font-size:22px;
+.logo-circle .t2{
+font-size:23px;
 font-weight:900;
-color:var(--gold);
 line-height:1;
+color:var(--gold);
 margin-top:3px;
 }
 
@@ -131,10 +131,40 @@ color:var(--gold);
 }
 
 .hero{
-padding:180px 20px 120px;
+height:100vh;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
 text-align:center;
-max-width:1200px;
-margin:auto;
+padding:20px;
+overflow:hidden;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+inset:0;
+background:
+linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.88)),
+url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2000&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+z-index:-1;
+animation:zoomHero 18s linear infinite alternate;
+}
+
+@keyframes zoomHero{
+from{
+transform:scale(1);
+}
+to{
+transform:scale(1.08);
+}
+}
+
+.hero-content{
+max-width:950px;
 }
 
 .hero h2{
@@ -149,11 +179,11 @@ color:var(--gold);
 }
 
 .hero p{
-max-width:850px;
-margin:auto;
-font-size:1.1rem;
+font-size:1.2rem;
 line-height:2;
-color:#cfcfcf;
+color:#ddd;
+max-width:800px;
+margin:auto;
 }
 
 .hero-buttons{
@@ -172,6 +202,7 @@ display:inline-flex;
 align-items:center;
 gap:10px;
 cursor:pointer;
+transition:.3s;
 }
 
 .btn-primary{
@@ -195,7 +226,7 @@ transform:translateY(-3px);
 }
 
 .section{
-padding:80px 20px;
+padding:90px 20px;
 max-width:1300px;
 margin:auto;
 }
@@ -206,7 +237,7 @@ margin-bottom:50px;
 }
 
 .section-title h3{
-font-size:2.5rem;
+font-size:2.7rem;
 font-weight:900;
 color:var(--gold);
 margin-bottom:15px;
@@ -216,57 +247,40 @@ margin-bottom:15px;
 color:#aaa;
 }
 
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.stat-box{
-background:#111;
-padding:35px;
-border-radius:25px;
-border:1px solid var(--border);
-text-align:center;
-}
-
-.stat-box h4{
-font-size:2.3rem;
-font-weight:900;
-color:var(--gold);
-margin-bottom:10px;
-}
-
 .server-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+gap:35px;
 }
 
 .server-card{
-background:linear-gradient(145deg,#141414,#090909);
-padding:40px 30px;
-border-radius:30px;
-border:1px solid var(--border);
-transition:.4s;
 position:relative;
 overflow:hidden;
+border-radius:35px;
+background:linear-gradient(145deg,#151515,#080808);
+border:1px solid var(--border);
+padding:45px 35px;
+transition:.4s;
+cursor:pointer;
 }
 
 .server-card::before{
 content:'';
 position:absolute;
-top:-50%;
-left:-50%;
-width:200%;
-height:200%;
-background:radial-gradient(circle,rgba(212,175,55,.08),transparent 60%);
-transform:rotate(20deg);
+inset:0;
+background:
+radial-gradient(circle at top,rgba(212,175,55,.12),transparent 60%);
+opacity:0;
+transition:.4s;
+}
+
+.server-card:hover::before{
+opacity:1;
 }
 
 .server-card:hover{
 transform:translateY(-12px);
-box-shadow:0 15px 30px rgba(212,175,55,.12);
+box-shadow:0 15px 35px rgba(212,175,55,.15);
 }
 
 .server-logo{
@@ -283,43 +297,117 @@ font-weight:900;
 background:#000;
 color:var(--gold);
 box-shadow:0 0 25px rgba(212,175,55,.2);
-position:relative;
-z-index:1;
 }
 
 .server-card h4{
-font-size:2rem;
+font-size:2.2rem;
 text-align:center;
 margin-bottom:20px;
-position:relative;
-z-index:1;
 }
 
 .server-card p{
 text-align:center;
 line-height:2;
 color:#bbb;
-margin-bottom:25px;
-position:relative;
-z-index:1;
 }
 
-.feature-list{
-display:grid;
-gap:12px;
-position:relative;
-z-index:1;
+.open-btn{
+margin-top:30px;
+display:flex;
+justify-content:center;
 }
 
-.feature-item{
+.panel{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.95);
+z-index:2000;
+overflow-y:auto;
+padding:120px 20px 60px;
+display:none;
+animation:fade .35s ease;
+backdrop-filter:blur(10px);
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:scale(.96);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
+}
+
+.panel-content{
+max-width:1200px;
+margin:auto;
+}
+
+.close-panel{
+position:fixed;
+top:25px;
+left:25px;
+width:55px;
+height:55px;
+border-radius:50%;
+background:#111;
+border:1px solid var(--gold);
 display:flex;
 align-items:center;
-gap:10px;
+justify-content:center;
+font-size:1.5rem;
+cursor:pointer;
+color:var(--gold);
+z-index:2100;
+}
+
+.panel-hero{
+background:
+linear-gradient(rgba(0,0,0,.82),rgba(0,0,0,.9)),
+url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?q=80&w=2000&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+padding:90px 30px;
+border-radius:35px;
+border:1px solid var(--border);
+text-align:center;
+margin-bottom:50px;
+}
+
+.panel-hero h2{
+font-size:3.5rem;
+font-weight:900;
+margin-bottom:20px;
+}
+
+.panel-hero p{
+max-width:850px;
+margin:auto;
+line-height:2;
 color:#ddd;
 }
 
-.feature-item i{
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-bottom:50px;
+}
+
+.stat-box{
+background:#111;
+padding:35px;
+border-radius:25px;
+border:1px solid var(--border);
+text-align:center;
+}
+
+.stat-box h4{
+font-size:2.3rem;
 color:var(--gold);
+margin-bottom:10px;
 }
 
 .download-grid{
@@ -331,7 +419,7 @@ gap:25px;
 .download-card{
 background:#111;
 padding:35px;
-border-radius:25px;
+border-radius:30px;
 border:1px solid var(--border);
 text-align:center;
 }
@@ -361,6 +449,7 @@ margin-top:15px;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
+margin-top:50px;
 }
 
 .price-card{
@@ -392,7 +481,7 @@ font-weight:900;
 color:var(--gold);
 }
 
-.notice-box{
+.notice{
 margin-top:50px;
 background:linear-gradient(145deg,#151515,#0a0a0a);
 padding:40px;
@@ -401,14 +490,30 @@ border:1px solid var(--border);
 line-height:2.2;
 }
 
-.notice-box h4{
+.notice h4{
 font-size:2rem;
-margin-bottom:20px;
 color:var(--gold);
+margin-bottom:20px;
+}
+
+.floating-whatsapp{
+position:fixed;
+left:25px;
+bottom:25px;
+width:65px;
+height:65px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#25D366;
+color:#fff;
+font-size:2rem;
+z-index:999;
+box-shadow:0 10px 25px rgba(0,0,0,.4);
 }
 
 footer{
-margin-top:80px;
 padding:60px 20px;
 text-align:center;
 background:#050505;
@@ -420,29 +525,12 @@ margin-top:15px;
 color:#888;
 }
 
-.floating-whatsapp{
-position:fixed;
-left:25px;
-bottom:25px;
-width:65px;
-height:65px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-background:#25D366;
-color:#fff;
-font-size:2rem;
-z-index:999;
-box-shadow:0 10px 25px rgba(0,0,0,.4);
-}
-
 .modal{
 display:none;
 position:fixed;
 inset:0;
 background:rgba(0,0,0,.92);
-z-index:2000;
+z-index:3000;
 padding:20px;
 overflow-y:auto;
 }
@@ -457,18 +545,18 @@ border:1px solid var(--gold);
 position:relative;
 }
 
-.close-btn{
+.close-modal{
 position:absolute;
 left:20px;
 top:15px;
 font-size:2rem;
-color:var(--gold);
 cursor:pointer;
+color:var(--gold);
 }
 
 .modal-content h3{
 font-size:2rem;
-margin-bottom:25px;
+margin-bottom:20px;
 color:var(--gold);
 }
 
@@ -480,7 +568,11 @@ color:#ccc;
 @media(max-width:768px){
 
 .hero h2{
-font-size:2.4rem;
+font-size:2.5rem;
+}
+
+.panel-hero h2{
+font-size:2.3rem;
 }
 
 .nav-links{
@@ -495,16 +587,18 @@ transform:none;
 
 </style>
 </head>
+
 <body>
 
 <header>
+
 <div class="navbar">
 
 <div class="logo">
 
 <div class="logo-circle">
-<div class="top">MAX</div>
-<div class="bottom">VIP</div>
+<div class="t1">MAX</div>
+<div class="t2">VIP</div>
 </div>
 
 <div class="logo-text">
@@ -516,15 +610,16 @@ transform:none;
 
 <nav class="nav-links">
 <a href="#servers">السيرفرات</a>
-<a href="#downloads">التحميل</a>
-<a href="#pricing">الأسعار</a>
-<a href="javascript:void(0)" onclick="openModal('policyModal')">الخصوصية</a>
+<a href="javascript:void(0)" onclick="openModal()">الخصوصية</a>
 </nav>
 
 </div>
+
 </header>
 
 <section class="hero">
+
+<div class="hero-content">
 
 <h2>
 أفضل سيرفرات IPTV الأصلية في
@@ -532,14 +627,14 @@ transform:none;
 </h2>
 
 <p>
-استمتع بأقوى تجربة مشاهدة مع سيرفرات BEST4K و MAX TV PRO بثبات عالي أثناء المباريات، جودة 4K حقيقية، وأكثر من 15,000 قناة و 30,000 فيلم ومسلسل مع تحديث يومي للمحتوى.
+استمتع بأقوى تجربة مشاهدة مع سيرفرات BEST4K و MAX TV PRO بجودة 4K وثبات عالي أثناء المباريات وأكثر من 15,000 قناة و 30,000 فيلم ومسلسل.
 </p>
 
 <div class="hero-buttons">
 
 <a href="https://wa.me/9647740393776" target="_blank" class="btn btn-primary">
 <i class="fab fa-whatsapp"></i>
-اطلب تجربة مجانية 12 ساعة
+تجربة مجانية 12 ساعة
 </a>
 
 <a href="#servers" class="btn btn-dark">
@@ -549,9 +644,89 @@ transform:none;
 
 </div>
 
+</div>
+
 </section>
 
-<section class="section">
+<section class="section" id="servers">
+
+<div class="section-title">
+
+<h3>
+اختر السيرفر المناسب لك
+</h3>
+
+<p>
+جميع السيرفرات أصلية ومدعومة رسمياً
+</p>
+
+</div>
+
+<div class="server-grid">
+
+<div class="server-card" onclick="openPanel('best4kPanel')">
+
+<div class="server-logo">
+4K
+</div>
+
+<h4>BEST4K</h4>
+
+<p>
+منصة احترافية لمحبي الجودة والثبات أثناء المباريات الكبرى مع تغطية رياضية وترفيهية كاملة.
+</p>
+
+<div class="open-btn">
+<div class="btn btn-primary">
+فتح السيرفر
+</div>
+</div>
+
+</div>
+
+<div class="server-card" onclick="openPanel('maxPanel')">
+
+<div class="server-logo">
+MAX
+</div>
+
+<h4>MAX TV PRO</h4>
+
+<p>
+تجربة ترفيه متكاملة تضم أقوى القنوات العالمية والأفلام والمسلسلات بجودة فائقة.
+</p>
+
+<div class="open-btn">
+<div class="btn btn-primary">
+فتح السيرفر
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="panel" id="best4kPanel">
+
+<div class="close-panel" onclick="closePanel('best4kPanel')">
+<i class="fas fa-times"></i>
+</div>
+
+<div class="panel-content">
+
+<div class="panel-hero">
+
+<h2>
+BEST4K
+</h2>
+
+<p>
+سيرفر رياضي وترفيهي احترافي بثبات عالي أثناء المباريات الكبرى مع دعم جودة 4K الحقيقية.
+</p>
+
+</div>
 
 <div class="stats">
 
@@ -567,107 +742,9 @@ transform:none;
 
 <div class="stat-box">
 <h4>4K</h4>
-<p>جودة فائقة وثبات عالي</p>
+<p>جودة فائقة</p>
 </div>
 
-</div>
-
-</section>
-
-<section class="section" id="servers">
-
-<div class="section-title">
-<h3>السيرفرات المتوفرة</h3>
-<p>اختر السيرفر المناسب لك</p>
-</div>
-
-<div class="server-grid">
-
-<div class="server-card">
-
-<div class="server-logo">
-4K
-</div>
-
-<h4>BEST4K</h4>
-
-<p>
-منصة احترافية لمحبي الجودة والثبات أثناء المباريات الكبرى مع دعم كامل للقنوات الرياضية العالمية.
-</p>
-
-<div class="feature-list">
-
-<div class="feature-item">
-<i class="fas fa-check-circle"></i>
-دعم جودة HD / FHD / 4K
-</div>
-
-<div class="feature-item">
-<i class="fas fa-check-circle"></i>
-تحديث يومي للمحتوى
-</div>
-
-<div class="feature-item">
-<i class="fas fa-check-circle"></i>
-مكتبة ضخمة للأفلام والمسلسلات
-</div>
-
-<div class="feature-item">
-<i class="fas fa-check-circle"></i>
-استقرار عالي بدون تقطيع
-</div>
-
-</div>
-
-</div>
-
-<div class="server-card">
-
-<div class="server-logo">
-MAX
-</div>
-
-<h4>MAX TV PRO</h4>
-
-<p>
-تجربة ترفيه متكاملة تضم أقوى القنوات العالمية والبطولات مع دعم Android و iOS و Smart TV و PC.
-</p>
-
-<div class="feature-list">
-
-<div class="feature-item">
-<i class="fas fa-check-circle"></i>
-أكثر من 15 ألف قناة
-</div>
-
-<div class="feature-item">
-<i class="fas fa-check-circle"></i>
-أكثر من 30 ألف فيلم ومسلسل
-</div>
-
-<div class="feature-item">
-<i class="fas fa-check-circle"></i>
-دعم جميع الأجهزة الذكية
-</div>
-
-<div class="feature-item">
-<i class="fas fa-check-circle"></i>
-تحديثات يومية مستمرة
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="section" id="downloads">
-
-<div class="section-title">
-<h3>التحميل والتفعيل</h3>
-<p>اختر جهازك وابدأ المشاهدة فوراً</p>
 </div>
 
 <div class="download-grid">
@@ -676,11 +753,11 @@ MAX
 
 <i class="fab fa-android"></i>
 
-<h4>تحميل MAX TV PRO</h4>
+<h4>
+تحميل التطبيق
+</h4>
 
-<p>نسخة أندرويد الرسمية</p>
-
-<a href="https://www.mediafire.com/file/aynt5054tdllmmb/Max-TV-Pro-active.apk/file" target="_blank" class="btn btn-primary" style="margin-top:20px;">
+<a href="https://www.mediafire.com/file/aynt5054tdllmmb/Max-TV-Pro-active.apk/file" target="_blank" class="btn btn-primary">
 اضغط هنا للتحميل
 </a>
 
@@ -690,72 +767,16 @@ MAX
 
 <i class="fas fa-tv"></i>
 
-<h4>Downloader Codes</h4>
+<h4>
+Downloader Code
+</h4>
 
-<p>أكواد التحميل للشاشات الذكية</p>
-
-<div class="download-code">2606779</div>
-<p>MAX ACTIVE</p>
-
-<div class="download-code">8229193</div>
-<p>MAX SHOW TV</p>
-
-<div class="download-code">183324</div>
-<p>MAX 4K</p>
-
-<div class="download-code">680115</div>
-<p>MAX XCIPTV</p>
-
-</div>
-
-<div class="download-card">
-
-<i class="fab fa-apple"></i>
-
-<h4>iPhone & iPad</h4>
-
-<p>التطبيقات المدعومة</p>
-
-<a href="https://apps.apple.com/app/id6443335504" target="_blank" class="btn btn-dark" style="margin-top:15px;">
-NEXT+
-</a>
-
-<a href="https://apps.apple.com/us/app/castora/id6760588570" target="_blank" class="btn btn-primary" style="margin-top:15px;">
-CASTORA
-</a>
-
-<p style="margin-top:20px;">
-كود التفعيل:
-<span style="color:var(--gold);font-weight:900;">max</span>
-</p>
-
-</div>
-
-<div class="download-card">
-
-<i class="fas fa-desktop"></i>
-
-<h4>PC & Laptop</h4>
-
-<p>المشغل الرسمي للكمبيوتر</p>
-
-<div class="download-code">8488</div>
-
-<p style="margin-top:15px;">
-my.splayer.in
-</p>
-
+<div class="download-code">
+4056700
 </div>
 
 </div>
 
-</section>
-
-<section class="section" id="pricing">
-
-<div class="section-title">
-<h3>الأسعار الرسمية</h3>
-<p>تجربة مجانية قبل الاشتراك</p>
 </div>
 
 <div class="price-grid">
@@ -776,35 +797,140 @@ my.splayer.in
 </div>
 
 <div class="price-card">
-<h4>سنة كاملة</h4>
+<h4>سنة</h4>
 <div class="price">22,000 IQD</div>
 </div>
 
 </div>
 
-<div class="notice-box">
+</div>
+
+</div>
+
+<div class="panel" id="maxPanel">
+
+<div class="close-panel" onclick="closePanel('maxPanel')">
+<i class="fas fa-times"></i>
+</div>
+
+<div class="panel-content">
+
+<div class="panel-hero">
+
+<h2>
+MAX TV PRO
+</h2>
+
+<p>
+أقوى مكتبة ترفيهية وقنوات عالمية مع دعم Android و iOS و Smart TV و PC.
+</p>
+
+</div>
+
+<div class="download-grid">
+
+<div class="download-card">
+
+<i class="fab fa-android"></i>
+
+<h4>
+Android APK
+</h4>
+
+<a href="https://www.mediafire.com/file/aynt5054tdllmmb/Max-TV-Pro-active.apk/file" target="_blank" class="btn btn-primary">
+اضغط هنا للتحميل
+</a>
+
+</div>
+
+<div class="download-card">
+
+<i class="fab fa-apple"></i>
+
+<h4>
+iPhone & iPad
+</h4>
+
+<a href="https://apps.apple.com/app/id6443335504" target="_blank" class="btn btn-dark" style="margin-top:10px;">
+NEXT+
+</a>
+
+<a href="https://apps.apple.com/us/app/castora/id6760588570" target="_blank" class="btn btn-primary" style="margin-top:15px;">
+CASTORA
+</a>
+
+<p style="margin-top:20px;">
+كود التفعيل:
+<span style="color:var(--gold);font-weight:900;">max</span>
+</p>
+
+</div>
+
+<div class="download-card">
+
+<i class="fas fa-tv"></i>
+
+<h4>
+Downloader Codes
+</h4>
+
+<div class="download-code">2606779</div>
+<p>MAX ACTIVE</p>
+
+<div class="download-code">8229193</div>
+<p>MAX SHOW TV</p>
+
+<div class="download-code">183324</div>
+<p>MAX 4K</p>
+
+<div class="download-code">680115</div>
+<p>MAX XCIPTV</p>
+
+</div>
+
+<div class="download-card">
+
+<i class="fas fa-desktop"></i>
+
+<h4>
+PC & Laptop
+</h4>
+
+<div class="download-code">
+8488
+</div>
+
+<p style="margin-top:15px;">
+my.splayer.in
+</p>
+
+</div>
+
+</div>
+
+<div class="notice">
 
 <h4>
 أفضل أداء واستقرار ⚡
 </h4>
 
 <p>
-للحصول على أفضل جودة مشاهدة وثبات أثناء المباريات والأفلام يُنصح باستخدام إنترنت Fiber أو FTTH بسرعة لا تقل عن 20Mbps.
+لأفضل جودة مشاهدة وثبات أثناء المباريات والأفلام يُنصح باستخدام إنترنت Fiber أو FTTH بسرعة لا تقل عن 20Mbps.
 
 يفضل تجنب الشبكات اللاسلكية الضعيفة لضمان تشغيل القنوات بجودة 4K بدون تقطيع.
-
-جميع السيرفرات تعمل بتحديث يومي وتدعم معظم الشاشات الذكية وأجهزة Android و iPhone والكمبيوتر.
 </p>
 
 </div>
 
-</section>
+</div>
+
+</div>
 
 <footer>
 
 <div class="logo-circle" style="margin:auto;">
-<div class="top">MAX</div>
-<div class="bottom">VIP</div>
+<div class="t1">MAX</div>
+<div class="t2">VIP</div>
 </div>
 
 <p>
@@ -813,7 +939,7 @@ MAX VIP STORE — الوكيل المعتمد لجميع السيرفرات ال
 
 <div style="margin-top:25px;display:flex;justify-content:center;gap:15px;flex-wrap:wrap;">
 
-<a href="javascript:void(0)" onclick="openModal('policyModal')" class="btn btn-dark">
+<a href="javascript:void(0)" onclick="openModal()" class="btn btn-dark">
 سياسة الاستخدام
 </a>
 
@@ -822,10 +948,6 @@ MAX VIP STORE — الوكيل المعتمد لجميع السيرفرات ال
 </a>
 
 </div>
-
-<p>
-جميع الحقوق محفوظة © 2026
-</p>
 
 </footer>
 
@@ -837,24 +959,24 @@ MAX VIP STORE — الوكيل المعتمد لجميع السيرفرات ال
 
 <div class="modal-content">
 
-<span class="close-btn" onclick="closeModal('policyModal')">
+<div class="close-modal" onclick="closeModal()">
 ×
-</span>
+</div>
 
 <h3>
 سياسة الاستخدام والخصوصية 🔐
 </h3>
 
 <p>
-- الحساب مخصص للاستخدام الشخصي فقط ويمنع إعادة البيع أو المشاركة العشوائية للحسابات.
+- الحساب مخصص للاستخدام الشخصي فقط.
 <br><br>
-- يمنع تشغيل الاشتراك على أكثر من جهاز بنفس الوقت بشكل مخالف.
+- يمنع تشغيل الاشتراك على أكثر من جهاز بنفس الوقت.
 <br><br>
-- بيانات العملاء تبقى سرية بالكامل ولا يتم مشاركتها مع أي جهة أخرى.
+- بيانات المستخدم تبقى سرية بالكامل.
 <br><br>
-- جودة البث تعتمد بشكل مباشر على استقرار الإنترنت لدى المستخدم.
+- جودة البث تعتمد على استقرار الإنترنت.
 <br><br>
-- نوفر تجربة مجانية لمدة 12 ساعة قبل الاشتراك للتأكد من الجودة والثبات.
+- نوفر تجربة مجانية لمدة 12 ساعة قبل الاشتراك.
 </p>
 
 </div>
@@ -863,18 +985,35 @@ MAX VIP STORE — الوكيل المعتمد لجميع السيرفرات ال
 
 <script>
 
-function openModal(id){
+function openPanel(id){
 document.getElementById(id).style.display='block';
+document.body.style.overflow='hidden';
 }
 
-function closeModal(id){
+function closePanel(id){
 document.getElementById(id).style.display='none';
+document.body.style.overflow='auto';
+}
+
+function openModal(){
+document.getElementById('policyModal').style.display='block';
+}
+
+function closeModal(){
+document.getElementById('policyModal').style.display='none';
 }
 
 window.onclick=function(e){
+
+if(e.target.classList.contains('panel')){
+e.target.style.display='none';
+document.body.style.overflow='auto';
+}
+
 if(e.target.classList.contains('modal')){
 e.target.style.display='none';
 }
+
 }
 
 </script>
