@@ -409,41 +409,6 @@ color:var(--gold);
 margin-bottom:10px;
 }
 
-.download-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
-}
-
-.download-card{
-background:#111;
-padding:35px;
-border-radius:30px;
-border:1px solid var(--border);
-text-align:center;
-}
-
-.download-card i{
-font-size:3rem;
-color:var(--gold);
-margin-bottom:20px;
-}
-
-.download-card h4{
-font-size:1.6rem;
-margin-bottom:15px;
-}
-
-.download-code{
-font-size:1.7rem;
-font-weight:900;
-color:var(--gold);
-border:2px dashed var(--gold);
-padding:12px;
-border-radius:15px;
-margin-top:15px;
-}
-
 .price-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -458,10 +423,6 @@ border-radius:25px;
 border:1px solid var(--border);
 text-align:center;
 transition:.3s;
-}
-
-.price-card:hover{
-transform:translateY(-10px);
 }
 
 .price-card.active{
@@ -519,51 +480,6 @@ background:#050505;
 border-top:1px solid var(--border);
 }
 
-footer p{
-margin-top:15px;
-color:#888;
-}
-
-.modal{
-display:none;
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.92);
-z-index:3000;
-padding:20px;
-overflow-y:auto;
-}
-
-.modal-content{
-max-width:700px;
-margin:60px auto;
-background:#111;
-padding:35px;
-border-radius:30px;
-border:1px solid var(--gold);
-position:relative;
-}
-
-.close-modal{
-position:absolute;
-left:20px;
-top:15px;
-font-size:2rem;
-cursor:pointer;
-color:var(--gold);
-}
-
-.modal-content h3{
-font-size:2rem;
-margin-bottom:20px;
-color:var(--gold);
-}
-
-.modal-content p{
-line-height:2.3;
-color:#ccc;
-}
-
 @media(max-width:768px){
 
 .hero h2{
@@ -576,10 +492,6 @@ font-size:2.3rem;
 
 .nav-links{
 display:none;
-}
-
-.price-card.active{
-transform:none;
 }
 
 }
@@ -609,7 +521,6 @@ transform:none;
 
 <nav class="nav-links">
 <a href="#servers">السيرفرات</a>
-<a href="javascript:void(0)" onclick="openModal()">سياسة الاستخدام</a>
 </nav>
 
 </div>
@@ -626,14 +537,14 @@ transform:none;
 </h2>
 
 <p>
-استمتع بأقوى تجربة مشاهدة مع سيرفرات BEST4K و MAX TV PRO بجودة 4K وثبات عالي أثناء المباريات وأكثر من 15,000 قناة و 30,000 فيلم ومسلسل.
+استمتع بأقوى تجربة مشاهدة مع سيرفرات BEST4K و MAX TV PRO و FAMILY 4K و PABLO RED بجودة 4K وثبات عالي أثناء المباريات.
 </p>
 
 <div class="hero-buttons">
 
 <a href="https://wa.me/9647740393776" target="_blank" class="btn btn-primary">
 <i class="fab fa-whatsapp"></i>
-تجربة مجانية 12 ساعة
+تواصل مع الوكيل
 </a>
 
 <a href="#servers" class="btn btn-dark">
@@ -663,560 +574,36 @@ transform:none;
 
 <div class="server-grid">
 
-<div class="server-card" onclick="openPanel('best4kPanel')">
-
-<div class="server-logo">
-4K
-</div>
-
+<div class="server-card">
+<div class="server-logo">4K</div>
 <h4>BEST4K</h4>
-
-<p>
-منصة احترافية لمحبي الجودة والثبات أثناء المباريات الكبرى مع تغطية رياضية وترفيهية كاملة.
-</p>
-
-<div class="open-btn">
-<div class="btn btn-primary">
-فتح السيرفر
-</div>
+<p>منصة احترافية لمحبي الجودة والثبات أثناء المباريات الكبرى.</p>
 </div>
 
-</div>
-
-<div class="server-card" onclick="openPanel('maxPanel')">
-
-<div class="server-logo">
-MAX
-</div>
-
+<div class="server-card">
+<div class="server-logo">MAX</div>
 <h4>MAX TV PRO</h4>
+<p>تجربة ترفيه متكاملة تضم أقوى القنوات العالمية والأفلام.</p>
+</div>
 
+<div class="server-card">
+<div class="server-logo">F4K</div>
+<h4>FAMILY 4K</h4>
+<p>سيرفر ترفيهي متكامل لجميع الأجهزة الذكية.</p>
+</div>
+
+<div class="server-card">
+<div class="server-logo">PR</div>
+<h4>PABLO RED</h4>
 <p>
-تجربة ترفيه متكاملة تضم أقوى القنوات العالمية والأفلام والمسلسلات بجودة فائقة.
+خدمة ترفيهية ورياضية متكاملة بجودة 4K وثبات عالي أثناء المباريات.
 </p>
-
-<div class="open-btn">
-<div class="btn btn-primary">
-فتح السيرفر
-</div>
-</div>
-
 </div>
 
 </div>
 
 </section>
 
-<!-- BEST4K PANEL -->
-
-<div class="panel" id="best4kPanel">
-
-<div class="close-panel" onclick="closePanel('best4kPanel')">
-<i class="fas fa-times"></i>
-</div>
-
-<div class="panel-content">
-
-<div class="panel-hero">
-
-<h2>BEST4K</h2>
-
-<p>
-سيرفر رياضي وترفيهي احترافي بثبات عالي أثناء المباريات الكبرى مع دعم جودة 4K الحقيقية.
-</p>
-
-</div>
-
-<div class="stats">
-
-<div class="stat-box">
-<h4>55,000+</h4>
-<p>قناة رياضية وترفيهية</p>
-</div>
-
-<div class="stat-box">
-<h4>80,000+</h4>
-<p>أفلام ومسلسلات</p>
-</div>
-
-<div class="stat-box">
-<h4>Daily</h4>
-<p>تحديث يومي للمحتوى</p>
-</div>
-
-<div class="stat-box">
-<h4>4K</h4>
-<p>جودة HD / FHD / 4K</p>
-</div>
-
-</div>
-
-<div class="download-grid">
-
-<div class="download-card">
-
-<i class="fab fa-android"></i>
-
-<h4>تحميل التطبيق</h4>
-
-<a href="https://sh-apps.cyou/apk/BEST4K.apk" target="_blank" class="btn btn-primary">
-اضغط هنا للتحميل
-</a>
-
-</div>
-
-<div class="download-card">
-
-<i class="fas fa-tv"></i>
-
-<h4>Downloader Code</h4>
-
-<div class="download-code">
-4056700
-</div>
-
-</div>
-
-<div class="download-card">
-
-<i class="fab fa-apple"></i>
-
-<h4>مشغلات iOS</h4>
-
-<p style="line-height:2;">
-NEXT+<br>
-CASTORA
-</p>
-
-<div class="download-code">
-4949
-</div>
-
-<p style="margin-top:10px;">
-كود التفعيل
-</p>
-
-</div>
-
-<div class="download-card">
-
-<i class="fas fa-bolt"></i>
-
-<h4>مميزات السيرفر</h4>
-
-<p style="line-height:2;">
-ثبات عالي أثناء المباريات<br>
-سيرفرات قوية<br>
-دعم 4K حقيقي<br>
-تحديث يومي<br>
-دعم جميع الأجهزة
-</p>
-
-</div>
-
-</div>
-
-<div class="price-grid">
-
-<div class="price-card">
-<h4>شهر</h4>
-<div class="price">7,000 IQD</div>
-</div>
-
-<div class="price-card active">
-<h4>3 أشهر</h4>
-<div class="price">12,000 IQD</div>
-</div>
-
-<div class="price-card">
-<h4>6 أشهر</h4>
-<div class="price">20,000 IQD</div>
-</div>
-
-<div class="price-card">
-<h4>سنة كاملة</h4>
-<div class="price">30,000 IQD</div>
-</div>
-
-</div>
-
-<div class="notice">
-
-<h4>
-أفضل استقرار للمشاهدة ⚡
-</h4>
-
-<p>
-للحصول على أفضل أداء أثناء المباريات والبث المباشر يُفضل استخدام إنترنت Fiber أو FTTH بسرعة لا تقل عن 20Mbps مع اتصال مستقر.
-
-سيرفر BEST4K مصمم لتحمل الضغط العالي أثناء البطولات والأحداث الكبرى بدون تقطيع.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- MAX TV PRO PANEL -->
-
-<div class="panel" id="maxPanel">
-
-<div class="close-panel" onclick="closePanel('maxPanel')">
-<i class="fas fa-times"></i>
-</div>
-
-<div class="panel-content">
-
-<div class="panel-hero">
-
-<h2>MAX TV PRO</h2>
-
-<p>
-أقوى مكتبة ترفيهية وقنوات عالمية مع دعم Android و iOS و Smart TV و PC.
-</p>
-
-</div>
-
-<div class="stats">
-
-<div class="stat-box">
-<h4>15,000+</h4>
-<p>قناة مباشرة متنوعة</p>
-</div>
-
-<div class="stat-box">
-<h4>30,000+</h4>
-<p>فيلم ومسلسل</p>
-</div>
-
-<div class="stat-box">
-<h4>Daily</h4>
-<p>تحديث يومي للمحتوى</p>
-</div>
-
-<div class="stat-box">
-<h4>4K</h4>
-<p>دعم HD / FHD / 4K</p>
-</div>
-
-</div>
-
-<div class="download-grid">
-
-<div class="download-card">
-
-<i class="fab fa-android"></i>
-
-<h4>Android APK</h4>
-
-<a href="https://www.mediafire.com/file/aynt5054tdllmmb/Max-TV-Pro-active.apk/file" target="_blank" class="btn btn-primary">
-اضغط هنا للتحميل
-</a>
-
-</div>
-
-<div class="download-card">
-
-<i class="fab fa-apple"></i>
-
-<h4>iPhone & iPad</h4>
-
-<a href="https://apps.apple.com/app/id6443335504" target="_blank" class="btn btn-dark" style="margin-top:10px;">
-NEXT+
-</a>
-
-<a href="https://apps.apple.com/us/app/castora/id6760588570" target="_blank" class="btn btn-primary" style="margin-top:15px;">
-CASTORA
-</a>
-
-<p style="margin-top:20px;">
-كود التفعيل:
-<span style="color:var(--gold);font-weight:900;">max</span>
-</p>
-
-</div>
-
-<div class="download-card">
-
-<i class="fas fa-tv"></i>
-
-<h4>Downloader Codes</h4>
-
-<div class="download-code">2606779</div>
-<p>MAX ACTIVE</p>
-
-<div class="download-code">8229193</div>
-<p>MAX SHOW TV</p>
-
-<div class="download-code">183324</div>
-<p>MAX 4K</p>
-
-<div class="download-code">680115</div>
-<p>MAX XCIPTV</p>
-
-<div class="download-code">3603031</div>
-<p>MAX TV+</p>
-
-<div class="download-code">8623805</div>
-<p>MAX TV VPN</p>
-
-</div>
-
-<div class="download-card">
-
-<i class="fas fa-desktop"></i>
-
-<h4>PC & Laptop</h4>
-
-<div class="download-code">
-8488
-</div>
-
-<p style="margin-top:15px;">
-my.splayer.in
-</p>
-
-</div>
-
-</div>
-
-<div class="price-grid">
-
-<div class="price-card">
-<h4>شهر</h4>
-<div class="price">5,000 IQD</div>
-</div>
-
-<div class="price-card active">
-<h4>3 أشهر</h4>
-<div class="price">10,000 IQD</div>
-</div>
-
-<div class="price-card">
-<h4>6 أشهر</h4>
-<div class="price">15,000 IQD</div>
-</div>
-
-<div class="price-card">
-<h4>سنة كاملة</h4>
-<div class="price">22,000 IQD</div>
-</div>
-
-</div>
-
-<div class="notice">
-
-<h4>
-أفضل أداء واستقرار ⚡
-</h4>
-
-<p>
-لأفضل جودة مشاهدة وثبات أثناء المباريات والأفلام يُنصح باستخدام إنترنت Fiber أو FTTH بسرعة لا تقل عن 20Mbps.
-
-يفضل تجنب الشبكات اللاسلكية الضعيفة لضمان تشغيل القنوات بجودة 4K بدون تقطيع.
-
-جميع السيرفرات تعمل بتحديث يومي وتدعم معظم الشاشات الذكية وأجهزة Android و iPhone والكمبيوتر.
-</p>
-
-</div>
-
-</div>
-
-</div>
-<!-- FAMILY 4K CARD -->
-
-<div class="server-card" onclick="openPanel('familyPanel')">
-
-<div class="server-logo">
-F4K
-</div>
-
-<h4>FAMILY 4K</h4>
-
-<p>
-سيرفر ترفيهي متكامل يضم القنوات العالمية والأفلام والمسلسلات بجودة عالية مع استقرار ممتاز لجميع الأجهزة.
-</p>
-
-<div class="open-btn">
-<div class="btn btn-primary">
-فتح السيرفر
-</div>
-</div>
-
-</div>
-
-<!-- FAMILY 4K PANEL -->
-
-<div class="panel" id="familyPanel">
-
-<div class="close-panel" onclick="closePanel('familyPanel')">
-<i class="fas fa-times"></i>
-</div>
-
-<div class="panel-content">
-
-<div class="panel-hero">
-
-<h2>FAMILY 4K</h2>
-
-<p>
-منصة ترفيهية متكاملة تضم آلاف القنوات العالمية والأفلام والمسلسلات مع دعم جودة 4K وتشغيل مستقر على مختلف الأجهزة.
-</p>
-
-</div>
-
-<div class="stats">
-
-<div class="stat-box">
-<h4>15,000+</h4>
-<p>قناة مباشرة متنوعة</p>
-</div>
-
-<div class="stat-box">
-<h4>30,000+</h4>
-<p>فيلم ومسلسل</p>
-</div>
-
-<div class="stat-box">
-<h4>Daily</h4>
-<p>تحديث يومي للمحتوى</p>
-</div>
-
-<div class="stat-box">
-<h4>4K</h4>
-<p>دعم HD / FHD / 4K</p>
-</div>
-
-</div>
-
-<div class="download-grid">
-
-<div class="download-card">
-
-<i class="fab fa-google-play"></i>
-
-<h4>Google Play</h4>
-
-<a href="https://play.google.com/store/apps/details?id=com.shadeed.familypro" target="_blank" class="btn btn-primary">
-اضغط هنا للتحميل
-</a>
-
-</div>
-
-<div class="download-card">
-
-<i class="fas fa-tv"></i>
-
-<h4>Family Active</h4>
-
-<div class="download-code">
-630379
-</div>
-
-<p style="margin-top:10px;">
-Downloader Code
-</p>
-
-</div>
-
-<div class="download-card">
-
-<i class="fas fa-tv"></i>
-
-<h4>Family Pro</h4>
-
-<div class="download-code">
-919624
-</div>
-
-<p style="margin-top:10px;">
-Downloader Code
-</p>
-
-</div>
-
-<div class="download-card">
-
-<i class="fas fa-crown"></i>
-
-<h4>Family Gold</h4>
-
-<div class="download-code">
-9577153
-</div>
-
-<p style="margin-top:10px;">
-Downloader Code
-</p>
-
-</div>
-
-<div class="download-card">
-
-<i class="fas fa-gem"></i>
-
-<h4>Family Diamond</h4>
-
-<div class="download-code">
-8085964
-</div>
-
-<p style="margin-top:10px;">
-Downloader Code
-</p>
-
-</div>
-
-<div class="download-card">
-
-<i class="fas fa-bolt"></i>
-
-<h4>مميزات السيرفر</h4>
-
-<p style="line-height:2;">
-تحديث يومي للمحتوى<br>
-تشغيل سريع وثابت<br>
-دعم جميع الأجهزة<br>
-جودة بث عالية<br>
-مكتبة ضخمة ومتنوعة
-</p>
-
-</div>
-
-</div>
-
-<div class="price-grid">
-
-<div class="price-card active">
-<h4>6 أشهر</h4>
-<div class="price">15,000 IQD</div>
-</div>
-
-<div class="price-card">
-<h4>سنة كاملة</h4>
-<div class="price">22,000 IQD</div>
-</div>
-
-</div>
-
-<div class="notice">
-
-<h4>
-أفضل أداء واستقرار ⚡
-</h4>
-
-<p>
-لأفضل تجربة مشاهدة بجودة عالية يُفضل استخدام إنترنت مستقر بسرعة لا تقل عن 20Mbps.
-
-سيرفر FAMILY 4K يدعم معظم الأجهزة الذكية ويتميز بثبات ممتاز أثناء أوقات الضغط والمباريات.
-</p>
-
-</div>
-
-</div>
-
-</div>
 <footer>
 
 <div class="logo-circle" style="margin:auto;">
@@ -1224,15 +611,11 @@ Downloader Code
 <div class="t2">VIP</div>
 </div>
 
-<p>
+<p style="margin-top:20px;color:#888;">
 MAX VIP STORE — الوكيل المعتمد لجميع السيرفرات الأصلية في العراق
 </p>
 
 <div style="margin-top:25px;display:flex;justify-content:center;gap:15px;flex-wrap:wrap;">
-
-<a href="javascript:void(0)" onclick="openModal()" class="btn btn-dark">
-سياسة الاستخدام
-</a>
 
 <a href="https://wa.me/9647740393776" target="_blank" class="btn btn-primary">
 واتساب الدعم
@@ -1246,34 +629,6 @@ MAX VIP STORE — الوكيل المعتمد لجميع السيرفرات ال
 <i class="fab fa-whatsapp"></i>
 </a>
 
-<div class="modal" id="policyModal">
-
-<div class="modal-content">
-
-<div class="close-modal" onclick="closeModal()">
-×
-</div>
-
-<h3>
-سياسة الاستخدام والخصوصية 🔐
-</h3>
-
-<p>
-- الحساب مخصص للاستخدام الشخصي فقط.
-<br><br>
-- يمنع تشغيل الاشتراك على أكثر من جهاز بنفس الوقت.
-<br><br>
-- بيانات المستخدم تبقى سرية بالكامل.
-<br><br>
-- جودة البث تعتمد على استقرار الإنترنت.
-<br><br>
-- نوفر تجربة مجانية لمدة 12 ساعة قبل الاشتراك.
-</p>
-
-</div>
-
-</div>
-
 <script>
 
 function openPanel(id){
@@ -1284,27 +639,6 @@ document.body.style.overflow='hidden';
 function closePanel(id){
 document.getElementById(id).style.display='none';
 document.body.style.overflow='auto';
-}
-
-function openModal(){
-document.getElementById('policyModal').style.display='block';
-}
-
-function closeModal(){
-document.getElementById('policyModal').style.display='none';
-}
-
-window.onclick=function(e){
-
-if(e.target.classList.contains('panel')){
-e.target.style.display='none';
-document.body.style.overflow='auto';
-}
-
-if(e.target.classList.contains('modal')){
-e.target.style.display='none';
-}
-
 }
 
 </script>
