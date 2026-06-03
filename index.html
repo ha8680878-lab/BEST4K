@@ -1,1481 +1,1378 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>MAX VIP STORE | الوكيل المعتمد لجميع السيرفرات الأصلية في العراق</title>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-
-<style>
-
-:root{
---gold:#d4af37;
---gold-light:#f3d57a;
---bg:#050505;
---card:#111111;
---text:#ffffff;
---muted:#b8b8b8;
---border:rgba(212,175,55,.25);
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:'Cairo',sans-serif;
-background:#000;
-color:#fff;
-overflow-x:hidden;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-a{
-text-decoration:none;
-transition:.3s;
-}
-
-body::before{
-content:'';
-position:fixed;
-inset:0;
-background:
-radial-gradient(circle at top,#2d2105 0%,#000 60%);
-z-index:-2;
-}
-
-header{
-position:fixed;
-top:0;
-width:100%;
-z-index:999;
-background:rgba(0,0,0,.88);
-backdrop-filter:blur(10px);
-border-bottom:1px solid var(--border);
-}
-
-.navbar{
-max-width:1300px;
-margin:auto;
-padding:15px 20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-display:flex;
-align-items:center;
-gap:15px;
-}
-
-.logo-circle{
-width:70px;
-height:70px;
-border-radius:50%;
-border:2px solid var(--gold);
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-background:linear-gradient(145deg,#161616,#000);
-box-shadow:0 0 25px rgba(212,175,55,.35);
-}
-
-.logo-circle .t1{
-font-size:14px;
-font-weight:900;
-line-height:1;
-}
-
-.logo-circle .t2{
-font-size:23px;
-font-weight:900;
-line-height:1;
-color:var(--gold);
-margin-top:3px;
-}
-
-.logo-text h1{
-font-size:1.1rem;
-font-weight:900;
-}
-
-.logo-text p{
-font-size:.75rem;
-color:#999;
-}
-
-.nav-links{
-display:flex;
-gap:25px;
-}
-
-.nav-links a{
-color:#ddd;
-font-weight:700;
-}
-
-.nav-links a:hover{
-color:var(--gold);
-}
-
-.hero{
-height:100vh;
-position:relative;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:20px;
-overflow:hidden;
-}
-
-.hero::before{
-content:'';
-position:absolute;
-inset:0;
-background:
-linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.9)),
-url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2000&auto=format&fit=crop');
-background-size:cover;
-background-position:center;
-z-index:-1;
-animation:zoomHero 18s linear infinite alternate;
-}
-
-@keyframes zoomHero{
-from{
-transform:scale(1);
-}
-to{
-transform:scale(1.08);
-}
-}
-
-.hero-content{
-max-width:950px;
-}
-
-.hero h2{
-font-size:4rem;
-font-weight:900;
-line-height:1.3;
-margin-bottom:25px;
-}
-
-.hero h2 span{
-color:var(--gold);
-}
-
-.hero p{
-font-size:1.2rem;
-line-height:2;
-color:#ddd;
-max-width:800px;
-margin:auto;
-}
-
-.hero-buttons{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-margin-top:40px;
-}
-
-.btn{
-padding:16px 35px;
-border-radius:50px;
-font-weight:800;
-display:inline-flex;
-align-items:center;
-gap:10px;
-cursor:pointer;
-transition:.3s;
-}
-
-.btn-primary{
-background:var(--gold);
-color:#000;
-}
-
-.btn-primary:hover{
-background:var(--gold-light);
-transform:translateY(-3px);
-}
-
-.btn-dark{
-border:1px solid var(--gold);
-color:#fff;
-}
-
-.btn-dark:hover{
-background:#111;
-transform:translateY(-3px);
-}
-
-.section{
-padding:90px 20px;
-max-width:1300px;
-margin:auto;
-}
-
-.section-title{
-text-align:center;
-margin-bottom:50px;
-}
-
-.section-title h3{
-font-size:2.7rem;
-font-weight:900;
-color:var(--gold);
-margin-bottom:15px;
-}
-
-.section-title p{
-color:#aaa;
-}
-
-.server-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-gap:35px;
-}
-
-.server-card{
-position:relative;
-overflow:hidden;
-border-radius:35px;
-background:linear-gradient(145deg,#151515,#080808);
-border:1px solid var(--border);
-padding:45px 35px;
-transition:.4s;
-cursor:pointer;
-}
-
-.server-card::before{
-content:'';
-position:absolute;
-inset:0;
-background:
-radial-gradient(circle at top,rgba(212,175,55,.12),transparent 60%);
-opacity:0;
-transition:.4s;
-}
-
-.server-card:hover::before{
-opacity:1;
-}
-
-.server-card:hover{
-transform:translateY(-12px);
-box-shadow:0 15px 35px rgba(212,175,55,.15);
-}
-
-.server-logo{
-width:110px;
-height:110px;
-margin:auto auto 25px;
-border-radius:50%;
-border:2px solid var(--gold);
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:2rem;
-font-weight:900;
-background:#000;
-color:var(--gold);
-box-shadow:0 0 25px rgba(212,175,55,.2);
-}
-
-.server-card h4{
-font-size:2.2rem;
-text-align:center;
-margin-bottom:20px;
-}
-
-.server-card p{
-text-align:center;
-line-height:2;
-color:#bbb;
-}
-
-.open-btn{
-margin-top:30px;
-display:flex;
-justify-content:center;
-}
-
-.panel{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.95);
-z-index:2000;
-overflow-y:auto;
-padding:120px 20px 60px;
-display:none;
-animation:fade .35s ease;
-backdrop-filter:blur(10px);
-}
-
-@keyframes fade{
-from{
-opacity:0;
-transform:scale(.96);
-}
-to{
-opacity:1;
-transform:scale(1);
-}
-}
-
-.panel-content{
-max-width:1200px;
-margin:auto;
-}
-
-.close-panel{
-position:fixed;
-top:25px;
-left:25px;
-width:55px;
-height:55px;
-border-radius:50%;
-background:#111;
-border:1px solid var(--gold);
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:1.5rem;
-cursor:pointer;
-color:var(--gold);
-z-index:2100;
-}
-
-.panel-hero{
-background:
-linear-gradient(rgba(0,0,0,.82),rgba(0,0,0,.9)),
-url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?q=80&w=2000&auto=format&fit=crop');
-background-size:cover;
-background-position:center;
-padding:90px 30px;
-border-radius:35px;
-border:1px solid var(--border);
-text-align:center;
-margin-bottom:50px;
-}
-
-.panel-hero h2{
-font-size:3.5rem;
-font-weight:900;
-margin-bottom:20px;
-}
-
-.panel-hero p{
-max-width:850px;
-margin:auto;
-line-height:2;
-color:#ddd;
-}
-
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-margin-bottom:50px;
-}
-
-.stat-box{
-background:#111;
-padding:35px;
-border-radius:25px;
-border:1px solid var(--border);
-text-align:center;
-}
-
-.stat-box h4{
-font-size:2.3rem;
-color:var(--gold);
-margin-bottom:10px;
-}
-
-.download-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
-}
-
-.download-card{
-background:#111;
-padding:35px;
-border-radius:30px;
-border:1px solid var(--border);
-text-align:center;
-}
-
-.download-card i{
-font-size:3rem;
-color:var(--gold);
-margin-bottom:20px;
-}
-
-.download-card h4{
-font-size:1.6rem;
-margin-bottom:15px;
-}
-
-.download-code{
-font-size:1.7rem;
-font-weight:900;
-color:var(--gold);
-border:2px dashed var(--gold);
-padding:12px;
-border-radius:15px;
-margin-top:15px;
-}
-
-.price-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-margin-top:50px;
-}
-
-.price-card{
-background:#0e0e0e;
-padding:35px 20px;
-border-radius:25px;
-border:1px solid var(--border);
-text-align:center;
-transition:.3s;
-}
-
-.price-card:hover{
-transform:translateY(-10px);
-}
-
-.price-card.active{
-border:2px solid var(--gold);
-transform:scale(1.05);
-}
-
-.price-card h4{
-font-size:1.5rem;
-margin-bottom:15px;
-}
-
-.price{
-font-size:2.3rem;
-font-weight:900;
-color:var(--gold);
-}
-
-.notice{
-margin-top:50px;
-background:linear-gradient(145deg,#151515,#0a0a0a);
-padding:40px;
-border-radius:30px;
-border:1px solid var(--border);
-line-height:2.2;
-}
-
-.notice h4{
-font-size:2rem;
-color:var(--gold);
-margin-bottom:20px;
-}
-
-.floating-whatsapp{
-position:fixed;
-left:25px;
-bottom:25px;
-width:65px;
-height:65px;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-background:#25D366;
-color:#fff;
-font-size:2rem;
-z-index:999;
-box-shadow:0 10px 25px rgba(0,0,0,.4);
-}
-
-footer{
-padding:60px 20px;
-text-align:center;
-background:#050505;
-border-top:1px solid var(--border);
-}
-
-footer p{
-margin-top:15px;
-color:#888;
-}
-
-.modal{
-display:none;
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.92);
-z-index:3000;
-padding:20px;
-overflow-y:auto;
-}
-
-.modal-content{
-max-width:700px;
-margin:60px auto;
-background:#111;
-padding:35px;
-border-radius:30px;
-border:1px solid var(--gold);
-position:relative;
-}
-
-.close-modal{
-position:absolute;
-left:20px;
-top:15px;
-font-size:2rem;
-cursor:pointer;
-color:var(--gold);
-}
-
-.modal-content h3{
-font-size:2rem;
-margin-bottom:20px;
-color:var(--gold);
-}
-
-.modal-content p{
-line-height:2.3;
-color:#ccc;
-}
-
-@media(max-width:768px){
-
-.hero h2{
-font-size:2.5rem;
-}
-
-.panel-hero h2{
-font-size:2.3rem;
-}
-
-.nav-links{
-display:none;
-}
-
-.price-card.active{
-transform:none;
-}
-
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IQTV 4K | أفضل سيرفرات IPTV والمنتجات الرقمية في العراق</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cyan: #818cf8;
+      --blue: #4f46e5;
+      --blue-glowing: #6366f1;
+      --bg: #020617;
+      --card: #0f172a;
+      --card-hover: #1e293b;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --border: rgba(99, 102, 241, 0.2);
+      --font: 'Cairo', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    a {
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at top, #1e1b4b 0%, #020617 70%);
+      z-index: -2;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      background: rgba(3, 4, 8, 0.85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      max-width: 1300px;
+      margin: auto;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-circle {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      border: 2px solid var(--blue);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #091225, #000);
+      box-shadow: 0 0 20px rgba(0, 102, 255, 0.4);
+    }
+
+    .logo-circle .t1 {
+      font-size: 13px;
+      font-weight: 900;
+      line-height: 1;
+      color: #fff;
+    }
+
+    .logo-circle .t2 {
+      font-size: 18px;
+      font-weight: 950;
+      line-height: 1;
+      color: var(--cyan);
+      margin-top: 1px;
+    }
+
+    .logo-text h1 {
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      background: linear-gradient(120deg, #fff, var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .logo-text p {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: #cbd5e0;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--cyan);
+    }
+
+    .hero {
+      min-height: 85vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 20px 80px;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 950px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .hero h2 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    .hero h2 span {
+      background: linear-gradient(135deg, #2b84ff, var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: #cbd5e1;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 35px;
+    }
+
+    .btn {
+      padding: 14px 30px;
+      border-radius: 50px;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(0, 102, 255, 0.45);
+    }
+
+    .btn-primary:hover {
+      background: #1e7bfc;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 102, 255, 0.6);
+    }
+
+    .btn-dark {
+      background: #0f1322;
+      border: 1px solid var(--border);
+      color: #fff;
+    }
+
+    .btn-dark:hover {
+      background: #151b32;
+      transform: translateY(-2px);
+    }
+
+    .section {
+      padding: 40px 20px 100px;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h3 {
+      font-size: 2.3rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .categories-filter {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 45px;
+    }
+
+    .filter-btn {
+      background: #0d111d;
+      border: 1px solid var(--border);
+      color: #a0aec0;
+      padding: 10px 24px;
+      border-radius: 35px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .filter-btn:hover {
+      color: #fff;
+      border-color: #3b82f6;
+    }
+
+    .filter-btn.active {
+      background: var(--blue);
+      color: #fff;
+      border-color: var(--blue);
+      box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3);
+    }
+
+    .server-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .server-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      background: linear-gradient(145deg, #0d1222, #04060b);
+      border: 1px solid var(--border);
+      padding: 40px 30px;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+    }
+
+    .server-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top, rgba(0, 102, 255, 0.12), transparent 70%);
+      opacity: 0;
+      transition: 0.4s;
+    }
+
+    .server-card:hover::before {
+      opacity: 1;
+    }
+
+    .server-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0, 102, 255, 0.15);
+      border-color: rgba(0, 102, 255, 0.4);
+    }
+
+    .server-logo {
+      width: 90px;
+      height: 90px;
+      margin: auto auto 22px;
+      border-radius: 50%;
+      border: 2px solid var(--blue);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.8rem;
+      font-weight: 900;
+      background: #030408;
+      box-shadow: 0 0 20px rgba(0, 102, 255, 0.15);
+    }
+
+    .server-card h4 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 12px;
+      font-weight: 900;
+    }
+
+    .server-card p {
+      text-align: center;
+      line-height: 1.8;
+      color: #cbd5e0;
+      font-size: 0.95rem;
+      height: 75px;
+      overflow: hidden;
+    }
+
+    .open-btn {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .open-btn .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .panel {
+      position: fixed;
+      inset: 0;
+      background: rgba(3, 4, 8, 0.98);
+      z-index: 2000;
+      overflow-y: auto;
+      padding: 100px 20px 60px;
+      display: none;
+      backdrop-filter: blur(12px);
+    }
+
+    .panel-content {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .close-panel {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #111422;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      cursor: pointer;
+      color: #fff;
+      z-index: 2100;
+      transition: 0.3s;
+    }
+
+    .close-panel:hover {
+      background: #1d233e;
+      color: var(--cyan);
+    }
+
+    .panel-hero {
+      background: linear-gradient(145deg, #0d1222, #04060b);
+      padding: 60px 30px;
+      border-radius: 30px;
+      border: 1px solid var(--border);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .panel-hero h2 {
+      font-size: 3.2rem;
+      font-weight: 900;
+      margin-bottom: 15px;
+    }
+
+    .panel-hero-desc {
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.9;
+      color: #cbd5e1;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .stat-box {
+      background: #070911;
+      padding: 24px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .stat-box h4 {
+      font-size: 2.1rem;
+      font-weight: 900;
+      margin-bottom: 5px;
+    }
+
+    .stat-box p {
+      color: var(--text);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .download-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .download-card {
+      background: #070911;
+      padding: 30px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 240px;
+    }
+
+    .download-card i {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .download-card h4 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      font-weight: 800;
+    }
+
+    .download-card p {
+      font-size: 0.9rem;
+      color: #cbd5e0;
+      margin-bottom: 12px;
+    }
+
+    .download-code {
+      font-size: 1.6rem;
+      font-weight: 900;
+      border: 2px dashed var(--blue);
+      padding: 10px;
+      border-radius: 14px;
+      background: rgba(0,0,0,0.3);
+      margin: 10px 0;
+    }
+
+    .section-subtitle-panel {
+      font-size: 1.8rem;
+      font-weight: 900;
+      margin: 50px 0 25px;
+      text-align: right;
+      color: #fff;
+      border-right: 4px solid var(--blue);
+      padding-right: 15px;
+    }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .price-card {
+      background: #070911;
+      padding: 30px 20px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      text-align: center;
+      position: relative;
+      transition: 0.3s;
+    }
+
+    .price-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .price-card.active {
+      border: 2px solid var(--cyan);
+    }
+
+    .price-card h4 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      font-weight: 800;
+    }
+
+    .price-card .price {
+      font-size: 2rem;
+      font-weight: 900;
+    }
+
+    .notice {
+      margin-top: 40px;
+      background: linear-gradient(135deg, #090f20, #04060b);
+      padding: 35px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      line-height: 2;
+    }
+
+    .notice h4 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+      font-weight: 900;
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      left: 25px;
+      bottom: 25px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #25D366;
+      color: #fff;
+      font-size: 1.8rem;
+      z-index: 999;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+      transition: 0.3s;
+    }
+
+    .floating-whatsapp:hover {
+      transform: scale(1.1);
+    }
+
+    footer {
+      padding: 60px 20px;
+      text-align: center;
+      background: #030408;
+      border-top: 1px solid var(--border);
+    }
+
+    footer p {
+      margin-top: 15px;
+      color: var(--muted);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 3000;
+      padding: 20px;
+      overflow-y: auto;
+      backdrop-filter: blur(8px);
+    }
+
+    .modal-content {
+      max-width: 600px;
+      margin: 80px auto;
+      background: #0d111d;
+      padding: 35px;
+      border-radius: 25px;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .close-modal {
+      position: absolute;
+      left: 20px;
+      top: 15px;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--cyan);
+    }
+
+    .modal-content h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: var(--cyan);
+      font-weight: 900;
+    }
+
+    .modal-content p {
+      line-height: 2;
+      color: #cbd5e0;
+    }
+
+    /* Booking Modal custom styling */
+    .booking-form-group {
+      margin-bottom: 16px;
+      text-align: right;
+    }
+
+    .booking-form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #e2e8f0;
+    }
+
+    .booking-form-group input, .booking-form-group textarea {
+      width: 100%;
+      background: #060912;
+      border: 1px solid #1a2542;
+      border-radius: 12px;
+      padding: 12px;
+      color: #fff;
+      font-family: inherit;
+      outline: none;
+    }
+
+    .booking-form-group input:focus, .booking-form-group textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 10px rgba(0, 102, 255, 0.2);
+    }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      .hero h2 {
+        font-size: 2.2rem;
+      }
+      .panel-hero h2 {
+        font-size: 2rem;
+      }
+      .nav-links {
+        display: none;
+      }
+      .panel {
+        padding-top: 80px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
-
-<div class="navbar">
-
-<div class="logo">
-
-<div class="logo-circle">
-<div class="t1">MAX</div>
-<div class="t2">VIP</div>
-</div>
-
-<div class="logo-text">
-<h1>MAX VIP STORE</h1>
-<p>الوكيل المعتمد لجميع السيرفرات الأصلية في العراق</p>
-</div>
-
-</div>
-
-<nav class="nav-links">
-<a href="#servers">السيرفرات</a>
-<a href="javascript:void(0)" onclick="openModal()">سياسة الاستخدام</a>
-</nav>
-
-</div>
-
-</header>
-
-<section class="hero">
-
-<div class="hero-content">
-
-<h2>
-أفضل سيرفرات IPTV الأصلية في
-<span>العراق</span>
-</h2>
-
-<p>
-استمتع بأقوى تجربة مشاهدة مع سيرفراتنا الأصلية والمدعومة بجودة 4K وثبات عالي أثناء المباريات الكبرى مع تحديثات يومية وضمان كامل.
-</p>
-
-<div class="hero-buttons">
-
-<a href="https://wa.me/9647740393776" target="_blank" class="btn btn-primary">
-<i class="fab fa-whatsapp"></i>
-تجربة مجانية 12 ساعة
-</a>
-
-<a href="#servers" class="btn btn-dark">
-<i class="fas fa-tv"></i>
-استعرض السيرفرات
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="section" id="servers">
-
-<div class="section-title">
-
-<h3>
-اختر السيرفر المناسب لك
-</h3>
-
-<p>
-جميع السيرفرات أصلية ومدعومة رسمياً
-</p>
-
-</div>
-
-<div class="server-grid">
-
-<div class="server-card" onclick="openPanel('best4kPanel')">
-
-<div class="server-logo">
-4K
-</div>
-
-<h4>BEST4K</h4>
-
-<p>
-منصة احترافية لمحبي الجودة والثبات أثناء المباريات الكبرى مع تغطية رياضية وترفيهية كاملة.
-</p>
-
-<div class="open-btn">
-<div class="btn btn-primary">
-فتح السيرفر
-</div>
-</div>
-
-</div>
-
-<div class="server-card" onclick="openPanel('maxPanel')">
-
-<div class="server-logo">
-MAX
-</div>
-
-<h4>MAX TV PRO</h4>
-
-<p>
-تجربة ترفيه متكاملة تضم أقوى القنوات العالمية والأفلام والمسلسلات بجودة فائقة.
-</p>
-
-<div class="open-btn">
-<div class="btn btn-primary">
-فتح السيرفر
-</div>
-</div>
-
-</div>
-
-<div class="server-card" onclick="openPanel('familyPanel')">
-
-<div class="server-logo">
-F4K
-</div>
-
-<h4>FAMILY 4K</h4>
-
-<p>
-سيرفر ترفيهي متكامل يضم القنوات العالمية والأفلام والمسلسلات بجودة عالية مع استقرار ممتاز لجميع الأجهزة.
-</p>
-
-<div class="open-btn">
-<div class="btn btn-primary">
-فتح السيرفر
-</div>
-</div>
-
-</div>
-
-<div class="server-card" onclick="openPanel('pabloPanel')">
-
-<div class="server-logo" style="color: #ff3333; border-color: #ff3333; box-shadow: 0 0 25px rgba(255, 51, 51, 0.2);">
-RED
-</div>
-
-<h4>PABLO RED</h4>
-
-<p>
-خدمة الترفيه الأولى والمتعة الحقيقية! مكتبة ضخمة جداً وثبات أسطوري مصمم لبطولة كأس العالم 2026.
-</p>
-
-<div class="open-btn">
-<div class="btn btn-primary" style="background: #ff3333; color: #fff;">
-فتح السيرفر
-</div>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<div class="panel" id="best4kPanel">
-
-<div class="close-panel" onclick="closePanel('best4kPanel')">
-<i class="fas fa-times"></i>
-</div>
-
-<div class="panel-content">
-
-<div class="panel-hero">
-
-<h2>BEST4K</h2>
-
-<p>
-سيرفر رياضي وترفيهي احترافي بثبات عالي أثناء المباريات الكبرى مع دعم جودة 4K الحقيقية.
-</p>
-
-</div>
-
-<div class="stats">
-
-<div class="stat-box">
-<h4>55,000+</h4>
-<p>قناة رياضية وترفيهية</p>
-</div>
-
-<div class="stat-box">
-<h4>80,000+</h4>
-<p>أفلام ومسلسلات</p>
-</div>
-
-<div class="stat-box">
-<h4>Daily</h4>
-<p>تحديث يومي للمحتوى</p>
-</div>
-
-<div class="stat-box">
-<h4>4K</h4>
-<p>جودة HD / FHD / 4K</p>
-</div>
-
-</div>
-
-<div class="download-grid">
-
-<div class="download-card">
-
-<i class="fab fa-android"></i>
-
-<h4>تحميل التطبيق</h4>
-
-<a href="https://sh-apps.cyou/apk/BEST4K.apk" target="_blank" class="btn btn-primary">
-اضغط هنا للتحميل
-</a>
-
-</div>
-
-<div class="download-card">
-
-<i class="fas fa-tv"></i>
-
-<h4>Downloader Code</h4>
-
-<div class="download-code">
-4056700
-</div>
-
-</div>
-
-<div class="download-card">
-
-<i class="fab fa-apple"></i>
-
-<h4>مشغلات iOS</h4>
-
-<p style="line-height:2;">
-NEXT+<br>
-CASTORA
-</p>
-
-<div class="download-code">
-4949
-</div>
-
-<p style="margin-top:10px;">
-كود التفعيل
-</p>
-
-</div>
-
-<div class="download-card">
-
-<i class="fas fa-bolt"></i>
-
-<h4>مميزات السيرفر</h4>
-
-<p style="line-height:2;">
-ثبات عالي أثناء المباريات<br>
-سيرفرات قوية<br>
-دعم 4K حقيقي<br>
-تحديث يومي<br>
-دعم جميع الأجهزة
-</p>
-
-</div>
-
-</div>
-
-<div class="price-grid">
-
-<div class="price-card">
-<h4>شهر</h4>
-<div class="price">7,000 IQD</div>
-</div>
-
-<div class="price-card active">
-<h4>3 أشهر</h4>
-<div class="price">12,000 IQD</div>
-</div>
-
-<div class="price-card">
-<h4>6 أشهر</h4>
-<div class="price">20,000 IQD</div>
-</div>
-
-<div class="price-card">
-<h4>سنة كاملة</h4>
-<div class="price">30,000 IQD</div>
-</div>
-
-</div>
-
-<div class="notice">
-
-<h4>
-أفضل استقرار للمشاهدة ⚡
-</h4>
-
-<p>
-للحصول على أفضل أداء أثناء المباريات والبث المباشر يُفضل استخدام إنترنت Fiber أو FTTH بسرعة لا تقل عن 20Mbps مع اتصال مستقر.
-
-سيرفر BEST4K مصمم لتحمل الضغط العالي أثناء البطولات والأحداث الكبرى بدون تقطيع.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="panel" id="maxPanel">
-
-<div class="close-panel" onclick="closePanel('maxPanel')">
-<i class="fas fa-times"></i>
-</div>
-
-<div class="panel-content">
-
-<div class="panel-hero">
-
-<h2>MAX TV PRO</h2>
-
-<p>
-أقوى مكتبة ترفيهية وقنوات عالمية مع دعم Android و iOS و Smart TV و PC.
-</p>
-
-</div>
-
-<div class="stats">
-
-<div class="stat-box">
-<h4>15,000+</h4>
-<p>قناة مباشرة متنوعة</p>
-</div>
-
-<div class="stat-box">
-<h4>30,000+</h4>
-<p>فيلم ومسلسل</p>
-</div>
-
-<div class="stat-box">
-<h4>Daily</h4>
-<p>تحديث يومي للمحتوى</p>
-</div>
-
-<div class="stat-box">
-<h4>4K</h4>
-<p>دعم HD / FHD / 4K</p>
-</div>
-
-</div>
-
-<div class="download-grid">
-
-<div class="download-card">
-
-<i class="fab fa-android"></i>
-
-<h4>Android APK</h4>
-
-<a href="https://www.mediafire.com/file/aynt5054tdllmmb/Max-TV-Pro-active.apk/file" target="_blank" class="btn btn-primary">
-اضغط هنا للتحميل
-</a>
-
-</div>
-
-<div class="download-card">
-
-<i class="fab fa-apple"></i>
-
-<h4>iPhone & iPad</h4>
-
-<a href="https://apps.apple.com/app/id6443335504" target="_blank" class="btn btn-dark" style="margin-top:10px;">
-NEXT+
-</a>
-
-<a href="https://apps.apple.com/us/app/castora/id6760588570" target="_blank" class="btn btn-primary" style="margin-top:15px;">
-CASTORA
-</a>
-
-<p style="margin-top:20px;">
-كود التفعيل:
-<span style="color:var(--gold);font-weight:900;">max</span>
-</p>
-
-</div>
-
-<div class="download-card">
-
-<i class="fas fa-tv"></i>
-
-<h4>Downloader Codes</h4>
-
-<div class="download-code">2606779</div>
-<p>MAX ACTIVE</p>
-
-<div class="download-code">8229193</div>
-<p>MAX SHOW TV</p>
-
-<div class="download-code">183324</div>
-<p>MAX 4K</p>
-
-<div class="download-code">680115</div>
-<p>MAX XCIPTV</p>
-
-<div class="download-code">3603031</div>
-<p>MAX TV+</p>
-
-<div class="download-code">8623805</div>
-<p>MAX TV VPN</p>
-
-</div>
-
-<div class="download-card">
-
-<i class="fas fa-desktop"></i>
-
-<h4>PC & Laptop</h4>
-
-<div class="download-code">
-8488
-</div>
-
-<p style="margin-top:15px;">
-my.splayer.in
-</p>
-
-</div>
-
-</div>
-
-<div class="price-grid">
-
-<div class="price-card">
-<h4>شهر</h4>
-<div class="price">5,000 IQD</div>
-</div>
-
-<div class="price-card active">
-<h4>3 أشهر</h4>
-<div class="price">10,000 IQD</div>
-</div>
-
-<div class="price-card">
-<h4>6 أشهر</h4>
-<div class="price">15,000 IQD</div>
-</div>
-
-<div class="price-card">
-<h4>سنة كاملة</h4>
-<div class="price">22,000 IQD</div>
-</div>
-
-</div>
-
-<div class="notice">
-
-<h4>
-أفضل أداء واستقرار ⚡
-</h4>
-
-<p>
-لأفضل جودة مشاهدة وثبات أثناء المباريات والأفلام يُنصح باستخدام إنترنت Fiber أو FTTH بسرعة لا تقل عن 20Mbps.
-
-يفضل تجنب الشبكات اللاسلكية الضعيفة لضمان تشغيل القنوات بجودة 4K بدون تقطيع.
-
-جميع السيرفرات تعمل بتحديث يومي وتدعم معظم الشاشات الذكية وأجهزة Android و iPhone والكمبيوتر.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="panel" id="familyPanel">
-
-<div class="close-panel" onclick="closePanel('familyPanel')">
-<i class="fas fa-times"></i>
-</div>
-
-<div class="panel-content">
-
-<div class="panel-hero">
-
-<h2>FAMILY 4K</h2>
-
-<p>
-منصة ترفيهية متكاملة تضم آلاف القنوات العالمية والأفلام والمسلسلات مع دعم جودة 4K وتشغيل مستقر على مختلف الأجهزة.
-</p>
-
-</div>
-
-<div class="stats">
-
-<div class="stat-box">
-<h4>15,000+</h4>
-<p>قناة مباشرة متنوعة</p>
-</div>
-
-<div class="stat-box">
-<h4>30,000+</h4>
-<p>فيلم ومسلسل</p>
-</div>
-
-<div class="stat-box">
-<h4>Daily</h4>
-<p>تحديث يومي للمحتوى</p>
-</div>
-
-<div class="stat-box">
-<h4>4K</h4>
-<p>دعم HD / FHD / 4K</p>
-</div>
-
-</div>
-
-<div class="download-grid">
-
-<div class="download-card">
-
-<i class="fab fa-google-play"></i>
-
-<h4>Google Play</h4>
-
-<a href="https://play.google.com/store/apps/details?id=com.shadeed.familypro" target="_blank" class="btn btn-primary">
-اضغط هنا للتحميل
-</a>
-
-</div>
-
-<div class="download-card">
-
-<i class="fas fa-tv"></i>
-
-<h4>Family Active</h4>
-
-<div class="download-code">
-630379
-</div>
-
-<p style="margin-top:10px;">
-Downloader Code
-</p>
-
-</div>
-
-<div class="download-card">
-
-<i class="fas fa-tv"></i>
-
-<h4>Family Pro</h4>
-
-<div class="download-code">
-919624
-</div>
-
-<p style="margin-top:10px;">
-Downloader Code
-</p>
-
-</div>
-
-<div class="download-card">
-
-<i class="fas fa-crown"></i>
-
-<h4>Family Gold</h4>
-
-<div class="download-code">
-9577153
-</div>
-
-<p style="margin-top:10px;">
-Downloader Code
-</p>
-
-</div>
-
-<div class="download-card">
-
-<i class="fas fa-gem"></i>
-
-<h4>Family Diamond</h4>
-
-<div class="download-code">
-8085964
-</div>
-
-<p style="margin-top:10px;">
-Downloader Code
-</p>
-
-</div>
-
-<div class="download-card">
-
-<i class="fas fa-bolt"></i>
-
-<h4>مميزات السيرفر</h4>
-
-<p style="line-height:2;">
-تحديث يومي للمحتوى<br>
-تشغيل سريع وثابت<br>
-دعم جميع الأجهزة<br>
-جودة بث عالية<br>
-مكتبة ضخمة ومتنوعة
-</p>
-
-</div>
-
-</div>
-
-<div class="price-grid">
-
-<div class="price-card active">
-<h4>6 أشهر</h4>
-<div class="price">15,000 IQD</div>
-</div>
-
-<div class="price-card">
-<h4>سنة كاملة</h4>
-<div class="price">22,000 IQD</div>
-</div>
-
-</div>
-
-<div class="notice">
-
-<h4>
-أفضل أداء واستقرار ⚡
-</h4>
-
-<p>
-لأفضل تجربة مشاهدة بجودة عالية يُفضل استخدام إنترنت مستقر بسرعة لا تقل عن 20Mbps.
-
-سيرفر FAMILY 4K يدعم معظم الأجهزة الذكية ويتميز بثبات ممتاز أثناء أوقات الضغط والمباريات.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="panel" id="pabloPanel">
-
-<div class="close-panel" onclick="closePanel('pabloPanel')">
-<i class="fas fa-times"></i>
-</div>
-
-<div class="panel-content">
-
-<div class="panel-hero" style="background: linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.92)), url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?q=80&w=2000&auto=format&fit=crop'); border-color: rgba(255,51,51,.3);">
-
-<h2 style="color: #ff3333;">PABLO RED</h2>
-
-<p>
-خدمة الترفيه الأولى — المتعة الحقيقية تبدأ هنا! سيرفر أسطوري يمتاز بالثبات المطلق والسرعة، ومجهز بالكامل لتغطية كأس العالم 2026 بأعلى دقة.
-</p>
-
-</div>
-
-<div class="stats">
-
-<div class="stat-box" style="border-color: rgba(255,51,51,.25);">
-<h4 style="color: #ff3333;">5,350+</h4>
-<p>قناة مباشرة أصلية</p>
-</div>
-
-<div class="stat-box" style="border-color: rgba(255,51,51,.25);">
-<h4 style="color: #ff3333;">60,000+</h4>
-<p>أفلام ومسلسلات حديثة</p>
-</div>
-
-<div class="stat-box" style="border-color: rgba(255,51,51,.25);">
-<h4 style="color: #ff3333;">Daily</h4>
-<p>تحديث يومي لكل المنصات</p>
-</div>
-
-<div class="stat-box" style="border-color: rgba(255,51,51,.25);">
-<h4 style="color: #ff3333;">4K ULTRA</h4>
-<p>ثبات فخم بدون تقطيع</p>
-</div>
-
-</div>
-
-<div class="download-grid">
-
-<div class="download-card" style="border-color: rgba(255,51,51,.25);">
-
-<i class="fab fa-android" style="color: #ff3333;"></i>
-
-<h4>تطبيق الأندرويد الأصلي</h4>
-
-<a href="https://fhd.cx" target="_blank" class="btn btn-primary" style="background: #ff3333; color: #fff;">
-رابط مباشر للتحميل
-</a>
-
-</div>
-
-<div class="download-card" style="border-color: rgba(255,51,51,.25);">
-
-<i class="fas fa-tv" style="color: #ff3333;"></i>
-
-<h4>Downloader Code</h4>
-
-<div class="download-code" style="color: #ff3333; border-color: #ff3333;">
-9568447
-</div>
-
-<p style="margin-top:10px;">لأجهزة الـ FireStick والـ Android TV</p>
-
-</div>
-
-<div class="download-card" style="border-color: rgba(255,51,51,.25);">
-
-<i class="fab fa-apple" style="color: #ff3333;"></i>
-
-<h4>برامج الآيفون والآيباد</h4>
-
-<a href="https://apps.apple.com/app/id6443335504" target="_blank" class="btn btn-dark" style="margin-top:10px; border-color:#ff3333;">
-تطبيق NEXT+
-</a>
-
-<a href="https://apps.apple.com/us/app/castora/id6760588570" target="_blank" class="btn btn-primary" style="margin-top:15px; background: #ff3333; color:#fff;">
-تطبيق CASTORA
-</a>
-
-<p style="margin-top:20px;">
-كود تفعيل السيرفر:
-<span style="color:#ff3333;font-weight:900;">111</span>
-</p>
-
-</div>
-
-<div class="download-card" style="border-color: rgba(255,51,51,.25);">
-
-<i class="fas fa-display" style="color: #ff3333;"></i>
-
-<h4>الشاشات الذكية والأجهزة</h4>
-
-<p style="line-height:2; font-weight: 700;">
-عمل على شاشات:<br>
-SAMSUNG & LG
-</p>
-
-<div class="download-code" style="color: #fff; border-color: #ff3333; font-size: 1.2rem; dashed;">
-IBO PLAYER
-</div>
-
-<p style="margin-top:10px; font-size: 0.85rem; color: #aaa;">يتم التشغيل عبر مشغل السيرفرات المذكور</p>
-
-</div>
-
-</div>
-
-<div class="price-grid">
-
-<div class="price-card" style="border-color: rgba(255,51,51,.2);">
-<h4>شهر واحد</h4>
-<div class="price" style="color: #ff3333;">5,000 IQD</div>
-</div>
-
-<div class="price-card" style="border-color: rgba(255,51,51,.2);">
-<h4>3 أشهر</h4>
-<div class="price" style="color: #ff3333;">10,000 IQD</div>
-</div>
-
-<div class="price-card" style="border-color: rgba(255,51,51,.2);">
-<h4>6 أشهر</h4>
-<div class="price" style="color: #ff3333;">15,000 IQD</div>
-</div>
-
-<div class="price-card active" style="border-color: #ff3333; transform: scale(1.05);">
-<h4>سنة كاملة 🏆</h4>
-<div class="price" style="color: #ff3333;">30,000 IQD</div>
-</div>
-
-</div>
-
-<div class="notice" style="border-color: rgba(255,51,51,.25); background: linear-gradient(145deg, #1a0b0b, #050505);">
-
-<h4 style="color: #ff3333;">
-سيرفر بابلو ريد.. ثبات، سرعة، وفخامة! 🚀
-</h4>
-
-<p>
-تم تصميم سيرفر PABLO RED ليعمل بكفاءة مطلقة على جميع الأجهزة (Android, iOS, Smart TV, TV Box). يدعم الدفع عن طريق (ماستركارد وسويتش كيو - MasterCard / Super Ki).
-
-لضمان جودة بث مستقرة 4K وبدون أي تقطيع أثناء المباريات، يوصى باتصال إنترنت ثابت لا يقل عن 20Mbps.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-<footer>
-
-<div class="logo-circle" style="margin:auto;">
-<div class="t1">MAX</div>
-<div class="t2">VIP</div>
-</div>
-
-<p>
-MAX VIP STORE — الوكيل المعتمد لجميع السيرفرات الأصلية في العراق
-</p>
-
-<div style="margin-top:25px;display:flex;justify-content:center;gap:15px;flex-wrap:wrap;">
-
-<a href="javascript:void(0)" onclick="openModal()" class="btn btn-dark">
-سياسة الاستخدام
-</a>
-
-<a href="https://wa.me/9647740393776" target="_blank" class="btn btn-primary">
-واتساب الدعم
-</a>
-
-</div>
-
-</footer>
-
-<a href="https://wa.me/9647740393776" target="_blank" class="floating-whatsapp">
-<i class="fab fa-whatsapp"></i>
-</a>
-
-<div class="modal" id="policyModal">
-
-<div class="modal-content">
-
-<div class="close-modal" onclick="closeModal()">
-×
-</div>
-
-<h3>
-سياسة الاستخدام والخصوصية 🔐
-</h3>
-
-<p>
-- الحساب مخصص للاستخدام الشخصي فقط.
-<br><br>
-- يمنع تشغيل الاشتراك على أكثر من جهاز بنفس الوقت.
-<br><br>
-- بيانات المستخدم تبقى سرية بالكامل.
-<br><br>
-- جودة البث تعتمد على استقرار الإنترنت.
-<br><br>
-- نوفر تجربة مجانية لمدة 12 ساعة قبل الاشتراك.
-</p>
-
-</div>
-
-</div>
-
-<script>
-
-function openPanel(id){
-document.getElementById(id).style.display='block';
-document.body.style.overflow='hidden';
-}
-
-function closePanel(id){
-document.getElementById(id).style.display='none';
-document.body.style.overflow='auto';
-}
-
-function openModal(){
-document.getElementById('policyModal').style.display='block';
-}
-
-function closeModal(){
-document.getElementById('policyModal').style.display='none';
-}
-
-window.onclick=function(e){
-
-if(e.target.classList.contains('panel')){
-e.target.style.display='none';
-document.body.style.overflow='auto';
-}
-
-if(e.target.classList.contains('modal')){
-e.target.style.display='none';
-}
-
-}
-
-</script>
-
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <div class="logo-circle">
+          <div class="t1">IQTV</div>
+          <div class="t2">4K</div>
+        </div>
+        <div class="logo-text">
+          <h1>IQTV 4K</h1>
+          <p>أسرع وأضمن خدمة بث في العراق 🇮🇶</p>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#servers">الاشتراكات والأسعار</a>
+        <a href="javascript:void(0)" onclick="openModal('policyModal')">سياسة الاستخدام</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>أفضل سيرفرات IPTV والاشتراكات الأصلية في العراق 🇮🇶</h2>
+      <p>جودة 4K حقيقية، أحدث الأفلام والمسلسلات، ثبات تام ومطلق بدون أي تقطيع وقت المباريات والقمم الكبرى مع أفضل الاسعار وضمان كامل.</p>
+      <div class="hero-buttons">
+        <a href="https://wa.me/9647740393776" target="_blank" class="btn btn-primary">
+          <i class="fab fa-whatsapp"></i>
+          طلب تجربة مجانية 12 ساعة
+        </a>
+        <a href="#servers" class="btn btn-dark">
+          <i class="fas fa-tv"></i>
+          استعرض الاشتراكات
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="servers">
+    <div class="section-title">
+      <h3>اقسام المتجر والاشتراكات</h3>
+      <p>اختر السيرفر أو الباقة التي تناسبك واضغط حجز لإجراء طلب الحجز الفوري وإصدار الفاتورة</p>
+    </div>
+
+    <!-- Category selector -->
+    <div class="categories-filter">
+      <button class="filter-btn active" onclick="filterCategory('iptv', this)">سيرفرات IPTV الأصلية</button>
+<button class="filter-btn " onclick="filterCategory('extra', this)">منتجات وبطاقات رقمية أخرى</button>
+    </div>
+
+    <!-- Grid items -->
+    <div class="server-grid">
+      
+      <div class="server-card select-category-iptv" onclick="openPanel('best4k')">
+        <div class="server-logo" style="color: #6366f1; border-color: #6366f1; box-shadow: 0 0 25px rgba(99, 102, 241, 0.25);">
+          4K
+        </div>
+        <h4>BEST4K</h4>
+        <p>منصة احترافية لمحبي الجودة والثبات أثناء المباريات الكبرى مع تغطية رياضية وترفيهية كاملة.</p>
+        <div class="open-btn">
+          <div class="btn btn-primary" style="background: #6366f1; color: #fff;">
+            فتح السيرفر والتفاصيل
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="server-card select-category-iptv" onclick="openPanel('maxtvpro')">
+        <div class="server-logo" style="color: #6366f1; border-color: #6366f1; box-shadow: 0 0 25px rgba(99, 102, 241, 0.25);">
+          MAX
+        </div>
+        <h4>MAX TV PRO</h4>
+        <p>تجربة ترفيه متكاملة تضم أقوى القنوات العالمية والأفلام والمسلسلات بجودة فائقة.</p>
+        <div class="open-btn">
+          <div class="btn btn-primary" style="background: #6366f1; color: #fff;">
+            فتح السيرفر والتفاصيل
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="server-card select-category-iptv" onclick="openPanel('family4k')">
+        <div class="server-logo" style="color: #6366f1; border-color: #6366f1; box-shadow: 0 0 25px rgba(99, 102, 241, 0.25);">
+          F4K
+        </div>
+        <h4>FAMILY 4K</h4>
+        <p>سيرفر ترفيهي عائلي متكامل يضم القنوات العالمية والأفلام والمسلسلات بجودة عالية مع استقرار ممتاز لجميع الأجهزة.</p>
+        <div class="open-btn">
+          <div class="btn btn-primary" style="background: #6366f1; color: #fff;">
+            فتح السيرفر والتفاصيل
+          </div>
+        </div>
+      </div>
+    
+
+      <div class="server-card select-category-iptv" onclick="openPanel('pablored')">
+        <div class="server-logo" style="color: #ff3333; border-color: #ff3333; box-shadow: 0 0 25px rgba(255, 51, 51, 0.25);">
+          RED
+        </div>
+        <h4>PABLO RED</h4>
+        <p>خدمة الترفيه الأولى والمتعة الحقيقية! مكتبة ضخمة جداً وثبات أسطوري مصمم لبطولة كأس العالم والنهائيات الكبرى.</p>
+        <div class="open-btn">
+          <div class="btn btn-primary" style="background: #ff3333; color: #fff;">
+            فتح السيرفر والتفاصيل
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  </section>
+
+  <!-- Panels Container (Servers popups) -->
+  
+      <!-- Panel for best4k -->
+      <div class="panel" id="panel_best4k">
+        <div class="close-panel" onclick="closePanel('panel_best4k')">
+          <i class="fas fa-times"></i>
+        </div>
+        <div class="panel-content">
+          <div class="panel-hero" style="border-color: rgba(99, 102, 241, 0.3)">
+            <h2 style="color: #6366f1">BEST4K</h2>
+            <p class="panel-hero-desc">منصة احترافية لمحبي الجودة والثبات أثناء المباريات الكبرى مع تغطية رياضية وترفيهية كاملة.</p>
+          </div>
+
+          <div class="stats">
+            
+      <div class="stat-box" style="border-color: rgba(99, 102, 241, 0.3)">
+        <h4 style="color: #6366f1">55,000+</h4>
+        <p>قناة رياضية وترفيهية</p>
+      </div>
+    
+      <div class="stat-box" style="border-color: rgba(99, 102, 241, 0.3)">
+        <h4 style="color: #6366f1">80,000+</h4>
+        <p>أفلام ومسلسلات</p>
+      </div>
+    
+      <div class="stat-box" style="border-color: rgba(99, 102, 241, 0.3)">
+        <h4 style="color: #6366f1">يومي</h4>
+        <p>تحديث يومي للمحتوى</p>
+      </div>
+    
+      <div class="stat-box" style="border-color: rgba(99, 102, 241, 0.3)">
+        <h4 style="color: #6366f1">4K / FHD / HD</h4>
+        <p>جودة البث المدعومة</p>
+      </div>
+    
+          </div>
+
+          <div class="download-grid">
+            
+          <div class="download-card" style="border-color: rgba(99, 102, 241, 0.3)">
+            <i class="fab fa-android" style="color: #6366f1"></i>
+            <h4>تحميل تطبيق الأندرويد</h4>
+            <p style="margin-bottom: 20px;">تحميل مباشر APK بجودة عالية</p>
+            <a href="https://sh-apps.cyou/apk/BEST4K.apk" target="_blank" class="btn btn-primary" style="background: #4f46e5">اضغط هنا للتحميل المباشر</a>
+          </div>
+        
+          <div class="download-card" style="border-color: rgba(99, 102, 241, 0.3)">
+            <i class="fas fa-tv" style="color: #6366f1"></i>
+            <h4>كود Downloader للتلفزيون</h4>
+            <div class="download-code" style="color: #6366f1; border-color: #6366f1">4056700</div>
+            <p style="margin-top: 10px; font-size: 0.85rem; color: #999;">أدخله في تطبيق Downloader على الشاشات والـ Firestick</p>
+          </div>
+        
+          <div class="download-card" style="border-color: rgba(99, 102, 241, 0.3)">
+            <i class="fab fa-apple" style="color: #6366f1"></i>
+            <h4>مشغلات أجهزة Apple iOS</h4>
+            <p style="line-height:2; font-weight:700; color: #fff;">تطبيق NEXT+ أو تطبيق CASTORA</p>
+            <p style="margin-top:15px; color:#6366f1; font-weight:900;">استخدم كود التفعيل: 4949 للربط السريع</p>
+          </div>
+        
+          <div class="download-card" style="border-color: rgba(99, 102, 241, 0.3)">
+            <i class="fas fa-crown" style="color: #6366f1"></i>
+            <h4>مميزات اشتراك BEST4K</h4>
+            <p style="line-height:2; text-align:right; font-size: 0.9rem; color: #ccc;">• ثبات فائق جداً أثناء مباريات اللعبة الكبرى<br>• سيرفرات سحابية حقيقية تتحمل الضغط<br>• أعلى معدل بتات 4K حقيقي بمعدل 60fps<br>• تحديث فوري يومي للمسلسلات والأفلام<br>• مناسب لكل الأجهزة والشاشات الذكية</p>
+          </div>
+        
+          </div>
+
+          <div class="section-subtitle-panel">باقات أسعار الاشتراك المتاحة</div>
+          <div class="price-grid">
+            
+      <div class="price-card " style="">
+        <h4>شهر واحد</h4>
+        <div class="price" style="color: #6366f1">7,000 IQD</div>
+        <button class="btn btn-primary" style="background: #4f46e5; width: 100%; border-radius: 12px; margin-top:16px; padding: 10px; font-size: 0.9rem;" onclick="openBookingModal('best4k', 'BEST4K', 'شهر واحد', '7,000 IQD')">
+          حجز فوري 🛒
+        </button>
+      </div>
+    
+      <div class="price-card active" style="border-color: #6366f1; transform: scale(1.02);">
+        <h4>3 أشهر</h4>
+        <div class="price" style="color: #6366f1">12,000 IQD</div>
+        <button class="btn btn-primary" style="background: #4f46e5; width: 100%; border-radius: 12px; margin-top:16px; padding: 10px; font-size: 0.9rem;" onclick="openBookingModal('best4k', 'BEST4K', '3 أشهر', '12,000 IQD')">
+          حجز فوري 🛒
+        </button>
+      </div>
+    
+      <div class="price-card " style="">
+        <h4>6 أشهر</h4>
+        <div class="price" style="color: #6366f1">20,000 IQD</div>
+        <button class="btn btn-primary" style="background: #4f46e5; width: 100%; border-radius: 12px; margin-top:16px; padding: 10px; font-size: 0.9rem;" onclick="openBookingModal('best4k', 'BEST4K', '6 أشهر', '20,000 IQD')">
+          حجز فوري 🛒
+        </button>
+      </div>
+    
+      <div class="price-card " style="">
+        <h4>سنة كاملة</h4>
+        <div class="price" style="color: #6366f1">30,000 IQD</div>
+        <button class="btn btn-primary" style="background: #4f46e5; width: 100%; border-radius: 12px; margin-top:16px; padding: 10px; font-size: 0.9rem;" onclick="openBookingModal('best4k', 'BEST4K', 'سنة كاملة', '30,000 IQD')">
+          حجز فوري 🛒
+        </button>
+      </div>
+    
+          </div>
+
+          <div class="notice" style="border-color: rgba(99, 102, 241, 0.3)">
+            <h4 style="color: #6366f1">أفضل استقرار للمشاهدة في العراق ⚡</h4>
+            <p>للحصول على أفضل أداء أثناء المباريات والبث المباشر يُفضل استخدام إنترنت Fiber أو FTTH بسرعة لا تقل عن 20Mbps مع اتصال مستقر. سيرفر BEST4K مصمم خصيصاً لتحمل الضغوط العالية أثناء البطولات لضمان الفرجة بدون توقف.</p>
+          </div>
+        </div>
+      </div>
+    
+
+      <!-- Panel for maxtvpro -->
+      <div class="panel" id="panel_maxtvpro">
+        <div class="close-panel" onclick="closePanel('panel_maxtvpro')">
+          <i class="fas fa-times"></i>
+        </div>
+        <div class="panel-content">
+          <div class="panel-hero" style="border-color: rgba(99, 102, 241, 0.3)">
+            <h2 style="color: #6366f1">MAX TV PRO</h2>
+            <p class="panel-hero-desc">تجربة ترفيه متكاملة تضم أقوى القنوات العالمية والأفلام والمسلسلات بجودة فائقة.</p>
+          </div>
+
+          <div class="stats">
+            
+      <div class="stat-box" style="border-color: rgba(99, 102, 241, 0.3)">
+        <h4 style="color: #6366f1">15,000+</h4>
+        <p>قناة مباشرة متنوعة</p>
+      </div>
+    
+      <div class="stat-box" style="border-color: rgba(99, 102, 241, 0.3)">
+        <h4 style="color: #6366f1">30,000+</h4>
+        <p>فيلم ومسلسل</p>
+      </div>
+    
+      <div class="stat-box" style="border-color: rgba(99, 102, 241, 0.3)">
+        <h4 style="color: #6366f1">تلقائي</h4>
+        <p>تحديث يومي للمحتوى</p>
+      </div>
+    
+      <div class="stat-box" style="border-color: rgba(99, 102, 241, 0.3)">
+        <h4 style="color: #6366f1">4K / FHD / HD</h4>
+        <p>دعم الجودة العالية</p>
+      </div>
+    
+          </div>
+
+          <div class="download-grid">
+            
+          <div class="download-card" style="border-color: rgba(99, 102, 241, 0.3)">
+            <i class="fab fa-android" style="color: #6366f1"></i>
+            <h4>تطبيق Android APK</h4>
+            <p style="margin-bottom: 20px;">رابط خارجي للتحميل المباشر</p>
+            <a href="https://www.mediafire.com/file/aynt5054tdllmmb/Max-TV-Pro-active.apk/file" target="_blank" class="btn btn-primary" style="background: #4f46e5">اضغط هنا للتحميل المباشر</a>
+          </div>
+        
+          <div class="download-card" style="border-color: rgba(99, 102, 241, 0.3)">
+            <i class="fab fa-apple" style="color: #6366f1"></i>
+            <h4>تطبيقات iPhone & iPad</h4>
+            <p style="line-height:2; font-weight:700; color: #fff;">تطبيق NEXT+ أو CASTORA</p>
+            <p style="margin-top:15px; color:#6366f1; font-weight:900;">كود تفعيل التطبيق: max للاتصال بالسيرفر</p>
+          </div>
+        
+          <div class="download-card" style="border-color: rgba(99, 102, 241, 0.3)">
+            <i class="fas fa-tv" style="color: #6366f1"></i>
+            <h4>أكواد Downloader للشاشات</h4>
+            <div class="download-code" style="color: #6366f1; border-color: #6366f1">2606779 (MAX ACTIVE)
+8229193 (MAX SHOW TV)
+183324 (MAX 4K)
+680115 (MAX XCIPTV)
+3603031 (MAX TV+)
+8623805 (MAX TV VPN)</div>
+            <p style="margin-top: 10px; font-size: 0.85rem; color: #999;">اختر التطبيق المناسب لجهازك واكتب الكود المقابل له</p>
+          </div>
+        
+          <div class="download-card" style="border-color: rgba(99, 102, 241, 0.3)">
+            <i class="fab fa-apple" style="color: #6366f1"></i>
+            <h4>مشغل الكمبيوتر واللابتوب</h4>
+            <p style="line-height:2; font-weight:700; color: #fff;">الموقع الرسمي: my.splayer.in</p>
+            <p style="margin-top:15px; color:#6366f1; font-weight:900;">كود المشغل: 8488 للتصفح عبر المتصفح</p>
+          </div>
+        
+          </div>
+
+          <div class="section-subtitle-panel">باقات أسعار الاشتراك المتاحة</div>
+          <div class="price-grid">
+            
+      <div class="price-card " style="">
+        <h4>شهر واحد</h4>
+        <div class="price" style="color: #6366f1">5,000 IQD</div>
+        <button class="btn btn-primary" style="background: #4f46e5; width: 100%; border-radius: 12px; margin-top:16px; padding: 10px; font-size: 0.9rem;" onclick="openBookingModal('maxtvpro', 'MAX TV PRO', 'شهر واحد', '5,000 IQD')">
+          حجز فوري 🛒
+        </button>
+      </div>
+    
+      <div class="price-card active" style="border-color: #6366f1; transform: scale(1.02);">
+        <h4>3 أشهر</h4>
+        <div class="price" style="color: #6366f1">10,000 IQD</div>
+        <button class="btn btn-primary" style="background: #4f46e5; width: 100%; border-radius: 12px; margin-top:16px; padding: 10px; font-size: 0.9rem;" onclick="openBookingModal('maxtvpro', 'MAX TV PRO', '3 أشهر', '10,000 IQD')">
+          حجز فوري 🛒
+        </button>
+      </div>
+    
+      <div class="price-card " style="">
+        <h4>6 أشهر</h4>
+        <div class="price" style="color: #6366f1">15,000 IQD</div>
+        <button class="btn btn-primary" style="background: #4f46e5; width: 100%; border-radius: 12px; margin-top:16px; padding: 10px; font-size: 0.9rem;" onclick="openBookingModal('maxtvpro', 'MAX TV PRO', '6 أشهر', '15,000 IQD')">
+          حجز فوري 🛒
+        </button>
+      </div>
+    
+      <div class="price-card " style="">
+        <h4>سنة كاملة</h4>
+        <div class="price" style="color: #6366f1">22,000 IQD</div>
+        <button class="btn btn-primary" style="background: #4f46e5; width: 100%; border-radius: 12px; margin-top:16px; padding: 10px; font-size: 0.9rem;" onclick="openBookingModal('maxtvpro', 'MAX TV PRO', 'سنة كاملة', '22,000 IQD')">
+          حجز فوري 🛒
+        </button>
+      </div>
+    
+          </div>
+
+          <div class="notice" style="border-color: rgba(99, 102, 241, 0.3)">
+            <h4 style="color: #6366f1">أفضل أداء واستقرار بأفضل سعر ⚡</h4>
+            <p>لأفضل جودة مشاهدة وثبات أثناء المباريات والأفلام يُنصح باستخدام إنترنت عالي السرعة لا يقل عن 20Mbps. يفضل تجنب شبكات الـ Wi-Fi البعيدة أو الضعيفة لضمان ثبات البث بجودة 4K.</p>
+          </div>
+        </div>
+      </div>
+    
+
+      <!-- Panel for family4k -->
+      <div class="panel" id="panel_family4k">
+        <div class="close-panel" onclick="closePanel('panel_family4k')">
+          <i class="fas fa-times"></i>
+        </div>
+        <div class="panel-content">
+          <div class="panel-hero" style="border-color: rgba(99, 102, 241, 0.3)">
+            <h2 style="color: #6366f1">FAMILY 4K</h2>
+            <p class="panel-hero-desc">سيرفر ترفيهي عائلي متكامل يضم القنوات العالمية والأفلام والمسلسلات بجودة عالية مع استقرار ممتاز لجميع الأجهزة.</p>
+          </div>
+
+          <div class="stats">
+            
+      <div class="stat-box" style="border-color: rgba(99, 102, 241, 0.3)">
+        <h4 style="color: #6366f1">15,000+</h4>
+        <p>قناة بث مباشر</p>
+      </div>
+    
+      <div class="stat-box" style="border-color: rgba(99, 102, 241, 0.3)">
+        <h4 style="color: #6366f1">30,000+</h4>
+        <p>مكتبة أفلام ومسلسلات</p>
+      </div>
+    
+      <div class="stat-box" style="border-color: rgba(99, 102, 241, 0.3)">
+        <h4 style="color: #6366f1">يومي سريع</h4>
+        <p>تحديث المحتوى</p>
+      </div>
+    
+      <div class="stat-box" style="border-color: rgba(99, 102, 241, 0.3)">
+        <h4 style="color: #6366f1">ممتاز</h4>
+        <p>ثبات واستقرار فائق</p>
+      </div>
+    
+          </div>
+
+          <div class="download-grid">
+            
+          <div class="download-card" style="border-color: rgba(99, 102, 241, 0.3)">
+            <i class="fab fa-android" style="color: #6366f1"></i>
+            <h4>رابط متجر Google Play</h4>
+            <p style="margin-bottom: 20px;">تنزيل رسمي لأجهزة أندرويد</p>
+            <a href="https://play.google.com/store/apps/details?id=com.shadeed.familypro" target="_blank" class="btn btn-primary" style="background: #4f46e5">اضغط هنا للتحميل المباشر</a>
+          </div>
+        
+          <div class="download-card" style="border-color: rgba(99, 102, 241, 0.3)">
+            <i class="fas fa-tv" style="color: #6366f1"></i>
+            <h4>كود Family Active</h4>
+            <div class="download-code" style="color: #6366f1; border-color: #6366f1">630379</div>
+            <p style="margin-top: 10px; font-size: 0.85rem; color: #999;">كود تطبيق Downloader المباشر</p>
+          </div>
+        
+          <div class="download-card" style="border-color: rgba(99, 102, 241, 0.3)">
+            <i class="fas fa-tv" style="color: #6366f1"></i>
+            <h4>كود Family Pro</h4>
+            <div class="download-code" style="color: #6366f1; border-color: #6366f1">919624</div>
+            <p style="margin-top: 10px; font-size: 0.85rem; color: #999;">كود تطبيق Downloader المباشر</p>
+          </div>
+        
+          <div class="download-card" style="border-color: rgba(99, 102, 241, 0.3)">
+            <i class="fas fa-tv" style="color: #6366f1"></i>
+            <h4>كود Family Gold</h4>
+            <div class="download-code" style="color: #6366f1; border-color: #6366f1">9577153</div>
+            <p style="margin-top: 10px; font-size: 0.85rem; color: #999;">كود Downloader لإصدار جولد</p>
+          </div>
+        
+          <div class="download-card" style="border-color: rgba(99, 102, 241, 0.3)">
+            <i class="fas fa-tv" style="color: #6366f1"></i>
+            <h4>كود Family Diamond</h4>
+            <div class="download-code" style="color: #6366f1; border-color: #6366f1">8085964</div>
+            <p style="margin-top: 10px; font-size: 0.85rem; color: #999;">كود Downloader لإصدار دايموند</p>
+          </div>
+        
+          </div>
+
+          <div class="section-subtitle-panel">باقات أسعار الاشتراك المتاحة</div>
+          <div class="price-grid">
+            
+      <div class="price-card active" style="border-color: #6366f1; transform: scale(1.02);">
+        <h4>6 أشهر</h4>
+        <div class="price" style="color: #6366f1">15,000 IQD</div>
+        <button class="btn btn-primary" style="background: #4f46e5; width: 100%; border-radius: 12px; margin-top:16px; padding: 10px; font-size: 0.9rem;" onclick="openBookingModal('family4k', 'FAMILY 4K', '6 أشهر', '15,000 IQD')">
+          حجز فوري 🛒
+        </button>
+      </div>
+    
+      <div class="price-card " style="">
+        <h4>سنة كاملة</h4>
+        <div class="price" style="color: #6366f1">22,000 IQD</div>
+        <button class="btn btn-primary" style="background: #4f46e5; width: 100%; border-radius: 12px; margin-top:16px; padding: 10px; font-size: 0.9rem;" onclick="openBookingModal('family4k', 'FAMILY 4K', 'سنة كاملة', '22,000 IQD')">
+          حجز فوري 🛒
+        </button>
+      </div>
+    
+          </div>
+
+          <div class="notice" style="border-color: rgba(99, 102, 241, 0.3)">
+            <h4 style="color: #6366f1">ترفيه آمن وثابت لجميع أفراد العائلة 👨‍👩‍👧‍👦</h4>
+            <p>يتميز سيرفر FAMILY 4K باستقرار ممتاز وقدرة عالية على التعامل مع الضغط خلال مباريات دوري الأبطال والمناسبات الكبرى، ويحتوي على تصفية فخمة لفرجة نظيفة ومناسبة للعائلة.</p>
+          </div>
+        </div>
+      </div>
+    
+
+      <!-- Panel for pablored -->
+      <div class="panel" id="panel_pablored">
+        <div class="close-panel" onclick="closePanel('panel_pablored')">
+          <i class="fas fa-times"></i>
+        </div>
+        <div class="panel-content">
+          <div class="panel-hero" style="border-color: rgba(255, 51, 51, 0.3)">
+            <h2 style="color: #ff3333">PABLO RED</h2>
+            <p class="panel-hero-desc">خدمة الترفيه الأولى والمتعة الحقيقية! مكتبة ضخمة جداً وثبات أسطوري مصمم لبطولة كأس العالم والنهائيات الكبرى.</p>
+          </div>
+
+          <div class="stats">
+            
+      <div class="stat-box" style="border-color: rgba(255, 51, 51, 0.3)">
+        <h4 style="color: #ff3333">5,350+</h4>
+        <p>قنوات حية مخصصة</p>
+      </div>
+    
+      <div class="stat-box" style="border-color: rgba(255, 51, 51, 0.3)">
+        <h4 style="color: #ff3333">60,000+</h4>
+        <p>أفلام ومسلسلات حديثة VOD</p>
+      </div>
+    
+      <div class="stat-box" style="border-color: rgba(255, 51, 51, 0.3)">
+        <h4 style="color: #ff3333">فوري</h4>
+        <p>مزامنة وتحديث الترفيه</p>
+      </div>
+    
+      <div class="stat-box" style="border-color: rgba(255, 51, 51, 0.3)">
+        <h4 style="color: #ff3333">ألترا فخم</h4>
+        <p>مستوى الثبات العام</p>
+      </div>
+    
+          </div>
+
+          <div class="download-grid">
+            
+          <div class="download-card" style="border-color: rgba(255, 51, 51, 0.3)">
+            <i class="fab fa-android" style="color: #ff3333"></i>
+            <h4>التطبيق الرسمي المباشر</h4>
+            <p style="margin-bottom: 20px;">تحميل تطبيق الأندرويد الأصلي</p>
+            <a href="https://fhd.cx" target="_blank" class="btn btn-primary" style="background: #ff1111">اضغط هنا للتحميل المباشر</a>
+          </div>
+        
+          <div class="download-card" style="border-color: rgba(255, 51, 51, 0.3)">
+            <i class="fas fa-tv" style="color: #ff3333"></i>
+            <h4>كود Downloader للتنصيب</h4>
+            <div class="download-code" style="color: #ff3333; border-color: #ff3333">9568447</div>
+            <p style="margin-top: 10px; font-size: 0.85rem; color: #999;">مخصص لأجهزة FireStick و Xiaomi Mi Box و Android TV</p>
+          </div>
+        
+          <div class="download-card" style="border-color: rgba(255, 51, 51, 0.3)">
+            <i class="fab fa-apple" style="color: #ff3333"></i>
+            <h4>برامج وتغليفات iOS (أبل)</h4>
+            <p style="line-height:2; font-weight:700; color: #fff;">مشغلات NEXT+ و CASTORA</p>
+            <p style="margin-top:15px; color:#ff3333; font-weight:900;">رمز الربط السريع للتفعيل المباشر: 111</p>
+          </div>
+        
+          <div class="download-card" style="border-color: rgba(255, 51, 51, 0.3)">
+            <i class="fab fa-apple" style="color: #ff3333"></i>
+            <h4>الشاشات الذكية (SAMSUNG & LG)</h4>
+            <p style="line-height:2; font-weight:700; color: #fff;">تثبيت مشغل IBO PLAYER المعتمد</p>
+            <p style="margin-top:15px; color:#ff3333; font-weight:900;">ثم تزويدنا بعنوان MAC لتفعيل الاشتراك مباشرة</p>
+          </div>
+        
+          </div>
+
+          <div class="section-subtitle-panel">باقات أسعار الاشتراك المتاحة</div>
+          <div class="price-grid">
+            
+      <div class="price-card " style="">
+        <h4>شهر واحد</h4>
+        <div class="price" style="color: #ff3333">5,000 IQD</div>
+        <button class="btn btn-primary" style="background: #ff1111; width: 100%; border-radius: 12px; margin-top:16px; padding: 10px; font-size: 0.9rem;" onclick="openBookingModal('pablored', 'PABLO RED', 'شهر واحد', '5,000 IQD')">
+          حجز فوري 🛒
+        </button>
+      </div>
+    
+      <div class="price-card " style="">
+        <h4>3 أشهر</h4>
+        <div class="price" style="color: #ff3333">10,000 IQD</div>
+        <button class="btn btn-primary" style="background: #ff1111; width: 100%; border-radius: 12px; margin-top:16px; padding: 10px; font-size: 0.9rem;" onclick="openBookingModal('pablored', 'PABLO RED', '3 أشهر', '10,000 IQD')">
+          حجز فوري 🛒
+        </button>
+      </div>
+    
+      <div class="price-card " style="">
+        <h4>6 أشهر</h4>
+        <div class="price" style="color: #ff3333">15,000 IQD</div>
+        <button class="btn btn-primary" style="background: #ff1111; width: 100%; border-radius: 12px; margin-top:16px; padding: 10px; font-size: 0.9rem;" onclick="openBookingModal('pablored', 'PABLO RED', '6 أشهر', '15,000 IQD')">
+          حجز فوري 🛒
+        </button>
+      </div>
+    
+      <div class="price-card active" style="border-color: #ff3333; transform: scale(1.02);">
+        <h4>سنة كاملة 🏆</h4>
+        <div class="price" style="color: #ff3333">30,000 IQD</div>
+        <button class="btn btn-primary" style="background: #ff1111; width: 100%; border-radius: 12px; margin-top:16px; padding: 10px; font-size: 0.9rem;" onclick="openBookingModal('pablored', 'PABLO RED', 'سنة كاملة 🏆', '30,000 IQD')">
+          حجز فوري 🛒
+        </button>
+      </div>
+    
+          </div>
+
+          <div class="notice" style="border-color: rgba(255, 51, 51, 0.3)">
+            <h4 style="color: #ff3333">سيرفر بابلو ريد.. ثبات، سرعة، وفخامة لا مثيل لها 🚀</h4>
+            <p>تم جلب هذا السيرفر خصيصاً لتفادي تقطيع الـ IPTV وقت الذروة. يدعم الدفع الذكي عبر بطاقات الماستركارد وسويتش كيو (MasterCard / Super Ki) والتحويل المباشر في العراق. تجربة المشاهدة فخمة وسريعة التنقل.</p>
+          </div>
+        </div>
+      </div>
+    
+
+  <!-- Single Policy Modal -->
+  <div class="modal" id="policyModal">
+    <div class="modal-content">
+      <div class="close-modal" onclick="closeModal('policyModal')">×</div>
+      <h3>سياسة الاستخدام والخصوصية 🔐</h3>
+      <p>• الحساب والاشتراك مرخصين للاستخدام الشخصي فقط.<br><br>• يمنع منعاً باتاً تشغيل اشتراك واحد على أكثر من جهاز في نفس الوقت لتجنب إيقاف الخدمة آلياً بفلتر السيرفر.<br><br>• بياناتكم ومعلومات الاتصال خاصة ومحمية بالكامل وسرية.<br><br>• جودة واستقرار البث تعتمد بالدرجة الأولى على ثبات الإنترنت لديكم وخلوه من التقاطعات.<br><br>• نرحب وننصح دائماً بالطلب وتجربة السيرفر لمدة 12 ساعة مجاناً قبل الالتزام بأي اشتراك طويل الأجل لضمان رضاكم.</p>
+    </div>
+  </div>
+
+  <!-- Booking Interactive Modal -->
+  <div class="modal" id="bookingModal">
+    <div class="modal-content">
+      <div class="close-modal" onclick="closeModal('bookingModal')">×</div>
+      <h3 style="margin-bottom: 5px;">تفاصيل حجز الاشتراك</h3>
+      <p id="bookingSub" style="font-size:0.85rem; color:#a0aec0; margin-bottom: 20px;"></p>
+      
+      <form id="standaloneBookingForm" onsubmit="submitForm(event)">
+        <input type="hidden" id="book_server_id">
+        <input type="hidden" id="book_server_name">
+        <input type="hidden" id="book_duration">
+        <input type="hidden" id="book_price">
+
+        <div class="booking-form-group">
+          <label>الاسم بالكامل:</label>
+          <input type="text" id="book_name" required placeholder="مثال: علي البصري">
+        </div>
+        
+        <div class="booking-form-group">
+          <label>رقم هاتف الواتساب:</label>
+          <input type="tel" id="book_phone" required placeholder="مثال: 07740393776">
+        </div>
+
+        <div class="booking-form-group">
+          <label>ملاحظات إضافية (اختياري):</label>
+          <textarea id="book_notes" rows="2" placeholder="مثال: أريد تفعيله لجهاز الأندرويد أو أبل"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; border-radius: 15px; padding: 15px; font-weight:800; font-size:1.05rem; margin-top: 10px;">
+          تأكيد وإصدار الفاتورة على واتساب 🚀
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="logo-circle" style="margin: auto;">
+      <div class="t1">IQTV</div>
+      <div class="t2">4K</div>
+    </div>
+    <p>IQTV 4K — الوكيل المعتمد لجميع السيرفرات الأصلية في العراق 🏆</p>
+    <div style="margin-top:25px; display:flex; justify-content:center; gap:15px; flex-wrap:wrap;">
+      <a href="javascript:void(0)" onclick="openModal('policyModal')" class="btn btn-dark">سياسة الاستخدام</a>
+      <a href="https://wa.me/9647740393776" target="_blank" class="btn btn-primary">واتساب الدعم</a>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/9647740393776" target="_blank" class="floating-whatsapp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    // Panel handling
+    function openPanel(id) {
+      document.getElementById('panel_' + id).style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePanel(id) {
+      document.getElementById(id).style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    // Modal view
+    function openModal(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
+    // Category filter system
+    function filterCategory(catId, btn) {
+      // Toggle active states
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Filter cards
+      const cards = document.querySelectorAll('.server-card');
+      cards.forEach(card => {
+        if (card.classList.contains('select-category-' + catId)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Booking interaction
+    function openBookingModal(pId, pName, duration, price) {
+      document.getElementById('book_server_id').value = pId;
+      document.getElementById('book_server_name').value = pName;
+      document.getElementById('book_duration').value = duration;
+      document.getElementById('book_price').value = price;
+      
+      document.getElementById('bookingSub').innerText = 'أنت بصدد طلب اشتراك ' + pName + ' لمدّة (' + duration + ') بقيمة ' + price;
+      document.getElementById('bookingModal').style.display = 'block';
+    }
+
+    function submitForm(event) {
+      event.preventDefault();
+      
+      const pName = document.getElementById('book_server_name').value;
+      const duration = document.getElementById('book_duration').value;
+      const price = document.getElementById('book_price').value;
+      const name = document.getElementById('book_name').value;
+      const phone = document.getElementById('book_phone').value;
+      const notes = document.getElementById('book_notes').value || 'لا يوجد';
+
+      const invoice = 'مرحباً متجر *IQTV 4K* 🇮🇶\n\n' +
+                    'لقد قمت بتقديم طلب حجز اشتراك إلكتروني عبر موقعكم الخاص:\n' +
+                    '🏷️ *الاشتراك المطلـوب:* ' + pName + '\n' +
+                    '⏱️ *المـدة:* ' + duration + '\n' +
+                    '💰 *السـعـر:* ' + price + '\n\n' +
+                    '📋 *بيانات العميل:*\n' +
+                    '👤 *الاسم:* ' + name + '\n' +
+                    '📞 *رقم الهاتف:* ' + phone + '\n' +
+                    '📝 *ملاحظات:* ' + notes + '\n\n' +
+                    'يرجى تأكيد الحجز وإرسال تفاصيل التفعيل وشكراً لكم!';
+
+      const encoded = encodeURIComponent(invoice);
+      window.open('https://wa.me/9647740393776?text=' + encoded, '_blank');
+      closeModal('bookingModal');
+    }
+
+    // Window clicks outside targets close them
+    window.onclick = function(e) {
+      if (e.target.classList.contains('panel')) {
+        e.target.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+      if (e.target.classList.contains('modal')) {
+        e.target.style.display = 'none';
+      }
+    }
+
+    // Trigger initial filter on load to display first category
+    window.addEventListener('DOMContentLoaded', () => {
+      const activeFilterBtn = document.querySelector('.filter-btn.active');
+      if (activeFilterBtn) {
+        activeFilterBtn.click();
+      }
+    });
+  </script>
 </body>
 </html>
