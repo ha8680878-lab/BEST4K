@@ -618,7 +618,8 @@
             opacity: 1;
         }
 
-        .panel-overlay.active + .panel-drawer {
+        .panel-overlay.active + .panel-drawer,
+        .panel-drawer.active {
             transform: translateX(0);
         }
 
@@ -1631,7 +1632,7 @@
                 </div>
                 <div class="policy-item">
                     <i class="fas fa-caret-left"></i>
-                    <p><strong>سرية البيانات وموثوقيتها:</strong> لضمان استمتاعك بدقة الـ 4K فائقة السلاسة وبدون أي تقطيع، يُنصح بشبكة إنترنت تفوق سرعتها الـ 20 ميجابت بالثانية.</p>
+                    <p><strong>سرعة الإنترنت:</strong> للحصول على دقة 4K فائقة السلاسة بدون تقطيع، يُنصح بإنترنت مستقر بسرعة 20Mbps فما فوق.</p>
                 </div>
             </div>
         </div>
@@ -1869,16 +1870,13 @@
 
             document.getElementById('drawer-inject-content').innerHTML = contentHtml;
             document.getElementById('p-overlay').classList.add('active');
+            document.getElementById('p-drawer').classList.add('active');
             document.body.style.overflow = 'hidden';
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.2); opacity: 0.7; }
         }
 
         function closeServerDrawer() {
             document.getElementById('p-overlay').classList.remove('active');
+            document.getElementById('p-drawer').classList.remove('active');
             document.body.style.overflow = 'auto';
         }
 
@@ -1931,7 +1929,7 @@
             const currentDurationVal = durationSelect.value;
             let optionsHtml = '';
             data.prices.forEach(pr => {
-                const isSelected = pr.duration === currentDurationVal ? 'selected' : '';
+                const isSelected = pr.price === currentDurationVal ? 'selected' : '';
                 optionsHtml += `<option value="${pr.price}" data-duration="${pr.duration}" ${isSelected}>${pr.duration} — ${pr.price}</option>`;
             });
 
