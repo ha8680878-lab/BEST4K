@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS Play CDN (Optimized Build Setup) -->
+    <!-- Tailwind CSS Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -72,8 +72,8 @@
       .animate-fade-in {
         animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       }
-
-      /* Custom scrollbar styling */
+      
+      /* Custom Scrollbar */
       ::-webkit-scrollbar {
         width: 8px;
         height: 8px;
@@ -105,265 +105,225 @@
     <div id="root"></div>
 
     <script>
-      // Global default data payloads
+      // القيم الافتراضية الفاخرة لمتجر العراقيين لبلورة التحديثات مباشرة
       window.STORE_SETTINGS = {
-        title: 'IQTV 4K',
-        subtitle: 'الاشتراكات الفاخرة والبث المستقر بدقة 4K',
-        description: 'المتجر الرسمي والأول في العراق لاشتراكات IPTV الفاخرة، حسابات Netflix، وعوالم الترفيه والسرعة الفائقة مع ثبات أسطوري وضمان متكامل.',
-        whatsappNumber: '9647700000000',
-        whatsappTemplate: 'مرحباً، أود حجز اشتراك {product} - باقة {plan} بسعر {price}. هل يمكنني إتمام الدفع؟',
-        logoText: 'IQTV',
-        logoSub: '4K'
+        title: "IQTV 4K",
+        subtitle: "الاشتراكات الفاخرة والبث المستقر بدقة 4K",
+        description: "المتجر الرسمي والأول في العراق لاشتراكات IPTV الفاخرة، حسابات Netflix، وعوالم الترفيه والسرعة الفائقة مع ثبات أسطوري وضمان متكامل.",
+        whatsappNumber: "9647700000000",
+        whatsappTemplate: "مرحباً، أود حجز اشتراك {product} - باقة {plan} بسعر {price}. هل يمكنني إتمام الدفع والتفعيل الآن؟\n\n- الاسم: {name}\n- الهاتف: {phone}\n- ملاحظات إضافية: {notes}",
+        logoText: "IQTV",
+        logoSub: "4K"
       };
 
       window.STORE_CATEGORIES = [
-        { id: 'iptv', name: 'سيرفرات IPTV والمشاهدة', icon: 'Tv' },
-        { id: 'extra', name: 'حسابات واشتراكات ترفيهية أخرى', icon: 'Sparkles' }
+        { id: "iptv", name: "سيرفرات IPTV والمشاهدة", icon: "Tv" },
+        { id: "extra", name: "حسابات واشتراكات ترفيهية أخرى", icon: "Sparkles" }
       ];
 
       window.STORE_SERVERS = [
         {
-          id: 'vultra',
-          name: 'V ULTRA',
-          badge: 'الأحدث 🔥',
-          category: 'iptv',
-          tagline: 'خفّة مطلقة للتصفح وألترا سرعة في التنقل بين القنوات',
-          shortDesc: 'الإصدار فائق التطور مع تنقل عبقري وحماية من التقطيع، يعمل بروعة على كافة السرعات حتى المتوسطة والضعيفة.',
-          logoText: 'V',
-          logoBg: 'bg-gradient-to-br from-orange-500 via-orange-600 to-yellow-400 text-black',
-          glowColor: 'orange',
+          id: "vultra",
+          name: "V ULTRA",
+          badge: "الأحدث 🔥",
+          category: "iptv",
+          tagline: "خفّة مطلقة للتصفح وألترا سرعة في التنقل بين القنوات",
+          shortDesc: "الإصدار فائق التطور مع تنقل عبقري وحماية من التقطيع، يعمل بروعة على كافة السرعات حتى المتوسطة والضعيفة.",
+          logoText: "V",
+          logoBg: "bg-gradient-to-br from-orange-500 via-orange-600 to-yellow-400 text-black",
+          glowColor: "orange",
           stats: [
-            { value: 'ألترا ⚡', label: 'الخفة وسرعة التجاوب' },
-            { value: 'تنقل ذكي', label: 'تنقل فوري بين القنوات' },
-            { value: 'كود 1000', label: 'كود سيرفر أيفون الخاص' },
-            { value: 'ثقة تامة', label: 'قوة خوادم البث المباشر' }
+            { value: "ألترا ⚡", label: "الخفة وسرعة التجاوب" },
+            { value: "تنقل ذكي", label: "تنقل فوري بين القنوات" },
+            { value: "كود 1000", label: "كود سيرفر أيفون الخاص" },
+            { value: "ثقة تامة", label: "قوة خوادم البث المباشر" }
           ],
           downloads: [
-            {
-              type: 'android_apk',
-              title: 'تحميل مباشر سريع',
-              subtitle: 'رابط التحميل السريع المباشر',
-              link: 'https://tr.ee/vul'
-            },
-            {
-              type: 'android_apk',
-              title: 'متجر Google Play للأندرويد',
-              subtitle: 'تطبيق V ULTRA الرسمي على المتجر',
-              link: 'https://play.google.com/store/apps/details?id=com.shadeed.var8k'
-            },
-            {
-              type: 'downloader',
-              title: 'كود Downloader للشاشات الذكية',
-              subtitle: 'أدخله في تطبيق Downloader على الشاشة والـ Firestick',
-              value: '9098255'
-            },
-            {
-              type: 'apple_ios',
-              title: 'تطبيق الآيفون والآيباد Apple iOS',
-              subtitle: 'رابط التحميل من متجر App Store وسيرفر التوصيل',
-              link: 'https://apps.apple.com/app/id6443335504',
-              additionalInfo: 'استخدم كود السيرفر للايفون: 1000'
-            },
-            {
-              type: 'feature_list',
-              title: 'مزايا تحديث V ULTRA الجديد',
-              additionalInfo: '• خفّة وسرعة أعلى من المعتاد لعدم استهلاك الرام\n• تنقّل مريح وسلس للغاية بين قنوات البث ومكتبات VOD\n• تصميم واجهة عصري وجديد كلياً يناسب الشاشات والتحكم بالريموت\n• استقرار متفوق لأدنى سرعات الإنترنت بفضل تقنية الضغط الذكي'
-            }
+            { type: "android_apk", title: "تحميل مباشر سريع", subtitle: "رابط التحميل السريع المباشر", link: "https://tr.ee/vul" },
+            { type: "android_apk", title: "متجر Google Play للأندرويد", subtitle: "تطبيق V ULTRA الرسمي على المتجر", link: "https://play.google.com/store/apps/details?id=com.shadeed.var8k" },
+            { type: "downloader", title: "كود Downloader للشاشات الذكية", subtitle: "أدخله في تطبيق Downloader على الشاشة والـ Firestick", value: "9098255" },
+            { type: "apple_ios", title: "تطبيق الآيفون والآيباد Apple iOS", subtitle: "رابط التحميل من متجر App Store وسيرفر التوصيل", link: "https://apps.apple.com/app/id6443335504", additionalInfo: "استخدم كود السيرفر للايفون: 1000" },
+            { type: "feature_list", title: "مزايا تحديث V ULTRA الجديد", additionalInfo: "• خفّة وسرعة أعلى من المعتاد لعدم استهلاك الرام\n• تنقّل مريح وسلس للغاية بين قنوات البث ومكتبات VOD\n• تصميم واجهة عصري وجديد كلياً يناسب الشاشات والتحكم بالريموت\n• استقرار متفوق لأدنى سرعات الإنترنت بفضل تقنية الضغط الذكي" }
           ],
           prices: [
-            { duration: 'شهر واحد', price: '10,000 IQD' },
-            { duration: '3 أشهر', price: '15,000 IQD' },
-            { duration: '6 أشهر', price: '20,000 IQD' },
-            { duration: 'سنة كاملة', price: '35,000 IQD', isPopular: true }
+            { duration: "شهر واحد", price: "10,000 IQD" },
+            { duration: "3 أشهر", price: "15,000 IQD" },
+            { duration: "6 أشهر", price: "20,000 IQD" },
+            { duration: "سنة كاملة", price: "35,000 IQD", isPopular: true }
           ],
-          noticeTitle: 'ثورة السرعة والخفة في العراق ⚡',
-          noticeDesc: 'تطبيق V ULTRA الجديد كلياً يقدم حلولاً ثورية لمشاكل التقطيع والتقليد. كود السيرفر مدمج ومفتاح الدونلودر يتيح التثبيت السهل بلحظات. نوصي به بشدة كخيار فخم ومميز للاستخدام العائلي والرياضي الصارم.'
+          noticeTitle: "ثورة السرعة والخفة في العراق ⚡",
+          noticeDesc: "تطبيق V ULTRA الجديد كلياً يقدم حلولاً ثورية لمشاكل التقطيع والتقليد. كود السيرفر مدمج ومفتاح الدونلودر يتيح التثبيت السهل بلحظات. نوصي به بشدة كخيار فخم ومميز للاستخدام العائلي والرياضي الصارم."
         },
         {
-          id: 'best4k',
-          name: 'BEST4K',
-          badge: 'طاقة قصوى 🚀',
-          category: 'iptv',
-          tagline: 'منصة احترافية لمحبي الجودة الفائقة والثبات الأسطوري',
-          shortDesc: 'السيرفر المفضل لمشاهدة المباريات الكبرى بدقة 4K ومعدل إطارات مرتفع 60fps دون أي تذبذب.',
-          logoText: '4K',
-          logoBg: 'bg-gradient-to-br from-indigo-600 via-blue-600 to-violet-500',
-          glowColor: 'indigo',
+          id: "best4k",
+          name: "BEST4K",
+          badge: "طاقة قصوى 🚀",
+          category: "iptv",
+          tagline: "منصة احترافية لمحبي الجودة الفائقة والثبات الأسطوري",
+          shortDesc: "السيرفر المفضل لمشاهدة المباريات الكبرى بدقة 4K ومعدل إطارات مرتفع 60fps دون أي تذبذب.",
+          logoText: "4K",
+          logoBg: "bg-gradient-to-br from-indigo-600 via-blue-600 to-violet-500",
+          glowColor: "indigo",
           stats: [
-            { value: '55,000+', label: 'قناة رياضية وترفيهية' },
-            { value: '80,000+', label: 'فيلم ومسلسل VOD' },
-            { value: 'يومي فوري', label: 'مزامنة وتحديث فوري' },
-            { value: '4K Real', label: 'معدل إطارات 60fps' }
+            { value: "55,000+", label: "قناة رياضية وترفيهية" },
+            { value: "80,000+", label: "فيلم ومسلسل VOD" },
+            { value: "يومي فوري", label: "مزامنة وتحديث فوري" },
+            { value: "4K Real", label: "معدل إطارات 60fps" }
           ],
           downloads: [
-            {
-              type: 'android_apk',
-              title: 'تحميل مباشر للآندرويد APK',
-              subtitle: 'رابط التحميل المباشر الآمن',
-              link: 'https://sh-apps.cyou/apk/BEST4K.apk'
-            },
-            {
-              type: 'downloader',
-              title: 'كود Downloader للشاشات والتلفزيون',
-              subtitle: 'تطبيق Downloader على الشاشات والـ Firestick',
-              value: '4056700'
-            },
-            {
-              type: 'apple_ios',
-              title: 'مشغلات أجهزة Apple iOS',
-              subtitle: 'تثبيت تطبيق NEXT+ أو تطبيق CASTORA',
-              additionalInfo: 'استخدم كود التفعيل السريع: 4949 للربط المباشر بالسيرفر'
-            },
-            {
-              type: 'feature_list',
-              title: 'مميزات اشتراك BEST4K الاستثنائي',
-              additionalInfo: '• ثبات فائق جداً أثناء مباريات اللعبة والقمم العالمية الكبرى\n• خوادم سحابية موزعة دولياً لضمان عدم حدوث ضغط أوقات الذروة\n• أعلى جودة بتات ممكنة 4K Ultra HD\n• تصفية وإمكانية تقسيم المفضلة وحظر الفئات غير المرغوبة'
-            }
+            { type: "android_apk", title: "تحميل مباشر للآندرويد APK", subtitle: "رابط التحميل المباشر الآمن", link: "https://sh-apps.cyou/apk/BEST4K.apk" },
+            { type: "downloader", title: "كود Downloader للشاشات والتلفزيون", subtitle: "تطبيق Downloader على الشاشات والـ Firestick", value: "4056700" },
+            { type: "apple_ios", title: "مشغلات أجهزة Apple iOS", subtitle: "تثبيت تطبيق NEXT+ أو تطبيق CASTORA", additionalInfo: "استخدم كود التفعيل السريع: 4949 للربط المباشر بالسيرفر" },
+            { type: "feature_list", title: "مميزات تفعيل BEST4K الاستثنائي", additionalInfo: "• ثبات فائق جداً أثناء مباريات اليوم والقمم العالمية الكبرى\n• خوادم سحابية موزعة دولياً لضمان عدم حدوث ضغط أوقات الذروة\n• أعلى جودة بتات ممكنة 4K Ultra HD\n• تصفية وإمكانية تقسيم المفضلة وحظر الفئات غير المرغوبة" }
           ],
           prices: [
-            { duration: 'شهر واحد', price: '7,000 IQD' },
-            { duration: '3 أشهر', price: '12,000 IQD', isPopular: true },
-            { duration: '6 أشهر', price: '20,000 IQD' },
-            { duration: 'سنة كاملة', price: '30,000 IQD' }
+            { duration: "شهر واحد", price: "7,000 IQD" },
+            { duration: "3 أشهر", price: "12,000 IQD", isPopular: true },
+            { duration: "6 أشهر", price: "20,000 IQD" },
+            { duration: "سنة كاملة", price: "30,000 IQD" }
           ],
-          noticeTitle: 'أفضل استقرار للمشاهدة في العراق ⚡',
-          noticeDesc: 'للحصول على الأداء الأسطوري الموعود أثناء مواجهات دوري الأبطال والدوريات الكبرى، يفضل استخدام إنترنت ألياف ضوئية FTTH بسرعة عالية. سيرفر BEST4K مصمم بشكل متطور ليعطيك متعة حقيقية وكأنك بالملعب.'
+          noticeTitle: "أفضل استقرار للمشاهدة في العراق ⚡",
+          noticeDesc: "للإحساس بالأداء الأسطوري الموعود أثناء مواجهات دوري الأبطال والدوريات الكبرى، يفضل استخدام إنترنت ألياف ضوئية FTTH بسرعة عالية. سيرفر BEST4K مصمم بشكل متطور ليعطيك متعة حقيقية وكأنك بالملعب."
         },
         {
-          id: 'maxtvpro',
-          name: 'MAX TV PRO',
-          badge: 'القيمة الأقوى 💎',
-          category: 'iptv',
-          tagline: 'أكبر محتوى من القنوات الترفيهية الفاخرة بأفضل الأسعار',
-          shortDesc: 'استمتع بأفخم تجميعة للقنوات العربية واللاتينية والعالمية والمكتبات السينمائية مع استقرار باهر وكفاءة عالية.',
-          logoText: 'MAX',
-          logoBg: 'bg-gradient-to-br from-indigo-500 via-purple-600 to-pink-500',
-          glowColor: 'purple',
+          id: "maxtvpro",
+          name: "MAX TV PRO",
+          badge: "القيمة الأقوى 💎",
+          category: "iptv",
+          tagline: "أكبر محتوى من القنوات الترفيهية الفاخرة بأفضل الأسعار",
+          shortDesc: "استمتع بأفخم تجميعة للقنوات العربية واللاتينية والعالمية والمكتبات السينمائية مع استقرار باهر وكفاءة عالية.",
+          logoText: "MAX",
+          logoBg: "bg-gradient-to-br from-indigo-505 via-purple-600 to-pink-500",
+          glowColor: "purple",
           stats: [
-            { value: '15,000+', label: 'قناة مباشرة حية' },
-            { value: '30,000+', label: 'فيلم ومسلسل' },
-            { value: 'تلقائي', label: 'تحديثات فنية فورية' },
-            { value: 'FHD & 4K', label: 'دقة ممتازة وألوان زاهية' }
+            { value: "15,000+", label: "قناة مباشرة حية" },
+            { value: "30,005+", label: "فيلم ومسلسل" },
+            { value: "تلقائي", label: "تحديثات فنية فورية" },
+            { value: "FHD & 4K", label: "دقة ممتازة وألوان زاهية" }
           ],
           downloads: [
-            {
-              type: 'android_apk',
-              title: 'تطبيق Android APK المباشر',
-              subtitle: 'تحميل مباشر من موقع MediaFire',
-              link: 'https://www.mediafire.com/file/aynt5054tdllmmb/Max-TV-Pro-active.apk/file'
-            },
-            {
-              type: 'apple_ios',
-              title: 'تطبيقات الآيفون والآيباد Apple',
-              subtitle: 'تطبيق NEXT+ أو تطبيق CASTORA',
-              additionalInfo: 'استخدم كود التفعيل: max للاتصال بالسيرفر مباشرة'
-            },
-            {
-              type: 'downloader',
-              title: 'أكواد Downloader للشاشات والتلفزيون',
-              subtitle: 'أدخل الكود المطابق لإصدار تطبيقك المفضل',
-              additionalInfo: 'MAX ACTIVE: 2606779\nMAX SHOW TV: 8229193\nMAX 4K: 183324\nMAX XCIPTV: 680115\nMAX TV+: 3603031\nMAX TV VPN: 8623805'
-            },
-            {
-              type: 'web_pc',
-              title: 'مشغل الكمبيوتر والويب المباشر',
-              subtitle: 'التشغيل والتصفح عبر متصفح الكمبيوتر واللابتوب',
-              link: 'https://my.splayer.in',
-              additionalInfo: 'رمز مشغل الويب المعتمد: 8488'
-            }
+            { type: "android_apk", title: "تطبيق Android APK المباشر", subtitle: "تحميل مباشر من موقع MediaFire", link: "https://www.mediafire.com/file/aynt5054tdllmmb/Max-TV-Pro-active.apk/file" },
+            { type: "apple_ios", title: "تطبيقات الآيفون والآيباد Apple", subtitle: "تطبيق NEXT+ أو تطبيق CASTORA", additionalInfo: "استخدم كود التفعيل: max للاتصال بالسيرفر مباشرة" },
+            { type: "downloader", title: "أكواد Downloader للشاشات والتلفزيون", subtitle: "أدخل الكود المطابق لإصدار تطبيقك المفضل", additionalInfo: "MAX ACTIVE: 2606779\nMAX SHOW TV: 8229193\nMAX 4K: 183324\nMAX XCIPTV: 680115" },
+            { type: "web_pc", title: "مشغل الكمبيوتر والويب المباشر", subtitle: "التشغيل والتصفح عبر متصفح الكمبيوتر واللابتوب", link: "https://my.splayer.in", additionalInfo: "رمز مشغل الويب المعتمد: 8488" }
           ],
           prices: [
-            { duration: 'شهر واحد', price: '5,000 IQD' },
-            { duration: '3 أشهر', price: '10,000 IQD', isPopular: true },
-            { duration: '6 أشهر', price: '15,000 IQD' },
-            { duration: 'سنة كاملة', price: '22,000 IQD' }
+            { duration: "شهر واحد", price: "5,000 IQD" },
+            { duration: "3 أشهر", price: "10,000 IQD", isPopular: true },
+            { duration: "6 أشهر", price: "15,000 IQD" },
+            { duration: "سنة كاملة", price: "22,000 IQD" }
           ],
-          noticeTitle: 'أداء مضمون واستقرار مثالي للجميع ⚡',
-          noticeDesc: 'سيرفر MAX TV PRO يقدم المزيج المثالي بين السعر الاقتصادي البسيط والمحتوى العملاق والحديث جداً. مناسب لكافة أفراد العائلة وللأجهزة المتوسطة وبطاقات الشاشات المتعددة.'
+          noticeTitle: "أداء مضمون واستقرار مثالي للجميع ⚡",
+          noticeDesc: "سيرفر MAX TV PRO يقدم المزيج المثالي بين السعر الاقتصادي البسيط والمحتوى العملاق والحديث جداً. مناسب لكافة أفراد العائلة وللأجهزة المتوسطة وبطاقات الشاشات المتعددة."
         },
         {
-          id: 'pablored',
-          name: 'PABLO RED',
-          badge: 'خيار النخبة 🏆',
-          category: 'iptv',
-          tagline: 'الخدمة الترفيهية الفاخرة ذات الثبات الفولاذي',
-          shortDesc: 'الخيار المطلق لعشاق السينما والمباريات الضخمة مع ثبات فولاذي تم تصميمه خصيصاً لتفادي تقطيع البث فترات الذروة.',
-          logoText: 'RED',
-          logoBg: 'bg-gradient-to-br from-red-600 via-rose-500 to-orange-500',
-          glowColor: 'red',
+          id: "family4k",
+          name: "FAMILY 4K",
+          badge: "الخيار العائلي 👨‍👩‍👧‍👦",
+          category: "iptv",
+          tagline: "تجربة الترفيه المنزلي الشامل النظيف والمناسب للعائلة",
+          shortDesc: "سيرفر ترفيهي واستثنائي يتميز بتصفية قنوات ذكية وأسلوب عرض ملائم وراقي لكافة أفراد أسرتك.",
+          logoText: "F4K",
+          logoBg: "bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-600",
+          glowColor: "indigo",
           stats: [
-            { value: '5,350+', label: 'قنوات حية منقحة بدقة' },
-            { value: '60,000+', label: 'أفلام ومسلسلات حديثة VOD' },
-            { value: 'فوري تلقائي', label: 'روابط مدمجة محدثة' },
-            { value: 'ثبات ألترا', label: 'مستوى استقرار غير مسبوق' }
+            { value: "15,000+", label: "قنوات ومحطات عائلية" },
+            { value: "30,000+", label: "فيلم ومسلسل مترجم ومحدث" },
+            { value: "تحديث مستمر", label: "تحديثات ترفيه يومية" },
+            { value: "فخامة خفة", label: "أداء آمن بدون ومشاكل" }
           ],
           downloads: [
-            {
-              type: 'android_apk',
-              title: 'تحميل مباشر للآندرويد APK',
-              subtitle: 'تنزيل تطبيق بابلو ريد الرسمي والأصلي',
-              link: 'https://fhd.cx'
-            },
-            {
-              type: 'downloader',
-              title: 'كود Downloader للتثبيت السريع',
-              subtitle: 'أدخله لتنصيب التطبيق على التلفزيون وشاشات شاومي ومخازن Firestick',
-              value: '9568447'
-            },
-            {
-              type: 'apple_ios',
-              title: 'تطبيقات أجهزة iPhone & iPad (أبل)',
-              subtitle: 'مشغلات NEXT+ و CASTORA الرسمية',
-              additionalInfo: 'رمز الربط والتفعيل المباشر السريع: 111'
-            }
+            { type: "android_apk", title: "متجر Google Play للأندرويد", subtitle: "تحميل التطبيق الرسمي المعتمد من المتجر مباشرة", link: "https://play.google.com/store/apps/details?id=com.shadeed.familypro" },
+            { type: "downloader", title: "أكواد Downloader لإصدارات التلفزيون", subtitle: "اختر الرمز المطابق لنسخة التطبيق على تلفزيونك لتبدأ التشغيل والمشاهدة", additionalInfo: "Family Active: 630379\nFamily Pro: 919624\nFamily Gold: 9577153\nFamily Diamond: 8085964" }
           ],
           prices: [
-            { duration: 'شهر واحد', price: '5,000 IQD' },
-            { duration: '3 أشهر', price: '10,000 IQD' },
-            { duration: '6 أشهر', price: '15,000 IQD' },
-            { duration: 'سنة كاملة', price: '30,000 IQD', isPopular: true }
+            { duration: "6 أشهر", price: "15,000 IQD", isPopular: true },
+            { duration: "سنة كاملة", price: "22,000 IQD" }
           ],
-          noticeTitle: 'ثبات، سرعة، وقدرة تنقل تفوق الخيال 🚀',
-          noticeDesc: 'سيرفر بابلو ريد هو الأول من نوعه الذي يعتمد على البنية التحتية السحابية المخصصة للألعاب والترفيه عالي الحجم. يدعم الدفع والتحويل بكل طرق العراق المفضلة لسهولة قصوى.'
-         }
+          noticeTitle: "متعة الاستقرار والأمان العائلي 🛡️",
+          noticeDesc: "يتمتع FAMILY 4K بخوادم ذات توزيع متوازن وممتاز، مما يحافظ على ثبات البث أثناء الفترات المزدحمة بالطلب وبطولات أبطال آسيا وأوروبا. مناسب جداً لجميع الشاشات وهواتف الأندرويد والآيفون."
+        },
+        {
+          id: "pablored",
+          name: "PABLO RED",
+          badge: "خيار النخبة 🏆",
+          category: "iptv",
+          tagline: "الخدمة الترفيهية الفاخرة ذات الثبات الفولاذي",
+          shortDesc: "الخيار المطلق لعشاق السينما والمباريات الضخمة مع ثبات فولاذي تم تصميمه خصيصاً لتفادي تقطيع البث فترات الذروة.",
+          logoText: "RED",
+          logoBg: "bg-gradient-to-br from-red-600 via-rose-500 to-orange-500",
+          glowColor: "red",
+          stats: [
+            { value: "5,350+", label: "قنوات حية منقحة بدقة" },
+            { value: "60,000+", label: "أفلام ومسلسلات حديثة VOD" },
+            { value: "فوري تلقائي", label: "روابط مدمجة محدثة" },
+            { value: "ثبات ألترا", label: "مستوى استقرار غير مسبوق" }
+          ],
+          downloads: [
+            { type: "android_apk", title: "تحميل مباشر للآندرويد APK", subtitle: "تنزيل تطبيق بابلو ريد الرسمي والأصلي", link: "https://fhd.cx" },
+            { type: "downloader", title: "كود Downloader للتثبيت السريع", subtitle: "أدخله لتنصيب التطبيق على التلفزيون وشاشات شاومي ومخازن Firestick", value: "9568447" },
+            { type: "apple_ios", title: "تطبيقات أجهزة iPhone & iPad (أبل)", subtitle: "مشغلات NEXT+ و CASTORA الرسمية", additionalInfo: "رمز الربط والتفعيل المباشر السريع: 111" },
+            { type: "tv_smart", title: "تفعيل الشاشات الذكية (SAMSUNG & LG)", subtitle: "تنصيب المشغل الرسمي المعتمد IBO PLAYER", additionalInfo: "بعد تنصيب البرنامج يرجى إرسال الـ MAC Address الخاص بالتطبيق لنا ليتم توجيه وتفعيل الاشتراك بسيرفرك فوراً!" }
+          ],
+          prices: [
+            { duration: "شهر واحد", price: "5,000 IQD" },
+            { duration: "3 أشهر", price: "10,000 IQD" },
+            { duration: "6 أشهر", price: "15,000 IQD" },
+            { duration: "سنة كاملة", price: "30,000 IQD", isPopular: true }
+          ],
+          noticeTitle: "ثبات، سرعة، وقدرة تنقل تفوق الخيال 🚀",
+          noticeDesc: "سيرفر بابلو ريد هو الأول من نوعه الذي يعتمد على البنية التحتية السحابية المخصصة للألعاب والترفيه عالي الحجم. يدعم الدفع والتحويل بكل طرق العراق المفضلة (زين كاش، ماستركارد، سويتش) لسهولة قصوى."
+        }
       ];
 
       window.STORE_PRODUCTS = [
         {
-          id: 'netflix',
-          name: 'حساب نتفلكس بريميوم رسمي 🍿',
-          description: 'شاشة خاصة بروفايل مقفل برمز سري بأعلى دقة 4K مع ضمان ذهبي كامل طوال مدة الاشتراك.',
-          category: 'extra',
+          id: "netflix",
+          name: "حساب نتفلكس بريميوم رسمي 🍿",
+          description: "شاشة خاصة بروفايل مقفل برمز سري بأعلى دقة 4K مع ضمان ذهبي كامل طوال مدة الاشتراك.",
+          category: "extra",
           prices: [
-            { duration: 'شهر واحد', price: '4,000 IQD', isPopular: true },
-            { duration: '3 أشهر', price: '11,000 IQD' },
-            { duration: '6 أشهر', price: '20,000 IQD' }
+            { duration: "شهر واحد", price: "4,000 IQD", isPopular: true },
+            { duration: "3 أشهر", price: "12,000 IQD" },
+            { duration: "6 أشهر", price: "24,000 IQD" }
           ],
-          icon: 'Clapperboard'
+          icon: "Clapperboard"
         },
         {
-          id: 'shahid_vip',
-          name: 'اشتراك شاهد VIP الرياضية والترفيهية 📺',
-          description: 'باقة شاهد كاملة لمشاهدة دوري روشن السعودي وأحدث المسلسلات الحصرية بجودة عالية ودون إعلانات.',
-          category: 'extra',
+          id: "shahid_vip",
+          name: "اشتراك شاهد VIP الرياضية والترفيهية 📺",
+          description: "باقة شاهد كاملة لمشاهدة دوري روشن السعودي وأحدث المسلسلات الحصرية بجودة عالية ودون إعلانات.",
+          category: "extra",
           prices: [
-            { duration: 'شهر واحد', price: '5,000 IQD' },
-            { duration: '3 أشهر', price: '13,000 IQD', isPopular: true },
-            { duration: 'سنة كاملة', price: '38,000 IQD' }
+            { duration: "شهر واحد", price: "5,000 IQD" },
+            { duration: "3 أشهر", price: "13,000 IQD", isPopular: true },
+            { duration: "سنة كاملة", price: "38,000 IQD" }
           ],
-          icon: 'Tv'
+          icon: "Tv"
         },
         {
-          id: 'youtube_premium',
-          name: 'يوتيوب بريميوم رسمي (على إيميلك الشخصي) ✨',
-          description: 'تخلص من الإعلانات المزعجة للأبد واستمتع بميزة التشغيل في الخلفية ويوتيوب ميوزك وبدون طلب باسوورد إيميلك.',
-          category: 'extra',
+          id: "youtube_premium",
+          name: "يوتيوب بريميوم رسمي (على إيميلك الشخصي) ✨",
+          description: "تخلص من الإعلانات المزعجة للأبد واستمتع بميزة التشغيل في الخلفية ويوتيوب ميوزك وبدون طلب باسوورد إيميلك.",
+          category: "extra",
           prices: [
-            { duration: 'شهر واحد', price: '2,000 IQD' },
-            { duration: '6 أشهر', price: '9,000 IQD' },
-            { duration: 'سنة كاملة', price: '15,000 IQD', isPopular: true }
+            { duration: "شهر واحد", price: "2,000 IQD" },
+            { duration: "6 أشهر", price: "9,000 IQD" },
+            { duration: "سنة كاملة", price: "15,000 IQD", isPopular: true }
           ],
-          icon: 'Youtube'
+          icon: "Youtube"
+        },
+        {
+          id: "playstation_plus",
+          name: "بطاقات بلايستيشن ستور والـ Plus 🎮",
+          description: "شحن حسابك العراقي أو الأمريكي ببطاقات رسمية لتنزيل الألعاب المفضلة والأطوار الجماعية الآمنة بالكامل.",
+          category: "extra",
+          prices: [
+            { duration: "كارت 10 دولار أمريكي", price: "15,500 IQD" },
+            { duration: "كارت 20 دولار أمريكي", price: "30,000 IQD", isPopular: true },
+            { duration: "كارت 50 دولار أمريكي", price: "73,000 IQD" }
+          ],
+          icon: "Gamepad2"
         }
       ];
     </script>
@@ -371,32 +331,97 @@
     <script type="text/babel">
       const { useState, useMemo, useEffect } = React;
 
-      // Lucide Icon Renderer for static HTML environment
+      // Resilient local storage parser
+      function safeGetLocalStorage(key, defaultValue, validator) {
+        try {
+          const cached = localStorage.getItem(key);
+          if (!cached || cached === 'undefined' || cached === 'null') return defaultValue;
+          const parsed = JSON.parse(cached);
+          if (parsed === null || parsed === undefined) return defaultValue;
+          if (validator) return validator(parsed);
+          return parsed;
+        } catch (e) {
+          console.error("Error reading storage for " + key + ":", e);
+          return defaultValue;
+        }
+      }
+
+      const validateSettings = (p) => ({
+        title: typeof p?.title === 'string' ? p.title : window.STORE_SETTINGS.title,
+        subtitle: typeof p?.subtitle === 'string' ? p.subtitle : window.STORE_SETTINGS.subtitle,
+        description: typeof p?.description === 'string' ? p.description : window.STORE_SETTINGS.description,
+        whatsappNumber: typeof p?.whatsappNumber === 'string' ? p.whatsappNumber : window.STORE_SETTINGS.whatsappNumber,
+        whatsappTemplate: typeof p?.whatsappTemplate === 'string' ? p.whatsappTemplate : window.STORE_SETTINGS.whatsappTemplate,
+        logoText: typeof p?.logoText === 'string' ? p.logoText : window.STORE_SETTINGS.logoText,
+        logoSub: typeof p?.logoSub === 'string' ? p.logoSub : window.STORE_SETTINGS.logoSub,
+      });
+
+      const validateCategories = (p) => {
+        if (!Array.isArray(p) || p.length === 0) return window.STORE_CATEGORIES;
+        return p.map(c => ({ id: c?.id || 'iptv', name: c?.name || 'بدون اسم', icon: c?.icon || 'Tv' }));
+      };
+
+      const validateServers = (p) => {
+        if (!Array.isArray(p)) return window.STORE_SERVERS;
+        return p.map(s => ({
+          id: s?.id || 'srv_' + Math.random(),
+          name: s?.name || 'سيرفر ترفيهي',
+          badge: s?.badge || '',
+          category: s?.category || 'iptv',
+          tagline: s?.tagline || '',
+          shortDesc: s?.shortDesc || '',
+          logoText: s?.logoText || '',
+          logoBg: s?.logoBg || 'bg-slate-800',
+          logoUrl: s?.logoUrl || undefined,
+          glowColor: ['indigo', 'red', 'purple', 'cyan', 'orange'].includes(s?.glowColor) ? s.glowColor : 'orange',
+          stats: Array.isArray(s?.stats) ? s.stats.map(st => ({ value: st?.value || '', label: st?.label || '' })) : [],
+          downloads: Array.isArray(s?.downloads) ? s.downloads.map(dl => ({
+            type: dl?.type || 'android_apk',
+            title: dl?.title || '',
+            subtitle: dl?.subtitle || '',
+            value: dl?.value || '',
+            link: dl?.link || '',
+            additionalInfo: dl?.additionalInfo || ''
+          })) : [],
+          prices: Array.isArray(s?.prices) ? s.prices.map(pr => ({ duration: pr?.duration || '', price: pr?.price || '', isPopular: !!pr?.isPopular })) : [],
+          noticeTitle: s?.noticeTitle || '',
+          noticeDesc: s?.noticeDesc || ''
+        }));
+      };
+
+      const validateProducts = (p) => {
+        if (!Array.isArray(p)) return window.STORE_PRODUCTS;
+        return p.map(pr => ({
+          id: pr?.id || 'prod_' + Math.random(),
+          name: pr?.name || 'اشتراك مميز',
+          description: pr?.description || '',
+          category: pr?.category || 'extra',
+          icon: pr?.icon || 'Sparkles',
+          prices: Array.isArray(pr?.prices) ? pr.prices.map(px => ({ duration: px?.duration || '', price: px?.price || '', isPopular: !!px?.isPopular })) : []
+        }));
+      };
+
+      // Icon displayer
       function Icon({ name, className }) {
         useEffect(() => {
           if (window.lucide) {
             window.lucide.createIcons();
           }
         }, [name]);
-
         return <i data-lucide={name || "sparkles"} className={className || "w-5 h-5"} />;
       }
 
-      // Standalone Vector Brand Identity SVG for IQTV 4K
+      // Elegant Logo matching corporate identification
       function IQTVLogo({ className }) {
         return (
           <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className={className || "w-12 h-12"}>
-            <circle cx="100" cy="100" r="95" fill="#080c14" stroke="#1f2937" strokeWidth="4" />
+            <circle cx="100" cy="100" r="95" fill="#080c14" stroke="#101827" strokeWidth="4" />
             <g transform="translate(10, 5)">
-              {/* Letter I */}
               <rect x="42" y="65" width="10" height="45" rx="2" fill="white" />
-              {/* Letter Q */}
               <path d="M78 87.5C78 99.926 68.374 110 56.5 110C44.626 110 35 99.926 35 87.5C35 75.074 44.626 65 56.5 65C68.374 65 78 75.074 78 87.5ZM45.5 87.5C45.5 95.23 50.425 101.5 56.5 101.5C62.575 101.5 67.5 95.23 67.5 87.5C67.5 79.77 62.575 73.5 56.5 73.5C50.425 73.5 45.5 79.77 45.5 87.5Z" fill="white" />
               <path d="M64 97L77 110H68L58 100L64 97Z" fill="#0084ff" />
-              {/* Letter T */}
               <rect x="85" y="65" width="30" height="8" rx="1.5" fill="white" />
               <rect x="95" y="73" width="10" height="37" rx="2" fill="white" />
-              {/* Letter V */}
               <path d="M120 65H130L140 110H130L120 65Z" fill="white" />
               <path d="M140 110L150 65H140L135 87.5L140 110Z" fill="#0084ff" />
             </g>
@@ -408,25 +433,10 @@
       }
 
       function App() {
-        const [settings, setSettings] = useState(() => {
-          const l = localStorage.getItem('IQTV_SETTINGS');
-          return l ? JSON.parse(l) : window.STORE_SETTINGS;
-        });
-
-        const [categories, setCategories] = useState(() => {
-          const l = localStorage.getItem('IQTV_CATEGORIES');
-          return l ? JSON.parse(l) : window.STORE_CATEGORIES;
-        });
-
-        const [servers, setServers] = useState(() => {
-          const l = localStorage.getItem('IQTV_SERVERS');
-          return l ? JSON.parse(l) : window.STORE_SERVERS;
-        });
-
-        const [products, setProducts] = useState(() => {
-          const l = localStorage.getItem('IQTV_PRODUCTS');
-          return l ? JSON.parse(l) : window.STORE_PRODUCTS;
-        });
+        const [settings, setSettings] = useState(() => safeGetLocalStorage('IQTV_SETTINGS', window.STORE_SETTINGS, validateSettings));
+        const [categories, setCategories] = useState(() => safeGetLocalStorage('IQTV_CATEGORIES', window.STORE_CATEGORIES, validateCategories));
+        const [servers, setServers] = useState(() => safeGetLocalStorage('IQTV_SERVERS', window.STORE_SERVERS, validateServers));
+        const [products, setProducts] = useState(() => safeGetLocalStorage('IQTV_PRODUCTS', window.STORE_PRODUCTS, validateProducts));
 
         const [activeCategory, setActiveCategory] = useState(categories[0]?.id || 'iptv');
         const [searchQuery, setSearchQuery] = useState('');
@@ -434,16 +444,12 @@
         const [copiedValue, setCopiedValue] = useState(null);
         const [isPolicyOpen, setIsPolicyOpen] = useState(false);
 
-        const [bookingDetails, setBookingDetails] = useState({
-          isOpen: false,
-          serverName: '',
-          duration: '',
-          price: ''
-        });
+        // Booking Modal states
+        const [bookingDetails, setBookingDetails] = useState({ isOpen: false, serverName: '', duration: '', price: '' });
         const [bookingForm, setBookingForm] = useState({ name: '', phone: '', notes: '' });
         const [bookingDone, setBookingDone] = useState(false);
 
-        // Administration
+        // ADMIN states
         const [isAdminOpen, setIsAdminOpen] = useState(false);
         const [isLoggedIn, setIsLoggedIn] = useState(false);
         const [adminPass, setAdminPass] = useState('');
@@ -455,7 +461,7 @@
         const [editingServerId, setEditingServerId] = useState(null);
         const [serverForm, setServerForm] = useState({
           id: '', name: '', badge: '', category: 'iptv', tagline: '', shortDesc: '',
-          logoText: '', logoBg: 'bg-gradient-to-br from-blue-600 via-sky-600 to-indigo-500', logoUrl: '', glowColor: 'blue',
+          logoText: '', logoBg: 'bg-gradient-to-br from-blue-600 to-sky-600', logoUrl: '', glowColor: 'blue',
           stats: [{ value: '', label: '' }],
           downloads: [{ type: 'android_apk', title: '', subtitle: '', link: '', value: '', additionalInfo: '' }],
           prices: [{ duration: '', price: '', isPopular: false }],
@@ -468,30 +474,17 @@
           prices: [{ duration: '', price: '', isPopular: false }]
         });
 
-        const triggerUpdateSettings = (newVal) => {
-          setSettings(newVal);
-          localStorage.setItem('IQTV_SETTINGS', JSON.stringify(newVal));
-        };
-        const triggerUpdateCategories = (newVal) => {
-          setCategories(newVal);
-          localStorage.setItem('IQTV_CATEGORIES', JSON.stringify(newVal));
-        };
-        const triggerUpdateServers = (newVal) => {
-          setServers(newVal);
-          localStorage.setItem('IQTV_SERVERS', JSON.stringify(newVal));
-        };
-        const triggerUpdateProducts = (newVal) => {
-          setProducts(newVal);
-          localStorage.setItem('IQTV_PRODUCTS', JSON.stringify(newVal));
-        };
+        // Sync functions
+        const triggerUpdateSettings = (v) => { setSettings(v); localStorage.setItem('IQTV_SETTINGS', JSON.stringify(v)); };
+        const triggerUpdateCategories = (v) => { setCategories(v); localStorage.setItem('IQTV_CATEGORIES', JSON.stringify(v)); };
+        const triggerUpdateServers = (v) => { setServers(v); localStorage.setItem('IQTV_SERVERS', JSON.stringify(v)); };
+        const triggerUpdateProducts = (v) => { setProducts(v); localStorage.setItem('IQTV_PRODUCTS', JSON.stringify(v)); };
 
         const filteredServers = useMemo(() => {
           return servers.filter(s => {
             if (s.category !== activeCategory) return false;
             const q = searchQuery.toLowerCase();
-            return s.name.toLowerCase().includes(q) || 
-                   s.tagline.toLowerCase().includes(q) || 
-                   s.shortDesc.toLowerCase().includes(q);
+            return s.name.toLowerCase().includes(q) || s.tagline.toLowerCase().includes(q) || s.shortDesc.toLowerCase().includes(q);
           });
         }, [searchQuery, activeCategory, servers]);
 
@@ -539,109 +532,60 @@
             setSettingsForm({ ...settings });
             setCatsForm([...categories]);
           } else {
-            alert('⚠️ رمز المرور خاطئ! يرجى استخدام كلمة المرور المعتمدة: AMD313$$');
+            alert('⚠️ كلمة المرور لمدير النظام خاطئة! يرجى استخدام كلمة المرور المعينة: AMD313$$');
           }
         };
 
         const handleSaveSettings = (e) => {
           e.preventDefault();
           triggerUpdateSettings(settingsForm);
-          alert('✅ تم حفظ إعدادات الهوية وسيرفر الواتساب بنجاح!');
+          alert('✅ تم حفظ تعديلات هوية المتجر بنجاح في متصفحك!');
         };
 
+        // Self-replicator html compiled setup
         const handleExportFinalCode = () => {
           const stringifiedSettings = JSON.stringify(settings, null, 2);
           const stringifiedCategories = JSON.stringify(categories, null, 2);
           const stringifiedServers = JSON.stringify(servers, null, 2);
           const stringifiedProducts = JSON.stringify(products, null, 2);
 
-          const fullSource = document.querySelector('script[type="text/babel"]').innerHTML;
+          const innerBabelScript = document.querySelector('script[type="text/babel"]').innerHTML;
 
           const updatedTemplate = `<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${settings.title} | ${settings.subtitle}</title>
-    
-    <!-- Fonts from Google -->
+    <title>\${settings.title} | \${settings.subtitle}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              brand: {
-                blue: '#0084ff',
-                dark: '#030712',
-                card: 'rgba(11, 15, 25, 0.7)',
-                border: 'rgba(255, 255, 255, 0.08)',
-                hover: '#339cff',
-              }
+              brand: { blue: '#0084ff', dark: '#030712', card: 'rgba(11, 15, 25, 0.7)', border: 'rgba(255, 255, 255, 0.08)', hover: '#339cff' }
             },
-            fontFamily: {
-              sans: ["Cairo", "sans-serif"],
-              mono: ["JetBrains Mono", "monospace"]
-            },
-            fontSize: {
-              '2xs': '0.7rem',
-              '3xs': '0.625rem',
-            },
-            scale: {
-              '102': '1.02',
-            }
+            fontFamily: { sans: ["Cairo", "sans-serif"], mono: ["JetBrains Mono", "monospace"] },
+            fontSize: { '2xs': '0.7rem', '3xs': '0.625rem' },
+            scale: { '102': '1.02' }
           }
         }
       }
     </script>
-    
     <style>
-      body {
-        background-color: #030712;
-        color: #f3f4f6;
-        font-family: 'Cairo', sans-serif;
-        overflow-x: hidden;
-      }
-      .bento-card {
-        background: rgba(11, 15, 25, 0.75);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-      .bento-card:hover {
-        border-color: rgba(0, 132, 255, 0.4);
-        transform: translateY(-4px);
-        box-shadow: 0 10px 40px rgba(0, 132, 255, 0.15);
-      }
-      @keyframes fadeIn {
-        from { opacity: 0; transform: scale(0.98); }
-        to { opacity: 1; transform: scale(1); }
-      }
-      .animate-fade-in {
-        animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-      }
-      ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #030712;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #1f2937;
-        border-radius: 6px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #0084ff;
-      }
+      body { background-color: #030712; color: #f3f4f6; font-family: 'Cairo', sans-serif; overflow-x: hidden; }
+      .bento-card { background: rgba(11, 15, 25, 0.75); border: 1px solid rgba(255, 255, 255, 0.06); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+      .bento-card:hover { border-color: rgba(0, 132, 255, 0.4); transform: translateY(-4px); box-shadow: 0 10px 40px rgba(0, 132, 255, 0.15); }
+      @keyframes fadeIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
+      .animate-fade-in { animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+      ::-webkit-scrollbar { width: 8px; height: 8px; }
+      ::-webkit-scrollbar-track { background: #030712; }
+      ::-webkit-scrollbar-thumb { background: #1f2937; border-radius: 6px; }
+      ::-webkit-scrollbar-thumb:hover { background: #0084ff; }
     </style>
-
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -649,17 +593,15 @@
 </head>
 <body class="selection:bg-blue-600/30 selection:text-white">
     <div id="root"></div>
-
     <script>
-      window.STORE_SETTINGS = ${stringifiedSettings};
-      window.STORE_CATEGORIES = ${stringifiedCategories};
-      window.STORE_SERVERS = ${stringifiedServers};
-      window.STORE_PRODUCTS = ${stringifiedProducts};
+      window.STORE_SETTINGS = \${stringifiedSettings};
+      window.STORE_CATEGORIES = \${stringifiedCategories};
+      window.STORE_SERVERS = \${stringifiedServers};
+      window.STORE_PRODUCTS = \${stringifiedProducts};
     </script>
-
     <script type="text/babel">
-      ${fullSource}
-    <\/script>
+      \${innerBabelScript}
+    <\\/script>
 </body>
 </html>`;
 
@@ -671,7 +613,7 @@
           document.body.appendChild(link);
           link.click();
           document.body.removeChild(link);
-          alert('🚀 مبارك! تم إنشاء ودراسة كود الـ index.html المحدّث؛ حيث تم تنزيله بجهازك وبداخله كافة التعديلات كقيم افتراضية للعامة!');
+          alert('🚀 تم تصدير الكود المحدّث للمتجر وحفظه باسم index.html على جهازك بنجاح! جميع التعديلات والسيرفرات الجديدة التي أنشأتها باتت الآن مخصصة كعناصر أساسية افتراضية في الكود الشامل للجمهور.');
         };
 
         const getGlowColors = (color) => {
@@ -695,11 +637,11 @@
           setEditingServerId('new');
           setServerForm({
             id: 'server_' + Date.now(), name: '', badge: 'مميز ⭐', category: activeCategory, tagline: '', shortDesc: '',
-            logoText: 'IQ', logoBg: 'bg-gradient-to-br from-blue-600 via-sky-600 to-indigo-500', logoUrl: '', glowColor: 'blue',
+            logoText: 'IQ', logoBg: 'bg-gradient-to-br from-blue-600 to-indigo-500', logoUrl: '', glowColor: 'blue',
             stats: [{ value: 'أولمبي ⚡', label: 'السرعة والثبات' }],
             downloads: [{ type: 'android_apk', title: 'رابط مباشر للبرنامج', subtitle: 'تحميل فوري آمن', link: 'https://', value: '', additionalInfo: '' }],
             prices: [{ duration: 'سنة كاملة', price: '25,000 IQD', isPopular: true }],
-            noticeTitle: 'تنبيه الجودة والثبات 🛡️', noticeDesc: 'يرجى إتمام التفعيل فور استلام الرسالة'
+            noticeTitle: 'تنبيه للتفعيل السريع 🛡️', noticeDesc: 'يرجى إتمام التعديلات فور وصول المفتاح لسلامة الخدمة.'
           });
         };
 
@@ -710,22 +652,19 @@
 
         const handleSaveServer = (e) => {
           e.preventDefault();
-          let nextServers = [...servers];
-          if (editingServerId === 'new') {
-            nextServers.push(serverForm);
-          } else {
-            nextServers = nextServers.map(s => s.id === editingServerId ? serverForm : s);
-          }
-          triggerUpdateServers(nextServers);
+          let next = [...servers];
+          if (editingServerId === 'new') next.push(serverForm);
+          else next = next.map(s => s.id === editingServerId ? serverForm : s);
+          triggerUpdateServers(next);
           setEditingServerId(null);
-          alert('✅ تم حفظ السيرفر بنجاح!');
+          alert('✅ تم حفظ وحماية السيرفر المضاف بنجاح!');
         };
 
         const handleDeleteServer = (id) => {
-          if (confirm('هل أنت متأكد من حذف هذا السيرفر نهائياً؟')) {
+          if (confirm('هل أنت متأكد من حذف هذا السيرفر بالكامل؟')) {
             const next = servers.filter(s => s.id !== id);
             triggerUpdateServers(next);
-            alert('🗑️ تم حذف السيرفر بنجاح!');
+            alert('🗑️ تم الحذف بنجاح!');
           }
         };
 
@@ -737,35 +676,32 @@
           });
         };
 
-        const handleStartEditProduct = (prod) => {
-          setEditingProdId(prod.id);
-          setProdForm({ ...prod });
+        const handleStartEditProduct = (p) => {
+          setEditingProdId(p.id);
+          setProdForm({ ...p });
         };
 
         const handleSaveProduct = (e) => {
           e.preventDefault();
-          let nextProds = [...products];
-          if (editingProdId === 'new') {
-            nextProds.push(prodForm);
-          } else {
-            nextProds = nextProds.map(p => p.id === editingProdId ? prodForm : p);
-          }
-          triggerUpdateProducts(nextProds);
+          let next = [...products];
+          if (editingProdId === 'new') next.push(prodForm);
+          else next = next.map(p => p.id === editingProdId ? prodForm : p);
+          triggerUpdateProducts(next);
           setEditingProdId(null);
-          alert('✅ تم حفظ المنتج الترفيهي بنجاح!');
+          alert('✅ تم حفظ الاشتراك بنجاح!');
         };
 
         const handleDeleteProduct = (id) => {
           if (confirm('هل أنت متأكد من حذف هذا الاشتراك؟')) {
             const next = products.filter(p => p.id !== id);
             triggerUpdateProducts(next);
-            alert('🗑️ تم الحذف بنجاح!');
+            alert('🗑️ تم الحذف!');
           }
         };
 
         function OtherProductItem({ prod }) {
           const [selectedPlanIdx, setSelectedPlanIdx] = useState(0);
-          const currentPlan = prod.prices[selectedPlanIdx] || prod.prices[0] || { duration: 'سنة كاملة', price: '0 IQD' };
+          const currentPlan = prod.prices[selectedPlanIdx] || prod.prices[0] || { duration: 'عرض خاص', price: 'تواصل مجاناً' };
 
           return (
             <div className="bento-card rounded-3xl p-6 md:p-8 flex flex-col justify-between hover:translate-y-[-4px] relative overflow-hidden group">
@@ -803,14 +739,12 @@
                 <div className="flex items-center justify-between mt-auto pt-2 border-t border-white/5">
                   <div className="space-y-0.5">
                     <span className="text-[10px] font-bold text-slate-500 block">سعر الاشتراك المحدد</span>
-                    <span className="text-lg md:text-xl font-black text-blue-400">
-                      {currentPlan.price}
-                    </span>
+                    <span className="text-lg md:text-xl font-black text-blue-400">{currentPlan.price}</span>
                   </div>
 
                   <button
                     onClick={() => setBookingDetails({ isOpen: true, serverName: prod.name, duration: currentPlan.duration, price: currentPlan.price })}
-                    className="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 active:bg-blue-750 text-xs font-bold text-white transition-all shadow-md flex items-center gap-1 cursor-pointer"
+                    className="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-xs font-bold text-white transition-all shadow-md flex items-center gap-1 cursor-pointer"
                   >
                     <span>حجز فوري 🛒</span>
                   </button>
@@ -821,12 +755,15 @@
         }
 
         return (
-          <div className="min-h-screen text-slate-100 relative">
+          <div className="min-h-screen text-slate-100 relative pb-12">
+            
+            {/* Background Orbs */}
             <div className="fixed inset-0 pointer-events-none overflow-hidden -z-20">
               <div className="absolute top-[-10%] left-[5%] w-[400px] h-[400px] bg-blue-950/10 rounded-full blur-3xl" />
               <div className="absolute top-[30%] right-[5%] w-[550px] h-[550px] bg-sky-950/10 rounded-full blur-3xl" />
             </div>
 
+            {/* Header */}
             <header className="sticky top-0 w-full bg-slate-950/80 backdrop-blur-xl border-b border-white/5 z-[100] py-4">
               <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
                 <div className="flex items-center gap-4">
@@ -845,7 +782,7 @@
                 <div className="flex items-center gap-3">
                   <button 
                     onClick={() => setIsAdminOpen(true)}
-                    className="px-3.5 py-1.5 bg-slate-900 border border-slate-800 hover:border-blue-500/50 rounded-full text-slate-400 hover:text-white text-xs font-black transition-all"
+                    className="px-3.5 py-1.5 bg-slate-900 border border-slate-800 hover:border-blue-500/50 rounded-full text-slate-400 hover:text-white text-xs font-black transition-all cursor-pointer"
                   >
                     لوحة الإدارة 🔐
                   </button>
@@ -861,6 +798,7 @@
               </div>
             </header>
 
+            {/* Hero */}
             <section className="relative pt-12 pb-16 md:py-24 px-4 overflow-hidden">
               <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
                 <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/25 text-blue-300 text-xs font-extrabold tracking-wider animate-bounce select-none">
@@ -870,12 +808,10 @@
 
                 <h2 className="text-3xl md:text-6xl font-black leading-tight">
                   سرعة فائقة واشتراكات فاخرة <br className="hidden md:block"/>
-                  <span className="bg-gradient-to-l from-blue-400 via-sky-300 to-blue-500 bg-clip-text text-transparent">
-                    {settings.title}
-                  </span>
+                  <span className="bg-gradient-to-l from-blue-400 via-sky-300 to-blue-500 bg-clip-text text-transparent">{settings.title}</span>
                 </h2>
                 
-                <p className="text-slate-350 text-sm md:text-lg leading-relaxed max-w-2xl mx-auto font-sans font-light">
+                <p className="text-slate-300 text-sm md:text-lg leading-relaxed max-w-2xl mx-auto font-sans font-light">
                   {settings.description}
                 </p>
 
@@ -897,20 +833,20 @@
                     }}
                     className="w-full sm:w-auto px-8 py-4 bg-slate-900 hover:bg-slate-850 text-slate-100 font-extrabold text-sm md:text-base rounded-full border border-slate-800 flex items-center justify-center gap-2.5 transition-all cursor-pointer"
                   >
-                    <Icon name="Tv" className="w-5 h-5 text-blue-450" />
+                    <Icon name="Tv" className="w-5 h-5" />
                     <span>استعراض باقات السيرفرات</span>
                   </button>
                 </div>
               </div>
             </section>
 
+            {/* Main Section */}
             <main id="subscriptions-area" className="max-w-7xl mx-auto px-4 md:px-8 py-10 space-y-12 pb-32">
+              
               <div className="flex flex-col lg:flex-row items-center justify-between gap-6 border-b border-white/5 pb-8">
                 <div className="space-y-1.5 text-center lg:text-right">
                   <h3 className="text-2xl md:text-3xl font-black text-white">باقات وأقسام متجر الاشتراكات</h3>
-                  <p className="text-xs md:text-sm text-slate-400 font-sans font-medium">
-                    استعرض الباقات المتاحة واختر سيرفرك المفضل للتفعيل الفوري بروابط مباشرة ممتازة
-                  </p>
+                  <p className="text-xs md:text-sm text-slate-400 font-sans font-medium">استعرض الباقات المتاحة واختر سيرفرك المفضل للتفعيل الفوري بروابط مباشرة ممتازة</p>
                 </div>
 
                 <div className="w-full lg:w-96 relative">
@@ -925,6 +861,7 @@
                 </div>
               </div>
 
+              {/* Tabs */}
               <div className="flex flex-wrap gap-2.5 justify-center md:justify-start">
                 {categories.map((cat) => (
                   <button
@@ -942,7 +879,9 @@
                 ))}
               </div>
 
+              {/* Content Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
                 {filteredServers.map((srv) => (
                   <div 
                     key={srv.id}
@@ -960,7 +899,7 @@
                       <div className="flex items-center justify-between mb-6">
                         {srv.logoUrl ? (
                           <div className="w-14 h-14 rounded-2xl overflow-hidden shrink-0 bg-slate-900 border border-white/5 flex items-center justify-center shadow-lg">
-                            <img src={srv.logoUrl} alt={srv.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                            <img src={srv.logoUrl} alt={srv.name} className="w-full h-full object-cover" />
                           </div>
                         ) : (
                           <div className={"w-14 h-14 rounded-2xl shrink-0 " + (srv.logoBg || "bg-slate-800") + " flex items-center justify-center text-lg font-black text-white shadow-lg"}>
@@ -970,7 +909,7 @@
 
                         <span className={"text-[11px] font-black border px-3 py-1 rounded-full flex items-center gap-1 bg-black/60 transition-all " + (
                           srv.glowColor === 'orange' ? 'border-orange-500/30 text-orange-400' :
-                          srv.glowColor === 'red' ? 'border-rose-500/30 text-rose-500' :
+                          srv.glowColor === 'red' ? 'border-rose-500/30 text-rose-450' :
                           srv.glowColor === 'purple' ? 'border-purple-500/30 text-purple-400' :
                           srv.glowColor === 'cyan' ? 'border-teal-500/30 text-teal-400' : 'border-blue-500/30 text-blue-400'
                         )}>
@@ -1011,21 +950,22 @@
                 ))}
 
                 {filteredServers.length === 0 && filteredProducts.length === 0 && (
-                  <div className="col-span-full py-16 text-center text-slate-400 flex flex-col items-center justify-center gap-2">
-                    <Icon name="AlertTriangle" className="w-10 h-10 text-amber-500" />
-                    <p className="text-sm font-bold">لا توجد نتائج لمطابقة بحثك في المتجر</p>
+                  <div className="col-span-full py-16 text-center text-slate-400 gap-2">
+                    <Icon name="AlertTriangle" className="w-10 h-10 text-amber-500 mx-auto" />
+                    <p className="text-sm font-bold">لا يوجد نتائج تطابق بحوزتك في هذا القسم</p>
                   </div>
                 )}
               </div>
 
-              <div className="bg-gradient-to-tr from-[#0b101c] via-slate-900 to-[#071328] border border-slate-800 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+              {/* Support Banner */}
+              <div className="bg-gradient-to-tr from-[#0b101c] via-slate-900 to-[#071328] border border-slate-800 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 mr-1 pr-6 ml-1">
                 <div className="space-y-2 text-center md:text-right">
-                  <h4 className="text-lg md:text-xl font-bold text-white flex items-center justify-center md:justify-start gap-1.5">
+                  <h4 className="text-lg md:text-xl font-bold text-white flex items-center justify-center md:justify-start gap-1.5 font-sans">
                     <Icon name="ShieldCheck" className="w-5 h-5 text-blue-400" />
-                    <span>الضمان الذهبي لمشاهدة عائلية مستقرة ومتواصلة 🛡️</span>
+                    <span>الضمان الذهبي لمشاهدة مستقرة بالكامل بالعراق 🛡️</span>
                   </h4>
-                  <p className="text-slate-300 text-xs md:text-sm max-w-2xl font-sans font-light bg-clip-text">
-                    نضمن لك جودة ترفيهية خرافية طوال فترة اشتراكك، مع باقة دعم فني ممتازة متواجدة دائمًا لمساعدتك على التحميل خطوة بخطوة بالدعم الفني المباشر بالواتساب.
+                  <p className="text-slate-300 text-xs md:text-sm max-w-2xl font-sans font-light leading-relaxed">
+                    نضمن لك جودة مشاهدة سينمائية ومباريات بقمة الثبات طيلة اشتراكك. وفي حال حصول تقطعات، يتوفر فريق دعم فني ممتاز لمساعدتك واستبدال الأكواد مباشرة عبر الواتساب.
                   </p>
                 </div>
                 <a 
@@ -1034,18 +974,19 @@
                   rel="noopener noreferrer"
                   className="px-6 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-xs rounded-full shadow-lg flex items-center gap-1 cursor-pointer whitespace-nowrap"
                 >
-                  <span>مراسلة الدعم الفني</span>
+                  <span>مراسلة الدعم الفني فوراََ</span>
                   <Icon name="ArrowLeft" className="w-4 h-4" />
                 </a>
               </div>
             </main>
 
+            {/* Footer */}
             <footer className="bg-slate-950 py-16 border-t border-white/5 text-center">
               <div className="max-w-7xl mx-auto px-4 md:px-8 space-y-6">
-                <IQTVLogo className="w-14 h-14 md:w-16 md:h-16 mx-auto select-none" />
+                <IQTVLogo className="w-14 h-14 md:w-16 md:h-16 mx-auto select-none font-bold" />
 
                 <div>
-                  <p className="text-slate-200 font-extrabold text-sm">{settings.title} — الخدمة الإلكترونية والبديل الفاخر في العراق 🇮🇶</p>
+                  <p className="text-slate-200 font-extrabold text-sm">{settings.title} — الخدمة الإلكترونية والبديل الأقوى للبث الفضائي بالعراق 🇮🇶</p>
                   <p className="text-slate-500 text-2xs font-light max-w-xl mx-auto font-sans leading-relaxed mt-2">
                     جميع الأسماء والشعارات والشركات هي علامات مسجلة لأصحابها الأصليين، دور موقعنا يقتصر على تزويد التفعيلات القانونية مع الدعم المضمون طوال مدة التراخيص.
                   </p>
@@ -1057,46 +998,32 @@
                   <a href={"https://wa.me/" + settings.whatsappNumber.replace(/\D/g, '')} target="_blank" className="hover:text-white">تفاصيل الدعم الفني بالواتساب</a>
                 </div>
 
-                <p className="text-slate-650 text-3xs font-mono">&copy; 2026 IQTV 4K. تواصل معنا لتغطية شاملة ومضمونة.</p>
+                <p className="text-slate-600 text-3xs font-mono">&copy; 2026 {settings.title}. جميع الحقوق محفوظة.</p>
               </div>
             </footer>
 
+            {/* Floating button */}
             <div className="fixed bottom-6 left-6 z-[999]">
               <a 
                 href={"https://wa.me/" + settings.whatsappNumber.replace(/\D/g, '')}
                 target="_blank" 
-                className="w-14 h-14 rounded-full bg-emerald-500 flex items-center justify-center text-white text-xl shadow-xl shadow-emerald-500/25 hover:scale-105 transition-all text-center shrink-0"
+                className="w-14 h-14 rounded-full bg-emerald-500 flex items-center justify-center text-white text-xl shadow-xl shadow-emerald-500/25 transition-all text-center shrink-0"
               >
                 <Icon name="MessageSquare" className="w-6 h-6 text-white" />
               </a>
             </div>
 
+            {/* Privacy Policy */}
             {isPolicyOpen && (
-              <div 
-                className="fixed inset-0 bg-slate-950/90 z-[3000] backdrop-blur-md flex items-center justify-center p-4 animate-fade-in"
-                onClick={() => setIsPolicyOpen(false)}
-              >
-                <div 
-                  className="bg-slate-900 border border-slate-800 rounded-3xl max-w-lg w-full p-6 md:p-8 relative text-right"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <button 
-                    onClick={() => setIsPolicyOpen(false)}
-                    className="absolute left-4 top-4 p-1 rounded-full bg-slate-800 text-slate-400 hover:text-white cursor-pointer"
-                  >
-                    <Icon name="X" className="w-5 h-5" />
-                  </button>
-
-                  <h3 className="text-xl font-bold text-blue-400 mb-6 flex items-center gap-1.5 justify-start">
-                    <Icon name="ShieldCheck" className="w-5 h-5" />
-                    <span>سياسة الاستخدام والخصوصية 🔐</span>
-                  </h3>
-
+              <div className="fixed inset-0 bg-slate-950/90 z-[3000] backdrop-blur-md flex items-center justify-center p-4 animate-fade-in" onClick={() => setIsPolicyOpen(false)}>
+                <div className="bg-slate-905 border border-slate-800 rounded-3xl max-w-lg w-full p-6 md:p-8 relative text-right pr-6" onClick={(e) => e.stopPropagation()}>
+                  <button onClick={() => setIsPolicyOpen(false)} className="absolute left-4 top-4 p-1 rounded-full bg-slate-800 text-slate-400 hover:text-white cursor-pointer"><Icon name="X" className="w-5 h-5" /></button>
+                  <h3 className="text-xl font-bold text-blue-400 mb-6 flex items-center gap-1.5 justify-start"><Icon name="ShieldCheck" className="w-5 h-5" /><span>سياسة الاستخدام والخصوصية 🔐</span></h3>
                   <div className="space-y-4 text-slate-300 text-xs md:text-sm font-sans leading-relaxed whitespace-pre-line">
                     <p>• كود التفعيل المباشر مرخص وصالح للتشغيل على جهاز واحد متزامن فقط لضمان سلامة الخدمة الفنية.</p>
-                    <p>• يمنع حظرًا باتًا مشاركة الأكواد أو تشغيلها بأجهزة متعددة بنفس الوقت لتجنب إيقاف الخدمة وحظر الضمان.</p>
-                    <p>• الضمان الذهبي يشمل الصيانة الفورية وتوفير التعويض والاشتراكات البديلة من الدعم الفني بالواتساب فورًا.</p>
-                    <p>• يرجى إتمام فحص وتطبيق التجربة المجانية 12 ساعة قبل الحجز السنوي للتأكد من الملاءمة الفنية بنسبة 100%.</p>
+                    <p>• يمنع حظرًا باتًا مشاركة الأكواد أو تشتيتها أو استخدامها في النشاطات غير المشروعة لعدم إلغاء الضمان.</p>
+                    <p>• الضمان الذهبي يشمل التعديل وتوفير التعويض والاشتراكات البديلة من الدعم الفني بالواتساب فوراََ.</p>
+                    <p>• يرجى إتمام فحص وتطبيق التجربة المجانية 12 ساعة قبل الحجز الطويل للتأكد من المزامنة الفنية.</p>
                   </div>
                 </div>
               </div>
@@ -1104,202 +1031,183 @@
 
             {/* Server Details Modal */}
             {selectedServer && (
-              <div 
-                className="fixed inset-0 bg-slate-950/95 z-[2500] backdrop-blur-xl overflow-y-auto p-4 md:p-8 animate-fade-in animate-scale-up"
-                onClick={() => setSelectedServer(null)}
-              >
+              <div className="fixed inset-0 bg-slate-950/95 z-[2500] backdrop-blur-md overflow-y-auto px-4 py-8 animate-fade-in" onClick={() => setSelectedServer(null)}>
                 <div 
-                  className="max-w-5xl mx-auto my-10 relative" 
+                  className="max-w-4xl mx-auto bento-card rounded-3xl overflow-hidden relative border border-slate-800/80 mt-4 md:mt-12 text-right pr-1"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <button 
-                    onClick={() => setSelectedServer(null)}
-                    className="fixed top-6 left-6 w-12 h-12 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-800 transition-all cursor-pointer z-[2600]"
-                  >
-                    <Icon name="X" className="w-6 h-6" />
-                  </button>
-
-                  <div className={"p-8 md:p-12 rounded-3xl bg-gradient-to-br " + activeColors.bg + " border " + activeColors.border + " relative overflow-hidden mb-8"}>
-                    <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl -z-10" />
+                  {/* Decorative Header Background */}
+                  <div className={"h-32 md:h-48 bg-gradient-to-l relative flex items-end p-6 md:p-8 " + activeColors.bg}>
+                    <button 
+                      onClick={() => setSelectedServer(null)}
+                      className="absolute left-4 top-4 md:left-6 md:top-6 w-10 h-10 rounded-full bg-black/60 border border-white/10 text-white flex items-center justify-center hover:bg-black transition-all cursor-pointer"
+                    >
+                      <Icon name="X" className="w-5 h-5" />
+                    </button>
                     
-                    <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-right">
+                    <div className="flex items-center gap-4 md:gap-6 z-10 translate-y-2">
                       {selectedServer.logoUrl ? (
-                        <div className="w-24 h-24 rounded-2xl overflow-hidden shrink-0 bg-slate-900 border border-white/5 shadow-xl flex items-center justify-center">
-                          <img src={selectedServer.logoUrl} alt={selectedServer.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                        <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl overflow-hidden border-2 border-slate-800 bg-slate-900 shrink-0 shadow-xl">
+                          <img src={selectedServer.logoUrl} alt={selectedServer.name} className="w-full h-full object-cover" />
                         </div>
                       ) : (
-                        <div className={"w-24 h-24 rounded-2xl shrink-0 " + (selectedServer.logoBg || "bg-slate-800") + " flex items-center justify-center text-white text-3xl font-black shadow-xl"}>
+                        <div className={"w-16 h-16 md:w-20 md:h-20 rounded-2xl shrink-0 " + (selectedServer.logoBg || "bg-slate-800") + " flex items-center justify-center text-2xl font-black text-white shadow-xl"}>
                           {selectedServer.logoText || selectedServer.name[0]}
                         </div>
                       )}
-
-                      <div className="flex-1 space-y-2">
-                        <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
-                          <h2 className="text-3xl md:text-4xl font-extrabold text-white">{selectedServer.name}</h2>
-                          <span className={"px-3 py-1 rounded-full text-xs font-bold border " + activeColors.badge}>
-                            {selectedServer.badge || 'سيرفر'}
-                          </span>
+                      <div>
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <h3 className="text-xl md:text-3xl font-black text-white">{selectedServer.name}</h3>
+                          <span className={"text-3xs font-black border px-2.5 py-0.5 rounded-full uppercase " + activeColors.badge}>{selectedServer.badge || 'مميز ⭐'}</span>
                         </div>
-                        <p className={"text-lg font-bold " + activeColors.text}>{selectedServer.tagline}</p>
-                        <p className="text-slate-300 text-sm md:text-base max-w-3xl leading-relaxed font-sans">{selectedServer.shortDesc}</p>
+                        <p className="text-slate-350 text-xs font-bold font-sans mt-1">{selectedServer.tagline}</p>
                       </div>
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8 font-sans">
-                    {selectedServer.stats && selectedServer.stats.map((st, idx) => (
-                      <div 
-                        key={idx} 
-                        className={"bg-slate-900/60 p-5 rounded-2xl border " + activeColors.statBg + " text-center space-y-1"}
-                      >
-                        <div className={"text-xl md:text-2xl font-black " + activeColors.text}>{st.value}</div>
-                        <div className="text-xs font-bold text-slate-400">{st.label}</div>
+                  <div className="p-6 md:p-8 pt-8 md:pt-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    {/* Left Column: Description + stats + links */}
+                    <div className="lg:col-span-2 space-y-6">
+                      <div className="space-y-2">
+                        <h4 className="text-sm font-bold text-slate-500 uppercase font-sans">نبذة عن السيرفر والترخيص</h4>
+                        <p className="text-slate-200 text-sm md:text-base leading-relaxed font-sans font-light">
+                          {selectedServer.shortDesc}
+                        </p>
                       </div>
-                    ))}
-                  </div>
 
-                  <h3 className="text-xl font-bold text-white mb-4 pr-3 border-r-4 border-blue-500 inline-block font-sans">
-                    دليل تشغيل التطبيقات وتثبيت الاشتراك ⚙️
-                  </h3>
+                      {/* Stats */}
+                      {selectedServer.stats && selectedServer.stats.length > 0 && (
+                        <div className="grid grid-cols-2 gap-4">
+                          {selectedServer.stats.map((st, idx) => (
+                            <div key={idx} className={"p-4 rounded-2xl bg-slate-900/40 border " + activeColors.statBg}>
+                              <span className="text-xs font-bold text-slate-450 block font-sans">{st.label}</span>
+                              <span className="text-base md:text-lg font-black text-white mt-1 block">{st.value}</span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 font-sans">
-                    {selectedServer.downloads && selectedServer.downloads.map((dl, idx) => {
-                      if (dl.type === 'feature_list') {
-                        return (
-                          <div key={idx} className="bg-slate-900/40 border border-slate-800 rounded-2xl p-6 text-right">
-                            <div className="flex items-center gap-3 mb-3 text-amber-500 justify-start">
-                              <Icon name="Crown" className="w-5 h-5" />
-                              <h4 className="font-bold text-base md:text-lg">{dl.title}</h4>
-                            </div>
-                            <div className="space-y-2 text-slate-300 text-sm leading-relaxed whitespace-pre-line">
-                              {dl.additionalInfo}
-                            </div>
-                          </div>
-                        );
-                      }
+                      {/* Downloads */}
+                      <div className="space-y-4">
+                        <div className="flex items-center gap-2 border-b border-white/5 pb-2">
+                          <Icon name="DownloadCloud" className="w-5 h-5 text-blue-400" />
+                          <h4 className="text-md font-bold text-white font-sans">روابط وبرامج التحميل وأكواد الشاشات</h4>
+                        </div>
 
-                      return (
-                        <div key={idx} className="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 flex flex-col justify-between items-start gap-4">
-                          <div className="flex items-center gap-4 justify-start text-right w-full">
-                            <div className="p-3 bg-slate-950 border border-slate-850 rounded-xl text-blue-400">
-                              <Icon 
-                                name={
-                                  dl.type === 'android_apk' ? 'Smartphone' :
-                                  dl.type === 'apple_ios' ? 'Tv' :
-                                  dl.type === 'downloader' ? 'Download' : 'Globe'
-                                } 
-                                className="w-6 h-6" 
-                              />
-                            </div>
-                            <div>
-                              <h4 className="font-bold text-white text-sm md:text-base">{dl.title}</h4>
-                              <p className="text-slate-400 text-xs">{dl.subtitle}</p>
-                            </div>
-                          </div>
+                        <div className="space-y-3">
+                          {selectedServer.downloads.map((dl, idx) => {
+                            if (dl.type === 'feature_list') {
+                              return (
+                                <div key={idx} className="bg-slate-900/30 border border-slate-850 p-5 rounded-2xl">
+                                  <h5 className="text-sm font-black text-blue-300 flex items-center gap-1.5 mb-2"><Icon name="Sparkles" className="w-4 h-4 text-emerald-400" /><span>{dl.title}</span></h5>
+                                  <div className="text-xs text-slate-300 space-y-1.5 font-sans whitespace-pre-line leading-relaxed">{dl.additionalInfo}</div>
+                                </div>
+                              );
+                            }
 
-                          {dl.value && (
-                            <div className="w-full bg-slate-950 border border-slate-850 p-3 rounded-xl flex items-center justify-between gap-3 text-center">
-                              <span className="font-mono text-sm tracking-widest text-emerald-400 font-extrabold">{dl.value}</span>
+                            return (
+                              <div key={idx} className="bg-slate-950/70 border border-slate-850 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 font-sans hover:border-slate-800 transition-all">
+                                <div className="space-y-1">
+                                  <div className="flex items-center gap-2">
+                                    <span className="p-1.5 bg-slate-900 border border-slate-800 rounded-lg text-slate-400">
+                                      {dl.type === 'downloader' ? <Icon name="Tv" className="w-4 h-4" /> :
+                                       dl.type === 'apple_ios' ? <Icon name="Apple" className="w-4 h-4" /> :
+                                       dl.type === 'web_pc' ? <Icon name="Monitor" className="w-4 h-4" /> : <Icon name="Android" className="w-4 h-4" />}
+                                    </span>
+                                    <h5 className="text-xs md:text-sm font-bold text-slate-100">{dl.title}</h5>
+                                  </div>
+                                  <p className="text-[10px] md:text-xs text-slate-450 pr-8">{dl.subtitle}</p>
+                                </div>
+
+                                <div className="flex items-center gap-2 pr-8 sm:pr-0">
+                                  {dl.type === 'downloader' ? (
+                                    <div className="flex items-center gap-1.5 bg-slate-900 px-3 py-1.5 border border-slate-800 rounded-xl">
+                                      <span className="text-xs font-mono font-black text-orange-400 tracking-wider h-5">{dl.value}</span>
+                                      <button 
+                                        onClick={(e) => { e.stopPropagation(); copyToClipboard(dl.value); }} 
+                                        className="text-[10px] font-black text-slate-450 hover:text-white mr-1 flex items-center cursor-pointer"
+                                      >
+                                        <span>{copiedValue === dl.value ? 'نسخ!' : 'نسخ الكود'}</span>
+                                      </button>
+                                    </div>
+                                  ) : (
+                                    <a 
+                                      href={dl.link} 
+                                      target="_blank" 
+                                      rel="noopener"
+                                      onClick={(e) => e.stopPropagation()}
+                                      className="px-4 py-2 bg-slate-900 border border-slate-800 hover:border-blue-500/50 hover:bg-slate-850 rounded-xl text-xs font-black text-white flex items-center gap-1.5 transition-all"
+                                    >
+                                      <span>افتح الرابط</span>
+                                      <Icon name="ExternalLink" className="w-3.5 h-3.5" />
+                                    </a>
+                                  )}
+
+                                  {dl.additionalInfo && (
+                                    <span className="text-[10px] font-semibold text-amber-500 bg-amber-500/5 border border-amber-500/10 px-2 py-1 rounded-lg">{dl.additionalInfo}</span>
+                                  )}
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Right column: packages selects */}
+                    <div className="space-y-6">
+                      <div className="bg-slate-950/80 border border-slate-850 rounded-2xl p-6 space-y-6">
+                        <div className="space-y-1">
+                          <span className="text-xs font-bold text-slate-500 block uppercase font-sans">باقات التفعيل والأسعار</span>
+                          <h4 className="text-lg font-black text-white font-sans">اختر الفترة المناسبة لميزانيتك</h4>
+                        </div>
+
+                        <div className="space-y-3">
+                          {selectedServer.prices && selectedServer.prices.map((pr, idx) => (
+                            <div 
+                              key={idx}
+                              className={"border rounded-2xl p-4 flex items-center justify-between transition-all relative font-sans " + (
+                                pr.isPopular ? 'border-blue-500/40 bg-blue-550/5' : 'border-slate-850 bg-slate-900/30'
+                              )}
+                            >
+                              {pr.isPopular && (
+                                <span className="absolute top-[-9px] right-4 px-2 py-0.5 bg-blue-600 text-white text-[9px] font-black rounded-full uppercase">الأكثر طلباً ⭐</span>
+                              )}
+                              
+                              <div className="space-y-0.5 text-right">
+                                <h5 className="text-xs font-bold text-slate-350">{pr.duration}</h5>
+                                <span className={"text-lg font-black block " + (pr.isPopular ? 'text-blue-400' : 'text-slate-100')}>{pr.price}</span>
+                              </div>
+
                               <button 
-                                onClick={() => copyToClipboard(dl.value)}
-                                className="px-3 py-1.5 bg-blue-600/20 text-blue-400 hover:bg-blue-600 hover:text-white rounded-lg text-2xs font-extrabold cursor-pointer transition-all"
+                                onClick={() => setBookingDetails({ isOpen: true, serverName: selectedServer.name, duration: pr.duration, price: pr.price })}
+                                className="px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-bold shadow-md cursor-pointer whitespace-nowrap"
                               >
-                                {copiedValue === dl.value ? "تم النسخ! ✓" : "نسخ الكود 📋"}
+                                <span>حجز فوري 🛒</span>
                               </button>
                             </div>
-                          )}
-
-                          {dl.additionalInfo && (
-                            <p className="text-2xs text-amber-400 font-sans leading-relaxed">
-                              {dl.additionalInfo}
-                            </p>
-                          )}
-
-                          {dl.link && (
-                            <a 
-                              href={dl.link} 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                              className="w-full py-2.5 bg-slate-800 hover:bg-slate-700 text-blue-400 hover:text-white text-xs font-extrabold rounded-xl transition-all text-center flex items-center justify-center gap-1.5"
-                            >
-                              <span>الذهاب لصفحة التحميل أو المتجر</span>
-                              <Icon name="ExternalLink" className="w-3.5 h-3.5" />
-                            </a>
-                          )}
+                          ))}
                         </div>
-                      );
-                    })}
-                  </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="md:col-span-2 space-y-4">
-                      <h3 className="text-xl font-bold text-white pr-3 border-r-4 border-blue-500 inline-block font-sans">
-                        باقات تفعيل واشتراك السيرفر 💎
-                      </h3>
-
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {selectedServer.prices && selectedServer.prices.map((pr, idx) => (
-                          <div 
-                            key={idx}
-                            className={"p-6 rounded-2xl border transition-all relative flex flex-col justify-between overflow-hidden " + (
-                              pr.isPopular 
-                                ? 'bg-gradient-to-tr from-[#0b1424] to-[#070b14] border-blue-500/40 shadow-xl shadow-blue-500/5' 
-                                : 'bg-slate-900 border-slate-850'
-                            )}
-                          >
-                            {pr.isPopular && (
-                              <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-blue-600 text-white text-[9px] font-black tracking-widest leading-none uppercase">
-                                الأكثر مبيعًا ⭐
-                              </span>
-                            )}
-                            <div className="space-y-1">
-                              <span className="text-xs font-bold text-slate-400 block">{pr.duration}</span>
-                              <span className="text-2xl font-black text-white">{pr.price}</span>
-                            </div>
-
-                            <button
-                              onClick={() => {
-                                setBookingDetails({ isOpen: true, serverName: selectedServer.name, duration: pr.duration, price: pr.price });
-                                setSelectedServer(null);
-                              }}
-                              className="mt-6 w-full py-2.5 bg-blue-600 hover:bg-blue-550 active:bg-blue-700 rounded-xl text-xs font-extrabold text-white transition-all cursor-pointer text-center"
-                            >
-                              حجز وتفعيل فوري 🛒
-                            </button>
+                        {/* Notice Alert */}
+                        {selectedServer.noticeTitle && (
+                          <div className="p-4 bg-amber-500/5 border border-amber-500/10 rounded-2xl space-y-1.5">
+                            <h5 className="text-xs font-black text-amber-500 flex items-center gap-1.5"><Icon name="AlertTriangle" className="w-4 h-4 text-amber-400" /><span>{selectedServer.noticeTitle}</span></h5>
+                            <p className="text-[11px] text-slate-400 leading-relaxed font-sans">{selectedServer.noticeDesc}</p>
                           </div>
-                        ))}
+                        )}
                       </div>
                     </div>
-
-                    {selectedServer.noticeTitle && (
-                      <div className="bg-orange-500/10 border border-orange-500/20 p-6 rounded-3xl text-right flex flex-col justify-between h-full">
-                        <div className="space-y-3">
-                          <h4 className="text-base font-bold text-orange-400 flex items-center gap-1.5 justify-start">
-                            <Icon name="AlertTriangle" className="w-5 h-5" />
-                            <span>{selectedServer.noticeTitle}</span>
-                          </h4>
-                          <p className="text-slate-350 text-xs leading-relaxed font-sans font-light">
-                            {selectedServer.noticeDesc}
-                          </p>
-                        </div>
-                        <div className="pt-4 text-3xs text-slate-500 uppercase tracking-widest font-mono">
-                          مهم لجميع العملاء بالعراق
-                        </div>
-                      </div>
-                    )}
                   </div>
                 </div>
               </div>
             )}
 
-            {/* Direct Booking Modal Form */}
+            {/* Booking Form Dialog */}
             {bookingDetails.isOpen && (
-              <div 
-                className="fixed inset-0 bg-slate-950/95 z-[4000] backdrop-blur-2xl flex items-center justify-center p-4 animate-fade-in"
-                onClick={() => setBookingDetails({ isOpen: false, serverName: '', duration: '', price: '' })}
-              >
+              <div className="fixed inset-0 bg-slate-950/95 z-[4000] backdrop-blur-md flex items-center justify-center p-4 animate-fade-in" onClick={() => setBookingDetails({ isOpen: false, serverName: '', duration: '', price: '' })}>
                 <div 
-                  className="bg-slate-900 border border-slate-800 rounded-3xl max-w-xl w-full p-6 md:p-8 relative text-right"
+                  className="bg-slate-900 border border-slate-800 rounded-3xl max-w-md w-full overflow-hidden relative text-right"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <button 
@@ -1309,137 +1217,134 @@
                     <Icon name="X" className="w-5 h-5" />
                   </button>
 
-                  <h3 className="text-xl font-bold text-white mb-2 flex items-center gap-1.5 justify-start">
-                    <Icon name="ShoppingBag" className="w-5 h-5 text-blue-400" />
-                    <span>تأكيد حجز التفعيل والاشتراك 🤝</span>
-                  </h3>
-                  <p className="text-xs text-slate-400 mb-6 font-sans">
-                    يرجى ملء معلوماتك البسيطة لتجهيز كود التفعيل المباشر وتأكيد العملية فوراً عبر الدعم الفني بالواتساب.
-                  </p>
+                  <div className="p-6 md:p-8 space-y-6">
+                    <div className="space-y-1.5 border-b border-white/5 pb-4">
+                      <h3 className="text-xl font-bold text-white font-sans">تأكيد حجز تفعيل الاشتراك 🛍️</h3>
+                      <p className="text-xs text-slate-400 font-sans font-medium">سيرفر <span className="text-blue-400 font-bold">{bookingDetails.serverName}</span> - باقة <span className="text-emerald-400 font-bold">{bookingDetails.duration}</span> بسعر <span className="text-amber-400 font-black">{bookingDetails.price}</span></p>
+                    </div>
 
-                  <div className="bg-slate-950 border border-slate-850 p-4 rounded-2xl mb-6 flex flex-col md:flex-row items-center justify-between gap-4">
-                    <div>
-                      <span className="text-[10px] text-slate-500 font-bold block uppercase font-mono">الاشتراك المحدد</span>
-                      <span className="text-base font-extrabold text-blue-400">{bookingDetails.serverName} ({bookingDetails.duration})</span>
-                    </div>
-                    <div className="text-left md:text-right">
-                      <span className="text-[10px] text-slate-500 font-bold block uppercase font-mono">السعر الإجمالي</span>
-                      <span className="text-xl font-black text-emerald-400">{bookingDetails.price}</span>
-                    </div>
+                    {bookingDone ? (
+                      <div className="py-12 text-center space-y-3">
+                        <div className="w-16 h-16 bg-emerald-500/10 border border-emerald-550/20 text-emerald-400 rounded-full flex items-center justify-center text-4xl mx-auto shadow-inner">✓</div>
+                        <h4 className="text-lg font-black text-white">جاري توجيهك للواتساب...</h4>
+                        <p className="text-xs text-slate-405 font-sans font-light leading-relaxed">أكمل كتابة اسمك وهاتفك، سنقوم بتوفير كود الإرسال فائق السرعة لك فوراً.</p>
+                      </div>
+                    ) : (
+                      <form onSubmit={submitBooking} className="space-y-4 font-sans">
+                        <div className="space-y-1.5">
+                          <label className="text-xs font-semibold text-slate-400 block pb-1">اسم العميل الثلاثي</label>
+                          <input 
+                            type="text" 
+                            required
+                            placeholder="مثال: عباس محمد حسن"
+                            value={bookingForm.name}
+                            onChange={(e) => setBookingForm({ ...bookingForm, name: e.target.value })}
+                            className="w-full bg-slate-950 border border-slate-800 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-xl p-3 text-sm text-white outline-none"
+                          />
+                        </div>
+
+                        <div className="space-y-1.5">
+                          <label className="text-xs font-semibold text-slate-400 block pb-1">رقم هاتف العميل (للتوصيل الفوري بآسيا/زين)</label>
+                          <input 
+                            type="tel" 
+                            required
+                            placeholder="مثال: 0770XXXXXXX"
+                            value={bookingForm.phone}
+                            onChange={(e) => setBookingForm({ ...bookingForm, phone: e.target.value })}
+                            className="w-full bg-slate-950 border border-slate-800 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-xl p-3 text-sm text-white outline-none"
+                          />
+                        </div>
+
+                        <div className="space-y-1.5">
+                          <label className="text-xs font-semibold text-slate-400 block pb-1">ملاحظات إضافية أو شروط الدفع (اختياري)</label>
+                          <textarea 
+                            rows="2"
+                            placeholder="مثال: أريد الدفع عن طريق زين كاش"
+                            value={bookingForm.notes}
+                            onChange={(e) => setBookingForm({ ...bookingForm, notes: e.target.value })}
+                            className="w-full bg-slate-950 border border-slate-800 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-xl p-3 text-sm text-white outline-none"
+                          />
+                        </div>
+
+                        <button 
+                          type="submit"
+                          className="w-full py-4 bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-black text-sm rounded-xl transition-all shadow-lg shadow-emerald-550/15 flex items-center justify-center gap-2 mt-6 cursor-pointer"
+                        >
+                          <Icon name="MessageSquare" className="w-5 h-5 text-white" />
+                          <span>إرسال الحجز والتوصيل بالواتساب 💬</span>
+                        </button>
+                      </form>
+                    )}
                   </div>
-
-                  {bookingDone ? (
-                    <div className="py-8 text-center text-emerald-400 space-y-3 animate-fade-in">
-                      <Icon name="CheckCircle" className="w-12 h-12 mx-auto text-emerald-400 animate-bounce" />
-                      <h4 className="text-lg font-bold">تم تجهيز بيانات تفعيلك بنجاح!</h4>
-                      <p className="text-xs text-slate-400">سيتم نقلك فوراً إلى الدعم الفني بالمحادثة لتأكيد تفاصيل الدفع...</p>
-                    </div>
-                  ) : (
-                    <form onSubmit={submitBooking} className="space-y-4 font-sans text-right">
-                      <div>
-                        <label className="block text-slate-450 text-xs font-bold mb-1.5">الاسم الأساسي للعميل:</label>
-                        <input 
-                          type="text" 
-                          required
-                          placeholder="أدخل اسمك الكريم هنا"
-                          value={bookingForm.name}
-                          onChange={(e) => setBookingForm({ ...bookingForm, name: e.target.value })}
-                          className="w-full bg-slate-950 border border-slate-850 focus:border-blue-500 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 outline-none transition-all"
-                        />
-                      </div>
-
-                      <div>
-                        <label className="block text-slate-450 text-xs font-bold mb-1.5">رقم الهاتف لربط التفعيل (اختياري):</label>
-                        <input 
-                          type="text" 
-                          placeholder="مثال: 077xxxxxxxx"
-                          value={bookingForm.phone}
-                          onChange={(e) => setBookingForm({ ...bookingForm, phone: e.target.value })}
-                          className="w-full bg-slate-950 border border-slate-850 focus:border-blue-500 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 outline-none transition-all text-left"
-                        />
-                      </div>
-
-                      <div>
-                        <label className="block text-slate-450 text-xs font-bold mb-1.5">ملاحظات تود إضافتها أو جهاز تشغيلك:</label>
-                        <textarea 
-                          placeholder="مثال: أريد تشغيل الكود على شاشة ذكية / هاتف آيفون"
-                          value={bookingForm.notes}
-                          onChange={(e) => setBookingForm({ ...bookingForm, notes: e.target.value })}
-                          rows={3}
-                          className="w-full bg-slate-950 border border-slate-850 focus:border-blue-500 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-600 outline-none transition-all resize-none"
-                        />
-                      </div>
-
-                      <button
-                        type="submit"
-                        className="mt-6 w-full py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm rounded-xl cursor-pointer shadow-lg shadow-emerald-500/10 flex items-center justify-center gap-2 transition-all"
-                      >
-                        <Icon name="MessageSquare" className="w-5 h-5 text-white" />
-                        <span>إرسال تفاصيل التفعيل بواتساب والدفع 🚀</span>
-                      </button>
-                    </form>
-                  )}
                 </div>
               </div>
             )}
 
-            {/* Administative Portal Control Panel */}
+            {/* Administrations Control System */}
             {isAdminOpen && (
-              <div 
-                className="fixed inset-0 bg-slate-950/98 z-[5000] overflow-y-auto p-4 md:p-8 animate-fade-in"
-                onClick={() => setIsAdminOpen(false)}
-              >
-                <div 
-                  className="max-w-6xl mx-auto my-6"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <div className="flex items-center justify-between border-b border-white/5 pb-4 mb-6">
+              <div className="fixed inset-0 bg-slate-950/98 z-[9000] backdrop-blur-xl overflow-y-auto px-4 py-8 animate-fade-in text-right">
+                <div className="max-w-6xl mx-auto space-y-6">
+                  
+                  <div className="flex items-center justify-between border-b border-white/5 pb-4 flex-wrap gap-4">
                     <div className="flex items-center gap-3">
-                      <IQTVLogo className="w-10 h-10 shrink-0" />
+                      <div className="p-3 bg-blue-600/10 border border-blue-500/20 text-blue-400 rounded-2xl shrink-0"><Icon name="Lock" className="w-6 h-6" /></div>
                       <div>
-                        <h2 className="text-lg font-black text-white">لوحة تحكم المشرف المعرّبة</h2>
-                        <p className="text-[10px] text-slate-450">إدارة الباقات والتفاصيل وقنوات التواصل بنسخ فوري مستقل</p>
+                        <h2 className="text-xl md:text-2xl font-black text-white">لوحة تحكم مدير النظام المستقلة 🔐</h2>
+                        <p className="text-xs text-slate-400 font-sans font-medium">سيرفرات التفعيل، أرقام التواصل، الدعم، والمشاهدين بالعراق</p>
                       </div>
                     </div>
-                    <button 
-                      onClick={() => setIsAdminOpen(false)}
-                      className="px-3 py-1.5 bg-slate-900 border border-slate-850 text-slate-400 hover:text-white rounded-lg text-xs font-semibold cursor-pointer"
-                    >
-                      خروج وإغلاق ✖
-                    </button>
+
+                    <div className="flex items-center gap-3">
+                      {isLoggedIn && (
+                        <button 
+                          onClick={handleExportFinalCode}
+                          className="px-5 py-2.5 bg-emerald-650 hover:bg-emerald-600 border border-emerald-500/25 text-white text-xs font-black rounded-xl transition-all cursor-pointer flex items-center gap-1.5"
+                        >
+                          <Icon name="DownloadCloud" className="w-4 h-4" />
+                          <span>تصدير كود index.html النهائي</span>
+                        </button>
+                      )}
+                      <button 
+                        onClick={() => { setIsAdminOpen(false); setIsLoggedIn(false); setAdminPass(''); }}
+                        className="px-4 py-2.5 bg-slate-900 border border-slate-800 text-slate-400 hover:text-white text-xs font-black rounded-xl cursor-pointer"
+                      >
+                        إغلاق لوحة الإدارة ✕
+                      </button>
+                    </div>
                   </div>
 
                   {!isLoggedIn ? (
-                    <div className="max-w-md mx-auto my-16 bg-slate-900/50 border border-slate-800 p-8 rounded-3xl space-y-6 text-center">
-                      <div className="w-12 h-12 rounded-full bg-blue-500/10 border border-blue-500/25 flex items-center justify-center mx-auto text-blue-400 text-xl font-bold">🔑</div>
-                      <div className="space-y-1">
-                        <h4 className="text-lg font-bold text-white">تسجيل دخول المشرف</h4>
-                        <p className="text-2xs text-slate-500">الرجاء إدخال كلمة مرور المشرف الافتراضية للوصول</p>
+                    <div className="max-w-md mx-auto bento-card p-6 md:p-8 space-y-6 pt-12 text-center">
+                      <div className="w-16 h-16 bg-blue-600/10 border border-blue-500/25 text-blue-400 rounded-full flex items-center justify-center text-3xl mx-auto"><Icon name="ShieldAlert" className="w-8 h-8" /></div>
+                      <div className="space-y-1.5">
+                        <h4 className="text-lg font-black text-white font-sans">تسجيل دخول للمكلف التقني في IQTV</h4>
+                        <p className="text-xs text-slate-450 font-sans font-light">أدخل كلمة مرور الأمن للشركة للموافقة على التعديلات وتوليد النسخ</p>
                       </div>
 
-                      <form onSubmit={handleAdminLogin} className="space-y-4">
-                        <input 
-                          type="password" 
-                          required
-                          placeholder="رمز المرور الحالي: AMD313$$"
-                          value={adminPass}
-                          onChange={(e) => setAdminPass(e.target.value)}
-                          className="w-full bg-slate-950 border border-slate-850 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-700 outline-none focus:border-blue-500 transition-all text-center"
-                        />
-                        <button 
-                          type="submit"
-                          className="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-xs rounded-xl cursor-pointer"
-                        >
-                          ولوج إلى لوحة التحكم 🔐
-                        </button>
+                      <form onSubmit={handleAdminLogin} className="space-y-4 text-right">
+                        <div className="space-y-1.5">
+                          <label className="text-xs font-bold text-slate-400 block font-sans">رمز مرور الأمن لمدير النظام</label>
+                          <input 
+                            type="password" 
+                            required
+                            placeholder="أدخل كلمة مرور الأمن..."
+                            value={adminPass}
+                            onChange={(e) => setAdminPass(e.target.value)}
+                            className="w-full bg-slate-950 border border-slate-800 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-xl p-3 text-sm text-white select-all text-center outline-none font-mono"
+                          />
+                        </div>
+                        <button type="submit" className="w-full py-3.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-black transition-all cursor-pointer shadow-md">دخول آمن 🔑</button>
                       </form>
+                      <span className="text-[10px] text-slate-550 block font-mono">كلمة المرور الافتراضية: AMD313$$</span>
                     </div>
                   ) : (
-                    <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 font-sans">
+                    <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
+                      
+                      {/* Admin Tabs */}
                       <div className="space-y-1.5 bg-slate-900/60 border border-slate-800 p-3 rounded-2xl h-auto">
                         <button
                           onClick={() => { setActiveAdminTab('settings'); setEditingServerId(null); setEditingProdId(null); }}
-                          className={"w-full text-right px-4 py-3 rounded-xl text-xs font-black transition-all flex items-center gap-2 " + (
+                          className={"w-full text-right px-4 py-3 rounded-xl text-xs font-black transition-all flex items-center gap-2 cursor-pointer " + (
                             activeAdminTab === 'settings' ? 'bg-blue-600 text-white font-black' : 'text-slate-400 hover:text-white hover:bg-slate-800'
                           )}
                         >
@@ -1449,8 +1354,8 @@
 
                         <button
                           onClick={() => { setActiveAdminTab('servers'); setEditingServerId(null); setEditingProdId(null); }}
-                          className={"w-full text-right px-4 py-3 rounded-xl text-xs font-black transition-all flex items-center gap-2 " + (
-                            activeAdminTab === 'servers' ? 'bg-blue-600 text-white' : 'text-slate-400 hover:text-white hover:bg-slate-800'
+                          className={"w-full text-right px-4 py-3 rounded-xl text-xs font-black transition-all flex items-center gap-2 cursor-pointer " + (
+                            activeAdminTab === 'servers' ? 'bg-blue-600 text-white font-black' : 'text-slate-400 hover:text-white hover:bg-slate-800'
                           )}
                         >
                           <Icon name="Tv" className="w-4 h-4" />
@@ -1459,33 +1364,25 @@
 
                         <button
                           onClick={() => { setActiveAdminTab('products'); setEditingServerId(null); setEditingProdId(null); }}
-                          className={"w-full text-right px-4 py-3 rounded-xl text-xs font-black transition-all flex items-center gap-2 " + (
-                            activeAdminTab === 'products' ? 'bg-blue-600 text-white' : 'text-slate-400 hover:text-white hover:bg-slate-800'
+                          className={"w-full text-right px-4 py-3 rounded-xl text-xs font-black transition-all flex items-center gap-2 cursor-pointer " + (
+                            activeAdminTab === 'products' ? 'bg-blue-600 text-white font-black' : 'text-slate-400 hover:text-white hover:bg-slate-800'
                           )}
                         >
                           <Icon name="Sparkles" className="w-4 h-4" />
                           <span>إدارة الاشتراكات الترفيهية</span>
                         </button>
-
-                        <div className="h-[1px] bg-slate-800/80 my-2" />
-
-                        <button
-                          onClick={handleExportFinalCode}
-                          className="w-full text-right px-4 py-3 bg-amber-600 hover:bg-amber-500 text-white rounded-xl text-xs font-black transition-all flex items-center gap-2"
-                        >
-                          <Icon name="Download" className="w-4 h-4 text-white" />
-                          <span>تصدير وحفظ الكود النهائي ومزامنة الملفات 🚀</span>
-                        </button>
                       </div>
 
-                      <div className="lg:col-span-3 bg-slate-900/40 border border-slate-800 p-6 md:p-8 rounded-2xl h-auto">
+                      {/* Tab Area Content */}
+                      <div className="lg:col-span-3 bg-slate-900/40 border border-slate-800/60 rounded-3xl p-6 md:p-8">
+                        
                         {activeAdminTab === 'settings' && (
-                          <form onSubmit={handleSaveSettings} className="space-y-6 text-right">
-                            <h3 className="text-base font-bold text-white border-b border-slate-800 pb-3 mb-4">تعديل معلومات وهوية المتجر</h3>
+                          <form onSubmit={handleSaveSettings} className="space-y-5 font-sans">
+                            <h3 className="text-md md:text-lg font-black text-white border-b border-white/5 pb-2 mb-4">هوية المتجر، العناوين ومعلومات التواصل 💡</h3>
                             
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                              <div>
-                                <label className="block text-xs font-bold text-slate-400 mb-1.5">عنوان السطح الرئيسي للموقع:</label>
+                              <div className="space-y-1.5">
+                                <label className="text-xs font-bold text-slate-400">اسم المتجر الأساسي</label>
                                 <input 
                                   type="text" 
                                   value={settingsForm.title}
@@ -1493,8 +1390,8 @@
                                   className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-white"
                                 />
                               </div>
-                              <div>
-                                <label className="block text-xs font-bold text-slate-400 mb-1.5">أشرطة العناوين الفرعية والمميزات:</label>
+                              <div className="space-y-1.5">
+                                <label className="text-xs font-bold text-slate-400">العنوان الفرعي للمتجر</label>
                                 <input 
                                   type="text" 
                                   value={settingsForm.subtitle}
@@ -1504,29 +1401,9 @@
                               </div>
                             </div>
 
-                            <div>
-                              <label className="block text-xs font-bold text-slate-400 mb-1.5">الوصف التعريفي الممتد (الظاهر بالهيرو الرئيسي):</label>
-                              <textarea 
-                                value={settingsForm.description}
-                                onChange={(e) => setSettingsForm({ ...settingsForm, description: e.target.value })}
-                                rows={3}
-                                className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-white resize-none"
-                              />
-                            </div>
-
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                              <div>
-                                <label className="block text-xs font-bold text-slate-400 mb-1.5">رقم خدمة الواتساب الفني (مع الرمز الدولي بدون أصفار أو زائد):</label>
-                                <input 
-                                  type="text" 
-                                  placeholder="مثال: 9647700000000"
-                                  value={settingsForm.whatsappNumber}
-                                  onChange={(e) => setSettingsForm({ ...settingsForm, whatsappNumber: e.target.value })}
-                                  className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-white text-left font-mono"
-                                />
-                              </div>
-                              <div>
-                                <label className="block text-xs font-bold text-slate-400 mb-1.5">مسؤول اسم الشعار في الزاوية:</label>
+                              <div className="space-y-1.5">
+                                <label className="text-xs font-bold text-slate-400">شعار المتجر النصفي (مثال: IQTV)</label>
                                 <input 
                                   type="text" 
                                   value={settingsForm.logoText}
@@ -1534,11 +1411,32 @@
                                   className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-white"
                                 />
                               </div>
+                              <div className="space-y-1.5">
+                                <label className="text-xs font-bold text-slate-400">رقم الواتساب بالصيغة الدولية (بدون أصفار أو زائد)</label>
+                                <input 
+                                  type="text" 
+                                  placeholder="964XXXXXXXXXX"
+                                  value={settingsForm.whatsappNumber}
+                                  onChange={(e) => setSettingsForm({ ...settingsForm, whatsappNumber: e.target.value })}
+                                  className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-white text-left font-mono"
+                                />
+                              </div>
                             </div>
 
-                            <div>
-                              <label className="block text-xs font-bold text-slate-400 mb-1.5">قالب وبناء صيغة رسالة الحجز الواردة للواتساب تلقائياً:</label>
+                            <div className="space-y-1.5">
+                              <label className="text-xs font-bold text-slate-400">الوصف التعريفي المفتوح (Hero Description)</label>
                               <textarea 
+                                rows="3"
+                                value={settingsForm.description}
+                                onChange={(e) => setSettingsForm({ ...settingsForm, description: e.target.value })}
+                                className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-white font-sans"
+                              />
+                            </div>
+
+                            <div className="space-y-1.5">
+                              <label className="text-xs font-bold text-slate-400">صيغة رسالة الواتساب الجاهزة (WhatsApp Template)</label>
+                              <textarea 
+                                rows="3"
                                 value={settingsForm.whatsappTemplate}
                                 onChange={(e) => setSettingsForm({ ...settingsForm, whatsappTemplate: e.target.value })}
                                 className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-white"
@@ -1547,52 +1445,50 @@
                             </div>
 
                             <div className="flex gap-2 justify-end pt-4">
-                              <button 
-                                type="submit"
-                                className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-bold cursor-pointer"
-                              >
-                                حفظ تعديلات الهوية وتطبيقها 📌
-                              </button>
+                              <button type="submit" className="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-black cursor-pointer">حفظ وحفظ الهوية في المتصفح</button>
                             </div>
                           </form>
                         )}
 
+
                         {activeAdminTab === 'servers' && (
-                          <div className="text-right">
+                          <div className="space-y-6">
+                            
                             {editingServerId === null ? (
                               <div className="space-y-4">
-                                <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
-                                  <h3 className="text-base font-bold text-white">قائمة وإدارة سيرفرات IPTV الحالية</h3>
+                                <div className="flex items-center justify-between">
+                                  <h3 className="text-md font-bold text-white">قائمة سيرفرات IPTV النشطة</h3>
                                   <button 
                                     onClick={handleStartAddServer}
-                                    className="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 rounded-lg text-2xs font-extrabold text-white cursor-pointer"
+                                    className="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-bold cursor-pointer"
                                   >
-                                    + إضافة سيرفر IPTV جديد 📺
+                                    + إضافة سيرفر IPTV جديد
                                   </button>
                                 </div>
 
-                                <div className="space-y-2">
+                                <div className="space-y-2.5">
                                   {servers.map((srv) => (
-                                    <div key={srv.id} className="p-4 bg-slate-950 border border-slate-850 rounded-xl flex items-center justify-between">
+                                    <div key={srv.id} className="p-4 bg-slate-950 border border-slate-850 rounded-2xl flex items-center justify-between gap-4">
                                       <div className="flex items-center gap-3">
-                                        <span className="w-8 h-8 rounded-lg bg-blue-600/20 text-blue-400 text-xs font-black flex items-center justify-center">{srv.logoText || srv.name[0]}</span>
+                                        <div className="w-10 h-10 rounded-lg bg-orange-600/20 text-orange-400 text-xs font-black flex items-center justify-center">{srv.logoText || srv.name[0]}</div>
                                         <div>
-                                          <h4 className="font-extrabold text-white text-sm">{srv.name}</h4>
-                                          <p className="text-3xs text-slate-550 font-sans">{srv.tagline}</p>
+                                          <h4 className="text-sm font-bold text-white">{srv.name}</h4>
+                                          <span className="text-[10px] text-slate-500 font-sans">{srv.tagline || 'بدون وسم تعريفي'}</span>
                                         </div>
                                       </div>
+
                                       <div className="flex items-center gap-2">
                                         <button 
                                           onClick={() => handleStartEditServer(srv)}
-                                          className="px-2.5 py-1.5 bg-slate-900 border border-slate-800 text-slate-350 hover:text-white rounded-lg text-3xs font-extrabold cursor-pointer"
+                                          className="p-2 bg-slate-900 border border-slate-800 hover:border-blue-500/50 text-slate-400 hover:text-white rounded-lg text-xs"
                                         >
-                                          تعديل وميزات ⚙
+                                          إعداد وتعديل
                                         </button>
                                         <button 
                                           onClick={() => handleDeleteServer(srv.id)}
-                                          className="px-2.5 py-1.5 bg-red-650/10 border border-red-500/20 text-red-400 hover:bg-red-600 hover:text-white rounded-lg text-3xs font-extrabold cursor-pointer"
+                                          className="p-2 bg-red-950/20 border border-red-500/20 text-red-400 hover:bg-red-500 hover:text-white rounded-lg text-xs"
                                         >
-                                          حذف نهائي 🗑
+                                          حذف
                                         </button>
                                       </div>
                                     </div>
@@ -1608,152 +1504,255 @@
                                   <button onClick={() => setEditingServerId(null)} className="text-slate-400 hover:text-white text-xs">إلغاء التعديل</button>
                                 </div>
 
-                                <form onSubmit={handleSaveServer} className="space-y-4">
-                                  <div>
-                                    <label className="block text-xs font-bold text-slate-400 mb-1">اسم السيرفر لتفعيل الاشتراك:</label>
+                                <form onSubmit={handleSaveServer} className="space-y-4 font-sans">
+                                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div className="space-y-1">
+                                      <label className="text-xs font-bold text-slate-400">اسم السيرفر</label>
+                                      <input 
+                                        type="text" required
+                                        value={serverForm.name}
+                                        onChange={(e) => setServerForm({ ...serverForm, name: e.target.value })}
+                                        className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2"
+                                      />
+                                    </div>
+                                    <div className="space-y-1">
+                                      <label className="text-xs font-bold text-slate-400">الشعار النصي (حرفان - مثال: V)</label>
+                                      <input 
+                                        type="text" maxlength="3"
+                                        value={serverForm.logoText}
+                                        onChange={(e) => setServerForm({ ...serverForm, logoText: e.target.value })}
+                                        className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2"
+                                      />
+                                    </div>
+                                  </div>
+
+                                  <div className="space-y-1">
+                                    <label className="text-xs font-bold text-slate-400">وسم التميز التعريفي (الأحدث، طاقة قصوى.. الخ)</label>
                                     <input 
-                                      type="text" required
-                                      value={serverForm.name}
-                                      onChange={(e) => setServerForm({ ...serverForm, name: e.target.value })}
-                                      className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-white"
+                                      type="text"
+                                      value={serverForm.badge}
+                                      onChange={(e) => setServerForm({ ...serverForm, badge: e.target.value })}
+                                      className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2"
+                                    />
+                                  </div>
+
+                                  <div className="space-y-1">
+                                    <label className="text-xs font-bold text-slate-400">نبذة ترويجية مبدئية وجذابة</label>
+                                    <input 
+                                      type="text"
+                                      value={serverForm.tagline}
+                                      onChange={(e) => setServerForm({ ...serverForm, tagline: e.target.value })}
+                                      className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2"
+                                    />
+                                  </div>
+
+                                  <div className="space-y-1">
+                                    <label className="text-xs font-bold text-slate-400">الوصف التعريفي التفصيلي والتقني للسيرفر</label>
+                                    <textarea 
+                                      rows="3"
+                                      value={serverForm.shortDesc}
+                                      onChange={(e) => setServerForm({ ...serverForm, shortDesc: e.target.value })}
+                                      className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2"
                                     />
                                   </div>
 
                                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div>
-                                      <label className="block text-xs font-bold text-slate-400 mb-1">الشعار والرمز النصي بالسيرفر:</label>
-                                      <input 
-                                        type="text" 
-                                        value={serverForm.logoText}
-                                        onChange={(e) => setServerForm({ ...serverForm, logoText: e.target.value })}
-                                        className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-white"
-                                      />
+                                    <div className="space-y-1">
+                                      <label className="text-xs font-bold text-slate-400">لون الوهج وشكل البطاقة (Glow Color)</label>
+                                      <select 
+                                        value={serverForm.glowColor} 
+                                        onChange={(e) => setServerForm({ ...serverForm, glowColor: e.target.value })}
+                                        className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-white"
+                                      >
+                                        <option value="orange">Orange (برتقالي)</option>
+                                        <option value="indigo">Indigo (نيلي)</option>
+                                        <option value="purple">Purple (بنفسجي)</option>
+                                        <option value="red">Red (أحمر)</option>
+                                        <option value="cyan">Cyan (سماوي)</option>
+                                      </select>
                                     </div>
-                                    <div>
-                                      <label className="block text-xs font-bold text-slate-400 mb-1">رابط صورة او لوجو خارجي (اختياري):</label>
+                                    <div className="space-y-1">
+                                      <label className="text-xs font-bold text-slate-400">رابط صورة الهوية للشعار (اختياري)</label>
                                       <input 
-                                        type="text" 
+                                        type="text" placeholder="https://"
                                         value={serverForm.logoUrl}
                                         onChange={(e) => setServerForm({ ...serverForm, logoUrl: e.target.value })}
-                                        className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-white text-left font-mono"
+                                        className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-left"
                                       />
                                     </div>
                                   </div>
 
-                                  <div>
-                                    <label className="block text-xs font-bold text-slate-400 mb-1">العنوان الفرعي وجاذبية باقة التفعيل:</label>
-                                    <input 
-                                      type="text" 
-                                      value={serverForm.tagline}
-                                      onChange={(e) => setServerForm({ ...serverForm, tagline: e.target.value })}
-                                      className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-white"
-                                    />
-                                  </div>
+                                  {/* Stats items edit */}
+                                  <div className="space-y-2 bg-slate-950/40 p-4 rounded-xl border border-slate-850">
+                                    <h4 className="text-xs font-bold text-white flex items-center justify-between">
+                                      <span>مؤشرات القوة والسعة (Stats)</span>
+                                      <button 
+                                        type="button" 
+                                        onClick={() => setServerForm({ ...serverForm, stats: [...serverForm.stats, { value: '', label: '' }] })}
+                                        className="text-[10px] text-blue-450 font-bold"
+                                      >
+                                        + إضافة مؤشر
+                                      </button>
+                                    </h4>
 
-                                  <div>
-                                    <label className="block text-xs font-bold text-slate-400 mb-1">الشرح الطويل والتوضيح للجمهور:</label>
-                                    <textarea 
-                                      value={serverForm.shortDesc}
-                                      onChange={(e) => setServerForm({ ...serverForm, shortDesc: e.target.value })}
-                                      rows={2}
-                                      className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-white resize-none"
-                                    />
-                                  </div>
-
-                                  <div className="border-t border-slate-800 pt-4">
-                                    <h4 className="text-sm font-bold text-white mb-2">إيجاز الأسعار والباقات المتوفرة (أول سطر بالجدول يعرض بالسوق كـ "يبدأ من")</h4>
-                                    {serverForm.prices.map((pr, idx) => (
-                                      <div key={idx} className="flex gap-2 mb-2">
+                                    {serverForm.stats.map((st, i) => (
+                                      <div key={i} className="flex gap-2 items-center">
                                         <input 
-                                          type="text" required placeholder="الباقة، مثال: سنة كاملة"
-                                          value={pr.duration}
+                                          type="text" placeholder="المؤشر (مثال: 55,000+)"
+                                          value={st.value}
                                           onChange={(e) => {
-                                            const n = [...serverForm.prices];
-                                            n[idx].duration = e.target.value;
-                                            setServerForm({ ...serverForm, prices: n });
+                                            const next = [...serverForm.stats];
+                                            next[i].value = e.target.value;
+                                            setServerForm({ ...serverForm, stats: next });
                                           }}
-                                          className="flex-1 bg-slate-950 border border-slate-800 rounded-lg p-2 text-white"
+                                          className="bg-slate-950 border border-slate-800 rounded p-1.5 flex-1 text-xs"
                                         />
                                         <input 
-                                          type="text" required placeholder="السعر بالدينار العراقي"
-                                          value={pr.price}
+                                          type="text" placeholder="الوصف (مثال: قنوات وبث)"
+                                          value={st.label}
                                           onChange={(e) => {
-                                            const n = [...serverForm.prices];
-                                            n[idx].price = e.target.value;
-                                            setServerForm({ ...serverForm, prices: n });
+                                            const next = [...serverForm.stats];
+                                            next[i].label = e.target.value;
+                                            setServerForm({ ...serverForm, stats: next });
                                           }}
-                                          className="flex-1 bg-slate-950 border border-slate-800 rounded-lg p-2 text-white"
+                                          className="bg-slate-950 border border-slate-800 rounded p-1.5 flex-1 text-xs"
                                         />
                                         <button 
-                                          type="button"
+                                          type="button" 
                                           onClick={() => {
-                                            const n = serverForm.prices.filter((_, i) => i !== idx);
-                                            setServerForm({ ...serverForm, prices: n });
+                                            const next = serverForm.stats.filter((_, idx) => idx !== i);
+                                            setServerForm({ ...serverForm, stats: next });
                                           }}
-                                          className="px-2 bg-red-600/20 text-red-400 hover:bg-red-650 rounded-lg text-xs"
+                                          className="text-red-500 text-xs"
                                         >
-                                          إلغاء الباقة
+                                          ✕
                                         </button>
                                       </div>
                                     ))}
-                                    <button 
-                                      type="button"
-                                      onClick={() => {
-                                        const n = [...serverForm.prices, { duration: '', price: '', isPopular: false }];
-                                        setServerForm({ ...serverForm, prices: n });
-                                      }}
-                                      className="text-2xs text-blue-400 pl-2 cursor-pointer font-bold"
-                                    >
-                                      + إضافة خيار سعر مجدول آخر
-                                    </button>
                                   </div>
 
-                                  <div className="flex gap-2 justify-end pt-4 border-t border-slate-800">
-                                    <button type="button" onClick={() => setEditingServerId(null)} className="px-4 py-2 bg-slate-950 border border-slate-800 text-slate-450 rounded-lg text-xs font-bold">إلغاء التعديل</button>
-                                    <button type="submit" className="px-6 py-2 bg-blue-600 hover:bg-blue-500 rounded-lg text-white text-xs font-bold">تم وحفظ السيرفر بنجاح 💾</button>
+                                  {/* Prices items edit */}
+                                  <div className="space-y-2 bg-slate-950/40 p-4 rounded-xl border border-slate-850">
+                                    <h4 className="text-xs font-bold text-white flex items-center justify-between">
+                                      <span>فترات وأسعار الاشتراكات</span>
+                                      <button 
+                                        type="button" 
+                                        onClick={() => setServerForm({ ...serverForm, prices: [...serverForm.prices, { duration: '', price: '', isPopular: false }] })}
+                                        className="text-[10px] text-blue-450 font-bold"
+                                      >
+                                        + إضافة سعر باقة
+                                      </button>
+                                    </h4>
+
+                                    {serverForm.prices.map((pr, i) => (
+                                      <div key={i} className="flex gap-2 items-center flex-wrap sm:flex-nowrap">
+                                        <input 
+                                          type="text" placeholder="المدة (مثال: سنة كاملة)"
+                                          value={pr.duration}
+                                          onChange={(e) => {
+                                            const next = [...serverForm.prices];
+                                            next[i].duration = e.target.value;
+                                            setServerForm({ ...serverForm, prices: next });
+                                          }}
+                                          className="bg-slate-950 border border-slate-800 rounded p-1.5 flex-1 text-xs"
+                                        />
+                                        <input 
+                                          type="text" placeholder="السعر (مثال: 30,000 IQD)"
+                                          value={pr.price}
+                                          onChange={(e) => {
+                                            const next = [...serverForm.prices];
+                                            next[i].price = e.target.value;
+                                            setServerForm({ ...serverForm, prices: next });
+                                          }}
+                                          className="bg-slate-950 border border-slate-800 rounded p-1.5 flex-1 text-xs"
+                                        />
+                                        <label className="text-2xs flex items-center gap-1 cursor-pointer">
+                                          <input 
+                                            type="checkbox"
+                                            checked={pr.isPopular}
+                                            onChange={(e) => {
+                                              const next = [...serverForm.prices];
+                                              next[i].isPopular = e.target.checked;
+                                              setServerForm({ ...serverForm, prices: next });
+                                            }}
+                                            className="rounded border-slate-805"
+                                          />
+                                          <span>شائع؟</span>
+                                        </label>
+                                        <button 
+                                          type="button" 
+                                          onClick={() => {
+                                            const next = serverForm.prices.filter((_, idx) => idx !== i);
+                                            setServerForm({ ...serverForm, prices: next });
+                                          }}
+                                          className="text-red-500 text-xs"
+                                        >
+                                          ✕
+                                        </button>
+                                      </div>
+                                    ))}
+                                  </div>
+
+                                  <div className="flex gap-2 justify-end pt-4">
+                                    <button 
+                                      type="button" onClick={() => setEditingServerId(null)}
+                                      className="px-4 py-2 bg-slate-950 hover:bg-slate-800 text-slate-400 rounded-xl text-xs cursor-pointer"
+                                    >
+                                      إلغاء
+                                    </button>
+                                    <button 
+                                      type="submit"
+                                      className="px-6 py-2 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-xs cursor-pointer"
+                                    >
+                                      تأكيد وحفظ السيرفر
+                                    </button>
                                   </div>
                                 </form>
                               </div>
                             )}
+
                           </div>
                         )}
 
+
                         {activeAdminTab === 'products' && (
-                          <div className="text-right">
+                          <div className="space-y-6">
+                            
                             {editingProdId === null ? (
                               <div className="space-y-4">
-                                <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
-                                  <h3 className="text-base font-bold text-white">إمارة وإعداد وباقات الاشتراكات والترفيه الأخرى</h3>
+                                <div className="flex items-center justify-between">
+                                  <h3 className="text-md font-bold text-white">قائمة الاشتراكات الترفيهية النشطة</h3>
                                   <button 
                                     onClick={handleStartAddProduct}
-                                    className="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 rounded-lg text-2xs font-extrabold text-white cursor-pointer"
+                                    className="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-bold cursor-pointer"
                                   >
-                                    + إضافة كارت أو باقة ترفيهية 🍿
+                                    + إضافة منتج/اشتراك آخر
                                   </button>
                                 </div>
 
-                                <div className="space-y-2">
-                                  {products.map((prod) => (
-                                    <div key={prod.id} className="p-4 bg-slate-950 border border-slate-850 rounded-xl flex items-center justify-between">
+                                <div className="space-y-2.5">
+                                  {products.map((p) => (
+                                    <div key={p.id} className="p-4 bg-slate-950 border border-slate-850 rounded-2xl flex items-center justify-between gap-4 font-sans">
                                       <div className="flex items-center gap-3">
-                                        <span className="w-8 h-8 rounded-lg bg-orange-600/20 text-orange-400 text-xs font-black flex items-center justify-center">🍿</span>
+                                        <div className="p-2.5 bg-slate-900 border border-slate-800 rounded-xl text-blue-400"><Icon name={p.icon || "Sparkles"} className="w-5 h-5" /></div>
                                         <div>
-                                          <h4 className="font-extrabold text-white text-sm">{prod.name}</h4>
-                                          <p className="text-3xs text-slate-550 truncate font-sans">{prod.description}</p>
+                                          <h4 className="text-sm font-bold text-white">{p.name}</h4>
+                                          <p className="text-[10px] text-slate-500 line-clamp-1">{p.description}</p>
                                         </div>
                                       </div>
+
                                       <div className="flex items-center gap-2">
                                         <button 
-                                          onClick={() => handleStartEditProduct(prod)}
-                                          className="px-2.5 py-1.5 bg-slate-900 border border-slate-800 text-slate-350 hover:text-white rounded-lg text-3xs font-extrabold cursor-pointer"
+                                          onClick={() => handleStartEditProduct(p)}
+                                          className="p-2 bg-slate-900 border border-slate-805 hover:bg-slate-800 text-slate-400 hover:text-white rounded-lg text-xs cursor-pointer"
                                         >
-                                          تعديل ونشاط ⚙
+                                          تعديل
                                         </button>
                                         <button 
-                                          onClick={() => handleDeleteProduct(prod.id)}
-                                          className="px-2.5 py-1.5 bg-red-650/10 border border-red-500/20 text-red-400 hover:bg-red-600 hover:text-white rounded-lg text-3xs font-extrabold cursor-pointer"
+                                          onClick={() => handleDeleteProduct(p.id)}
+                                          className="p-2 bg-red-950/20 border border-red-500/20 text-red-500 rounded-lg text-xs cursor-pointer"
                                         >
-                                          حذف نهائي 🗑
+                                          حذف
                                         </button>
                                       </div>
                                     </div>
@@ -1762,94 +1761,131 @@
                               </div>
                             ) : (
                               <div>
-                                <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
-                                  <h3 className="text-lg font-bold text-white">
+                                <div className="flex items-center justify-between border-b border-white/5 pb-3 mb-4">
+                                  <h3 className="text-md font-bold text-white">
                                     {editingProdId === 'new' ? 'إضافة وتأسيس منتج ترفيهي جديد' : 'تعديل ميزات واشتراك ' + prodForm.name}
                                   </h3>
-                                  <button onClick={() => setEditingProdId(null)} className="text-slate-400 hover:text-white text-xs font-sans">إلغاء التعديل</button>
+                                  <button onClick={() => setEditingProdId(null)} className="text-slate-400 hover:text-white text-xs">إلغاء التعديل</button>
                                 </div>
 
-                                <form onSubmit={handleSaveProduct} className="space-y-4">
-                                  <div>
-                                    <label className="block text-xs font-bold text-slate-400 mb-1">اسم الاشتراك الترفيهي المتاح للجمهور:</label>
+                                <form onSubmit={handleSaveProduct} className="space-y-4 font-sans">
+                                  <div className="space-y-1">
+                                    <label className="text-xs font-bold text-slate-400">اسم الاشتراك/الحساب</label>
                                     <input 
                                       type="text" required
                                       value={prodForm.name}
                                       onChange={(e) => setProdForm({ ...prodForm, name: e.target.value })}
-                                      className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-white"
+                                      className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-white"
                                     />
                                   </div>
 
-                                  <div>
-                                    <label className="block text-xs font-bold text-slate-400 mb-1">الوصف الفرعي لتفاصيل الاشتراك والضمان المعطى:</label>
+                                  <div className="space-y-1">
+                                    <label className="text-xs font-bold text-slate-400">اسم الأيقونة الرسمية المفضلة (من مكتبة Lucide)</label>
+                                    <input 
+                                      type="text" placeholder="مثال: Clapperboard, Monitor, Youtube, Gamepad2"
+                                      value={prodForm.icon}
+                                      onChange={(e) => setProdForm({ ...prodForm, icon: e.target.value })}
+                                      className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-left text-white"
+                                    />
+                                  </div>
+
+                                  <div className="space-y-1">
+                                    <label className="text-xs font-bold text-slate-400">الوصف التعريفي للاشتراك</label>
                                     <textarea 
+                                      rows="3"
                                       value={prodForm.description}
                                       onChange={(e) => setProdForm({ ...prodForm, description: e.target.value })}
-                                      rows={2}
-                                      className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-white resize-none"
+                                      className="w-full bg-slate-950 border border-slate-800 rounded-lg p-2 text-white"
                                     />
                                   </div>
 
-                                  <div className="border-t border-slate-800 pt-4">
-                                    <h4 className="text-sm font-bold text-white mb-2">جدول الأسعار وباقات الشحن المتاحة للاختيار:</h4>
-                                    {prodForm.prices.map((pr, idx) => (
-                                      <div key={idx} className="flex gap-2 mb-2">
+                                  {/* Prices items edit */}
+                                  <div className="space-y-2 bg-slate-950/45 p-4 rounded-xl border border-slate-850">
+                                    <h4 className="text-xs font-bold text-white flex items-center justify-between">
+                                      <span>باقات وأسعار هذا الاشتراك</span>
+                                      <button 
+                                        type="button" 
+                                        onClick={() => setProdForm({ ...prodForm, prices: [...prodForm.prices, { duration: '', price: '', isPopular: false }] })}
+                                        className="text-[10px] text-blue-450 font-bold"
+                                      >
+                                        + إضافة باقة
+                                      </button>
+                                    </h4>
+
+                                    {prodForm.prices.map((pr, i) => (
+                                      <div key={i} className="flex gap-2 items-center">
                                         <input 
-                                          type="text" required placeholder="العنوان، مثال: شهر واحد"
+                                          type="text" placeholder="المدة (مثال: شهر واحد)"
                                           value={pr.duration}
                                           onChange={(e) => {
-                                            const n = [...prodForm.prices];
-                                            n[idx].duration = e.target.value;
-                                            setProdForm({ ...prodForm, prices: n });
+                                            const next = [...prodForm.prices];
+                                            next[i].duration = e.target.value;
+                                            setProdForm({ ...prodForm, prices: next });
                                           }}
-                                          className="flex-1 bg-slate-950 border border-slate-800 rounded-lg p-2 text-white"
+                                          className="bg-slate-950 border border-slate-800 rounded p-1.5 flex-1 text-xs text-white"
                                         />
                                         <input 
-                                          type="text" required placeholder="السعر الإجمالي بـ IQD"
+                                          type="text" placeholder="السعر (مثال: 4,000 IQD)"
                                           value={pr.price}
                                           onChange={(e) => {
-                                            const n = [...prodForm.prices];
-                                            n[idx].price = e.target.value;
-                                            setProdForm({ ...prodForm, prices: n });
+                                            const next = [...prodForm.prices];
+                                            next[i].price = e.target.value;
+                                            setProdForm({ ...prodForm, prices: next });
                                           }}
-                                          className="flex-1 bg-slate-950 border border-slate-800 rounded-lg p-2 text-white"
+                                          className="bg-slate-950 border border-slate-800 rounded p-1.5 flex-1 text-xs text-white"
                                         />
+                                        <label className="text-2xs flex items-center gap-1">
+                                          <input 
+                                            type="checkbox"
+                                            checked={pr.isPopular}
+                                            onChange={(e) => {
+                                              const next = [...prodForm.prices];
+                                              next[i].isPopular = e.target.checked;
+                                              setProdForm({ ...prodForm, prices: next });
+                                            }}
+                                          />
+                                          <span>شائع؟</span>
+                                        </label>
                                         <button 
-                                          type="button"
+                                          type="button" 
                                           onClick={() => {
-                                            const n = prodForm.prices.filter((_, i) => i !== idx);
-                                            setProdForm({ ...prodForm, prices: n });
+                                            const next = prodForm.prices.filter((_, idx) => idx !== i);
+                                            setProdForm({ ...prodForm, prices: next });
                                           }}
-                                          className="px-2 bg-red-600/20 text-red-400 hover:bg-red-650 rounded-lg text-xs"
+                                          className="text-red-500 text-xs"
                                         >
-                                          إلغاء الخيار
+                                          ✕
                                         </button>
                                       </div>
                                     ))}
-                                    <button 
-                                      type="button"
-                                      onClick={() => {
-                                        const n = [...prodForm.prices, { duration: '', price: '', isPopular: false }];
-                                        setProdForm({ ...prodForm, prices: n });
-                                      }}
-                                      className="text-2xs text-blue-400 pl-2 cursor-pointer font-bold"
-                                    >
-                                      + إضافة خيار مدة/سعر ترفيهي آخر
-                                    </button>
                                   </div>
 
-                                  <div className="flex gap-2 justify-end pt-4 border-t border-slate-800">
-                                    <button type="button" onClick={() => setEditingProdId(null)} className="px-4 py-2 bg-slate-950 border border-slate-800 text-slate-450 rounded-lg text-xs font-bold">إلغاء التعديل</button>
-                                    <button type="submit" className="px-6 py-2 bg-blue-600 hover:bg-blue-500 rounded-lg text-white text-xs font-bold">تم وحفظ البيانات 💾</button>
+                                  <div className="flex gap-2 justify-end pt-4">
+                                    <button 
+                                      type="button" onClick={() => setEditingProdId(null)}
+                                      className="px-4 py-2 bg-slate-950 hover:bg-slate-800 text-slate-400 rounded-xl text-xs cursor-pointer"
+                                    >
+                                      إلغاء
+                                    </button>
+                                    <button 
+                                      type="submit"
+                                      className="px-6 py-2 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-xs cursor-pointer"
+                                    >
+                                      تأكيد وحفظ
+                                    </button>
                                   </div>
                                 </form>
                               </div>
                             )}
+
                           </div>
                         )}
+
                       </div>
+
                     </div>
                   )}
+
                 </div>
               </div>
             )}
@@ -1858,8 +1894,9 @@
         );
       }
 
-      // Render App
-      const root = ReactDOM.createRoot(document.getElementById('root'));
+      // Render execution
+      const container = document.getElementById('root');
+      const root = ReactDOM.createRoot(container);
       root.render(<App />);
     </script>
 </body>
