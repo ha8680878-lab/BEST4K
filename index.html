@@ -1,1013 +1,1130 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" class="h-full">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IQTV 4K | أفضل سيرفرات IPTV والاشتراكات الأصلية في العراق</title>
-  
-  <!-- Tailwind CSS v3 CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Google Fonts - Cairo Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-  
-  <!-- FontAwesome Icons for Beautiful visual UI -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Cairo', 'sans-serif'],
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سوق السيرفرات الرقمية | الاشتراكات الفاخرة والبث المستقر</title>
+    
+    <!-- Fonts from Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Cairo", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"]
+            },
+            fontSize: {
+              '2xs': '0.7rem',
+              '3xs': '0.625rem',
+              '4xs': '0.55rem',
+            },
+            scale: {
+              '102': '1.02',
+            }
           }
         }
       }
-    }
-  </script>
+    </script>
+    
+    <style>
+      body {
+        background-color: #030712;
+        color: #f3f4f6;
+        font-family: 'Cairo', sans-serif;
+        overflow-x: hidden;
+      }
+      
+      .bento-card {
+        background: rgba(17, 24, 39, 0.45);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      
+      .bento-card:hover {
+        border-color: rgba(99, 102, 241, 0.3);
+        transform: translateY(-4px);
+        box-shadow: 0 10px 40px rgba(99, 102, 241, 0.05);
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.98); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      
+      .animate-fade-in {
+        animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
 
-  <style>
-    body {
-      font-family: 'Cairo', sans-serif;
-      background-color: #050505;
-      color: #f0f0f0;
-      overflow-x: hidden;
-    }
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #030712;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1f2937;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #374151;
+      }
+    </style>
 
-    /* Bento Grid Card Specific Styles */
-    .bento-card {
-      background-color: rgba(24, 24, 27, 0.45);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(12px);
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    }
+    <!-- React 18 production build CDNs -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    
+    <!-- Babel standalone compiler -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    .bento-card:hover {
-      border-color: rgba(249, 115, 22, 0.4); /* Orange-500/40 glow */
-      transform: translateY(-6px);
-      box-shadow: 0 10px 40px rgba(249, 115, 22, 0.08);
-    }
-
-    /* Floating ambient circles */
-    .glow-orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(130px);
-      pointer-events: none;
-      z-index: -10;
-    }
-  </style>
+    <!-- Lucide Icons mapping -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="min-h-full flex flex-col relative">
+<body class="selection:bg-indigo-600/30 selection:text-white">
 
-  <!-- Ambient Dynamic Orbs -->
-  <div class="glow-orb w-96 h-96 bg-orange-500/10 top-[10%] left-[5%]"></div>
-  <div class="glow-orb w-[500px] h-[500px] bg-indigo-500/5 top-[40%] right-[5%]"></div>
-  <div class="glow-orb w-80 h-80 bg-red-500/5 bottom-[10%] left-[20%]"></div>
+    <div id="root"></div>
 
-  <!-- NAVIGATION HEADER -->
-  <header class="sticky top-0 w-full bg-[#050505]/80 backdrop-blur-xl border-b border-white/5 z-50">
-    <div class="max-w-7xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
-      
-      <div class="flex items-center gap-4">
-        <div class="w-12 h-12 rounded-full border-2 border-orange-500 bg-gradient-to-tr from-black to-zinc-950 flex flex-col items-center justify-center shadow-lg shadow-orange-500/25">
-          <span class="text-[9px] font-black leading-none text-white tracking-wider">IQTV</span>
-          <span class="text-xs font-black leading-none text-orange-500 mt-0.5">4K</span>
-        </div>
-        <div>
-          <h1 class="text-sm md:text-lg font-black text-white bg-gradient-to-l from-white via-zinc-100 to-orange-400 bg-clip-text text-transparent">
-            متجر IQTV 4K الإلكتروني
-          </h1>
-          <p class="text-[10px] md:text-xs font-semibold text-zinc-400 flex items-center gap-1">
-            <span>الوكيل المعتمد والأول لتفعيل اشتراكات IPTV في العراق</span>
-            <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-          </p>
-        </div>
-      </div>
+    <script>
+      window.STORE_SETTINGS = {
+        "title": "سوق السيرفرات الرقمية",
+        "subtitle": "الاشتراكات الفاخرة والبث المستقر",
+        "description": "المتجر العراقي الأول لاشتراكات IPTV الفاخرة، حسابات Netflix وعوالم الترفيه والسرعة الفائقة مع ثبات أسطوري وضمان متكامل.",
+        "whatsappNumber": "9647700000000",
+        "whatsappTemplate": "مرحباً، أود حجز اشتراك {product} - باقة {plan} بسعر {price}. هل يمكنني إتمام الدفع؟",
+        "logoText": "شير",
+        "logoSub": "سيرفرات"
+      };
 
-      <nav class="hidden md:flex items-center gap-6 text-xs font-bold">
-        <a href="#store-section" class="text-zinc-300 hover:text-orange-400 transition-colors">الاشتراكات والأسعار</a>
-        <button onclick="toggleModal('policyModal', true)" class="text-zinc-300 hover:text-orange-400">سياسة الاستخدام وضمان الاسترداد</button>
-        <a href="https://wa.me/9647740393776" target="_blank" class="px-4 py-2 bg-orange-500/10 border border-orange-500/30 hover:border-orange-500 rounded-full text-orange-400 hover:text-white transition-all">
-          الدعم الفني والواتساب مباشر 💬
-        </a>
-      </nav>
-    </div>
-  </header>
+      window.STORE_CATEGORIES = [
+        { "id": "iptv", "name": "سيرفرات IPTV والمشاهدة", "icon": "Tv" },
+        { "id": "extra", "name": "حسابات واشتراكات ترفيهية أخرى", "icon": "Sparkles" }
+      ];
 
-  <!-- HERO SECTION -->
-  <section class="relative pt-12 pb-16 md:py-24 px-4 overflow-hidden text-center max-w-4xl mx-auto space-y-6">
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-extrabold animate-bounce">
-      <i class="fa-solid fa-fire text-orange-500"></i>
-      <span>تحديث V ULTRA الألترا الجديد متوفر الآن بشكل كامل!</span>
-    </div>
+      window.STORE_SERVERS = [
+        {
+          "id": "vultra",
+          "name": "V ULTRA",
+          "badge": "الأحدث 🔥",
+          "category": "iptv",
+          "tagline": "خفّة مطلقة للتصفح وألترا سرعة في التنقل بين القنوات",
+          "shortDesc": "الإصدار فائق التطور مع تنقل عبقري وحماية من التقطيع، يعمل بروعة على كافة السرعات حتى المتوسطة والضعيفة.",
+          "logoText": "V",
+          "logoBg": "bg-gradient-to-br from-orange-500 via-orange-600 to-yellow-400 text-black",
+          "glowColor": "orange",
+          "stats": [
+            { "value": "ألترا ⚡", "label": "الخفة وسرعة التجاوب" },
+            { "value": "تنقل ذكي", "label": "تنقل فوري بين القنوات" },
+            { "value": "كود 1000", "label": "كود سيرفر أيفون الخاص" },
+            { "value": "ثقة تامة", "label": "قوة خوادم البث المباشر" }
+          ],
+          "downloads": [
+            {
+              "type": "android_apk",
+              "title": "تحميل مباشر سريع",
+              "subtitle": "رابط التحميل السريع المباشر",
+              "link": "https://tr.ee/vul"
+            },
+            {
+              "type": "android_apk",
+              "title": "متجر Google Play للأندرويد",
+              "subtitle": "تطبيق V ULTRA الرسمي على المتجر",
+              "link": "https://play.google.com/store/apps/details?id=com.shadeed.var8k"
+            },
+            {
+              "type": "downloader",
+              "title": "كود Downloader للشاشات الذكية",
+              "subtitle": "أدخله في تطبيق Downloader على الشاشة والـ Firestick",
+              "value": "9098255"
+            },
+            {
+              "type": "apple_ios",
+              "title": "تطبيق الآيفون والآيباد Apple iOS",
+              "subtitle": "رابط التحميل من متجر App Store وسيرفر التوصيل",
+              "link": "https://apps.apple.com/app/id6443335504",
+              "additionalInfo": "استخدم كود السيرفر للايفون: 1000"
+            },
+            {
+              "type": "feature_list",
+              "title": "مزايا تحديث V ULTRA الجديد",
+              "additionalInfo": "• خفّة وسرعة أعلى من المعتاد لعدم استهلاك الرام\n• تنقّل مريح وسلس للغاية بين قنوات البث ومكتبات VOD\n• تصميم واجهة عصري وجديد كلياً يناسب الشاشات والتحكم بالريموت\n• استقرار متفوق لأدنى سرعات الإنترنت بفضل تقنية الضغط الذكي"
+            }
+          ],
+          "prices": [
+            { "duration": "شهر واحد", "price": "10,000 IQD" },
+            { "duration": "3 أشهر", "price": "15,000 IQD" },
+            { "duration": "6 أشهر", "price": "20,000 IQD" },
+            { "duration": "سنة كاملة", "price": "35,000 IQD", "isPopular": true }
+          ],
+          "noticeTitle": "ثورة السرعة والخفة في العراق ⚡",
+          "noticeDesc": "تطبيق V ULTRA الجديد كلياً يقدم حلولاً ثورية لمشاكل التقطيع والتقليد. كود السيرفر مدمج ومفتاح الدونلودر يتيح التثبيت السهل بلحظات. نوصي به بشدة كخيار فخم ومميز للاستخدام العائلي والرياضي الصارم."
+        },
+        {
+          "id": "best4k",
+          "name": "BEST4K",
+          "badge": "طاقة قصوى 🚀",
+          "category": "iptv",
+          "tagline": "منصة احترافية لمحبي الجودة الفائقة والثبات الأسطوري",
+          "shortDesc": "السيرفر المفضل لمشاهدة المباريات الكبرى بدقة 4K ومعدل إطارات مرتفع 60fps دون أي تذبذب.",
+          "logoText": "4K",
+          "logoBg": "bg-gradient-to-br from-indigo-600 via-blue-600 to-violet-500",
+          "glowColor": "indigo",
+          "stats": [
+            { "value": "55,000+", "label": "قناة رياضية وترفيهية" },
+            { "value": "80,000+", "label": "فيلم ومسلسل VOD" },
+            { "value": "يومي فوري", "label": "مزامنة وتحديث فوري" },
+            { "value": "4K Real", "label": "معدل إطارات 60fps" }
+          ],
+          "downloads": [
+            {
+              "type": "android_apk",
+              "title": "تحميل مباشر للآندرويد APK",
+              "subtitle": "رابط التحميل المباشر الآمن",
+              "link": "https://sh-apps.cyou/apk/BEST4K.apk"
+            },
+            {
+              "type": "downloader",
+              "title": "كود Downloader للشاشات والتلفزيون",
+              "subtitle": "تطبيق Downloader على الشاشات والـ Firestick",
+              "value": "4056700"
+            },
+            {
+              "type": "apple_ios",
+              "title": "مشغلات أجهزة Apple iOS",
+              "subtitle": "تثبيت تطبيق NEXT+ أو تطبيق CASTORA",
+              "additionalInfo": "استخدم كود التفعيل السريع: 4949 للربط المباشر بالسيرفر"
+            },
+            {
+              "type": "feature_list",
+              "title": "مميزات اشتراك BEST4K الاستثنائي",
+              "additionalInfo": "• ثبات فائق جداً أثناء مباريات اللعبة والقمم العالمية الكبرى\n• خوادم سحابية موزعة دولياً لضمان عدم حدوث ضغط أوقات الذروة\n• أعلى جودة بتات ممكنة 4K Ultra HD\n• تصفية وإمكانية تقسيم المفضلة وحظر الفئات غير المرغوبة"
+            }
+          ],
+          "prices": [
+            { "duration": "شهر واحد", "price": "7,000 IQD" },
+            { "duration": "3 أشهر", "price": "12,050 IQD", "isPopular": true },
+            { "duration": "6 أشهر", "price": "20,000 IQD" },
+            { "duration": "سنة كاملة", "price": "30,000 IQD" }
+          ],
+          "noticeTitle": "أفضل استقرار للمشاهدة في العراق ⚡",
+          "noticeDesc": "للحصول على الأداء الأسطوري الموعود أثناء مواجهات دوري الأبطال والدوريات الكبرى، يفضل استخدام إنترنت ألياف ضوئية FTTH بسرعة عالية."
+        },
+        {
+          "id": "maxtvpro",
+          "name": "MAX TV PRO",
+          "badge": "القيمة الأقوى 💎",
+          "category": "iptv",
+          "tagline": "أكبر محتوى من القنوات الترفيهية الفاخرة بأفضل الأسعار",
+          "shortDesc": "استمتع بأفخم تجميعة للقنوات العربية واللاتينية والعالمية والمكتبات السينمائية مع استقرار باهر وكفاءة عالية.",
+          "logoText": "MAX",
+          "logoBg": "bg-gradient-to-br from-indigo-500 via-purple-600 to-pink-500",
+          "glowColor": "purple",
+          "stats": [
+            { "value": "15,000+", "label": "قناة مباشرة حية" },
+            { "value": "30,000+", "label": "فيلم ومسلسل" },
+            { "value": "تلقائي", "label": "تحديثات فنية فورية" },
+            { "value": "FHD & 4K", "label": "دقة ممتازة وألوان زاهية" }
+          ],
+          "downloads": [
+            {
+              "type": "android_apk",
+              "title": "تطبيق Android APK المباشر",
+              "subtitle": "تحميل مباشر من موقع MediaFire",
+              "link": "https://www.mediafire.com/file/aynt5054tdllmmb/Max-TV-Pro-active.apk/file"
+            },
+            {
+              "type": "apple_ios",
+              "title": "تطبيقات الآيفون والآيباد Apple",
+              "subtitle": "تطبيق NEXT+ أو تطبيق CASTORA",
+              "additionalInfo": "استخدم كود التفعيل: max للاتصال بالسيرفر مباشرة"
+            },
+            {
+              "type": "downloader",
+              "title": "أكواد Downloader للشاشات والتلفزيون",
+              "subtitle": "أدخل الكود المطابق لإصدار تطبيقك المفضل",
+              "additionalInfo": "MAX ACTIVE: 2606779\nMAX SHOW TV: 8229193\nMAX 4K: 183324\nMAX XCIPTV: 680115\nMAX TV+: 3603031\nMAX TV VPN: 8623805"
+            }
+          ],
+          "prices": [
+            { "duration": "شهر واحد", "price": "5,000 IQD" },
+            { "duration": "3 أشهر", "price": "10,000 IQD", "isPopular": true },
+            { "duration": "6 أشهر", "price": "15,000 IQD" },
+            { "duration": "سنة كاملة", "price": "22,000 IQD" }
+          ],
+          "noticeTitle": "أداء مضمون واستقرار مثالي للجميع ⚡",
+          "noticeDesc": "سيرفر MAX TV PRO يقدم المزيج المثالي بين السعر الاقتصادي البسيط والمحتوى العملاق والحديث جداً."
+        },
+        {
+          "id": "family4k",
+          "name": "FAMILY 4K",
+          "badge": "الخيار العائلي 👨‍👩‍👧‍👦",
+          "category": "iptv",
+          "tagline": "تجربة الترفيه المنزلي الشامل النظيف والمناسب للعائلة",
+          "shortDesc": "سيرفر ترفيهي واستثنائي يتميز بتصفية قنوات ذكية وأسلوب عرض ملائم وراقي لكافة أفراد أسرتك.",
+          "logoText": "F4K",
+          "logoBg": "bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-600",
+          "glowColor": "indigo",
+          "stats": [
+            { "value": "15,000+", "label": "قنوات ومحطات عائلية" },
+            { "value": "30,000+", "label": "فيلم ومسلسل مترجم ومحدث" },
+            { "value": "تحديث مستمر", "label": "تحديثات ترفيه يومية" },
+            { "value": "فخامة خفة", "label": "أداء آمن بدون مشاكل" }
+          ],
+          "downloads": [
+            {
+              "type": "android_apk",
+              "title": "متجر Google Play للأندرويد",
+              "subtitle": "تحميل التطبيق الرسمي المعتمد من المتجر مباشرة",
+              "link": "https://play.google.com/store/apps/details?id=com.shadeed.familypro"
+            },
+            {
+              "type": "downloader",
+              "title": "أكواد Downloader لإصدارات التلفزيون",
+              "subtitle": "اختر الرمز المطابق لنسخة التطبيق على تلفزيونك لتبدأ التشغيل والمشاهدة",
+              "additionalInfo": "Family Active: 630379\nFamily Pro: 919624\nFamily Gold: 9577153\nFamily Diamond: 8085964"
+            }
+          ],
+          "prices": [
+            { "duration": "6 أشهر", "price": "15,000 IQD", "isPopular": true },
+            { "duration": "سنة كاملة", "price": "22,000 IQD" }
+          ],
+          "noticeTitle": "متعة الاستقرار والأمان العائلي 🛡️",
+          "noticeDesc": "يتمتع FAMILY 4K بخوادم ذات توزيع متوازن وممتاز، مما يحافظ على ثبات البث."
+        },
+        {
+          "id": "pablored",
+          "name": "PABLO RED",
+          "badge": "خيار النخبة 🏆",
+          "category": "iptv",
+          "tagline": "الخدمة الترفيهية الفاخرة ذات الثبات الفولاذي",
+          "shortDesc": "الخيار المطلق لعشاق السينما والمباريات الضخمة مع ثبات فولاذي تم تصميمه خصيصاً لتفادي تقطيع البث فترات الذروة.",
+          "logoText": "RED",
+          "logoBg": "bg-gradient-to-br from-red-600 via-rose-500 to-orange-500",
+          "glowColor": "red",
+          "stats": [
+            { "value": "5,350+", "label": "قنوات حية منقحة بدقة" },
+            { "value": "60,000+", "label": "أفلام ومسلسلات حديثة VOD" },
+            { "value": "فوري تلقائي", "label": "روابط مدمجة محدثة" },
+            { "value": "ثبات ألترا", "label": "مستوى استقرار غير مسبوق" }
+          ],
+          "downloads": [
+            {
+              "type": "android_apk",
+              "title": "تحميل مباشر للآندرويد APK",
+              "subtitle": "تنزيل تطبيق بابلو ريد الرسمي والأصلي",
+              "link": "https://fhd.cx"
+            },
+            {
+              "type": "downloader",
+              "title": "كود Downloader للتثبيت السريع",
+              "subtitle": "أدخله لتنصيب التطبيق على التلفزيون وشاشات شاومي ومخازن Firestick",
+              "value": "9568447"
+            },
+            {
+              "type": "apple_ios",
+              "title": "تطبيقات أجهزة iPhone & iPad (أبل)",
+              "subtitle": "مشغلات NEXT+ و CASTORA الرسمية",
+              "additionalInfo": "رمز الربط والتفعيل المباشر السريع: 111"
+            }
+          ],
+          "prices": [
+            { "duration": "شهر واحد", "price": "5,000 IQD" },
+            { "duration": "3 أشهر", "price": "10,000 IQD" },
+            { "duration": "6 أشهر", "price": "15,000 IQD" },
+            { "duration": "سنة كاملة", "price": "30,000 IQD", "isPopular": true }
+          ],
+          "noticeTitle": "ثبات، سرعة، وقدرة تنقل تفوق الخيال 🚀",
+          "noticeDesc": "سيرفر بابلو ريد هو الأول من نوعه الذي يعتمد على البنية التحتية السحابية المخصصة للألعاب والترفيه عالي الحجم."
+        }
+      ];
 
-    <h2 class="text-3xl md:text-6xl font-black tracking-tight leading-tight md:leading-snug text-white">
-      أفضل باقات البث في العراق <br/>
-      <span class="bg-gradient-to-l from-orange-400 via-yellow-300 to-orange-500 bg-clip-text text-transparent">
-        سيرفرات IPTV والبطاقات الرقمية
-      </span>
-    </h2>
+      window.STORE_PRODUCTS = [
+        {
+          "id": "netflix",
+          "name": "حساب نتفلكس بريميوم رسمي 🍿",
+          "description": "شاشة خاصة بروفايل مقفل برمز سري بأعلى دقة 4K مع ضمان ذهبي كامل طوال مدة الاشتراك.",
+          "category": "extra",
+          "prices": [
+            { "duration": "شهر واحد", "price": "4,000 IQD", "isPopular": true },
+            { "duration": "3 أشهر", "price": "11,000 IQD" },
+            { "duration": "6 أشهر", "price": "20,000 IQD" }
+          ],
+          "icon": "Clapperboard"
+        },
+        {
+          "id": "shahid_vip",
+          "name": "اشتراك شاهد VIP الرياضية والترفيهية 📺",
+          "description": "باقة شاهد كاملة لمشاهدة دوري روشن السعودي وأحدث المسلسلات الحصرية بجودة عالية ودون إعلانات.",
+          "category": "extra",
+          "prices": [
+            { "duration": "شهر واحد", "price": "5,000 IQD" },
+            { "duration": "3 أشهر", "price": "13,000 IQD", "isPopular": true },
+            { "duration": "سنة كاملة", "price": "38,000 IQD" }
+          ],
+          "icon": "Tv"
+        },
+        {
+          "id": "youtube_premium",
+          "name": "يوتيوب بريميوم رسمي (على إيميلك الشخصي) ✨",
+          "description": "تخلص من الإعلانات المزعجة للأبد واستمتع بميزة التشغيل في الخلفية ويوتيوب ميوزك وبدون طلب باسوورد إيميلك.",
+          "category": "extra",
+          "prices": [
+            { "duration": "شهر واحد", "price": "2,000 IQD" },
+            { "duration": "6 أشهر", "price": "9,000 IQD" },
+            { "duration": "سنة كاملة", "price": "15,000 IQD", "isPopular": true }
+          ],
+          "icon": "Youtube"
+        },
+        {
+          "id": "playstation_plus",
+          "name": "بطاقات بلايستيشن ستور والـ Plus 🎮",
+          "description": "شحن حسابك العراقي أو الأمريكي ببطاقات رسمية لتنزيل الألعاب المفضلة والأطوار الجماعية الآمنة بالكامل.",
+          "category": "extra",
+          "prices": [
+            { "duration": "كارت 10 دولار أمريكي", "price": "15,500 IQD" },
+            { "duration": "كارت 20 دولار أمريكي", "price": "30,000 IQD", "isPopular": true },
+            { "duration": "كارت 50 دولار أمريكي", "price": "73,000 IQD" }
+          ],
+          "icon": "Gamepad2"
+        }
+      ];
+    </script>
 
-    <p class="text-zinc-300 text-sm md:text-lg leading-relaxed max-w-2xl mx-auto font-light">
-      جودة 4K حقيقية، حماية ضد التقطيع في قمم الكرة والمباريات، مكتبة VOD متكاملة لأحدث الأفلام والمسلسلات مع لوحة تفعيل فورية وضمان فني ذهبي دائم!
-    </p>
+    <script type="text/babel">
+      const { useState, useMemo, useEffect } = React;
 
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-      <a href="https://wa.me/9647740393776" target="_blank" class="w-full sm:w-auto px-8 py-4 bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-black text-sm md:text-base rounded-full shadow-lg shadow-emerald-600/30 flex items-center justify-center gap-2.5 transition-all">
-        <i class="fa-brands fa-whatsapp text-lg"></i>
-        <span>طلب تجربة مجانية 12 ساعة 🎬</span>
-      </a>
-      
-      <a href="#store-section" class="w-full sm:w-auto px-8 py-4 bg-zinc-900 hover:bg-zinc-800 text-white font-black text-sm md:text-base rounded-full border border-white/10 flex items-center justify-center gap-2.5 transition-all">
-        <i class="fa-solid fa-tv text-orange-400"></i>
-        <span>استكشف الباقات والأسعار</span>
-      </a>
-    </div>
-  </section>
+      // Lucide Icon Renderer for static environments
+      function Icon({ name, className }) {
+        useEffect(() => {
+          if (window.lucide) {
+            window.lucide.createIcons();
+          }
+        }, [name]);
 
-  <!-- CORE DASHBOARD (BENTO STYLE) -->
-  <main id="store-section" class="max-w-7xl mx-auto px-4 md:px-8 py-10 space-y-12 pb-32 w-full">
-    
-    <!-- Title & Filter controls -->
-    <div class="flex flex-col lg:flex-row items-center justify-between gap-6 border-b border-zinc-900 pb-8">
-      <div class="space-y-1.5 text-center lg:text-right">
-        <h3 class="text-2xl md:text-3xl font-black text-white">أقسام المتجر والاشتراكات</h3>
-        <p class="text-xs md:text-sm text-zinc-400 font-medium">
-          اختر الباقة أو السيرفر المناسب لك وتابع تفاصيله المباشرة لحجز كودك الفوري
-        </p>
-      </div>
+        return <i data-lucide={name || "sparkles"} className={className || "w-5 h-5"} />;
+      }
 
-      <!-- Live Search Bar -->
-      <div class="w-full lg:w-96 relative">
-        <i class="fa-solid fa-magnifying-glass absolute right-4 top-1/2 -translate-y-1/2 text-zinc-500"></i>
-        <input 
-          type="text" 
-          id="storeSearch"
-          placeholder="ابحث عن سيرفر، سعر، باقة..."
-          oninput="performSearchAndFilter()"
-          class="w-full bg-zinc-900/60 border border-zinc-800/80 focus:border-orange-500 rounded-full pr-11 pl-4 py-3 text-sm text-white placeholder-zinc-500 outline-none transition-all"
-        />
-      </div>
-    </div>
+      function App() {
+        const settings = window.STORE_SETTINGS;
+        const categories = window.STORE_CATEGORIES;
+        const servers = window.STORE_SERVERS;
+        const products = window.STORE_PRODUCTS;
 
-    <!-- Category selectors Buttons -->
-    <div class="flex justify-center md:justify-start gap-4">
-      <button 
-        id="btn-iptv"
-        onclick="switchCategory('iptv')"
-        class="px-6 py-3 rounded-full text-xs md:text-sm font-black border transition-all bg-orange-600 text-white border-orange-500 shadow-md shadow-orange-600/10"
-      >
-        سيرفرات IPTV السحابية 📡
-      </button>
-      <button 
-        id="btn-extra"
-        onclick="switchCategory('extra')"
-        class="px-6 py-3 rounded-full text-xs md:text-sm font-black border transition-all bg-zinc-900/50 text-zinc-400 border-zinc-800 hover:text-white"
-      >
-        بطاقات رقمية واشتراكات ترفيه 🎮
-      </button>
-    </div>
+        const [activeCategory, setActiveCategory] = useState(categories[0]?.id || 'iptv');
+        const [searchQuery, setSearchQuery] = useState('');
+        const [selectedServer, setSelectedServer] = useState(null);
+        const [copiedValue, setCopiedValue] = useState(null);
+        const [isPolicyOpen, setIsPolicyOpen] = useState(false);
 
-    <!-- SENSATIONAL BENTO SERVERS GRID -->
-    <div id="iptv-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      
-      <!-- SERVER CARD: V ULTRA -->
-      <div onclick="openServerDetails('vultra')" class="group bento-card rounded-3xl p-6 md:p-8 flex flex-col justify-between cursor-pointer relative overflow-hidden" data-name="v ultra">
-        <div class="absolute top-0 right-0 w-32 h-32 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-[80px] -z-10 bg-orange-500/40"></div>
-        <div>
-          <div class="flex items-center justify-between mb-6">
-            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500 via-orange-600 to-yellow-400 flex items-center justify-center text-black text-lg font-black shadow-lg">
-              V
-            </div>
-            <span class="text-[11px] font-black tracking-wide border px-3 py-1 rounded-full flex items-center gap-1 bg-black/60 border-orange-500/30 text-orange-400 group-hover:border-orange-500 transition-colors">
-              <i class="fa-solid fa-bolt animate-pulse"></i>
-              <span>الأحدث 🔥</span>
-            </span>
-          </div>
-          <h4 class="text-xl font-black text-white mb-2 group-hover:text-orange-400 transition-colors">V ULTRA</h4>
-          <p class="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6">
-            الإصدار فائق التطور مع تنقل عبقري وحماية من التتقطيع المزعج، يعمل بروعة بالسرعات المتوسطة والضعيفة.
-          </p>
-        </div>
-        <div class="pt-4 border-t border-white/5 flex items-center justify-between">
-          <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-wider">سعر الحجز يبدأ من</span>
-          <div class="flex items-center gap-3">
-            <span class="text-lg font-black text-white group-hover:text-orange-400">10,000 IQD</span>
-            <div class="w-8 h-8 rounded-full flex items-center justify-center bg-orange-500/10 text-orange-400 group-hover:bg-orange-500 group-hover:text-black transition-all">
-              <i class="fa-solid fa-arrow-left"></i>
-            </div>
-          </div>
-        </div>
-      </div>
+        // Booking Modal states
+        const [bookingDetails, setBookingDetails] = useState({
+          isOpen: false,
+          serverName: '',
+          duration: '',
+          price: ''
+        });
+        const [bookingForm, setBookingForm] = useState({ name: '', phone: '', notes: '' });
+        const [bookingDone, setBookingDone] = useState(false);
 
-      <!-- SERVER CARD: BEST4K -->
-      <div onclick="openServerDetails('best4k')" class="group bento-card rounded-3xl p-6 md:p-8 flex flex-col justify-between cursor-pointer relative overflow-hidden" data-name="best4k">
-        <div class="absolute top-0 right-0 w-32 h-32 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-[80px] -z-10 bg-indigo-500/30"></div>
-        <div>
-          <div class="flex items-center justify-between mb-6">
-            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-600 via-blue-600 to-violet-500 flex items-center justify-center text-white text-lg font-black shadow-lg">
-              4K
-            </div>
-            <span class="text-[11px] font-black tracking-wide border px-3 py-1 rounded-full flex items-center gap-1 bg-black/60 border-indigo-500/30 text-indigo-400 group-hover:border-indigo-500 transition-colors">
-              <i class="fa-solid fa-bolt animate-pulse"></i>
-              <span>طاقة قصوى 🚀</span>
-            </span>
-          </div>
-          <h4 class="text-xl font-black text-white mb-2 group-hover:text-indigo-400 transition-colors">BEST4K</h4>
-          <p class="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6">
-            السيرفر المفضل لمشاهدة المباريات الكبرى بدقة 4K ومعدل إطارات مرتفع 60fps دون أي تذبذب.
-          </p>
-        </div>
-        <div class="pt-4 border-t border-white/5 flex items-center justify-between">
-          <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-wider">سعر الحجز يبدأ من</span>
-          <div class="flex items-center gap-3">
-            <span class="text-lg font-black text-white group-hover:text-indigo-400">7,000 IQD</span>
-            <div class="w-8 h-8 rounded-full flex items-center justify-center bg-indigo-500/10 text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-all">
-              <i class="fa-solid fa-arrow-left"></i>
-            </div>
-          </div>
-        </div>
-      </div>
+        // Filters matching query
+        const filteredServers = useMemo(() => {
+          return servers.filter(s => {
+            if (s.category !== activeCategory) return false;
+            const q = searchQuery.toLowerCase();
+            return s.name.toLowerCase().includes(q) || 
+                   s.tagline.toLowerCase().includes(q) || 
+                   s.shortDesc.toLowerCase().includes(q);
+          });
+        }, [searchQuery, activeCategory]);
 
-      <!-- SERVER CARD: MAX TV PRO -->
-      <div onclick="openServerDetails('maxtvpro')" class="group bento-card rounded-3xl p-6 md:p-8 flex flex-col justify-between cursor-pointer relative overflow-hidden" data-name="max tv pro">
-        <div class="absolute top-0 right-0 w-32 h-32 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-[80px] -z-10 bg-purple-500/30"></div>
-        <div>
-          <div class="flex items-center justify-between mb-6">
-            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 via-purple-600 to-pink-500 flex items-center justify-center text-white text-lg font-black shadow-lg">
-              MAX
-            </div>
-            <span class="text-[11px] font-black tracking-wide border px-3 py-1 rounded-full flex items-center gap-1 bg-black/60 border-purple-500/30 text-purple-400 group-hover:border-purple-500 transition-colors">
-              <i class="fa-solid fa-bolt animate-pulse"></i>
-              <span>القيمة الأقوى 💎</span>
-            </span>
-          </div>
-          <h4 class="text-xl font-black text-white mb-2 group-hover:text-purple-400 transition-colors">MAX TV PRO</h4>
-          <p class="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6">
-            استمتع بأفخم تجميع للقنوات العربية والعالمية والمكتبات السينمائية باستقرار باهر وكفاءة فنية عالية.
-          </p>
-        </div>
-        <div class="pt-4 border-t border-white/5 flex items-center justify-between">
-          <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-wider">سعر الحجز يبدأ من</span>
-          <div class="flex items-center gap-3">
-            <span class="text-lg font-black text-white group-hover:text-purple-400">5,000 IQD</span>
-            <div class="w-8 h-8 rounded-full flex items-center justify-center bg-purple-500/10 text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition-all">
-              <i class="fa-solid fa-arrow-left"></i>
-            </div>
-          </div>
-        </div>
-      </div>
+        const filteredProducts = useMemo(() => {
+          return products.filter(p => {
+            if (p.category !== activeCategory) return false;
+            const q = searchQuery.toLowerCase();
+            return p.name.toLowerCase().includes(q) || p.description.toLowerCase().includes(q);
+          });
+        }, [searchQuery, activeCategory]);
 
-      <!-- SERVER CARD: FAMILY 4K -->
-      <div onclick="openServerDetails('family4k')" class="group bento-card rounded-3xl p-6 md:p-8 flex flex-col justify-between cursor-pointer relative overflow-hidden" data-name="family 4k">
-        <div class="absolute top-0 right-0 w-32 h-32 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-[80px] -z-10 bg-teal-500/30"></div>
-        <div>
-          <div class="flex items-center justify-between mb-6">
-            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-600 flex items-center justify-center text-white text-lg font-black shadow-lg">
-              F4K
-            </div>
-            <span class="text-[11px] font-black tracking-wide border px-3 py-1 rounded-full flex items-center gap-1 bg-black/60 border-teal-500/30 text-teal-400 group-hover:border-teal-500 transition-colors">
-              <i class="fa-solid fa-bolt animate-pulse"></i>
-              <span>الخيار العائلي 👨‍👩‍👧‍👦</span>
-            </span>
-          </div>
-          <h4 class="text-xl font-black text-white mb-2 group-hover:text-teal-400 transition-colors">FAMILY 4K</h4>
-          <p class="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6">
-            سيرفر ترفيهي واستثنائي يتميز بتصفية قنوات ومحتوى ترفيهي راقي ملائم ومناسب تماماً للعائلة.
-          </p>
-        </div>
-        <div class="pt-4 border-t border-white/5 flex items-center justify-between">
-          <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-wider">سعر الحجز يبدأ من</span>
-          <div class="flex items-center gap-3">
-            <span class="text-lg font-black text-white group-hover:text-teal-400">15,000 IQD</span>
-            <div class="w-8 h-8 rounded-full flex items-center justify-center bg-teal-500/10 text-teal-400 group-hover:bg-teal-500 group-hover:text-white transition-all">
-              <i class="fa-solid fa-arrow-left"></i>
-            </div>
-          </div>
-        </div>
-      </div>
+        const copyToClipboard = (text) => {
+          navigator.clipboard.writeText(text);
+          setCopiedValue(text);
+          setTimeout(() => setCopiedValue(null), 2000);
+        };
 
-      <!-- SERVER CARD: PABLO RED -->
-      <div onclick="openServerDetails('pablored')" class="group bento-card rounded-3xl p-6 md:p-8 flex flex-col justify-between cursor-pointer relative overflow-hidden" data-name="pablo red">
-        <div class="absolute top-0 right-0 w-32 h-32 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-[80px] -z-10 bg-red-500/30"></div>
-        <div>
-          <div class="flex items-center justify-between mb-6">
-            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-600 via-rose-500 to-orange-500 flex items-center justify-center text-white text-lg font-black shadow-lg">
-              RED
-            </div>
-            <span class="text-[11px] font-black tracking-wide border px-3 py-1 rounded-full flex items-center gap-1 bg-black/60 border-red-500/30 text-rose-400 group-hover:border-red-500 transition-colors">
-              <i class="fa-solid fa-bolt animate-pulse"></i>
-              <span>خيار النخبة 🏆</span>
-            </span>
-          </div>
-          <h4 class="text-xl font-black text-white mb-2 group-hover:text-rose-400 transition-colors">PABLO RED</h4>
-          <p class="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6">
-            الخدمة الأولى الترفيهية وثبات مذهل تم تصميمه لتفادي التقطيع في المباريات ومواجهات الذروة الكبرى.
-          </p>
-        </div>
-        <div class="pt-4 border-t border-white/5 flex items-center justify-between">
-          <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-wider">سعر الحجز يبدأ من</span>
-          <div class="flex items-center gap-3">
-            <span class="text-lg font-black text-white group-hover:text-rose-400">5,000 IQD</span>
-            <div class="w-8 h-8 rounded-full flex items-center justify-center bg-red-500/10 text-rose-400 group-hover:bg-red-500 group-hover:text-white transition-all">
-              <i class="fa-solid fa-arrow-left"></i>
-            </div>
-          </div>
-        </div>
-      </div>
+        const submitBooking = (e) => {
+          e.preventDefault();
+          let template = settings.whatsappTemplate || "مرحباً، أود حجز اشتراك {product} - باقة {plan} بسعر {price}.";
+          let message = template
+            .replace(/{product}/g, bookingDetails.serverName)
+            .replace(/{plan}/g, bookingDetails.duration)
+            .replace(/{price}/g, bookingDetails.price)
+            .replace(/{name}/g, bookingForm.name || 'غير مدخل')
+            .replace(/{phone}/g, bookingForm.phone || 'غير مدخل')
+            .replace(/{notes}/g, bookingForm.notes || 'لا يوجد');
 
-    </div>
-
-    <!-- DIGITAL PRODUCTS EXTRA GRID (HIDDEN BY DEFAULT) -->
-    <div id="extra-container" class="grid grid-cols-1 md:grid-cols-2 gap-6 hidden">
-      
-      <!-- CARD: Netflix -->
-      <div class="bento-card rounded-3xl p-6 md:p-8 flex flex-col justify-between" data-name="netflix">
-        <div>
-          <div class="flex items-center gap-4 mb-4">
-            <div class="p-3 bg-red-500/10 border border-red-500/20 rounded-2xl text-red-500">
-              <i class="fa-solid fa-clapperboard text-2xl"></i>
-            </div>
-            <h4 class="text-lg md:text-xl font-extrabold text-white">حساب نتفلكس بريميوم رسمي 🍿</h4>
-          </div>
-          <p class="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6">
-            شاشة خاصة بروفايل مقفل برمز سري بأعلى دقة 4K مع ضمان ذهبي كامل طوال مدة اشتراكك.
-          </p>
-        </div>
-        <div>
-          <div class="flex items-center justify-between pt-4 border-t border-white/5">
-            <div>
-              <span class="text-[10px] text-zinc-500 block">سعر الحجز</span>
-              <span class="text-xl font-black text-amber-500">4,000 IQD / شهري</span>
-            </div>
-            <button onclick="triggerBooking('نتفلكس بريميوم رسمي', 'شهر واحد', '4,000 IQD')" class="px-5 py-2.5 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-black text-xs transition-all">
-              حجز فوري 🛒
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- CARD: Shahid VIP -->
-      <div class="bento-card rounded-3xl p-6 md:p-8 flex flex-col justify-between" data-name="shahid vip">
-        <div>
-          <div class="flex items-center gap-4 mb-4">
-            <div class="p-3 bg-purple-500/10 border border-purple-500/20 rounded-2xl text-purple-400">
-              <i class="fa-solid fa-photo-film text-2xl"></i>
-            </div>
-            <h4 class="text-lg md:text-xl font-extrabold text-white">اشتراك شاهد VIP الرياضية والترفيه 📺</h4>
-          </div>
-          <p class="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6">
-            باقة شاملة لمشاهدة دوري روشن والمسابقات وتغطية رياضية حصرية بجودة عالية وبدون إعلانات.
-          </p>
-        </div>
-        <div>
-          <div class="flex items-center justify-between pt-4 border-t border-white/5">
-            <div>
-              <span class="text-[10px] text-zinc-500 block">سعر الحجز</span>
-              <span class="text-xl font-black text-amber-500">5,000 IQD / شهري</span>
-            </div>
-            <button onclick="triggerBooking('شاهد VIP الرياضية', 'شهر واحد', '5,000 IQD')" class="px-5 py-2.5 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-black text-xs transition-all">
-              حجز فوري 🛒
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- CARD: YouTube Premium -->
-      <div class="bento-card rounded-3xl p-6 md:p-8 flex flex-col justify-between" data-name="youtube">
-        <div>
-          <div class="flex items-center gap-4 mb-4">
-            <div class="p-3 bg-red-600/10 border border-red-600/20 rounded-2xl text-red-500">
-              <i class="fa-brands fa-youtube text-2xl"></i>
-            </div>
-            <h4 class="text-lg md:text-xl font-extrabold text-white">يوتيوب بريميوم رسمي (إيميلك الشخصي) ✨</h4>
-          </div>
-          <p class="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6">
-            تخلص من الإعلانات المزعجة للأبد واستمتع بميزة التشغيل في الخلفية ويوتيوب ميوزك وبدون باسوورد.
-          </p>
-        </div>
-        <div>
-          <div class="flex items-center justify-between pt-4 border-t border-white/5">
-            <div>
-              <span class="text-[10px] text-zinc-500 block">سعر الحجز يبدأ من</span>
-              <span class="text-xl font-black text-amber-500">2,000 IQD</span>
-            </div>
-            <button onclick="triggerBooking('يوتيوب بريميوم رسمي', 'شهر واحد', '2,000 IQD')" class="px-5 py-2.5 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-black text-xs transition-all">
-              حجز فوري 🛒
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- CARD: PlayStation Plus -->
-      <div class="bento-card rounded-3xl p-6 md:p-8 flex flex-col justify-between" data-name="playstation">
-        <div>
-          <div class="flex items-center gap-4 mb-4">
-            <div class="p-3 bg-blue-500/10 border border-blue-500/20 rounded-2xl text-blue-500">
-              <i class="fa-solid fa-gamepad text-2xl"></i>
-            </div>
-            <h4 class="text-lg md:text-xl font-extrabold text-white">بطاقات بلايستيشن ستور والـ Plus 🎮</h4>
-          </div>
-          <p class="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6">
-            شحن حسابك العراقي أو الأمريكي ببطاقات رسمية لتنزيل الألعاب المفضلة والأطوار الجماعية الآمنة بالكامل.
-          </p>
-        </div>
-        <div>
-          <div class="flex items-center justify-between pt-4 border-t border-white/5">
-            <div>
-              <span class="text-[10px] text-zinc-500 block">سعر الحجز يبدأ من</span>
-              <span class="text-xl font-black text-amber-500">15,500 IQD</span>
-            </div>
-            <button onclick="triggerBooking('بطاقات بلايستيشن ستور', 'باقة أساسية', '15,500 IQD')" class="px-5 py-2.5 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-black text-xs transition-all">
-              حجز فوري 🛒
-            </button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- TRUST QUALITY BANNER -->
-    <div class="bg-gradient-to-tr from-[#0b101c] via-zinc-900 to-[#120f26] border border-zinc-800 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
-      <div class="space-y-2 text-center md:text-right">
-        <h4 class="text-lg md:text-xl font-bold text-white flex items-center justify-center md:justify-start gap-2">
-          <i class="fa-solid fa-shield-halved text-orange-500"></i>
-          <span>الضمان الأمني والتشغيلي المعتمد للعراق 🛡️</span>
-        </h4>
-        <p class="text-zinc-300 text-xs md:text-sm max-w-2xl font-light">
-          نضمن لك بقاء اشتراكك فعالاً ومستقراً طيلة الفترة. في حال حدوث أي خلل تقني خارجي، نوفر الدعم السريع والتعويض الفوري لراحتك.
-        </p>
-      </div>
-      <a href="https://wa.me/9647740393776" target="_blank" class="px-6 py-3.5 bg-orange-600 hover:bg-orange-500 text-white font-black text-xs rounded-full shadow-lg transition-all">
-        تحدث مع الإدارة مباشرة
-      </a>
-    </div>
-
-  </main>
-
-  <!-- SERVER DETAIL MODAL -->
-  <div id="detailModal" class="fixed inset-0 bg-black/95 z-[200] backdrop-blur-xl overflow-y-auto p-4 md:p-8 hidden">
-    <div class="max-w-4xl mx-auto my-10 relative">
-      
-      <!-- Close Button -->
-      <button onclick="toggleModal('detailModal', false)" class="fixed top-6 left-6 w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-white transition-all cursor-pointer">
-        <i class="fa-solid fa-xmark text-lg"></i>
-      </button>
-
-      <!-- Modal Content Dynamically Generated -->
-      <div id="modalTarget"></div>
-
-    </div>
-  </div>
-
-  <!-- BOOKING INTERACTIVE MODAL -->
-  <div id="bookingModal" class="fixed inset-0 bg-black/85 z-[300] backdrop-blur-md flex items-center justify-center p-4 hidden">
-    <div class="bg-zinc-900 border border-zinc-800 rounded-3xl max-w-md w-full overflow-hidden shadow-2xl relative">
-      <div class="h-1.5 bg-gradient-to-r from-orange-500 to-yellow-400"></div>
-      
-      <button onclick="toggleModal('bookingModal', false)" class="absolute left-4 top-5 p-1 rounded-full text-zinc-400 hover:text-white">
-        <i class="fa-solid fa-xmark text-lg"></i>
-      </button>
-
-      <div class="p-6 md:p-8 space-y-6 text-right">
-        <h3 class="text-lg md:text-xl font-black text-white">تفاصيل حجز الاشتراك</h3>
-        <p id="bookingHeaderDesc" class="text-zinc-400 text-xs leading-relaxed bg-black/40 p-4 rounded-xl border border-zinc-800"></p>
-
-        <form id="whatsappForm" onsubmit="handleInvoiceSubmit(event)" class="space-y-4">
-          <input type="hidden" id="book_server">
-          <input type="hidden" id="book_duration">
-          <input type="hidden" id="book_price">
+          const cleanPhone = settings.whatsappNumber.replace(/\D/g, '');
+          const waUrl = "https://wa.me/" + cleanPhone + "?text=" + encodeURIComponent(message);
           
-          <div>
-            <label class="block text-xs font-bold text-zinc-300 mb-2">الاسم بالكامل:</label>
-            <input type="text" id="cust_name" required placeholder="مثال: أحمد البصري" class="w-full bg-black/40 border border-zinc-800 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-700 outline-none transition-all" />
-          </div>
+          setBookingDone(true);
+          setTimeout(() => {
+            window.open(waUrl, '_blank');
+            setBookingDetails({ isOpen: false, serverName: '', duration: '', price: '' });
+            setBookingForm({ name: '', phone: '', notes: '' });
+            setBookingDone(false);
+          }, 1200);
+        };
 
-          <div>
-            <label class="block text-xs font-bold text-zinc-300 mb-2">رقم هاتف الواتساب:</label>
-            <input type="tel" id="cust_phone" required placeholder="مثال: 07740393776" class="w-full bg-black/40 border border-zinc-800 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-700 outline-none transition-all" />
-          </div>
+        const getGlowColors = (color) => {
+          switch (color) {
+            case 'orange':
+              return { text: 'text-orange-400', border: 'border-orange-500/20', bg: 'from-orange-950/20 to-slate-950/90', badge: 'bg-orange-500/15 text-orange-200 border-orange-500/35', statBg: 'border-orange-500/10' };
+            case 'red':
+              return { text: 'text-rose-400', border: 'border-rose-500/20', bg: 'from-rose-950/20 to-slate-950/90', badge: 'bg-rose-500/10 text-rose-300 border-rose-500/35', statBg: 'border-rose-500/10' };
+            case 'cyan':
+              return { text: 'text-teal-400', border: 'border-teal-500/20', bg: 'from-teal-950/20 to-slate-950/90', badge: 'bg-teal-500/10 text-teal-300 border-teal-500/35', statBg: 'border-teal-500/10' };
+            case 'purple':
+              return { text: 'text-purple-400', border: 'border-purple-500/20', bg: 'from-purple-950/20 to-slate-950/90', badge: 'bg-purple-500/10 text-purple-300 border-purple-500/35', statBg: 'border-purple-500/10' };
+            default:
+              return { text: 'text-indigo-400', border: 'border-indigo-500/20', bg: 'from-indigo-950/10 to-slate-950/90', badge: 'bg-indigo-500/10 text-indigo-300 border-indigo-500/30', statBg: 'border-indigo-500/10' };
+          }
+        };
 
-          <div>
-            <label class="block text-xs font-bold text-zinc-300 mb-2">ملاحظات إضافية كنوع الجهاز (اختياري):</label>
-            <textarea id="cust_notes" rows="2" placeholder="أندرويد، ايفون، تلفزيون ذكي..." class="w-full bg-black/40 border border-zinc-800 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-700 outline-none transition-all resize-none"></textarea>
-          </div>
+        const activeColors = selectedServer ? getGlowColors(selectedServer.glowColor) : null;
 
-          <button type="submit" class="w-full bg-orange-600 hover:bg-orange-500 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-orange-600/15 flex items-center justify-center gap-2">
-            تأكيد وإصدار الفاتورة للواتساب 🚀
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
+        function OtherProductItem({ prod }) {
+          const [selectedPlanIdx, setSelectedPlanIdx] = useState(0);
+          const currentPlan = prod.prices[selectedPlanIdx] || prod.prices[0] || { duration: 'سنة كاملة', price: '0 IQD' };
 
-  <!-- PRIVACY POLICY MODAL -->
-  <div id="policyModal" class="fixed inset-0 bg-black/90 z-[300] backdrop-blur-md flex items-center justify-center p-4 hidden">
-    <div class="bg-zinc-900 border border-zinc-800 rounded-3xl max-w-lg w-full p-6 md:p-8 shadow-2xl relative text-right">
-      <button onclick="toggleModal('policyModal', false)" class="absolute left-4 top-4 p-1 rounded-full text-zinc-400 hover:text-white">
-        <i class="fa-solid fa-xmark text-lg"></i>
-      </button>
-
-      <h3 class="text-xl font-black text-orange-400 mb-6 flex items-center gap-2">
-        <i class="fa-solid fa-shield-halved text-orange-500"></i>
-        <span>سياسة الاستخدام والخصوصية 🔐</span>
-      </h3>
-
-      <div class="space-y-4 text-zinc-300 text-xs md:text-sm leading-relaxed whitespace-pre-line font-sans">
-        <p>• الكود مرخص للاستخدام الشخصي على جهاز واحد فقط (إلا إذا كانت الباقة تدعم أجهزة متعددة متزامنة).</p>
-        <p>• يمنع منعاً باتاً تشغيل نفس كود التفعيل المباشر على أكثر من جهاز في نفس اللحظة، سيؤدي ذلك إلى حظر الحساب تلقائياً.</p>
-        <p>• بيانات العميل وهواتف الاتصال آمنة وسرية لدينا بالكامل.</p>
-        <p>• يرجى إجراء التجربة المجانية الموفرة لمدة 12 ساعة قبل تفعيل الاشتراكات الطويلة الأجل للتأكد من ملاءمة وسرعة السيرفر على جهازك المفضل.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- FLOATING WHATSAPP -->
-  <a href="https://wa.me/9647740393776" target="_blank" class="fixed bottom-6 left-6 w-14 h-14 bg-emerald-500 text-white flex items-center justify-center rounded-full shadow-2xl shadow-emerald-500/30 hover:scale-110 active:scale-95 transition-all z-50 animate-bounce">
-    <i class="fa-brands fa-whatsapp text-2xl"></i>
-  </a>
-
-  <!-- FOOTER -->
-  <footer class="bg-black py-16 border-t border-zinc-900 mt-auto text-center space-y-6 w-full">
-    <div class="w-12 h-12 rounded-full border border-zinc-800 bg-zinc-900 flex items-center justify-center mx-auto">
-      <span class="text-xs font-black text-orange-500">IQTV</span>
-    </div>
-    <p class="text-zinc-200 font-extrabold text-sm">IQTV 4K — أفضل الاشتراكات والمنتجات الرقمية في العراق 🇮🇶</p>
-    
-    <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-zinc-400">
-      <button onclick="toggleModal('policyModal', true)" class="hover:text-white">سياسة الاستخدام والخصوصية</button>
-      <span>•</span>
-      <a href="https://wa.me/9647740393776" target="_blank" class="hover:text-white">تواصل لحجز التجربة التجريبية</a>
-    </div>
-    <p class="text-zinc-600 text-[10px]">&copy; 2026 IQTV 4K. جميع الحقوق ومستوى الاستقرار محفوظ ومعتمد للوكالة الرسمية بالعراق.</p>
-  </footer>
-
-  <!-- SCRIPT ENGINE -->
-  <script>
-    // Server database containing complete spec metadata & V ULTRA highlight specs
-    const SERVERS_DB = {
-      vultra: {
-        id: 'vultra',
-        name: 'V ULTRA',
-        tagline: 'خفّة مطلقة للتصفح وألترا سرعة في التنقل بين القنوات',
-        logoText: 'V',
-        logoBg: 'bg-gradient-to-br from-orange-500 via-orange-600 to-yellow-400 text-black',
-        glowColor: 'orange',
-        badge: 'الأحدث 🔥',
-        shortDesc: 'الإصدار فائق التطور مع تنقل عبقري وحماية من التتقطيع المزعج، يعمل بروعة بالسرعات المتوسطة والضعيفة.',
-        stats: [
-          { value: 'ألترا ⚡', label: 'الخفة وسرعة التجاوب' },
-          { value: 'تنقل ذكي', label: 'تنقل فوري بين القنوات' },
-          { value: 'كود 1000', label: 'كود سيرفر أيفون الخاص' },
-          { value: 'ثقة تامة', label: 'قوة خوادم البث المباشر' }
-        ],
-        downloads: [
-          { type: 'android', title: 'تحميل مباشر سريع', subtitle: 'تحميل مباشر للبرنامج', value: 'https://tr.ee/vul', buttonText: 'اضغط هنا للتحميل المباشر ⚡' },
-          { type: 'playstore', title: 'متجر Google Play للأندرويد', subtitle: 'النسخة الرسمية المعتمدة للمتجر', value: 'https://play.google.com/store/apps/details?id=com.shadeed.var8k', buttonText: 'تحميل من متجر بلي' },
-          { type: 'downloader', title: 'كود Downloader للشاشات الذكية', subtitle: 'تطبيق Downloader على جميع الشاشات والفاير ستيك', code: '9098255' },
-          { type: 'apple', title: 'تطبيق الآيفون والآيباد Apple iOS', subtitle: 'تحميل تطبيق الآيفون مدمج برمز السيرفر', value: 'https://apps.apple.com/app/id6443335504', buttonText: 'تنزيل من App Store', info: 'استخدم كود السيرفر للايفون: 1000' }
-        ],
-        prices: [
-          { duration: 'شهر واحد', price: '10,000 IQD' },
-          { duration: '3 أشهر', price: '15,000 IQD' },
-          { duration: '6 أشهر', price: '20,000 IQD' },
-          { duration: 'سنة كاملة', price: '35,000 IQD', isPopular: true }
-        ],
-        noticeTitle: 'سرعة، خفّة، وتحكم فائق بالريموت 🚀',
-        noticeDesc: 'تطبيق V ULTRA الجديد كلياً يقدم حلولاً ثورية لمشاكل التقطيع والتقليد. كود السيرفر مدمج ومفتاح الدونلودر يتيح التثبيت السهل بلحظات.'
-      },
-      best4k: {
-        id: 'best4k',
-        name: 'BEST4K',
-        tagline: 'منصة احترافية لضمان الجودة الفائقة والثبات الأسطوري',
-        logoText: '4K',
-        logoBg: 'bg-gradient-to-br from-indigo-600 via-blue-600 to-violet-500',
-        glowColor: 'indigo',
-        badge: 'جودة وحسم 🚀',
-        shortDesc: 'السيرفر المفضل لمشاهدة المباريات الكبرى بدقة 4K ومعدل إطارات مرتفع 60fps دون أي تذبذب.',
-        stats: [
-          { value: '55,000+', label: 'قناة مباشرة حية' },
-          { value: '80,000+', label: 'فيلم ومسلسل سينمائي' },
-          { value: 'تلقائي', label: 'مزامنة محتوى لحظية ' },
-          { value: '60 FPS', label: 'ثبات فائق بالقمم' }
-        ],
-        downloads: [
-          { type: 'android', title: 'تحميل مباشر للآندرويد APK', subtitle: 'تحميل ملف apk السريع', value: 'https://sh-apps.cyou/apk/BEST4K.apk', buttonText: 'اضغط للتحميل السريع' },
-          { type: 'downloader', title: 'كود Downloader للشاشات الذكية', subtitle: 'كود Downloader الذكي', code: '4056700' },
-          { type: 'apple', title: 'مشغلات أجهزة Apple iOS', subtitle: 'تثبيت تطبيق NEXT+ أو تطبيق CASTORA', info: 'رمز الربط لتنزيل السيرفر المباشر: 4949' }
-        ],
-        prices: [
-          { duration: 'شهر واحد', price: '7,000 IQD' },
-          { duration: '3 أشهر', price: '12,000 IQD', isPopular: true },
-          { duration: '6 أشهر', price: '20,000 IQD' },
-          { duration: 'سنة كاملة', price: '30,000 IQD' }
-        ],
-        noticeTitle: 'أفضل استقرار للمشاهدة في العراق ⚡',
-        noticeDesc: 'للحصول على الأداء الأسطوري الموعود أثناء مواجهات دوري الأبطال والدوريات الكبرى، يفضل استخدام إنترنت ألياف ضوئية.'
-      },
-      maxtvpro: {
-        id: 'maxtvpro',
-        name: 'MAX TV PRO',
-        tagline: 'أكبر محتوى من القنوات الترفيهية الفاخرة بأفضل الأسعار بالعراق',
-        logoText: 'MAX',
-        logoBg: 'bg-gradient-to-br from-indigo-500 via-purple-600 to-pink-500',
-        glowColor: 'purple',
-        badge: 'قيمة مدهشة 💎',
-        shortDesc: 'استمتع بأفخم تجميعة للقنوات العربية واللاتينية والمكتبات السينمائية مع استقرار باهر وكفاءة عالية لجميع الأجهزة.',
-        stats: [
-          { value: '15,000+', label: 'قنوات وجداول حية' },
-          { value: '30,000+', label: 'فيلم ومسلسل محدث' },
-          { value: 'كفاءة', label: 'تحديثات وصيانة دورية' },
-          { value: 'طبيعي', label: 'ألوان زاهية ومعدل بتات ممتاز' }
-        ],
-        downloads: [
-          { type: 'android', title: 'تطبيق Android APK المباشر', subtitle: 'تحميل ميديا فاير الأصلي لحزمة التطبيق', value: 'https://www.mediafire.com/file/aynt5054tdllmmb/Max-TV-Pro-active.apk/file', buttonText: 'رابط التحميل المباشر' },
-          { type: 'apple', title: 'تطبيقات الآيفون والآيباد Apple', subtitle: 'تطبيق NEXT+ أو تطبيق CASTORA', info: 'استخدم كود التفعيل: max للاتصال فورا' },
-          { type: 'downloader', title: 'أكواد Downloader المتعددة للشاشة', subtitle: 'أكواد تطبيقات ماكس للشاشات', info: 'MAX ACTIVE: 2606779\nMAX SHOW TV: 8229193\nMAX 4K: 183324\nMAX XCIPTV: 680115\nMAX TV+: 3603031\nMAX TV VPN: 8623805' }
-        ],
-        prices: [
-          { duration: 'شهر واحد', price: '5,000 IQD' },
-          { duration: '3 أشهر', price: '10,000 IQD', isPopular: true },
-          { duration: '6 أشهر', price: '15,000 IQD' },
-          { duration: 'سنة كاملة', price: '22,000 IQD' }
-        ],
-        noticeTitle: 'بوابتك الكاملة للاشتراك العائلي المستقر 🛡️',
-        noticeDesc: 'سيرفر ماكس يجمع البساطة والسعر البسيط ليلائم التلفزيونات وشاشات التوصيل بالمنزل.'
-      },
-      family4k: {
-        id: 'family4k',
-        name: 'FAMILY 4K',
-        tagline: 'تجربة الترفيه المنزلي الشامل النظيف والمناسب للعائلة والمنزل',
-        logoText: 'F4K',
-        logoBg: 'bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-600',
-        glowColor: 'cyan',
-        badge: 'ملائم وعائلي 👨‍👩‍👧‍👦',
-        shortDesc: 'سيرفر ترفيهي تصفية تامة وجودة عرض ممتازة تليق بك وبأفراد منزلك بشكل دائم.',
-        stats: [
-          { value: '15,000+', label: 'قنوات ومحطات عائلية' },
-          { value: '30,000+', label: 'أحدث الأفلام المترجمة' },
-          { value: 'يومي', label: 'تحديثات سينما فورية' },
-          { value: 'نظيف', label: 'مناسب لجميع الجلسات' }
-        ],
-        downloads: [
-          { type: 'android', title: 'رابط متجر Google Play للأندرويد', subtitle: 'التحميل المباشر من المتجر الرسمي', value: 'https://play.google.com/store/apps/details?id=com.shadeed.familypro', buttonText: 'تحميل تطبيق فاميلي' },
-          { type: 'downloader', title: 'أكواد Downloader لإصدارات التلفزيون', subtitle: 'رموز تثبيت نسخ التطبيقات', info: 'Family Active: 630379\nFamily Pro: 919624\nFamily Gold: 9577153\nFamily Diamond: 8085964' }
-        ],
-        prices: [
-          { duration: '6 أشهر', price: '15,000 IQD', isPopular: true },
-          { duration: 'سنة كاملة', price: '22,000 IQD' }
-        ],
-        noticeTitle: 'ثبات ترفيهي واستقرار عائلي فخم 🛡️',
-        noticeDesc: 'مثالي لمختلف شاشات الأندرويد والسامسونج وموزعات البث في العراق.'
-      },
-      pablored: {
-        id: 'pablored',
-        name: 'PABLO RED',
-        tagline: 'الخدمة الفاخرة للاشتراك الفولاذي المقاوم للضغط الشديد',
-        logoText: 'RED',
-        logoBg: 'bg-gradient-to-br from-red-600 via-rose-500 to-orange-500',
-        glowColor: 'red',
-        badge: 'ألترا ثبات 🏆',
-        shortDesc: 'الخيار المطلق لعشاق ثبات الكرة، مصمم بتقنية عالية للتصدي لأي تقاطعات وقت مباريات دوري الأبطال والقمم العالمية.',
-        stats: [
-          { value: '5,350+', label: 'قنوات منقحة بدقة' },
-          { value: '60,000+', label: 'دليل VOD للأفلام والمسلسلات' },
-          { value: 'فوري', label: 'تثبيت ومزامنة أوتوماتيكية' },
-          { value: 'فولاذي', label: 'لوحة تحكم خادمة فائقة' }
-        ],
-        downloads: [
-          { type: 'android', title: 'تحميل مباشر للآندرويد APK', subtitle: 'تحميل التطبيق الأصلي لبابلو RED', value: 'https://fhd.cx', buttonText: 'اضغط للتحميل الفوري' },
-          { type: 'downloader', title: 'كود Downloader للتلفزيون وشاومي', subtitle: 'كود التحميل السريع للمشغل', code: '9568447' },
-          { type: 'apple', title: 'برامج وتغليفات iOS (أبل)', subtitle: 'مشغلات NEXT+ و CASTORA الرسمية', info: 'رمز التفعيل والربط المباشر السريع: 111' },
-          { type: 'apple', title: 'الشاشات الذكية (SAMSUNG & LG)', subtitle: 'تثبيت مشغل الـ IBO PLAYER المعتمد', info: 'بعد تنصيب البرنامج يرجى إرسال الـ MAC Address الخاص بالتطبيق لنا لتفعيل الاشتراك بسيرفرك فوراً!' }
-        ],
-        prices: [
-          { duration: 'شهر واحد', price: '5,000 IQD' },
-          { duration: '3 أشهر', price: '10,000 IQD' },
-          { duration: '6 أشهر', price: '15,000 IQD' },
-          { duration: 'سنة كاملة', price: '30,000 IQD', isPopular: true }
-        ],
-        noticeTitle: 'المتعة الحقيقية بدون تقطيع أوقات المباريات 🔥',
-        noticeDesc: 'سيرفر بابلو ريد يتميز ببنية سحابية خاصة تتحمل أعلى معدلات الضغط بليالي دوري الأبطال والنهائيات.'
-      }
-    };
-
-    let activeCategory = 'iptv';
-
-    // Toggle active categories Tab
-    function switchCategory(cat) {
-      activeCategory = cat;
-      const btnIptv = document.getElementById('btn-iptv');
-      const btnExtra = document.getElementById('btn-extra');
-      const iptvContainer = document.getElementById('iptv-container');
-      const extraContainer = document.getElementById('extra-container');
-
-      if (cat === 'iptv') {
-        btnIptv.className = "px-6 py-3 rounded-full text-xs md:text-sm font-black border transition-all bg-orange-600 text-white border-orange-500 shadow-md shadow-orange-600/10";
-        btnExtra.className = "px-6 py-3 rounded-full text-xs md:text-sm font-black border transition-all bg-zinc-900/50 text-zinc-400 border-zinc-800 hover:text-white";
-        iptvContainer.classList.remove('hidden');
-        extraContainer.classList.add('hidden');
-      } else {
-        btnExtra.className = "px-6 py-3 rounded-full text-xs md:text-sm font-black border transition-all bg-orange-600 text-white border-orange-500 shadow-md shadow-orange-600/10";
-        btnIptv.className = "px-6 py-3 rounded-full text-xs md:text-sm font-black border transition-all bg-zinc-900/50 text-zinc-400 border-zinc-800 hover:text-white";
-        extraContainer.classList.remove('hidden');
-        iptvContainer.classList.add('hidden');
-      }
-      performSearchAndFilter();
-    }
-
-    // Toggle Modals visibility
-    function toggleModal(modalId, isOpen) {
-      const modal = document.getElementById(modalId);
-      if (isOpen) {
-        modal.classList.remove('hidden');
-      } else {
-        modal.classList.add('hidden');
-      }
-    }
-
-    // Perform live search block filter
-    function performSearchAndFilter() {
-      const query = document.getElementById('storeSearch').value.toLowerCase();
-      const currentContainerId = activeCategory === 'iptv' ? 'iptv-container' : 'extra-container';
-      const container = document.getElementById(currentContainerId);
-      const cards = container.children;
-
-      for (let card of cards) {
-        const name = card.getAttribute('data-name') || '';
-        if (name.includes(query)) {
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
-        }
-      }
-    }
-
-    // Build Dynamically Server Specifications Modal view
-    function openServerDetails(serverId) {
-      const svr = SERVERS_DB[serverId];
-      if (!svr) return;
-
-      let themeColorClass = 'text-indigo-400';
-      let themeBorderClass = 'border-indigo-500/20';
-      let themeBgClass = 'from-indigo-950/20 to-zinc-950/90';
-      let themeBadgeClass = 'bg-indigo-500/10 text-indigo-300 border-indigo-500/30';
-      let btnBgClass = 'bg-indigo-600 hover:bg-indigo-500';
-
-      if (svr.glowColor === 'orange') {
-        themeColorClass = 'text-orange-400';
-        themeBorderClass = 'border-orange-500/20';
-        themeBgClass = 'from-orange-950/20 to-zinc-950/90';
-        themeBadgeClass = 'bg-orange-500/15 text-orange-200 border-orange-500/35';
-        btnBgClass = 'bg-orange-600 hover:bg-orange-500';
-      } else if (svr.glowColor === 'red') {
-        themeColorClass = 'text-rose-400';
-        themeBorderClass = 'border-rose-500/20';
-        themeBgClass = 'from-rose-950/20 to-zinc-950/90';
-        themeBadgeClass = 'bg-rose-500/15 text-rose-300 border-rose-500/35';
-        btnBgClass = 'bg-rose-600 hover:bg-rose-550';
-      } else if (svr.glowColor === 'purple') {
-        themeColorClass = 'text-purple-400';
-        themeBorderClass = 'border-purple-500/20';
-        themeBgClass = 'from-purple-950/20 to-zinc-950/90';
-        themeBadgeClass = 'bg-purple-500/15 text-purple-300 border-purple-500/35';
-        btnBgClass = 'bg-purple-600 hover:bg-purple-500';
-      } else if (svr.glowColor === 'cyan') {
-        themeColorClass = 'text-teal-400';
-        themeBorderClass = 'border-teal-500/20';
-        themeBgClass = 'from-teal-950/20 to-zinc-950/90';
-        themeBadgeClass = 'bg-teal-500/15 text-teal-300 border-teal-500/35';
-        btnBgClass = 'bg-teal-600 hover:bg-teal-500';
-      }
-
-      let statsHTML = '';
-      svr.stats.forEach(st => {
-        statsHTML += `
-          <div class="bg-zinc-900/60 p-5 rounded-2xl border ${themeBorderClass} text-center space-y-1">
-            <div class="text-lg md:text-xl font-black ${themeColorClass}">${st.value}</div>
-            <div class="text-[10px] font-bold text-zinc-400">${st.label}</div>
-          </div>
-        `;
-      });
-
-      let downloadsHTML = '';
-      svr.downloads.forEach(dl => {
-        let icon = '<i class="fa-solid fa-cloud-arrow-down text-orange-400 text-lg"></i>';
-        if (dl.type === 'android') {
-          icon = '<i class="fa-brands fa-android text-emerald-400 text-lg"></i>';
-        } else if (dl.type === 'playstore') {
-          icon = '<i class="fa-brands fa-google-play text-sky-400 text-lg"></i>';
-        } else if (dl.type === 'apple') {
-          icon = '<i class="fa-brands fa-apple text-rose-400 text-lg"></i>';
-        } else if (dl.type === 'downloader') {
-          icon = '<i class="fa-solid fa-tv text-amber-400 text-lg"></i>';
-        }
-
-        downloadsHTML += `
-          <div class="bg-zinc-950/40 border border-zinc-800 rounded-2xl p-6 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-3 mb-2">
-                ${icon}
-                <h4 class="font-bold text-white text-sm">${dl.title}</h4>
+          return (
+            <div className="bento-card rounded-3xl p-6 md:p-8 flex flex-col justify-between hover:translate-y-[-4px] relative overflow-hidden group">
+              <div>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-3.5 bg-slate-900 border border-slate-800 rounded-2xl">
+                    <Icon name={prod.icon || "Sparkles"} className="w-8 h-8 text-amber-400" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg md:text-xl font-bold text-white transition-colors group-hover:text-amber-400">{prod.name}</h4>
+                  </div>
+                </div>
+                <p className="text-slate-400 text-xs md:text-sm leading-relaxed mb-6 font-sans">
+                  {prod.description}
+                </p>
               </div>
-              <p class="text-[11px] text-zinc-400 leading-relaxed mb-4">${dl.subtitle}</p>
-              
-              ${dl.code ? `
-                <div class="bg-black/60 p-4 rounded-xl border border-dashed border-orange-500/30 flex items-center justify-between mb-4">
-                  <span class="font-mono text-2xl font-black text-orange-500 tracking-wider">${dl.code}</span>
-                  <button onclick="copyToClipboard('${dl.code}', this)" class="px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-xs text-zinc-300 flex items-center gap-1.5 hover:text-white">
-                    <i class="fa-regular fa-copy"></i>
-                    <span>نسخ الرمز</span>
+
+              <div>
+                {prod.prices && prod.prices.length > 0 && (
+                  <div className="bg-slate-950 p-1 rounded-xl flex gap-1 mb-5 border border-slate-850 overflow-x-auto">
+                    {prod.prices.map((pr, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setSelectedPlanIdx(idx)}
+                        className={"flex-1 py-1.5 px-2 text-2xs font-bold rounded-lg transition-all cursor-pointer whitespace-nowrap " + (
+                          selectedPlanIdx === idx ? 'bg-slate-800 text-white' : 'text-slate-400 hover:text-white'
+                        )}
+                      >
+                        {pr.duration}
+                      </button>
+                    ))}
+                  </div>
+                )}
+
+                <div className="flex items-center justify-between mt-auto pt-2 border-t border-white/5">
+                  <div className="space-y-0.5">
+                    <span className="text-[10px] font-bold text-slate-500 block">سعر الاشتراك المحدد</span>
+                    <span className="text-lg md:text-xl font-black text-amber-500">
+                      {currentPlan.price}
+                    </span>
+                  </div>
+
+                  <button
+                    onClick={() => setBookingDetails({ isOpen: true, serverName: prod.name, duration: currentPlan.duration, price: currentPlan.price })}
+                    className="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-xs font-bold text-white transition-all shadow-md flex items-center gap-1 cursor-pointer"
+                  >
+                    <span>حجز فوري 🛒</span>
                   </button>
                 </div>
-              ` : ''}
+              </div>
+            </div>
+          );
+        }
 
-              ${dl.info ? `
-                <p class="text-xs text-orange-300 bg-black/30 p-3 rounded-lg border border-zinc-800 mb-4 leading-relaxed whitespace-pre-line">${dl.info}</p>
-              ` : ''}
+        return (
+          <div className="min-h-screen text-slate-100 relative">
+            
+            {/* Background Ambient Cosmic Orbs */}
+            <div className="fixed inset-0 pointer-events-none overflow-hidden -z-20">
+              <div className="absolute top-[-10%] left-[5%] w-[400px] h-[400px] bg-indigo-950/10 rounded-full blur-3xl" />
+              <div className="absolute top-[30%] right-[5%] w-[500px] h-[500px] bg-sky-950/10 rounded-full blur-3xl" />
             </div>
 
-            ${dl.value ? `
-              <a href="${dl.value}" target="_blank" rel="noopener" referrerPolicy="no-referrer" class="w-full py-3 bg-zinc-800 hover:bg-zinc-750 text-white font-bold text-center text-xs flex items-center justify-center gap-2 border border-zinc-700/60 rounded-xl">
-                <span>${dl.buttonText || 'رابط المشهد'}</span>
-                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            {/* Header element */}
+            <header className="sticky top-0 w-full bg-slate-950/80 backdrop-blur-xl border-b border-white/5 z-[100] py-4">
+              <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <div className="w-[50px] h-[50px] rounded-full border-2 border-indigo-500 bg-gradient-to-tr from-slate-950 to-indigo-950 flex flex-col items-center justify-center shadow-lg shadow-indigo-500/25 shrink-0 select-none">
+                    <span className="text-[10px] font-black leading-none text-white tracking-widest uppercase">{settings.logoText || "IQTV"}</span>
+                    <span className="text-xs font-black text-indigo-400 mt-0.5">{settings.logoSub || "4K"}</span>
+                  </div>
+                  <div>
+                    <h1 className="text-lg md:text-xl font-black text-white bg-gradient-to-l from-white via-slate-100 to-indigo-300 bg-clip-text text-transparent">
+                      {settings.title}
+                    </h1>
+                    <p className="text-[10px] md:text-xs font-bold text-slate-400 flex items-center gap-1.5">
+                      <span>{settings.subtitle}</span>
+                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    </p>
+                  </div>
+                </div>
+
+                <a 
+                  href={"https://wa.me/" + settings.whatsappNumber.replace(/\D/g, '')}
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-indigo-600/10 border border-indigo-500/30 hover:border-indigo-500 rounded-full text-indigo-300 hover:text-white text-xs font-black transition-all"
+                >
+                  الدعم الفني والخدمة 💬
+                </a>
+              </div>
+            </header>
+
+            {/* Hero Section */}
+            <section className="relative pt-12 pb-16 md:py-24 px-4 overflow-hidden">
+              <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-300 text-xs font-extrabold tracking-wider animate-bounce select-none">
+                  <Icon name="Flame" className="w-4 h-4 text-orange-400 animate-pulse" />
+                  <span>تفعيل فوري مضمون ودعم فني متكامل بجميع أرجاء العراق!</span>
+                </div>
+
+                <h2 className="text-3xl md:text-6xl font-black leading-tight">
+                  سرعة فائقة واشتراكات فاخرة <br className="hidden md:block"/>
+                  <span className="bg-gradient-to-l from-indigo-400 via-teal-300 to-indigo-500 bg-clip-text text-transparent">
+                    {settings.title}
+                  </span>
+                </h2>
+                
+                <p className="text-slate-350 text-sm md:text-lg leading-relaxed max-w-2xl mx-auto font-sans font-light">
+                  {settings.description}
+                </p>
+
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                  <a 
+                    href={"https://wa.me/" + settings.whatsappNumber.replace(/\D/g, '')}
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto px-8 py-4 bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-extrabold text-sm md:text-base rounded-full shadow-lg shadow-emerald-500/20 hover:scale-102 flex items-center justify-center gap-2.5 transition-all cursor-pointer"
+                  >
+                    <Icon name="MessageSquare" className="w-5 h-5 text-white" />
+                    <span>طلب تجربة مجانية 12 ساعة 🎬</span>
+                  </a>
+                  
+                  <button 
+                    onClick={() => {
+                      const el = document.getElementById('subscriptions-area');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="w-full sm:w-auto px-8 py-4 bg-slate-900 hover:bg-slate-850 text-slate-100 font-extrabold text-sm md:text-base rounded-full border border-slate-800 flex items-center justify-center gap-2.5 transition-all cursor-pointer"
+                  >
+                    <Icon name="Tv" className="w-5 h-5 text-indigo-400" />
+                    <span>استعراض أقسام الاشتراكات</span>
+                  </button>
+                </div>
+              </div>
+            </section>
+
+            {/* Main Area */}
+            <main id="subscriptions-area" className="max-w-7xl mx-auto px-4 md:px-8 py-10 space-y-12 pb-32">
+              
+              <div className="flex flex-col lg:flex-row items-center justify-between gap-6 border-b border-white/5 pb-8">
+                <div className="space-y-1.5 text-center lg:text-right">
+                  <h3 className="text-2xl md:text-3xl font-black text-white">باقات وأقسام متجر الاشتراكات</h3>
+                  <p className="text-xs md:text-sm text-slate-400 font-sans font-medium">
+                    استعرض الباقات المتاحة واختر سيرفرك المفضل للتفعيل الفوري بروابط مباشرة ممتازة
+                  </p>
+                </div>
+
+                <div className="w-full lg:w-96 relative">
+                  <Icon name="Search" className="absolute right-4 top-1/2 -translate-y-1/2 w-4.5 h-4.5 text-slate-500" />
+                  <input 
+                    type="text" 
+                    placeholder="ابحث عن سيرفر، فيلم، سعر أو باقة..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full bg-slate-900/60 border border-slate-800 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 rounded-full pr-11 pl-4 py-3 text-sm text-slate-100 placeholder-slate-500 outline-none transition-all font-sans"
+                  />
+                </div>
+              </div>
+
+              {/* Dynamic categories tabs */}
+              <div className="flex flex-wrap gap-2.5 justify-center md:justify-start">
+                {categories.map((cat) => (
+                  <button
+                    key={cat.id}
+                    onClick={() => setActiveCategory(cat.id)}
+                    className={"px-6 py-3 rounded-full text-xs md:text-sm font-extrabold border transition-all cursor-pointer flex items-center gap-2 " + (
+                      activeCategory === cat.id 
+                        ? 'bg-indigo-600 text-white border-indigo-500 shadow-lg' 
+                        : 'bg-slate-900/50 text-slate-400 border-slate-800 hover:text-white'
+                    )}
+                  >
+                    <Icon name={cat.icon || "Tv"} className="w-4 h-4" />
+                    <span>{cat.name}</span>
+                  </button>
+                ))}
+              </div>
+
+              {/* Grid content show */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                {filteredServers.map((srv) => (
+                  <div 
+                    key={srv.id}
+                    onClick={() => setSelectedServer(srv)}
+                    className="group bento-card hover:translate-y-[-6px] rounded-3xl p-6 md:p-8 flex flex-col justify-between cursor-pointer relative overflow-hidden"
+                  >
+                    <div className={"absolute top-0 right-0 w-32 h-32 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-[80px] -z-10 bg-gradient-to-br " + (
+                      srv.glowColor === 'orange' ? 'from-orange-500' :
+                      srv.glowColor === 'red' ? 'from-rose-500' :
+                      srv.glowColor === 'purple' ? 'from-purple-500' :
+                      srv.glowColor === 'cyan' ? 'from-teal-500' : 'from-indigo-500'
+                    )} />
+
+                    <div>
+                      <div className="flex items-center justify-between mb-6">
+                        {srv.logoUrl ? (
+                          <div className="w-14 h-14 rounded-2xl overflow-hidden shrink-0 bg-slate-900 border border-white/5 flex items-center justify-center shadow-lg">
+                            <img src={srv.logoUrl} alt={srv.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                          </div>
+                        ) : (
+                          <div className={"w-14 h-14 rounded-2xl shrink-0 " + (srv.logoBg || "bg-slate-800") + " flex items-center justify-center text-lg font-black text-white shadow-lg"}>
+                            {srv.logoText || srv.name[0]}
+                          </div>
+                        )}
+
+                        <span className={"text-[11px] font-black border px-3 py-1 rounded-full flex items-center gap-1 bg-black/60 transition-all " + (
+                          srv.glowColor === 'orange' ? 'border-orange-500/30 text-orange-400' :
+                          srv.glowColor === 'red' ? 'border-rose-500/30 text-rose-400' :
+                          srv.glowColor === 'purple' ? 'border-purple-500/30 text-purple-400' :
+                          srv.glowColor === 'cyan' ? 'border-teal-500/30 text-teal-400' : 'border-indigo-500/30 text-indigo-400'
+                        )}>
+                          <Icon name="Zap" className="w-3 h-3 animate-pulse text-amber-400" />
+                          <span>{srv.badge || 'سيرفر'}</span>
+                        </span>
+                      </div>
+
+                      <h4 className="text-xl font-black text-slate-100 mb-2 group-hover:text-amber-400 transition-colors duration-200">{srv.name}</h4>
+                      <p className="text-slate-400 text-xs md:text-sm leading-relaxed mb-6 font-sans">
+                        {srv.shortDesc}
+                      </p>
+                    </div>
+
+                    <div className="pt-4 border-t border-white/5 flex items-center justify-between">
+                      <span className="text-[10px] font-bold text-slate-500 uppercase font-sans">سعر الحجز يبدأ من</span>
+                      
+                      <div className="flex items-center gap-3">
+                        <span className="text-lg font-black text-slate-100 group-hover:text-amber-400 transition-colors">
+                          {srv.prices && srv.prices[0] ? srv.prices[0].price : '0 IQD'}
+                        </span>
+                        <div className={"w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 " + (
+                          srv.glowColor === 'orange' ? 'bg-orange-500/10 text-orange-400 group-hover:bg-orange-500 group-hover:text-black shadow-lg shadow-orange-500/20' :
+                          srv.glowColor === 'red' ? 'bg-rose-500/10 text-rose-400 group-hover:bg-rose-500 group-hover:text-white' :
+                          srv.glowColor === 'purple' ? 'bg-purple-500/10 text-purple-400 group-hover:bg-purple-500 group-hover:text-white' :
+                          srv.glowColor === 'cyan' ? 'bg-teal-500/10 text-teal-400 group-hover:bg-teal-500 group-hover:text-black' :
+                          'bg-indigo-500/10 text-indigo-400 group-hover:bg-indigo-500'
+                        )}>
+                          <Icon name="ArrowLeft" className="w-4 h-4" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+
+                {filteredProducts.map((prod) => (
+                  <OtherProductItem key={prod.id} prod={prod} />
+                ))}
+
+                {filteredServers.length === 0 && filteredProducts.length === 0 && (
+                  <div className="col-span-full py-16 text-center text-slate-400 gap-2">
+                    <Icon name="AlertTriangle" className="w-10 h-10 text-amber-500 mx-auto" />
+                    <p className="text-sm font-bold">لا يوجد نتائج تطابق بحثك في هذا القسم</p>
+                  </div>
+                )}
+              </div>
+
+              {/* Support status Display */}
+              <div className="bg-gradient-to-tr from-[#0b101c] via-slate-900 to-[#120f26] border border-slate-800 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="space-y-2 text-center md:text-right">
+                  <h4 className="text-lg md:text-xl font-bold text-white flex items-center justify-center md:justify-start gap-1.5">
+                    <Icon name="ShieldCheck" className="w-5 h-5 text-indigo-400" />
+                    <span>الضمان الذهبي للتفعيل الفوري 🛡️</span>
+                  </h4>
+                  <p className="text-slate-300 text-xs md:text-sm max-w-2xl font-sans font-light">
+                    نضمن لك جودة ترفيهية خرافية طوال فترة اشتراكك، مع باقة دعم فني ممتازة متواجدة دائمًا لمساعدتك على التحميل خطوة بخطوة بالدعم الفني المباشر بالواتساب.
+                  </p>
+                </div>
+                <a 
+                  href={"https://wa.me/" + settings.whatsappNumber.replace(/\D/g, '')}
+                  target="_blank" 
+                  rel="noopener"
+                  className="px-6 py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-xs rounded-full shadow-lg flex items-center gap-1 cursor-pointer whitespace-nowrap"
+                >
+                  <span>الاتصال بالدعم الفني</span>
+                  <Icon name="ArrowLeft" className="w-4 h-4" />
+                </a>
+              </div>
+
+            </main>
+
+            {/* Footer */}
+            <footer className="bg-slate-950 py-16 border-t border-white/5 text-center">
+              <div className="max-w-7xl mx-auto px-4 md:px-8 space-y-6">
+                <div className="w-[60px] h-[60px] rounded-full border border-slate-800 bg-slate-900 flex flex-col items-center justify-center mx-auto select-none font-bold">
+                  <span className="text-[12px] font-black text-white">{settings.logoText || "IQTV"}</span>
+                  <span className="text-xs font-black text-indigo-400">{settings.logoSub || "4K"}</span>
+                </div>
+
+                <div>
+                  <p className="text-slate-200 font-extrabold text-sm">{settings.title} — الخدمة الإلكترونية المعتمدة بالعراق 🇮🇶</p>
+                  <p className="text-slate-500 text-2xs font-light max-w-xl mx-auto font-sans leading-relaxed mt-2">
+                    جميع الأسماء والشعارات والشركات هي علامات مسجلة لأصحابها الأصليين، دور موقعنا يقتصر على تزويد التفعيلات القانونية مع الدعم المضمون طوال مدة التراخيص.
+                  </p>
+                </div>
+
+                <div className="flex justify-center items-center gap-4 text-xs font-bold text-slate-400 font-sans">
+                  <button onClick={() => setIsPolicyOpen(true)} className="hover:text-white">سياسة الاستخدام والخصوصية</button>
+                  <span>•</span>
+                  <a href={"https://wa.me/" + settings.whatsappNumber.replace(/\D/g, '')} target="_blank" className="hover:text-white">خدمة العملاء المباشرة</a>
+                </div>
+
+                <p className="text-slate-600 text-3xs font-mono">&copy; 2026. تواصل لتجربة مجانية فائقة.</p>
+              </div>
+            </footer>
+
+            {/* Floating button */}
+            <div className="fixed bottom-6 left-6 z-[999]">
+              <a 
+                href={"https://wa.me/" + settings.whatsappNumber.replace(/\D/g, '')}
+                target="_blank" 
+                className="w-14 h-14 rounded-full bg-emerald-500 flex items-center justify-center text-white text-xl shadow-xl shadow-emerald-500/25 transition-all text-center shrink-0"
+              >
+                <Icon name="MessageSquare" className="w-6 h-6 text-white" />
               </a>
-            ` : ''}
-          </div>
-        `;
-      });
+            </div>
 
-      let pricesHTML = '';
-      svr.prices.forEach(pr => {
-        pricesHTML += `
-          <div class="bg-zinc-900 border ${pr.isPopular ? 'border-orange-500 shadow-md shadow-orange-500/15 scale-[1.02]' : 'border-zinc-800'} rounded-2xl p-6 text-center relative flex flex-col justify-between">
-            ${pr.isPopular ? `
-              <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-orange-500 text-black text-[10px] font-black rounded-full uppercase flex items-center gap-1">
-                <i class="fa-solid fa-crown text-[8px]"></i>
-                <span>الأكثر طلباً 🏆</span>
+            {/* Privacy Policy */}
+            {isPolicyOpen && (
+              <div 
+                className="fixed inset-0 bg-slate-950/90 z-[3000] backdrop-blur-md flex items-center justify-center p-4 animate-fade-in"
+                onClick={() => setIsPolicyOpen(false)}
+              >
+                <div 
+                  className="bg-slate-900 border border-slate-800 rounded-3xl max-w-lg w-full p-6 md:p-8 relative text-right pr-6"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <button 
+                    onClick={() => setIsPolicyOpen(false)}
+                    className="absolute left-4 top-4 p-1 rounded-full bg-slate-800 text-slate-400 hover:text-white"
+                  >
+                    <Icon name="X" className="w-5 h-5" />
+                  </button>
+
+                  <h3 className="text-xl font-bold text-teal-400 mb-6 flex items-center gap-1.5 justify-start">
+                    <Icon name="ShieldCheck" className="w-5 h-5" />
+                    <span>سياسة الاستخدام والخصوصية 🔐</span>
+                  </h3>
+
+                  <div className="space-y-4 text-slate-300 text-xs md:text-sm font-sans leading-relaxed whitespace-pre-line">
+                    <p>• كود التفعيل المباشر مرخص وصالح للتشغيل على جهاز واحد متزامن فقط لضمان سلامة الخدمة الفنية.</p>
+                    <p>• يمنع حظرًا باتًا مشاركة الأكواد أو تشتيتها أو استخدامها في النشاطات غير المشروعة لعدم إلغاء الضمان.</p>
+                    <p>• الضمان الذهبي يشمل التعديل وتوفير التعويض والاشتراكات البديلة من الدعم الفني بالواتساب فورًا.</p>
+                    <p>• يرجى إتمام فحص وتطبيق التجربة المجانية 12 ساعة قبل الحجز الطويل للتأكد من المزامنة الفنية.</p>
+                  </div>
+                </div>
               </div>
-            ` : ''}
+            )}
 
-            <div class="mb-4">
-              <h4 class="text-xs font-bold text-zinc-400 mb-1">${pr.duration}</h4>
-              <div class="text-2xl font-black ${pr.isPopular ? 'text-orange-400' : 'text-white'}">${pr.price}</div>
-            </div>
+            {/* Server details popup summary */}
+            {selectedServer && (
+              <div 
+                className="fixed inset-0 bg-slate-955/95 z-[2500] backdrop-blur-xl overflow-y-auto p-4 md:p-8 animate-fade-in"
+                onClick={() => setSelectedServer(null)}
+              >
+                <div 
+                  className="max-w-5xl mx-auto my-10 relative" 
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <button 
+                    onClick={() => setSelectedServer(null)}
+                    className="fixed top-6 left-6 w-12 h-12 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-800 transition-all cursor-pointer z-[2600]"
+                  >
+                    <Icon name="X" className="w-6 h-6" />
+                  </button>
 
-            <button onclick="triggerBooking('${svr.name}', '${pr.duration}', '${pr.price}')" class="w-full py-2.5 rounded-xl text-xs font-black transition-all ${pr.isPopular ? 'bg-orange-500 hover:bg-orange-400 text-black font-extrabold shadow-md' : 'bg-orange-600 hover:bg-orange-500 text-white'} flex items-center justify-center gap-1">
-              <span>حجز فوري 🛒</span>
-            </button>
-          </div>
-        `;
-      });
+                  {/* Hero Box */}
+                  <div className={"p-8 md:p-12 rounded-3xl bg-gradient-to-br " + activeColors.bg + " border " + activeColors.border + " relative overflow-hidden mb-8"}>
+                    <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl -z-10" />
+                    
+                    <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-right">
+                      {selectedServer.logoUrl ? (
+                        <div className="w-24 h-24 rounded-2xl overflow-hidden shrink-0 bg-slate-900 border border-white/5 shadow-xl flex items-center justify-center">
+                          <img src={selectedServer.logoUrl} alt={selectedServer.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                        </div>
+                      ) : (
+                        <div className={"w-24 h-24 rounded-2xl shrink-0 " + (selectedServer.logoBg || "bg-slate-800") + " flex items-center justify-center text-white text-3xl font-black shadow-xl"}>
+                          {selectedServer.logoText || selectedServer.name[0]}
+                        </div>
+                      )}
 
-      const elementHTML = `
-        <!-- Header area -->
-        <div class="p-8 md:p-12 rounded-3xl bg-gradient-to-br ${themeBgClass} border ${themeBorderClass} relative overflow-hidden mb-8">
-          <div class="absolute top-0 right-0 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl -z-10"></div>
-          
-          <div class="flex flex-col md:flex-row items-center gap-6 text-center md:text-right">
-            <div class="w-24 h-24 rounded-2xl ${svr.logoBg} flex items-center justify-center text-3xl font-black shadow-xl shrink-0">
-              ${svr.logoText}
-            </div>
+                      <div className="flex-1 space-y-2">
+                        <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
+                          <h2 className="text-3xl md:text-4xl font-extrabold text-white">{selectedServer.name}</h2>
+                          <span className={"px-3 py-1 rounded-full text-xs font-bold border " + activeColors.badge}>
+                            {selectedServer.badge || 'سيرفر'}
+                          </span>
+                        </div>
+                        <p className={"text-lg font-bold " + activeColors.text}>{selectedServer.tagline}</p>
+                        <p className="text-slate-300 text-sm md:text-base max-w-3xl leading-relaxed font-sans">{selectedServer.shortDesc}</p>
+                      </div>
+                    </div>
+                  </div>
 
-            <div class="flex-1 space-y-2">
-              <div class="flex flex-wrap items-center justify-center md:justify-start gap-3">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-white">${svr.name}</h2>
-                <span class="px-3 py-1 rounded-full text-[10px] font-bold border ${themeBadgeClass}">
-                  ${svr.badge}
-                </span>
+                  {/* Stats columns */}
+                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8 font-sans">
+                    {selectedServer.stats && selectedServer.stats.map((st, idx) => (
+                      <div 
+                        key={idx} 
+                        className={"bg-slate-900/60 p-5 rounded-2xl border " + activeColors.statBg + " text-center space-y-1"}
+                      >
+                        <div className={"text-xl md:text-2xl font-black " + activeColors.text}>{st.value}</div>
+                        <div className="text-xs font-bold text-slate-400">{st.label}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Guide and Manual list */}
+                  <h3 className="text-xl font-bold text-white mb-4 pr-3 border-r-4 border-indigo-500 inline-block font-sans">
+                    دليل تشغيل التطبيقات وتثبيت الاشتراك ⚙️
+                  </h3>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 font-sans">
+                    {selectedServer.downloads && selectedServer.downloads.map((dl, idx) => {
+                      if (dl.type === 'feature_list') {
+                        return (
+                          <div key={idx} className="bg-slate-900/40 border border-slate-800 rounded-2xl p-6 text-right">
+                            <div className="flex items-center gap-3 mb-3 text-amber-500 justify-start">
+                              <Icon name="Crown" className="w-5 h-5 text-amber-400" />
+                              <h4 className="font-bold text-base md:text-lg">{dl.title}</h4>
+                            </div>
+                            <div className="space-y-2 text-slate-300 text-sm leading-relaxed whitespace-pre-line">
+                              {dl.additionalInfo}
+                            </div>
+                          </div>
+                        );
+                      }
+
+                      return (
+                        <div key={idx} className="bg-slate-900/40 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between text-right">
+                          <div className="mb-4">
+                            <div className="flex items-center gap-3 mb-2 justify-start">
+                              {dl.type === 'android_apk' && <Icon name="Smartphone" className="w-5 h-5 text-emerald-400" />}
+                              {dl.type === 'downloader' && <Icon name="Tv" className="w-5 h-5 text-sky-400" />}
+                              {dl.type === 'apple_ios' && <Icon name="Apple" className="w-5 h-5 text-rose-400" />}
+                              {dl.type === 'tv_smart' && <Icon name="Tv" className="w-5 h-5 text-indigo-400" />}
+                              {dl.type === 'web_pc' && <Icon name="Laptop" className="w-5 h-5 text-purple-400" />}
+                              <h4 className="font-bold text-slate-100 text-base">{dl.title}</h4>
+                            </div>
+                            <p className="text-xs text-slate-500 leading-relaxed mb-4">{dl.subtitle}</p>
+
+                            {dl.value && (
+                              <div className="bg-slate-950/60 p-4 rounded-xl border border-dashed border-indigo-500/30 flex items-center justify-between mb-4">
+                                <div className="font-mono text-xl font-black text-indigo-400 tracking-wider">
+                                  {dl.value}
+                                </div>
+                                <button 
+                                  onClick={() => copyToClipboard(dl.value)}
+                                  className="px-3 py-1.5 rounded-lg bg-slate-900 text-xs text-slate-300 hover:text-white border border-slate-800 cursor-pointer"
+                                >
+                                  {copiedValue === dl.value ? "تم نسخ الكود!" : "نسخ الكود"}
+                                </button>
+                              </div>
+                            )}
+
+                            {dl.additionalInfo && (
+                              <p className="text-xs text-slate-300 bg-slate-950/35 p-3 rounded-lg border border-slate-800 whitespace-pre-line leading-relaxed">
+                                {dl.additionalInfo}
+                              </p>
+                            )}
+                          </div>
+
+                          {dl.link && (
+                            <a 
+                              href={dl.link} 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-center text-xs flex items-center justify-center gap-2 border border-slate-700 transition-all cursor-pointer"
+                            >
+                              <span>الرابط المباشر للبرنامج</span>
+                              <Icon name="ExternalLink" className="w-3.5 h-3.5" />
+                            </a>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Prices grid */}
+                  <h3 className="text-xl font-bold text-white mb-4 pr-3 border-r-4 border-indigo-500 inline-block font-sans">
+                    باقات واشتراكات ورخصة سيرفر {selectedServer.name} 💳
+                  </h3>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8 font-sans">
+                    {selectedServer.prices && selectedServer.prices.map((pr, idx) => (
+                      <div 
+                        key={idx} 
+                        className={"bg-slate-900 border " + (pr.isPopular ? 'border-teal-500 scale-102 hover:border-teal-400 shadow-lg shadow-teal-500/5' : 'border-slate-800') + " rounded-2xl p-6 text-center relative flex flex-col justify-between"}
+                      >
+                        {pr.isPopular && (
+                          <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-teal-500 text-slate-950 text-[10px] font-extrabold rounded-full flex items-center gap-1">
+                            <Icon name="Sparkles" className="w-3 h-3" />
+                            <span>الباقة الموصى بها</span>
+                          </div>
+                        )}
+
+                        <div className="mb-4">
+                          <h4 className="text-xs font-bold text-slate-400 mb-2">{pr.duration}</h4>
+                          <span className={"text-2xl font-black " + (pr.isPopular ? 'text-teal-400' : 'text-slate-100')}>
+                            {pr.price}
+                          </span>
+                        </div>
+
+                        <button 
+                          onClick={() => {
+                            setSelectedServer(null);
+                            setBookingDetails({ isOpen: true, serverName: selectedServer.name, duration: pr.duration, price: pr.price });
+                          }}
+                          className={"w-full py-2.5 rounded-xl text-xs font-black transition-all cursor-pointer " + (pr.isPopular ? 'bg-teal-500 text-slate-950' : 'bg-indigo-600 text-white hover:bg-indigo-500')}
+                        >
+                          شراء وحجز فوري 🛒
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Notice Alert */}
+                  {selectedServer.noticeTitle && (
+                    <div className={"bg-slate-900 border " + activeColors.border + " rounded-2xl p-6 md:p-8 flex items-start gap-4 text-right"}>
+                      <div className="p-3 bg-indigo-500/10 rounded-xl text-indigo-400 shrink-0">
+                        <Icon name="AlertCircle" className="w-6 h-6 animate-pulse" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-white text-base md:text-lg">{selectedServer.noticeTitle}</h4>
+                        <p className="text-slate-300 text-sm leading-relaxed mt-1 font-sans">{selectedServer.noticeDesc}</p>
+                      </div>
+                    </div>
+                  )}
+
+                </div>
               </div>
-              <p class="text-base md:text-lg font-bold ${themeColorClass}">${svr.tagline}</p>
-              <p class="text-zinc-300 text-xs md:text-sm max-w-3xl leading-relaxed">${svr.shortDesc}</p>
-            </div>
+            )}
+
+            {/* General Booking Modal */}
+            {bookingDetails.isOpen && (
+              <div 
+                className="fixed inset-0 bg-slate-955/85 z-[3000] backdrop-blur-md flex items-center justify-center p-4 animate-fade-in"
+                onClick={() => setBookingDetails({ isOpen: false, serverName: '', duration: '', price: '' })}
+              >
+                <div 
+                  className="bg-slate-900 border border-slate-800 rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl relative text-right"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <div className="h-1.5 bg-gradient-to-r from-blue-600 to-teal-500" />
+                  
+                  <button 
+                    onClick={() => setBookingDetails({ isOpen: false, serverName: '', duration: '', price: '' })}
+                    className="absolute left-4 top-5 p-1 rounded-full bg-slate-800 text-slate-400 hover:text-white"
+                  >
+                    <Icon name="X" className="w-5 h-5" />
+                  </button>
+
+                  <div className="p-6 md:p-8">
+                    <h3 className="text-2xl font-black text-slate-100 mb-2">تفاصيل حجز الفاتورة والتشغيل</h3>
+                    <p className="text-slate-400 text-xs md:text-sm mb-6 bg-slate-950/60 p-4 rounded-xl border border-slate-800 font-sans">
+                      أنت بصدد طلب تفعيل باقة <span className="text-teal-400 font-bold">{bookingDetails.serverName}</span> لمدّة (<span className="text-indigo-400 font-bold">{bookingDetails.duration}</span>) بقيمة <span className="text-amber-400 font-black">{bookingDetails.price}</span>.
+                    </p>
+
+                    {bookingDone ? (
+                      <div className="py-12 text-center flex flex-col items-center justify-center">
+                        <div className="w-16 h-16 bg-emerald-500/10 border border-emerald-500 text-emerald-400 rounded-full flex items-center justify-center mb-4 animate-bounce">
+                          <Icon name="Check" className="w-8 h-8" />
+                        </div>
+                        <h4 className="text-xl font-bold text-slate-100 mb-2">تم تجهيز طلبك بنجاح!</h4>
+                        <p className="text-slate-400 text-sm">برجاء الانتظار، جاري تحويلك لواتساب المبيعات الآن للتفعيل الفوري...</p>
+                      </div>
+                    ) : (
+                      <form onSubmit={submitBooking} className="space-y-4 text-xs font-sans">
+                        <div>
+                          <label className="block text-slate-400 font-bold mb-1.5">الاسم كاملاً:</label>
+                          <input 
+                            type="text" 
+                            required
+                            placeholder="علي البصري"
+                            value={bookingForm.name}
+                            onChange={(e) => setBookingForm({ ...bookingForm, name: e.target.value })}
+                            className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-slate-100 focus:border-indigo-500 outline-none"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-slate-400 font-bold mb-1.5">رقم الواتساب الخاص بك:</label>
+                          <input 
+                            type="tel" 
+                            required
+                            placeholder="07700000000"
+                            value={bookingForm.phone}
+                            onChange={(e) => setBookingForm({ ...bookingForm, phone: e.target.value })}
+                            className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-slate-100 focus:border-indigo-500 outline-none font-mono"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-slate-400 font-bold mb-1.5">ملاحظات إضافية للجهاز (الشاشة أو الهاتف):</label>
+                          <textarea 
+                            rows="2"
+                            placeholder="مثال: يرجى تفعيل الكود على شاشة LG"
+                            value={bookingForm.notes}
+                            onChange={(e) => setBookingForm({ ...bookingForm, notes: e.target.value })}
+                            className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-slate-100 resize-none focus:border-indigo-500 outline-none"
+                          />
+                        </div>
+
+                        <button 
+                          type="submit"
+                          className="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold rounded-xl py-3.5 transition-all text-xs"
+                        >
+                          إتمام الحجز وفتح الواتساب 🚀
+                        </button>
+                      </form>
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
+
           </div>
-        </div>
-
-        <!-- Stats Block -->
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          ${statsHTML}
-        </div>
-
-        <!-- Download Block Guide Header -->
-        <h3 class="text-lg font-black text-white mb-4 pr-3 border-r-4 border-orange-500 inline-block">
-          دليل التثبيت وخطوات تحميل السيرفر ⚙️
-        </h3>
-
-        <!-- Downloads Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-          ${downloadsHTML}
-        </div>
-
-        <!-- Prices block lists -->
-        <h3 class="text-lg font-black text-white mb-4 pr-3 border-r-4 border-orange-500 inline-block">
-          باقات أسعار الاشتراك لـ ${svr.name} 💳
-        </h3>
-
-        <!-- Prices list grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8 font-sans">
-          ${pricesHTML}
-        </div>
-
-        <!-- Dynamic Notice banner -->
-        <div class="bg-zinc-900 border ${themeBorderClass} rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-start gap-4">
-          <div class="p-3 bg-orange-500/10 rounded-xl text-orange-400 flex items-center justify-center shrink-0">
-            <i class="fa-solid fa-circle-info text-2xl animate-pulse"></i>
-          </div>
-          <div class="space-y-1">
-            <h4 class="font-extrabold text-white text-base">${svr.noticeTitle}</h4>
-            <p class="text-zinc-300 text-xs md:text-sm leading-relaxed">${svr.noticeDesc}</p>
-          </div>
-        </div>
-      `;
-
-      document.getElementById('modalTarget').innerHTML = elementHTML;
-      toggleModal('detailModal', true);
-    }
-
-    // Copying Downloader helper
-    function copyToClipboard(text, btn) {
-      navigator.clipboard.writeText(text).then(() => {
-        const originalText = btn.innerHTML;
-        btn.innerHTML = `<i class="fa-solid fa-check text-emerald-400"></i><span class="text-emerald-400">تم النسخ</span>`;
-        setTimeout(() => {
-          btn.innerHTML = originalText;
-        }, 2000);
-      });
-    }
-
-    // Trigger instant booking logic
-    function triggerBooking(serverName, duration, price) {
-      // Hide other modals if active to secure transition
-      toggleModal('detailModal', false);
-
-      document.getElementById('book_server').value = serverName;
-      document.getElementById('book_duration').value = duration;
-      document.getElementById('book_price').value = price;
-
-      document.getElementById('bookingHeaderDesc').innerHTML = `أنت بصدد طلب تفعيل اشتراك <span class="text-orange-400 font-bold">${serverName}</span> لمدّة (<span class="text-indigo-400 font-bold">${duration}</span>) بقيمة تبلغ <span class="text-yellow-400 font-extrabold">${price}</span>.`;
-      
-      toggleModal('bookingModal', true);
-    }
-
-    // Handle Form to Output Beautiful Invoice direct to WhatsApp admin API
-    function handleInvoiceSubmit(e) {
-      e.preventDefault();
-
-      const server = document.getElementById('book_server').value;
-      const duration = document.getElementById('book_duration').value;
-      const price = document.getElementById('book_price').value;
-
-      const name = document.getElementById('cust_name').value;
-      const phone = document.getElementById('cust_phone').value;
-      const notes = document.getElementById('cust_notes').value || 'لا يوجد';
-
-      const invoiceText = 
-        `مرحباً متجر *IQTV 4K* 🇮🇶\n\n` +
-        `لقد قمت بتقديم طلب حجز اشتراك إلكتروني عبر موقعكم الخاص:\n` +
-        `🏷️ *الاشتراك المطلـوب:* ${server}\n` +
-        `⏱️ *المـدة:* ${duration}\n` +
-        `💰 *السـعـر:* ${price}\n\n` +
-        `📋 *بيانات العميل:*\n` +
-        `👤 *الاسم:* ${name}\n` +
-        `📞 *رقم الهاتف:* ${phone}\n` +
-        `📝 *ملاحظات:* ${notes}\n\n` +
-        `يرجى تأكيد الحجز وإرسال تفاصيل التفعيل وشكراً لكم!`;
-
-      const encodedText = encodeURIComponent(invoiceText);
-      const whatsappUrl = `https://wa.me/9647740393776?text=${encodedText}`;
-
-      // Open new tab
-      window.open(whatsappUrl, '_blank');
-      
-      // Close modal
-      toggleModal('bookingModal', false);
-
-      // Reset form
-      document.getElementById('cust_name').value = '';
-      document.getElementById('cust_phone').value = '';
-      document.getElementById('cust_notes').value = '';
-    }
-
-    // Close Modals when clicking outside boundaries
-    window.onclick = function(event) {
-      const detailModal = document.getElementById('detailModal');
-      const bookingModal = document.getElementById('bookingModal');
-      const policyModal = document.getElementById('policyModal');
-
-      if (event.target === detailModal) {
-        detailModal.classList.add('hidden');
+        );
       }
-      if (event.target === bookingModal) {
-        bookingModal.classList.add('hidden');
-      }
-      if (event.target === policyModal) {
-        policyModal.classList.add('hidden');
-      }
-    }
-  </script>
+
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<App />);
+    </script>
 </body>
 </html>
